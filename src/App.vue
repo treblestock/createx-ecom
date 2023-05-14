@@ -1,7 +1,6 @@
 <script setup lang="ts">
 
 
-
 </script>
 
 <template>
@@ -12,25 +11,12 @@
 
 <style>
 @import '~/assets/css/null';
-@import '~/assets/css/utils';
-
-html,
-body {
-  font-size: 10px;
-}
-
-
-body > * {
-  font-size: 1.8rem;
-}
-
-
-
+@import '~/assets/css/consts';
+@import '~/assets/css/global';
+@import '~/assets/css/fonts';
 
 </style>
 
 <style scoped>
-
-
 
 </style>

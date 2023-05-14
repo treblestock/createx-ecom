@@ -1,13 +1,27 @@
-$grey: #ccc;
-$grey-light: #eee;
-$grey-dark: #555;
-$primary: $grey;
-$secondary: $grey-dark;
+$ff-lato: 'Lato';
+$lh: 1.5;
 
+$color-green: #17696A;
+$color-green-dark: #145C5D;
+$color-green-light: #17696A;
 
-/* paddings */
-$border-radius: 4px;
-$nav-padding: 1.5rem 1.5rem;
+$color-red: #FF4242;
+$color-orange: #F89828;
+$color-blue-dark: #17696A;
+$color-white: #fff;
+$color-black: #000;
 
-/* size */
-$icon-size: 4rem;
+$color-gray-900: #1E212C;
+$color-gray-800: #424551;
+$color-gray-700: #787A80;
+$color-gray-600: #9A9CA5;
+$color-gray-500: #B3B7BC;
+$color-gray-400: #D7DADD;
+$color-gray-300: #E5E8ED;
+$color-gray-200: #F4F5F7;
+$color-gray-100: #F9F9F9;
+
+$color-text: #C4C4C4;
+
+$border-w: 1px;
+$radius: 4px;

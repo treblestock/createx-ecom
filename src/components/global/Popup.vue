@@ -1,38 +1,37 @@
 <script setup lang="ts">
+import { ref } from 'vue'
 
 
 
-// @ts-ignore
-const props = defineProps<{
-  isActive: boolean
-  isTransparent: boolean
-  isNoCross: boolean
-}>()
+const isActive = ref(true)
 
-const emit = defineEmits([
-  'closed',
-])
+function close() {
+  isActive.value = false
+}
+
+defineExpose({
+  close,
+})
+
 
 
 </script>
 
 <template>
-  <div class="popup" v-if="isActive"
-    :class="{_darken: !isTransparent}"
-    @click="emit('closed')"
-  >
-    <!-- <div class="popup__wrapper" v-if="!isTransparent"
-      @click="emit('closed')"
-    ></div> -->
-    <div class="popup__body"
-      @click.stop
+  <Teleport to="body">
+    <div class="popup" v-if="isActive"
+      @click="close"
     >
-      <div class="popup__cross" v-if="!isNoCross"
-        @click="emit('closed')"
-      >&#x2573;</div>
-      <slot></slot>
+      <div class="popup__body"
+        @click.stop
+      >
+        <div class="popup__cross"
+          @click="close"
+        >&#x2573;</div>
+        <slot :close="close"></slot>
+      </div>
     </div>
-  </div>
+  </Teleport>
 </template>
 
 <style scoped>
@@ -40,56 +39,51 @@ const emit = defineEmits([
 
 
 .popup {
+  /* cover screen */
+  z-index: 100;
   position: fixed;
   top: 0;
   right: 0;
   left: 0;
   bottom: 0;
 
+  /* body pos */
   display: flex;
   justify-content: center;
   align-items: center;
 
-  z-index: 100;
 
-  &__wrapper {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
-
-    background: #000;
-    opacity: .3;
-  }
-  &._darken {
-    background: #000;
-    opacity: .3;
-  }
+  /* wrapper */
+  background: $color-gray-900;
+  opacity: 0.75;
 
 
   &__body {
-    z-index: 1;
     max-width: 90%;
     max-height: 90%;
+    padding: 7rem 5rem 5rem;
+
+    background: $color-white;
+
+    /* cross position */
     position: relative;
   }
   
   &__cross {
     position: absolute;
-    top: -2rem;
-    right: -2rem;
-    transform: translate(-100%, 100%);
+    top: 2.4rem;
+    right: 2rem;
 
     width: 2.4rem;
     height: 2.4rem;
 
-    color: $primary;
+    color: $color-gray-700;
     cursor: pointer;
-  }
+
     &:hover {
-      color: $primary;
+      color: $color-green;
     }
+  }
 }
 
     

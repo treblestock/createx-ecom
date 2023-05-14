@@ -1,11 +1,26 @@
 <script setup lang="ts">
+import { assetsIcons } from '~/types'
 
-// import MyIcon from '~/assets/img/icons/crud/download.svg'
+
+// @ts-ignore
+const props = defineProps<{
+  icon: keyof typeof assetsIcons // .png | .vue | .svg
+}>()
+
+const ASSETS_IMG_PATH = '../../assets/img/'
+// const PUBLIC_IMG_PATH = '../../public/img/'
+
+const iconPath = assetsIcons[props.icon]
+const url = new URL(`${ASSETS_IMG_PATH + iconPath}`, import.meta.url).href
+
+
+
+
 
 </script>
 
 <template>
-  <!-- <MyIcon class="icon"></MyIcon> -->
+  <img :src="url" alt="" />
   
 </template>
 

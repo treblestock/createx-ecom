@@ -1,0 +1,143 @@
+@import '~/assets/css/consts';
+@import '~/assets/css/utils';
+
+/* FONTS */
+.h1 {
+  font-size: 4.6rem;
+  line-height: 1.3;
+  font-weight: 900;
+  color: $color-text;
+}
+.h2 {
+  font-size: 3.2rem;
+  line-height: 1.3;
+  font-weight: 900;
+  color: $color-text;
+}
+.h3 {
+  font-size: 2.8rem;
+  line-height: 1.5;
+  font-weight: 700;
+  color: $color-gray-900;
+}
+.h4 {
+  font-size: 2.4rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: $color-text;
+}
+.h5 {
+  font-size: 2rem;
+  line-height: 1.3;
+  font-weight: 700;
+  color: $color-black;
+}
+.h6 {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: $color-text;
+}
+
+@define-mixin fontBaseRegular {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  color: $color-text;
+}
+@define-mixin fontBaseBold {
+  @mixin fontBaseRegular;
+  font-weight: 700;
+}
+@define-mixin fontLargeRegular {
+  font-size: 1.8rem;
+  line-height: 1.5;
+  color: $color-text;
+}
+@define-mixin fontLargeBold {
+  @mixin fontLargeRegular;
+  font-weight: 700;
+}
+@define-mixin fontSmallRegular {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  color: $color-text;
+}
+@define-mixin fontSmallBold {
+  @mixin fontSmallRegular;
+  font-weight: 700;
+}
+@define-mixin fontExtraSmallRegular {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: $color-text;
+}
+@define-mixin fontExtraSmallBold {
+  @mixin fontExtraSmallRegular;
+  font-weight: 900;
+}
+@define-mixin fontExtraExtraSmallRegular {
+  font-size: 1.2rem;
+  line-height: 1.5;
+  color: $color-text;
+}
+@define-mixin fontExtraExtraSmallBold {
+  @mixin fontExtraExtraSmallRegular;
+  font-weight: 900;
+}
+
+
+
+.text {
+  @mixin fontBaseRegular;
+}
+.text_b {
+  @mixin fontBaseBold;
+}
+.text_l {
+  @mixin fontLargeRegular;
+}
+.text_lb {
+  @mixin fontSmallBold;
+}
+.text_s {
+  @mixin fontSmallRegular;
+}
+.text_sb {
+  @mixin fontSmallBold;
+}
+.text_xs {
+  @mixin fontExtraSmallRegular;
+}
+.text_xsb {
+  @mixin fontExtraSmallBold;
+}
+.text_xxs {
+  @mixin fontExtraExtraSmallRegular;
+}
+.text_xxsb {
+  @mixin fontExtraExtraSmallBold;
+}
+
+html,
+body {
+  font-size: 10px;
+  font-family: $ff-lato;
+}
+
+
+body > * {
+  @mixin fontBaseRegular;
+}
+._bold {
+  @mixin fontBaseBold;
+}
+
+.link {
+  color: $color-green;
+  cursor: pointer;
+  
+  &:hover {
+    color: $color-green-dark;
+  }
+}

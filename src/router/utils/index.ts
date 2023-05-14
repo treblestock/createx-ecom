@@ -1,4 +1,4 @@
-import type { RouteLocationRaw, RouteLocationNormalized, RouterLinkProps } from "vue-router"
+import type { RouteLocationRaw, RouteLocationNormalized } from "vue-router"
 
 const BASE_URL = import.meta.env.BASE_URL || '/'
 export function withBaseUrl(string: string) {
@@ -37,8 +37,3 @@ export function propsParser(route: RouteLocationNormalized & JSONedParams): Reco
   , {} as Record<string, any>)
 }
 
-export interface WithParamsAny extends Omit<RouterLinkProps, 'to'> {
-  to?: string | RouterLinkProps['to'] | {
-    params?: Record<string, any>
-  } 
-}

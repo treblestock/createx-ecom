@@ -8,7 +8,8 @@ export default {
 import { computed } from 'vue'
 import { RouterLink} from 'vue-router'
 
-import { modifyRouteTo, type WithParamsAny } from '~/router/utils'
+import { modifyRouteTo } from '~/router/utils'
+import type { WithParamsAny } from '~/router/types'
 
 const props  = defineProps<WithParamsAny>() // vue-macros required for import types
 

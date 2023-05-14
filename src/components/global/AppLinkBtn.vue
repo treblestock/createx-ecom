@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { WithParamsAny } from '~/router/utils';
+import type { WithParamsAny } from '~/router/types'
 
 // @ts-ignore
 const props = defineProps<WithParamsAny>()
@@ -17,6 +17,6 @@ const props = defineProps<WithParamsAny>()
 
 .btn {
   padding: 1rem 1.5rem;
-  background-color: $primary;
+  background-color: $color-green;
 }
 </style>

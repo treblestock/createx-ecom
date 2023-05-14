@@ -1,0 +1,11 @@
+[
+  {
+    "id": 1,
+    "postId": 1,
+    "userId": 1,
+    "date": "2020-06-17",
+    "comment": "Phasellus varius faucibus ultrices odio in. Massa neque dictum natoque ornare rutrum malesuada et phasellus. Viverra natoque nulla cras vel nisl proin senectus. Tortor sed eleifend ante tristique felis sed urna aliquet. Suspendisse fames egestas sed duis purus diam et.",
+    "likes": 3,
+    "dislikes": 1
+  }
+]

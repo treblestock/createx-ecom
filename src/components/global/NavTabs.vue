@@ -13,7 +13,7 @@
 
 <style  scoped>
 @import '~/assets/css/consts';
-
+/* 
 .nav {
   display: grid;
   grid-auto-flow: column;
@@ -30,7 +30,7 @@
       border: none;
     }
   }
-}
+} */
 
 
 </style>
