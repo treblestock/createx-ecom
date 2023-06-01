@@ -1,3 +1,6 @@
+@import '~css/consts';
+
+
 @define-mixin addProp $name, $value, $sel: & {
   $(sel) {
     $(name): $value;
@@ -8,27 +11,15 @@
 }
 
 
-/* leng smooth */
 
-
-/* todo */
-@define-mixin leng-smooth $fz-min: 10px, $fz-max: 20px, $vp-min: 320px, $vp-max: 1440px {
-  $fz-delta: $fz-max - $fz-min;
-  $vp-delta: $vp-max - $vp-min;
-
-  html {
-    --fz-min: $fz-min;
-    --fz-max: $fz-max;
-    --vp-min: $vp-min;
-    --vp-max: $vp-max;
-  }
-  body > * {
-    /* font-size: clamp($fz-min, 12 * 2, $fz-max) */
-  }
+._fullscreen {
+  width: 100vw;
+  height: calc(100vh - $header-height-full);
 }
 
 
 ._hidden-smart {
+  position: absolute;
   visibility: hidden;
   width: 0;
   height: 0;
@@ -36,3 +27,73 @@
   margin: 0;
   padding: 0;
 }
+
+
+$color-slash-gradient: $color-gray-300;
+/* decor */
+@define-mixin slashBetween $w, $color: $color-slash-gradient {
+  & > * + * {
+    position: relative;
+
+    &:before {
+      content: '';
+      /* parent pos */
+      display: block;
+      position: absolute;
+      top: 0;
+      left: calc(-1 * $w);
+
+      /* view */
+      height: 100%;
+      width: 1px;
+      border-color: $color;
+    }
+  }
+}
+@define-mixin slashBetweenVertical $w, $color: $color-slash-gradient {
+  & > * + * {
+    position: relative;
+
+    &:before {
+      content: '';
+      /* parent pos */
+      display: block;
+      position: absolute;
+      top: calc(-1 * $w);
+      left: 0;
+
+      /* view */
+      width: 100%;
+      height: 1px;
+      border-color: $color;
+    }
+  }
+}
+
+
+
+
+/* Vue */
+
+.input-group._horizontal {
+  display: flex;
+  grid-template: 1.2rem;
+}
+
+
+/* colors  */
+._background-black {background: $color-black;}
+._background-blue-gray {background: $color-blue-gray;}
+._background-yellow {background: $color-yellow;}
+._background-red {background: $color-red;}
+._background-dark-blue {background: $color-dark-blue;}
+._background-beige {background: $color-beige;}
+._background-brown {background: $color-brown;}
+._background-gray {background: $color-gray;}
+._background-purple {background: $color-purple;}
+._background-green {background: $color-green;}
+._background-orange {background: $color-orange;}
+._background-white {background: $color-white;}
+
+
+

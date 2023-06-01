@@ -10,10 +10,11 @@
 </template>
 
 <style>
-@import '~/assets/css/null';
-@import '~/assets/css/consts';
-@import '~/assets/css/global';
-@import '~/assets/css/fonts';
+@import '~css/null';
+@import '~css/consts';
+@import '~css/fonts';
+@import '~css/global';
+@import '~css/structure';
 
 </style>
 

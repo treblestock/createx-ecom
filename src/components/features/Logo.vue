@@ -10,7 +10,7 @@ import Logo from '~/components/icons/Logo.vue'
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
+@import '~css/consts';
 
 
 

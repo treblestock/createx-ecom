@@ -2,7 +2,6 @@
 import { assetsIcons } from '~/types'
 
 
-// @ts-ignore
 const props = defineProps<{
   icon: keyof typeof assetsIcons // .png | .vue | .svg
 }>()

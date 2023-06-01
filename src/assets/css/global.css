@@ -1,5 +1,9 @@
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
+/* lib: */
+@import '~css/lib/customWebkitScrollbar';
+@import '~css/lib/plus';
+
 
 /* FONTS */
 .h1 {
@@ -40,104 +44,126 @@
   color: $color-text;
 }
 
-@define-mixin fontBaseRegular {
+@define-mixin fontRegular {
   font-size: 1.6rem;
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontBaseBold {
-  @mixin fontBaseRegular;
+@define-mixin fontBold {
+  @mixin fontRegular;
   font-weight: 700;
 }
-@define-mixin fontLargeRegular {
+@define-mixin fontXLRegular {
+  font-size: 2rem;
+  line-height: 1.5;
+  color: $color-text;
+}
+@define-mixin fontXLBold {
+  @mixin fontXLRegular;
+  font-weight: 700;
+}
+@define-mixin fontLRegular {
   font-size: 1.8rem;
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontLargeBold {
-  @mixin fontLargeRegular;
+@define-mixin fontLBold {
+  @mixin fontLRegular;
   font-weight: 700;
 }
-@define-mixin fontSmallRegular {
+@define-mixin fontSRegular {
   font-size: 1.4rem;
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontSmallBold {
-  @mixin fontSmallRegular;
+@define-mixin fontSBold {
+  @mixin fontSRegular;
   font-weight: 700;
 }
-@define-mixin fontExtraSmallRegular {
+@define-mixin fontXSRegular {
   font-size: 1.2rem;
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontExtraSmallBold {
-  @mixin fontExtraSmallRegular;
+@define-mixin fontXSBold {
+  @mixin fontXSRegular;
   font-weight: 900;
 }
-@define-mixin fontExtraExtraSmallRegular {
+@define-mixin fontXXSRegular {
   font-size: 1.2rem;
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontExtraExtraSmallBold {
-  @mixin fontExtraExtraSmallRegular;
+@define-mixin fontXXSBold {
+  @mixin fontXXSRegular;
   font-weight: 900;
 }
 
 
 
 .text {
-  @mixin fontBaseRegular;
+  @mixin fontRegular;
 }
 .text_b {
-  @mixin fontBaseBold;
+  @mixin fontBold;
+}
+.text_xl {
+  @mixin fontXLRegular;
+}
+.text_xlb {
+  @mixin fontXLBold;
 }
 .text_l {
-  @mixin fontLargeRegular;
+  @mixin fontLRegular;
 }
 .text_lb {
-  @mixin fontSmallBold;
+  @mixin fontLBold;
 }
 .text_s {
-  @mixin fontSmallRegular;
+  @mixin fontSRegular;
 }
 .text_sb {
-  @mixin fontSmallBold;
+  @mixin fontSBold;
 }
 .text_xs {
-  @mixin fontExtraSmallRegular;
+  @mixin fontXSRegular;
 }
 .text_xsb {
-  @mixin fontExtraSmallBold;
+  @mixin fontXSBold;
 }
 .text_xxs {
-  @mixin fontExtraExtraSmallRegular;
+  @mixin fontXXSRegular;
 }
 .text_xxsb {
-  @mixin fontExtraExtraSmallBold;
+  @mixin fontXXSBold;
 }
 
-html,
 body {
-  font-size: 10px;
   font-family: $ff-lato;
 }
 
 
 body > * {
-  @mixin fontBaseRegular;
+  @mixin fontRegular;
 }
 ._bold {
-  @mixin fontBaseBold;
+  @mixin fontBold;
+}
+
+
+._underlined {
+  text-decoration: underline;
 }
 
 .link {
   color: $color-green;
   cursor: pointer;
   
+  &._active,
   &:hover {
     color: $color-green-dark;
   }
 }
+
+
+

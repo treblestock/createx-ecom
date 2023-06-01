@@ -6,7 +6,6 @@ import { ref } from 'vue'
 
 import useSliderLogic from '~/composables/useSliderLogic'
 
-// @ts-ignore
 const props = defineProps<{
   title?: string,
   label?: string,
@@ -83,8 +82,8 @@ function setSlide(event: Event) {
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
 
 $color-gray-500: palegreen;
 $color-carrot: #ccc;

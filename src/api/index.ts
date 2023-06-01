@@ -1,18 +1,18 @@
+import type { BlogPost, BlogPostComment, Product, ProductReview,  } from "~/types"
+
+
 const api = {
-  async getblogPostComments() {
-    return import("../public/data/blogPostComments.json")
+  async getBlogPostComments(count: number = 4): Promise<BlogPostComment[]> {
+    return (await import("../public/data/blogPostComments.min.json")).default as BlogPostComment[]
   },
-  async getblogPosts() {
-    return import("../public/data/blogPosts.json")
+  async getBlogPosts(count: number = 4): Promise<BlogPost[]> {
+    return (await import("../public/data/blogPosts.min.json")).default as BlogPost[]
   },
-  async getindex() {
-    return import("../public/data/index.json")
+  async getProductReviews(count: number = 4): Promise<ProductReview[]> {
+    return (await import("../public/data/productReviews.min.json")).default as ProductReview[]
   },
-  async getproductReviews() {
-    return import("../public/data/productReviews.json")
-  },
-  async getproducts() {
-    return import("../public/data/products.json")
+  async getProducts(count: number = 16): Promise<Product[]> {
+    return (await import("../public/data/products.min.json")).default as Product[]
   },
 }
 

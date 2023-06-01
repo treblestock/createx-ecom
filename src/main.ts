@@ -4,7 +4,7 @@ import directivesLib from './plugins/directivesLib'
 
 import router from '~/router'
 import vueRouterExtension from './plugins/vueRouterExtension'
-import pinia from '~/stores'
+import pinia from '~/plugins/pinia'
 
 
 import App from './App.vue'

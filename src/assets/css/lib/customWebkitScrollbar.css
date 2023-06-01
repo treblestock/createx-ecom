@@ -1,0 +1,20 @@
+@import '~css/consts';
+/* Custom Webkit Scrollbar */
+
+/* html {
+  scrollbar-width: thin;
+  scrollbar-color: $color-gray-400 $color-gray-700;
+  scrollbar-gutter: stable;
+} */
+
+::-webkit-scrollbar {
+  width: 0.5rem;
+}
+::-webkit-scrollbar-track {
+  scrollbar-width: .5rem;
+  background-color: $color-gray-400;
+}
+::-webkit-scrollbar-thumb {
+  width: 0.5rem;
+  background-color: $color-gray-500;
+}

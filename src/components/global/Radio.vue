@@ -1,27 +1,27 @@
 <script setup lang="ts">
-// @ts-ignore
+
 const props = defineProps<{
-  modelValue?: string
-  name?: string
+  value: any
+  name: string
 }>()
-const emit = defineEmits([
-  'update:modelValue'
-])
+
+const modelValue = defineModel<any>()
+
+
 
 </script>
 
 <template>
-
   <input type="radio" class="input"
-    :name="name || modelValue"
-    :value="modelValue"
-    @input="event => emit('update:modelValue', (event.target as HTMLInputElement).value)"
+    v-model="modelValue"
+    :value="value"
+    :name="name"
   >
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
 
 
 .input {

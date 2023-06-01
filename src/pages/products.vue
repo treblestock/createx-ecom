@@ -1,24 +1,26 @@
 <script setup lang="ts">
-
-
-
-
-
-
+import ProductsGrid from '~/components/sections/productsGrid.vue'
+import SubscribeMailing from '~/components/sections/SubscribeMailing.vue'
 
 
 </script>
 
 <template>
-  <div class="div">
-    {{ $route.path }}
+  <div class="products-page">
+    <ProductsGrid></ProductsGrid>
+    <SubscribeMailing class="section"></SubscribeMailing>
   </div>
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
+@import '~css/consts';
 
-.div  {
+
+.products-page {
+}
+
+.section {
+  margin-bottom: 18rem;
 }
 
 </style>

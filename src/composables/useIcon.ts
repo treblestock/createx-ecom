@@ -17,7 +17,7 @@ export default function(iconName: string): Component {
   if (foundGlobalComp) return foundGlobalComp
 
   const iconPath = VUE_ICONS_PATH_BASE + iconName + '.vue'
-  const Comp = defineAsyncComponent(() => import(iconPath) )
+  const Comp = defineAsyncComponent(() => import(iconPath /* @vite-ignore */) ) //todo: 
   useApp()?.component(iconName, Comp)
   return Comp
 }

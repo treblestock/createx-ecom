@@ -1,5 +1,4 @@
 <script setup lang="ts">
-// @ts-ignore
 const props = defineProps<{
   size?: 's' | 'l',
   outlined?: boolean

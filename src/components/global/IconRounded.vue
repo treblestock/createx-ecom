@@ -3,7 +3,6 @@ import { computed } from 'vue'
 import { assetsIcons } from '~/types'
 
 
-// @ts-ignore
 const props = defineProps<{
   icon: keyof typeof assetsIcons
   radius?: number

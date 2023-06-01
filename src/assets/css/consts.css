@@ -9,6 +9,7 @@ $color-red: #FF4242;
 $color-orange: #F89828;
 $color-blue-dark: #17696A;
 $color-white: #fff;
+$color-white-op: rgba(255, 255, 255, .6);
 $color-black: #000;
 
 $color-gray-900: #1E212C;
@@ -21,7 +22,23 @@ $color-gray-300: #E5E8ED;
 $color-gray-200: #F4F5F7;
 $color-gray-100: #F9F9F9;
 
+
+$color-blue-gray: #C0DDED;
+$color-yellow: #FCD164;
+$color-red: #F75151;
+$color-dark-blue: #0C2C7E;
+$color-beige: #D8C1AD;
+$color-brown: #874E19;
+$color-gray: #9A9494;
+$color-purple: #A27AC9;
+$color-orange: #FB9620;
+
+
 $color-text: #C4C4C4;
+
 
 $border-w: 1px;
 $radius: 4px;
+
+
+$header-height-full: 16rem;

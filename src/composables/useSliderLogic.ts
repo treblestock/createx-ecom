@@ -86,17 +86,17 @@ class SliderLogic {
 
   private async updateView(): Promise<void> {
     if (!this.HTMLbody.value) return 
-    await nextTick()
+    await nextTick() // hack to get correct view after DOM updated
 
     const elementsToUpdateClasses: HTMLCollection[] = []
     if (this.HTMLbody.value) elementsToUpdateClasses.push(this.HTMLbody.value.children)
     if (this.HTMLpagination.value) elementsToUpdateClasses.push(this.HTMLpagination.value.children)
   
-    elementsToUpdateClasses.forEach(HTMLcontainer => {
-      for (const elem of HTMLcontainer) {
+    elementsToUpdateClasses.forEach(HTMLcollection => {
+      for (const elem of HTMLcollection) {
         elem.classList.remove(this.activeClass)
       }
-      HTMLcontainer[this.currentInd.value].classList.add(this.activeClass)
+      HTMLcollection[this.currentInd.value].classList.add(this.activeClass)
     })
     this.HTMLbody.value.style.transform = `translateX(${-this.currentShift.value}px)`
   }

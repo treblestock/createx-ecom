@@ -13,6 +13,11 @@ const timeInMs = {
   year:   1000 * 60 * 60 * 24 * 365,
 } as const
 
+interface DateLike {
+  year: number,
+  month: typeof monthMap[number],
+  date: number,
+}
 
 function separateDate(date: Date): DateLike {
   return {
@@ -31,11 +36,6 @@ const parseDateHandler = (key: string, value: any): any =>
   isDate(value) ? new Date(value) : value
 
 // toJSDate 
-interface DateLike {
-  year: number,
-  month: typeof monthMap[number],
-  date: number,
-}
 const toJSDate = (dateObj: DateLike): Date =>
   new Date(dateObj.year, monthMap.indexOf(dateObj.month), dateObj.date )
   
@@ -52,10 +52,23 @@ const getDuration = (dateA: Date | DateLike, dateB: Date | DateLike, period: key
 var toTimeInSec = (time: number) => (time / 1000).toFixed(1) + ' sec'
 
 
+function dateToHumanCase(data: string | Date | DateLike): string {
+  let date
+  if (typeof data === 'string') {
+    date = separateDate(new Date(data))
+  } else if (data instanceof Date) {
+    date = separateDate(data)
+  }
+
+  return `${date?.month} ${date?.date}, ${date?.year}`
+} 
+
+
 export {
   parseDateHandler,
   toJSDate,
   getDuration,
 
   toTimeInSec,
+  dateToHumanCase,
 }

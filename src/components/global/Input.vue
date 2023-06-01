@@ -1,26 +1,30 @@
 <script setup lang="ts">
-// @ts-ignore
-const props = defineProps<{
-  modelValue?: string | boolean | [] 
-}>()
-const emit = defineEmits([
-  'update:modelValue'
-])
+// const props = defineProps<{
+//   modelValue?: string | boolean | [] 
+// }>()
+// const emit = defineEmits([
+//   'update:modelValue'
+// ])
 
+const modelValue = defineModel<string | number>()
 </script>
 
 <template>
 
-  <input type="text" class="input"
+  <!-- <input type="text" class="input"
     :value="modelValue"
     @input="event => emit('update:modelValue', (event.target as HTMLInputElement).value)"
     placeholder="..."
+  > -->
+  <input type="text" class="input"
+    v-model="modelValue"
+    :="$attrs"
   >
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
 
 
 

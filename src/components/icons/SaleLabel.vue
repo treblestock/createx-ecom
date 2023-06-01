@@ -1,23 +1,19 @@
 <script setup lang="ts">
 
-// @ts-ignore
-const props = defineProps<{
-  discount: string | number
-}>()
 
 </script>
 
 <template>
   <span class="label">
     <div class="text_b">
-      -{{ discount }}%
+      -<slot></slot>%
     </div>
   </span>
   
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
+@import '~css/consts';
 .label {
   display: inline-block;
   border-radius: $radius;

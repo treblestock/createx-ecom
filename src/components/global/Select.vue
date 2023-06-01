@@ -1,48 +1,34 @@
 <script setup lang="ts">
-// @ts-ignore
 const props = defineProps<{
-  modelValue?: string | boolean | []
-  options?: {
-    value: string
-    text: string
-  }[]
+  options: {
+    [text: string]: any
+    length?: undefined // typescript hack to exclude array
+  }
 }>()
-const emit = defineEmits([
-  'update:modelValue'
-])
 
-
-function updateValue(event: Event) {
-  const target = event.target as HTMLSelectElement
-
-  const newValue = target.multiple
-    ? target.selectedOptions
-    : target.selectedOptions[0].value
-  emit('update:modelValue', newValue)
-}
+const modelValue = defineModel<any>()
 
 </script>
 
 <template>
-
   <select class="select"
-    :value="modelValue"
-    @input="updateValue"
+    v-model="modelValue"
   >
     <slot>
-      <option class="select__option" disabled value="">choose...</option>
+      <option class="select__option" disabled value="">choose</option>
       <option class="select__option"
-        v-for="option in options" :key="option.value"
+        v-for="optionValue, optionText in options" :key="optionValue"
+        :value="optionValue"
       >
-        {{ option.text }}
+        {{ optionText }}
       </option>
     </slot>
   </select>
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
 
 
 @define-mixin baseUI {

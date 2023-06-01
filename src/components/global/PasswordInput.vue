@@ -1,26 +1,36 @@
 <script setup lang="ts">
 import { ref, computed } from 'vue'
 
-// @ts-ignore
-const props = defineProps<{
-  modelValue?: string | boolean | [] 
-}>()
-const emit = defineEmits([
-  'update:modelValue'
-])
+// const props = defineProps<{
+//   modelValue?: string | boolean | [] 
+// }>()
+// const emit = defineEmits([
+//   'update:modelValue'
+// ])
 
 const isPassVisivle = ref(false)
-const type = computed(() => isPassVisivle.value ? 'text' : 'password')
+const currentType = computed(() => isPassVisivle.value ? 'text' : 'password')
 
+
+const modelValue = defineModel<string | number>()
 </script>
 
 <template>
 
   <div class="wrapper">
-    <input class="input"
+    <!-- <input class="input"
       :type="type"
       :value="modelValue"
       @input="event => emit('update:modelValue', (event.target as HTMLInputElement).value)"
+      placeholder="your password"
+      :="$attrs"
+    >
+    <div class="decor"
+      @click="isPassVisivle = !isPassVisivle"
+    ></div> -->
+    <input class="input"
+      :type="currentType"
+      v-model="modelValue"
       placeholder="your password"
       :="$attrs"
     >
@@ -31,8 +41,8 @@ const type = computed(() => isPassVisivle.value ? 'text' : 'password')
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
 
 
 .wrapper {

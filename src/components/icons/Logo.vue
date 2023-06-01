@@ -21,7 +21,7 @@
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
+@import '~css/consts';
 
 
 .icon {

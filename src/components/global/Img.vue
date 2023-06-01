@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import {computed} from 'vue'
 
-// @ts-ignore
 const props = withDefaults(defineProps<{
   src?: string,
   public?: boolean 
@@ -29,7 +28,7 @@ const imgUrl = computed(() => {
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
 
 </style>

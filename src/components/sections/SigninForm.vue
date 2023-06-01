@@ -47,7 +47,7 @@ function onSubmit(event: Event) {
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
+@import '~css/consts';
 
 .form {
   width: 39rem;

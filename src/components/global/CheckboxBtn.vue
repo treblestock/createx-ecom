@@ -1,20 +1,26 @@
 <script setup lang="ts">
-// @ts-ignore
-const props = defineProps<{
-  modelValue?: string | boolean | [] 
-}>()
-const emit = defineEmits([
-  'update:modelValue'
-])
+// const props = defineProps<{
+//   modelValue?: boolean | any[] 
+//   name?: string
+// }>()
+// const emit = defineEmits([
+//   'update:modelValue'
+// ])
+
+const modelValue = defineModel<any>()
 
 
 </script>
 
 <template>
   <label>
-    <input type="checkbox" class="input _hidden-smart"
+    <!-- <input type="checkbox" class="input _hidden-smart"
       :value="modelValue"
       @input="event => emit('update:modelValue', (event.target as HTMLInputElement).checked)"
+      :="$attrs"
+    > -->
+    <input type="checkbox" class="input _hidden-smart"
+      v-model="modelValue"
       :="$attrs"
     >
     <div class="btn">

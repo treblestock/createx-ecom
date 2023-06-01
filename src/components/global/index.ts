@@ -4,6 +4,7 @@ export { default as AppLinkBtn } from './AppLinkBtn.vue'
 // Form
 export { default as Btn } from './Btn.vue'
 export { default as Input } from './Input.vue'
+export { default as InputNumber } from './InputNumber.vue'
 export { default as PasswordInput } from './PasswordInput.vue'
 export { default as Radio } from './Radio.vue'
 export { default as RadioBtn } from './RadioBtn.vue'
@@ -12,6 +13,7 @@ export { default as CheckboxBtn } from './CheckboxBtn.vue'
 export { default as Select } from './Select.vue'
 export { default as SelectGroup } from './SelectGroup.vue'
 export { default as InputGroup } from './InputGroup.vue'
+export { default as InputNumberGroup } from './InputNumberGroup.vue'
 export { default as RadioGroup } from './RadioGroup.vue'
 export { default as CheckboxGroup } from './CheckboxGroup.vue'
 export { default as PasswordGroup } from './PasswordGroup.vue'
@@ -35,6 +37,7 @@ export interface AppGlobalComponents {
   // from
   Btn: typeof import('./Btn.vue')['default']
   Input: typeof import('./Input.vue')['default']
+  InputNumber: typeof import('./InputNumber.vue')['default']
   PasswordInput: typeof import('./PasswordInput.vue')['default']
   Radio: typeof import('./Radio.vue')['default']
   RadioBtn: typeof import('./RadioBtn.vue')['default']
@@ -43,6 +46,7 @@ export interface AppGlobalComponents {
   Select: typeof import('./Select.vue')['default']
   SelectGroup: typeof import('./SelectGroup.vue')['default']
   InputGroup: typeof import('./InputGroup.vue')['default']
+  InputNumberGroup: typeof import('./InputNumberGroup.vue')['default']
   RadioGroup: typeof import('./RadioGroup.vue')['default']
   CheckboxGroup: typeof import('./CheckboxGroup.vue')['default']
   PasswordGroup: typeof import('./PasswordGroup.vue')['default']

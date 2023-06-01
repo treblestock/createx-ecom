@@ -1,8 +1,8 @@
 <script setup lang="ts">
 
-// @ts-ignore
 const props = defineProps<{
-  oldPrice?: number
+  discount?: number
+  price: number
 }>()
 
 </script>
@@ -10,19 +10,19 @@ const props = defineProps<{
 <template>
   <div class="price">
     <span class="new-price h4"
-      :class="oldPrice ? '_red' : ''"
+      :class="discount ? '_red' : ''"
     >
-      $<slot></slot>.00
+      ${{ discount ? (price * (1 - discount / 100) ).toFixed(2) : price.toFixed(2) }}
     </span>
-    <span v-if="oldPrice" class="old-price text_l">
-      ${{ oldPrice }}.00
+    <span v-if="discount" class="old-price text_l">
+      ${{ price }}.00
     </span>
   </div>
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/global';
+@import '~css/consts';
+@import '~css/global';
 
 .price {
 }

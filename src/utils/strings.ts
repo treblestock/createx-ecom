@@ -13,7 +13,12 @@ function toHumanCase(camelCase: string): string {
   return camelCase.replaceAll(/[A-Z]/g, match => ' ' + match.toLowerCase() )
 }
 
+function humanToKebab(humanCase: string): string {
+  return humanCase.split(' ').map(word => word.toLowerCase()).join('-')
+} 
+
 export {
   doesIncludeWords,
   toHumanCase,
+  humanToKebab,
 }

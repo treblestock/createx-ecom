@@ -1,10 +1,9 @@
 <script setup lang="ts">
+import type { Rating } from '~/types'
 import RatingStar from '~/components/icons/RatingStar.vue'
 
-// @ts-ignore
 const props = withDefaults(defineProps<{
-  rating?: 0 | 1 | 2 | 3 | 4 | 5 | 
-    '0' | '1' | '2' | '3' | '4' | '5'
+  rating?: Rating
 }>(), {
   rating: 0
 })
@@ -12,15 +11,16 @@ const props = withDefaults(defineProps<{
 </script>
 
 <template>
-  <template v-for="n in 5">
+  <div>
     <RatingStar 
+      v-for="n in 5"
       :class="n <= +rating ? '_active' : ''"
     ></RatingStar>
-  </template>
+  </div>
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
+@import '~css/consts';
 
 
 

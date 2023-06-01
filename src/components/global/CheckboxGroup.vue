@@ -1,45 +1,52 @@
 <script setup lang="ts">
-// @ts-ignore
+// const props = defineProps<{
+//   modelValue?:  boolean | any[] | Set<any>
+//   label?: string
+//   name?: string
+// }>()
+// const emit = defineEmits([
+//   'update:modelValue'
+// ])
 const props = defineProps<{
-  modelValue?:  boolean
   label?: string
 }>()
-const emit = defineEmits([
-  'update:modelValue'
-])
-
+const modelValue = defineModel<any>()
 </script>
 
 <template>
 
   <label class="checkbox-group">
-    <Checkbox class="checkbox-group__checkbox"
+    <!-- <Checkbox class="checkbox-group__checkbox"
       :modelValue="modelValue"
       @update:model-value="value => emit('update:modelValue', value)"
-      :checked="modelValue"
+    ></Checkbox> -->
+    <Checkbox class="checkbox-group-checkbox"
+      v-model="modelValue"
+      :="$attrs"
     ></Checkbox>
-    <div class="checkbox-group__label">
-      <slot>{{ label }}</slot>
+    <div class="checkbox-group-label">
+      <slot>{{ label || '' }}</slot>
     </div>
   </label>
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
 
 
 .checkbox-group {
   display: flex;
-  &__label {
-    margin-left: 1.2rem;
+  padding-left: 0.3rem;
+}
+.checkbox-group-label {
+  margin-left: 1.2rem;
 
-    font-size: 1.6rem;
-    color: $color-gray-800;
-  }
+  font-size: 1.6rem;
+  color: $color-gray-800;
+}
 
-  &__checkbox {
-  }
+.checkbox-group-checkbox {
 }
 
 

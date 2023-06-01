@@ -5,8 +5,8 @@
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
-@import '~/assets/css/utils';
+@import '~css/consts';
+@import '~css/utils';
 
 .arrow {
   width: 4.8rem;

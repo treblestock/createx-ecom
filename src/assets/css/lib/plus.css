@@ -1,0 +1,31 @@
+@import '~css/consts';
+
+.plus {
+  width: 1em;
+  height: 1em;
+
+  position: relative;
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+
+    height: .05em;
+    width: 100%;
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    background: $color-green;
+  }
+
+  &:after {
+    width: .05em;
+    height: 100%;
+
+    top: 0;
+    left: 50%;
+  }
+}

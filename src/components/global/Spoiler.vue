@@ -1,64 +1,104 @@
 <script setup lang="ts">
 import {ref } from 'vue'
 
-const sliderBody = ref<HTMLElement | null>(null)
+type cssUnit = 'px' | 'rem' | 'em' | '%'
+const props = defineProps<{
+  maxBodyHeight?: number | `${string}${cssUnit}`
+  innerBorder?: boolean
+}>()
 
-function toggleSlider() {
-  sliderBody.value?.classList.toggle('_active')
+const exactMaxBodyHeight = computed(() => {
+  return typeof props.maxBodyHeight === 'number'
+    ? props.maxBodyHeight + 'px'
+    : props.maxBodyHeight
+})
+
+
+
+
+const spoilerHtml = ref<HTMLElement | null>(null)
+
+function togglespoiler() {
+  spoilerHtml.value?.classList.toggle('_active')
 }
 
 </script>
 
 <template>
-  <div class="slider">
-    <div class="slider__title"
-      @click="toggleSlider"
+  <div class="spoiler"
+    :class="{'_with-border': innerBorder}"
+    ref="spoilerHtml"
+  >
+    <div class="title text_b"
+      @click="togglespoiler"
     >
-      <div class="slider__icon">&#x2304;</div>
       <slot name="title">some tilte</slot>
+      <div class="plus"></div>
     </div>
-    <div class="slider__body" ref="sliderBody">
+    <div class="spoiler-body" 
+      :class="{_fixedHeight: maxBodyHeight}"
+    >
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil recusandae accusantium modi blanditiis non sapiente dolores? Natus quisquam assumenda voluptatibus aliquam minima necessitatibus! Explicabo ab amet doloribus soluta recusandae aut.</slot>
     </div>
   </div>
 </template>
 
 <style scoped>
-@import '~/assets/css/consts';
+@import '~css/consts';
 
 
-.slider {
-  width: 60rem;
+.spoiler {
+  max-width: 60rem;
+  padding: 1rem 0;
+}
+.title {
+  position: relative;
 
-  &__title {
-    position: relative;
+  padding: 1rem 0;
+  color: $color-gray-900;
 
-    border: 1px solid #000;
-    padding: 1rem 2rem;
+  /* children */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+}
+
+
+.spoiler:not(._active) {
+  .plus:after {
+    display: none;
   }
+}
 
-  &__icon {
-    position: absolute;
-    right: 2rem;
-    top: 50%;
-    transform: translateY(-75%);
+
+
+.spoiler-body {
+  padding: 1rem 0;
+  transition: all .2s linear;
+
+
+  .spoiler:not(._active) & {
+    max-height: 0;
+    font-size: 0;
+    line-height: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
   }
-
-  &__body {
-    padding: 1rem 2rem;
-    transition: all .2s linear;
-    border: 1px solid #000;
-    border-top: none;
+}
 
 
-    &:not(._active) {
-      font-size: 0;
-      line-height: 0;
-      padding: 0;
-      margin: 0;
-      border: none;
-    }
-  }
+
+._with-border {
+  border-top: 1px solid $color-gray-400;
+}
+
+
+/* spoiler max height */
+._fixedHeight {
+  max-height: v-bind(exactMaxBodyHeight);
+  overflow: auto;
 }
 
 

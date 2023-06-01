@@ -1,23 +1,18 @@
 <script setup lang="ts">
-// @ts-ignore
 const props = defineProps<{
-  modelValue?: string
-  value: string
-  name?: string
+  value: any
+  name: string
 }>()
-const emit = defineEmits([
-  'update:modelValue'
-])
 
+const modelValue = defineModel<any>()
 </script>
 
 <template>
   <label>
-    <Radio type="radio" class="input _hidden-smart"
-      :name="name || modelValue"
-      :modelValue="modelValue"
-      @update:model-value="value => emit('update:modelValue', value)"
+    <Radio class="input _hidden-smart"
+      v-model="modelValue"
       :value="value"
+      :name="name"
       :="$attrs"
     ></Radio>
     <div class="btn">
@@ -45,7 +40,8 @@ const emit = defineEmits([
   user-select: none;
 }
 .input {
-/* animations */
+  position: absolute;
+  /* animations */
   &:checked {
     & + .btn {
       color: $color-white;

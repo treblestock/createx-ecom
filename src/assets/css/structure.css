@@ -1,0 +1,63 @@
+html,
+body {
+  font-size: 10px; /* default rem setup */
+}
+
+/* leng smooth */
+/* todo */
+@define-mixin leng-smooth $fz-min: 10px, $fz-max: 20px, $vp-min: 320px, $vp-max: 1440px {
+  $fz-delta: $fz-max - $fz-min;
+  $vp-delta: $vp-max - $vp-min;
+
+  html {
+    --fz-min: $fz-min;
+    --fz-max: $fz-max;
+    --vp-min: $vp-min;
+    --vp-max: $vp-max;
+  }
+  body > * {
+    /* font-size: clamp($fz-min, 12 * 2, $fz-max) */
+  }
+}
+/* 
+@function fz_smooth($vp-min: $vp-min, $vp-max: $vp-max, $fz-min: $fz-min, $fz-max: $fz-max)
+  $vp-delta: calc($vp-max - $vp-min)
+  $fz-delta: calc($fz-max - $fz-min)
+  $fz-dynamic: calc($fz-min + ($fz-delta / $vp-delta) * (100vw - $vp-min) )
+  $res: clamp($fz-min, $fz-dynamic, $fz-max)
+  @return $res
+*/
+
+
+
+/* Container */
+$container-width: 123rem;
+$container-width-l: 186rem;
+
+.container {
+  margin: 0 auto;
+  max-width: calc($container-width + 2 * 2rem); /* inner padding*/
+  padding: 0 2rem;
+}
+.container-l {
+  margin: 0 auto;
+  max-width: calc($container-width-l + 2 * 2rem); /* inner padding*/
+  padding: 0 2rem;
+}
+
+
+/* grid */
+.grid {
+  /* --min-width: 20rem;
+  --max-width: 30rem; */
+  --gap: 3rem;
+
+  display: grid;
+  grid-gap: var(--gap);
+  /* grid-template-columns: repeat(auto-fit, minmax(var(--min-width), var(--max-width) ) ); */
+  grid-template-columns: repeat(auto-fill, minmax(var(--min-width), 1fr) );
+
+  & > * {
+
+  }
+}

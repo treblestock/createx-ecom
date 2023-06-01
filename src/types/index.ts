@@ -1,4 +1,5 @@
 export { assetsIcons } from './assetsIcons'
+export * from './clientView'
 
 
 // todo: sizeChart
@@ -14,9 +15,11 @@ export type valueToRecord<T> = {
 
 export type recordof<T> = valueof<valueToRecord<T> >
 
+export type RefOrComputed<T> = Ref<T> | ComputedRef<T>
+
 
 // Shared
-export type Id = string | number
+export type Id = number
 export type DateRecord = string
 export type Timestamp = number
 
@@ -49,7 +52,8 @@ export interface Product {
   imgs: string[]
   name: string
   categorySex: string
-  categoryClothType: string
+  categoryMajorClothType: string
+  categoryMinorClothType: ClothesCategory | ShoesCategory | AccessoriesCategory
   brand: string
   materials: string[]
   colors: ProductColor[]
@@ -57,7 +61,7 @@ export interface Product {
   price: number
   discount?: number
   rating: Rating
-  reviewsCount: number
+  reviewsIds: reviewId[]
   details: {
     desctiption: string
     characteristics: string[]
@@ -66,7 +70,7 @@ export interface Product {
   }
 }
 
-export type ProductPreview = Pick<Product, 'id' | 'categorySex' | 'categoryClothType' | 'name' | 'price' | 'discount' | 'rating' | 'sizes' | 'colors' >
+export type ProductPreview = Pick<Product, 'id' | 'categorySex' | 'categoryMajorClothType' | 'name' | 'price' | 'discount' | 'rating' | 'sizes' | 'colors' >
 export type ProductMainCharacteristics = Pick<Product, 'brand' | 'materials' | 'colors' | 'sizes'>
 
 export type ProductDetails = Product['details']
@@ -77,13 +81,14 @@ export type careClause = {
 }
 
 export type UserId = Id
+export type reviewId = Id
 export interface ProductReview {
   id: Id
   productId: ProductId
   userId: UserId
   date: DateRecord
   rating: Rating
-  comment: string
+  review: string
   likes: number
   dislikes: number
 }
@@ -254,9 +259,9 @@ export interface QnA {
 export interface BlogPost {
   id: Id
   img: string
-  category: BlogThemeCategory
+  category: string[]
   date: DateRecord
-  commentsNumber: number
+  commentsIds: commmentId[]
   title: string
   description: string
   tags: BlogPostTag[]
@@ -264,13 +269,14 @@ export interface BlogPost {
 }
 
 export interface BlogPostPreview extends Pick<BlogPost, 'category' | 'date' | 'title' | 'description' | 'tags'> {
-  commentsNumber: number
+  commentsIds: number
 }
 
-export type BlogThemeCategory = 'All' | 'Fashion' | 'Designers' | 'Lifestyle' | 'Celebrity style'
+export type BlogThemeCategory = 'Fashion' | 'Designers' | 'Lifestyle' | 'Celebrity style'
 export type BlogPostTag = 'trends' | 'inspiration' | 'designers' | 'kidsfashion' | 'streetstyle' | 'models'
 
 export type BlogPostId = Id
+export type commmentId = Id
 export interface BlogPostComment {
   id: Id
   postId: BlogPostId
@@ -299,3 +305,6 @@ export interface BlogPostDataTypes {
 }
 export type BlogPostData<E extends keyof BlogPostDataTypes> = BlogPostDataTypes[E]
 export type BlogPostEntitiy = keyof BlogPostDataTypes
+
+
+

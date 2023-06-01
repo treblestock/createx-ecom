@@ -1,10 +1,10 @@
 // @ts-ignore
 import path from 'node:path'
-
-
 import { defineConfig } from 'vite'
-import VueMacros from 'unplugin-vue-macros/vite'
 import vue from '@vitejs/plugin-vue'
+
+import autoImport from 'unplugin-auto-import/vite'
+
 
 
 // postcss
@@ -22,14 +22,31 @@ export default defineConfig({
       // @ts-ignore
       '~': path.resolve(__dirname, 'src'),
       // @ts-ignore
-      'css': path.resolve(__dirname, 'src', 'assets', 'css'),
+      '~css': path.resolve(__dirname, 'src', 'assets', 'css'),
     }
   },
   plugins: [
-    VueMacros({
-      plugins: {
-        vue: vue(),
-      }
+    autoImport({
+      include: [
+        /\.[jt]sx?$/,
+        /\.vue$/,
+      ],
+      dts: './auto-imports.d.ts',
+      injectAtEnd: true,
+      imports: [
+        "vue",
+        "vue-router",
+      ],
+      dirs: [
+        './src/composables',
+        './src/stores',
+        './src/utils',
+      ],
+    }),
+    vue({
+      script: {
+        defineModel: true
+      },
     }),
   ],
 
