@@ -5,25 +5,32 @@ body {
 
 /* leng smooth */
 /* todo */
-@define-mixin leng-smooth $fz-min: 10px, $fz-max: 20px, $vp-min: 320px, $vp-max: 1440px {
+@define-mixin leng-smooth $fz-min: 7px, $fz-max: 10px, $vp-min: 320px, $vp-max: 1440px {
   $fz-delta: $fz-max - $fz-min;
   $vp-delta: $vp-max - $vp-min;
+  $fz-dynamic: calc($fz-min + ($fz-delta / $vp-delta) * (100vw - $vp-min));
 
   html {
     --fz-min: $fz-min;
     --fz-max: $fz-max;
     --vp-min: $vp-min;
     --vp-max: $vp-max;
+    /* --fz-dynamic: $fz-dynamic; */
+    --fz-delta: calc(var(--fz-max) - var(--fz-min));
+    --vp-delta: calc(var(--vp-max) - var(--vp-min));
+    --fz-dynamic: calc(var(--fz-min) + var(--fz-delta) / var(--vp-delta) * (100vw - $vp-min));
   }
-  body > * {
-    /* font-size: clamp($fz-min, 12 * 2, $fz-max) */
+  body  {
+    /* font-size: clamp($fz-min, $fz-dynamic, $fz-max); */
+    /* font-size: clamp(var(--fz-min), var(--fz-dynamic), var(--fz-max)); */
   }
 }
+/* @mixin leng-smooth; */
 /* 
 @function fz_smooth($vp-min: $vp-min, $vp-max: $vp-max, $fz-min: $fz-min, $fz-max: $fz-max)
   $vp-delta: calc($vp-max - $vp-min)
   $fz-delta: calc($fz-max - $fz-min)
-  $fz-dynamic: calc($fz-min + ($fz-delta / $vp-delta) * (100vw - $vp-min) )
+  $fz-dynamic: calc($fz-min + ($fz-delta / $vp-delta) * ( ) )
   $res: clamp($fz-min, $fz-dynamic, $fz-max)
   @return $res
 */
@@ -54,8 +61,8 @@ $container-width-l: 186rem;
 
   display: grid;
   grid-gap: var(--gap);
-  /* grid-template-columns: repeat(auto-fit, minmax(var(--min-width), var(--max-width) ) ); */
   grid-template-columns: repeat(auto-fill, minmax(var(--min-width), 1fr) );
+  /* grid-template-columns: repeat(auto-fill, minmax(auto, 1fr) ); */
 
   & > * {
 

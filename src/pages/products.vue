@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import ProductsGrid from '~/components/sections/productsGrid.vue'
+import ProductsGrid from '~/components/sections/ProductsGrid.vue'
 import SubscribeMailing from '~/components/sections/SubscribeMailing.vue'
 
 
@@ -7,8 +7,8 @@ import SubscribeMailing from '~/components/sections/SubscribeMailing.vue'
 
 <template>
   <div class="products-page">
-    <ProductsGrid></ProductsGrid>
-    <SubscribeMailing class="section"></SubscribeMailing>
+    <ProductsGrid class="products-section"></ProductsGrid>
+    <SubscribeMailing></SubscribeMailing>
   </div>
 </template>
 
@@ -19,8 +19,9 @@ import SubscribeMailing from '~/components/sections/SubscribeMailing.vue'
 .products-page {
 }
 
-.section {
+.products-section {
   margin-bottom: 18rem;
 }
+
 
 </style>

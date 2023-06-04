@@ -1,26 +1,22 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
-import useSliderLogic from '~/composables/useSliderLogic.js'
+import useSlider from '~/composables/useSlider.js'
 
 
 const props = defineProps<{
-  isPaginationHidden?: true
-  isArrowsHidden?: true
+  isPaginationHidden?: boolean
+  isArrowsHidden?: boolean
   activeClass?: string
 }>()
 
 const HTMLbody = ref<null | HTMLElement>(null)
 const HTMLpagination = ref<null | HTMLElement>(null)
-const pagesCount = ref<number>(0)
 
 
-onMounted(() => { // todo: mutation observer is prefered 
-  const itemsCount = HTMLbody.value?.children.length || 0
-  pagesCount.value = itemsCount
-})
 
-const sliderLogic = useSliderLogic({
+
+const slider = useSlider({
   HTMLbody,
   HTMLpagination,
   activeClass: props.activeClass || '_active'
@@ -30,43 +26,47 @@ const sliderLogic = useSliderLogic({
 
 
 
-
 </script>
 
 <template>
   <div class="slider _fullscreen">
-    <div class="header">
+
+    <div class="slider-body">
+      <div class="slider-items"
+        ref="HTMLbody"
+      >
+        <slot></slot>
+      </div>
+    </div>
+
+    <div class="slider-toolbar">
       <div class="arrows"
         v-if="!isArrowsHidden"
       >
         <IconRounded icon="ArrowLeft"
-          @click="sliderLogic.prevSlide()"
+          @click="slider.prevSlide()"
         ></IconRounded>
         <IconRounded icon="ArrowRight"
-          @click="sliderLogic.nextSlide()"
+          @click="slider.nextSlide()"
         ></IconRounded>
       </div>
-    </div>
-
-    <div class="body"
-      ref="HTMLbody"
-    >
-      <slot></slot>
-    </div>
-
-    <div class="pagination"
-      v-if="!isPaginationHidden"
-      ref="HTMLpagination"
-    >
-      <div class="container">
-        <div class="page"
-          v-for="page, ind in pagesCount" :key="page"
-          @click="sliderLogic.setSlide(ind)"
+      <div class="pagination"
+        v-if="!isPaginationHidden"
+      >
+        <div class="container"
+          ref="HTMLpagination"
         >
-          <div class="page-count h3">0{{ ind }}</div>
-          <div class="page-icon"></div>
+          <div class="page"
+            v-for="ind in slider.pagesCount.value" :key="ind"
+            @click="slider.setSlide(ind - 1)"
+          >
+            <div class="page-count h3">0{{ ind }}</div>
+            <div class="page-icon"></div>
+          </div>
         </div>
       </div>
+
+      <div class="filler"></div>
     </div>
   </div>
   
@@ -76,42 +76,66 @@ const sliderLogic = useSliderLogic({
 @import '~css/consts';
 
 
+$slider-arrows-padding: 3.2rem;
 
 .slider {
-  
-}
-.slider-header {
+  position: relative;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column-reverse;
 }
+/* items */
 .slider-body {
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+
   width: 100%;
   height: 100%;
+
+  /* children */
+  overflow: hidden;
+}
+.slider-items {
+  height: 100%;
+  display: flex;
+
+  :slotted( > *) {
+    flex: 0 0 100%;
+    height: 100%;
+  }
+
+  /* animation */
+  transition: all .5s ease;
 }
 .slider-item {
 }
 
-.arrows {
+/* upper-layer */
+.slider-toolbar {
+  height: 50%;
   width: 100%;
 
-  /* pos */
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  top: 50%;
-
-  /* structure */
+  /* children */
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
 }
 
+.arrows {
+  width: calc(100% - 2 * ($slider-arrows-padding) );
+  margin: 0 auto;
+  /* structure */
+  display: flex;
+  justify-content: space-between;
+
+  & > * {
+    cursor: pointer;
+    user-select: none;
+  }
+}
+/* pagination */
 .pagination {
-  width: 100%;
-  /* pos */
-  z-index: 1;
-  position: absolute;
-  left: 0;
-  top: 75%;
 
   /* structure */
   & .container {
@@ -139,7 +163,7 @@ const sliderLogic = useSliderLogic({
   text-align: left;
 }
 .page-icon {
-  width: 3rem;
+  width: 18rem;
   height: 1px;
 
   background: $color-gray-500;

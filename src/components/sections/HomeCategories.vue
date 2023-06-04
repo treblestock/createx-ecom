@@ -14,22 +14,22 @@ import kidImg from '~/assets/img/people/kid.png'
       <div class="category">
         <div class="img">
           <img :src="womanImg" alt="">
-          <div class="title text_xl">women's</div>
         </div>
+        <div class="title text_xlb">women's</div>
       </div>
       
       <div class="category">
         <div class="img">
           <img :src="manImg" alt="">
-          <div class="title text_xl">men's</div>
         </div>
+        <div class="title text_xlb">men's</div>
       </div>
 
       <div class="category">
         <div class="img">
           <img :src="kidImg" alt="">
-          <div class="title text_xl">kids'</div>
         </div>
+        <div class="title text_xlb">kids'</div>
       </div>
 
     </div>
@@ -46,23 +46,35 @@ import kidImg from '~/assets/img/people/kid.png'
 }
 .container {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 .category {
-  flex: 0 0 33%;
+  flex: 0 0 39rem;
 }
 .img {
-  width: 39rem;
-  height: 39rem;
+  /* width: 39rem;
+  height: 39rem; */
+  width: 100%;
+  padding-bottom: 100%;
 
-  margin-bottom: 1.6rem;
+  position: relative;
+
+  margin-bottom: 2rem;
 
   & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
   }
 }
-.title text_xl {
+.title {
   text-align: center;
+  color: $color-gray-800;
+
 }
 
 </style>

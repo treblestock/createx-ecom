@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import img from '~/assets/img/illustrations/2.png'
+import img from '~/assets/img/illustrations/3.png'
 import MobileApps from '../features/MobileApps.vue';
 
 
@@ -41,13 +41,19 @@ import MobileApps from '../features/MobileApps.vue';
 .content {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   gap: 15rem;
 }
 
+.body {
+
+}
 
 .title {
   margin-bottom: 5rem;
+  color: $color-white;
 }
+
 
 </style>

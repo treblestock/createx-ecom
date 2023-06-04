@@ -1,10 +1,10 @@
 <script setup lang="ts">
-import img1 from '~/assets/img/clothes/categories/1.jpg'
-import img2 from '~/assets/img/clothes/categories/2.jpg'
-import img3 from '~/assets/img/clothes/categories/3.jpg'
-import img4 from '~/assets/img/clothes/categories/4.jpg'
-import img5 from '~/assets/img/clothes/categories/5.jpg'
-import img6 from '~/assets/img/clothes/categories/6.jpg'
+import img1 from '~/assets/img/clothes/categories/1.png'
+import img2 from '~/assets/img/clothes/categories/2.png'
+import img3 from '~/assets/img/clothes/categories/3.png'
+import img4 from '~/assets/img/clothes/categories/4.png'
+import img5 from '~/assets/img/clothes/categories/5.png'
+import img6 from '~/assets/img/clothes/categories/6.png'
 
 
 
@@ -20,42 +20,42 @@ import img6 from '~/assets/img/clothes/categories/6.jpg'
           <div class="img">
             <img :src="img1" alt="">
           </div>
-          <div class="title text_xl">Tops</div>
+          <div class="category-title text_xlb">Tops</div>
         </div>
 
         <div class="category">
           <div class="img">
             <img :src="img2" alt="">
           </div>
-          <div class="title text_xl">T-shirts</div>
+          <div class="category-title text_xlb">T-shirts</div>
         </div>
 
         <div class="category">
           <div class="img">
             <img :src="img3" alt="">
           </div>
-          <div class="title text_xl">Caps</div>
+          <div class="category-title text_xlb">Caps</div>
         </div>
 
         <div class="category">
           <div class="img">
             <img :src="img4" alt="">
           </div>
-          <div class="title text_xl">Sandals</div>
+          <div class="category-title text_xlb">Sandals</div>
         </div>
 
         <div class="category">
           <div class="img">
             <img :src="img5" alt="">
           </div>
-          <div class="title text_xl">Jackets</div>
+          <div class="category-title text_xlb">Jackets</div>
         </div>
 
         <div class="category">
           <div class="img">
             <img :src="img6" alt="">
           </div>
-          <div class="title text_xl">Coats</div>
+          <div class="category-title text_xlb">Coats</div>
         </div>
 
       </div>
@@ -72,14 +72,18 @@ import img6 from '~/assets/img/clothes/categories/6.jpg'
   margin-bottom: 18rem;
 }
 
-.tilte {
+.title {
   margin-bottom: 6rem;
+  
+  text-align: center;
+  color: $color-gray-900;
 }
 .container {
   
 }
 .categories {
   display: flex;
+  flex-wrap: wrap;
   gap: 3rem;
 }
 .category {
@@ -95,8 +99,9 @@ import img6 from '~/assets/img/clothes/categories/6.jpg'
     object-fit: cover;
   }
 }
-.title text_xl {
+.category-title {
   text-align: center;
+  color: $color-gray-900;
 }
 
 </style>

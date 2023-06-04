@@ -1,8 +1,11 @@
 import type { RouteLocationRaw, RouteLocationNormalized } from "vue-router"
 
 const BASE_URL = import.meta.env.BASE_URL || '/'
-export function withBaseUrl(string: string) {
+export function withBaseUrl(string: string): string {
   return (BASE_URL + string).replace('//', '/')
+}
+export function withHash(string: string): string {
+  return useRoute().fullPath + string
 }
 
 export function paramsValuesToStrings(to: Exclude<RouteLocationRaw, string> & {params?: Record<string, any> }): RouteLocationRaw & JSONedParams {
@@ -20,9 +23,13 @@ export function paramsValuesToStrings(to: Exclude<RouteLocationRaw, string> & {p
 }
 
 export function modifyRouteTo (to: RouteLocationRaw) {
-  return typeof to === 'string' 
-    ? withBaseUrl(to)
-    : paramsValuesToStrings(to)
+  if (typeof to !== 'string') return paramsValuesToStrings(to)
+
+  if (to.startsWith('#') ) return withHash(to)
+  return withBaseUrl(to)
+  // return typeof to === 'string'
+  //   ? withBaseUrl(to)
+  //   : paramsValuesToStrings(to)
 }
 
 interface JSONedParams {

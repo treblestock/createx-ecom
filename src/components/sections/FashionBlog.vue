@@ -1,16 +1,11 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { BlogPost as BlogPostType } from '~/types'
 import api from '~/api'
 import BlogPost from '../features/BlogPost.vue'
 
 
-const posts = ref<null | BlogPostType[]>(null)
+const posts = useFetchItems(() => api.getBlogPosts(2))
 
-onMounted(async () => {
-  const data = await api.getBlogPosts(2)
-  posts.value = data
-})
+
 
 
 
@@ -20,40 +15,59 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div class="slider">
-    <div class="header">
-      <div class="title h1">Fashion blog</div>
-      <AppLinkBtn outlined>
-        View blog
-      </AppLinkBtn>
-    </div>
+  <section class="section">
+    <div class="container">
+      <div class="blog-preview">
+        <div class="header">
+          <div class="title h1">Fashion blog</div>
+          <AppLinkBtn class="link"
+            outlined
+            :to="{
+              name: 'blog'
+            }"
+          >
+            View blog
+          </AppLinkBtn>
+        </div>
 
-    <div class="posts">
-      <BlogPost v-for="post, ind in posts" :key="+post.id + ind"
-        :="post"
-      ></BlogPost>
+        <div class="posts">
+          <BlogPost 
+            v-for="post in posts" :key="post.id"
+            :="post"
+          ></BlogPost>
+        </div>
+      </div>
     </div>
-
-  </div>
+  </section>
   
 </template>
 
 <style scoped>
 @import '~css/consts';
 
-
-.slider {
+.section {
+  margin-bottom: 12rem;
+}
+.blog-preview {
 
 }
-.slider-header {
+.header {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
+
+  margin-bottom: 6rem;
 }
 .title {
+  color: $color-gray-900;
+}
+.link {
+  
 }
 
 .posts {
-
+  display: flex;
+  gap: 3rem;
 }
 
 </style>

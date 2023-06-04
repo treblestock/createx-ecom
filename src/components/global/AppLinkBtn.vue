@@ -14,6 +14,7 @@ const props = defineProps<{
       size ? 'btn_' + size : '',
       outlined ? 'btn_outlined' : ''
     ]"
+    :to="$props.to"
   >
     <slot></slot>
   </AppLink>  

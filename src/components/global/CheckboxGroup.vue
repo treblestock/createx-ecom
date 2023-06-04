@@ -1,12 +1,4 @@
 <script setup lang="ts">
-// const props = defineProps<{
-//   modelValue?:  boolean | any[] | Set<any>
-//   label?: string
-//   name?: string
-// }>()
-// const emit = defineEmits([
-//   'update:modelValue'
-// ])
 const props = defineProps<{
   label?: string
 }>()
@@ -16,10 +8,6 @@ const modelValue = defineModel<any>()
 <template>
 
   <label class="checkbox-group">
-    <!-- <Checkbox class="checkbox-group__checkbox"
-      :modelValue="modelValue"
-      @update:model-value="value => emit('update:modelValue', value)"
-    ></Checkbox> -->
     <Checkbox class="checkbox-group-checkbox"
       v-model="modelValue"
       :="$attrs"

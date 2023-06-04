@@ -1,13 +1,4 @@
 <script setup lang="ts">
-// const props = defineProps<{
-//   modelValue?: string
-//   label?: string
-//   type?: string
-// }>()
-// const emit = defineEmits([
-//   'update:modelValue'
-// ])
-
 const props = defineProps<{
   label?: string
   vertical?: boolean
@@ -24,12 +15,6 @@ const modelValue = defineModel<string | number>()
     <div class="input-group-label">
       <slot>{{ label }}</slot>
     </div>
-    <!-- <Input class="input-group-input"
-      :modelValue="modelValue"
-      @update:model-value="value => emit('update:modelValue', value)"
-      :placeholder="label"
-      :type="type"
-    ></Input> -->
     <Input class="input-group-input"
       v-model="modelValue"
       :placeholder="label"

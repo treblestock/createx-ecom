@@ -6,7 +6,7 @@ export default {
 
 <script setup lang="ts">
 import { computed } from 'vue'
-import { RouterLink} from 'vue-router'
+import { RouterLink } from 'vue-router'
 
 import { modifyRouteTo } from '~/router/utils'
 import type { WithParamsAny } from '~/router/types'
@@ -16,7 +16,7 @@ const props  = defineProps<WithParamsAny>() // vue-macros required for import ty
 
 const isExternalLink = computed(() => 
   typeof props.to === 'string' && props.to.startsWith('http')
-) 
+)
 
 
 </script>

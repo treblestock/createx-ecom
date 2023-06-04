@@ -83,7 +83,7 @@ declare global {
   const useRouteChildren: typeof import('./src/composables/useRouteChildren')['default']
   const useRouter: typeof import('vue-router')['useRouter']
   const useRouterApi: typeof import('./src/composables/ignore/useRouterApi')['default']
-  const useSliderLogic: typeof import('./src/composables/useSliderLogic')['default']
+  const useSlider: typeof import('./src/composables/useSlider')['default']
   const useSlots: typeof import('vue')['useSlots']
   const useStorage: typeof import('./src/composables/useStorage')['default']
   const useStoreCounter: typeof import('./src/stores/Counter')['useStoreCounter']

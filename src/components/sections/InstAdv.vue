@@ -15,7 +15,10 @@ import img3 from '~/assets/img/from-inst/3.jpg'
       <div class="body">
         <div class="title h6">Follow us on Instagram</div>
         <div class="inst-acc h1">@createx_store</div>
-        <AppLinkBtn outlined>
+        <AppLinkBtn class="link"
+          outlined
+          to="https://google.com"
+        >
           <Icon icon="inst"></Icon>&#x2800;
           Follow instagram
         </AppLinkBtn>
@@ -45,6 +48,7 @@ import img3 from '~/assets/img/from-inst/3.jpg'
 }
 .container {
   display: flex;
+  justify-content: space-between;
   gap: 3rem;
 }
 
@@ -52,10 +56,19 @@ import img3 from '~/assets/img/from-inst/3.jpg'
 }
 .title {
   margin-bottom: 1rem;
+  color: $color-gray-900;
 }
 .inst-acc {
+  color: $color-gray-900;
   margin-bottom: 6rem;
 }
+.link {
+  display: flex;
+  align-items: center;
+  width: max-content;
+}
+
+/* imgs */
 .imgs {
   display: flex;
   gap: 1.5rem;

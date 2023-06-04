@@ -72,6 +72,7 @@ const selectedSize = ref(props.sizes[0])
 /* $img-ratio: calc(100% * 320 / 285); */
 $img-ratio: 114%;
 $shadow: 0 10px 10px 0 $color-gray-800;
+/* $shadow: $shadow-card; */
 .card {
   width: clamp(28rem, 100%, 39rem);
 

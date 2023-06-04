@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import SubscribeMailing from '~/components/sections/SubscribeMailing.vue'
 import HomeIntroSlider from '~/components/sections/HomeIntroSlider.vue'
 import HomeCategories from '~/components/sections/HomeCategories.vue'
 import HomeNewCollections from '~/components/sections/HomeNewCollections.vue'
@@ -12,7 +11,7 @@ import CreatexAdvantages from '~/components/sections/CreatexAdvantages.vue'
 import InstAdv from '~/components/sections/InstAdv.vue'
 import FashionBlog from '~/components/sections/FashionBlog.vue'
 import Sponsors from '~/components/sections/Sponsors.vue'
-
+import SubscribeMailing from '~/components/sections/SubscribeMailing.vue'
 
 
 

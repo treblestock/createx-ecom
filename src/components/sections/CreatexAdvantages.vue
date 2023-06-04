@@ -62,10 +62,13 @@ import img4 from '~/assets/img/icons/advantages/payment.svg'
 }
 .advantages {
   display: flex;
-  gap: 9rem;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 3rem;
 }
 .advantage {
-  flex: 0 0 33%;
+  flex: 0 0 24rem;
+
 
   text-align: center;
 }
@@ -77,13 +80,16 @@ import img4 from '~/assets/img/icons/advantages/payment.svg'
   margin-bottom: 2.4rem;
 
   text-align: center;
+  margin: 0 auto 2.4rem;
 
   /* & img {
     object-fit: cover;
   } */
 }
-.title text_xl {
+.title {
   text-align: center;
+  color: $color-gray-900;
+  margin-bottom: 1rem;
 }
 
 </style>

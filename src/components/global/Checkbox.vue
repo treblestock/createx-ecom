@@ -1,25 +1,10 @@
-<!-- todo: make modelValue = [] support -->
 <script setup lang="ts">
-
-// const props = defineProps<{
-//   modelValue?: boolean | any[] | Set<any>
-// }>()
-// const emit = defineEmits([
-//   'update:modelValue'
-// ])
-
-
 const modelValue = defineModel<any>()
 
 
 </script>
 
 <template>
-
-  <!-- <input type="checkbox" class="input"
-    :value="modelValue"
-    @input="event => emit('update:modelValue', (event.target as HTMLInputElement).checked)"
-  > -->
   <input type="checkbox" class="input"
     v-model="modelValue"
   >

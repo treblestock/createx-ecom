@@ -1,4 +1,4 @@
-<script setup lang="ts" generic="N extends string">
+<script setup lang="ts">
 import type { Product } from '~/types'
 import ProductColorFilter from '~/components/features/ProductColorFilter.vue'
 import ProductCheckboxFilter from '~/components/features/ProductCheckboxFilter.vue'
@@ -16,30 +16,6 @@ import {
   sizeLetter,
 } from '~/public/data/different.json'
 
-// type FiltersType<N extends string> = Uppercase<N> extends 'COLOR' 
-//   ? 'colorFilters' 
-//   : Uppercase<N> extends 'PRICE'
-//     ? 'priceFilters'
-//     : 'checkboxFilters'
-
-// type FilterOptions = {
-//   colorFilters: Record<ProductColor, Ref<boolean>>
-//   priceFilters: {
-//     minPrice: number
-//     maxPrice: number
-//   }
-//   checkboxFilters: Record<string, Ref<boolean>>
-// }
-
-
-// const props = defineProps<{
-//   // filters: Record<N, FilterOptions[FiltersType<N>]>
-//   categoryMinorClothType: Set<Product['categoryMinorClothType']>
-//   brand: Set<Product['brand']>
-//   materials: Set<Product['materials'][number]>
-//   colors: Set<Product['colors'][number]>
-//   sizes: Set<Product['sizes'][number]>
-// }>()
 
 const selectedCategoryMinorClothType = defineModel<Set<Product['categoryMinorClothType']>>('categoryMinorClothType', {required: true})
 const selectedBrand = defineModel<Set<Product['brand']>>('brand', {required: true})

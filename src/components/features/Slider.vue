@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
+import { ref } from 'vue'
 
-import useSliderLogic from '~/composables/useSliderLogic.js'
+import useSlider from '~/composables/useSlider.js'
 
 
 const props = defineProps<{
@@ -13,15 +13,9 @@ const props = defineProps<{
 
 const HTMLbody = ref<null | HTMLElement>(null)
 const HTMLpagination = ref<null | HTMLElement>(null)
-const pagesCount = ref<number>(0)
 
 
-onMounted(() => { // todo: mutation observer is prefered 
-  const itemsCount = HTMLbody.value?.children.length || 0
-  pagesCount.value = itemsCount
-})
-
-const sliderLogic = useSliderLogic({
+const slider = useSlider({
   HTMLbody,
   HTMLpagination,
   activeClass: props.activeClass || '_active'
@@ -30,88 +24,120 @@ const sliderLogic = useSliderLogic({
 
 
 
-
-
 </script>
 
 <template>
   <div class="slider">
-    <div class="header">
-      <div class="title h1">{{ title }}</div>
-      <div class="arrows"
-        v-if="!isArrowsHidden"
-      >
-        <IconRounded icon="ArrowLeft"
-          @click="sliderLogic.prevSlide()"
-        ></IconRounded>
-        <IconRounded icon="ArrowRight"
-          @click="sliderLogic.nextSlide()"
-        ></IconRounded>
+    <div class="slider-header">
+      <h2 class="slider-title h1">{{ title || '' }}</h2>
+      <div class="slider-arrows">
+        <ArrowLeft class="slider-arrow" 
+          @click="slider.prevSlide()" 
+        />
+        <ArrowRight class="slider-arrow" 
+          @click="slider.nextSlide()" 
+        />
       </div>
     </div>
 
-    <div class="body"
-      ref="HTMLbody"
-    >
-      <slot></slot>
-    </div>
+      <div class="slider-window">
+        <div class="slider-items"
+          ref="HTMLbody"
+        >
+          <slot></slot>
+        </div>
+      </div>
 
-    <div class="pagination"
-      v-if="!isPaginationHidden"
+    <div class="slider-pagination"
       ref="HTMLpagination"
     >
-      <div class="cursor-area"
-        v-for="page, ind in pagesCount" :key="page"
-        @click="sliderLogic.setSlide(ind)"
-      >
-        <div class="page-icon"></div>
-      </div>
+      <div class="slider-pagination-item"
+        v-for="i in slider.pagesCount.value" :key="i"
+        @click="slider.setSlide(i - 1)"
+      ></div>
     </div>
-  </div>
-  
+  </div>  
 </template>
 
 <style scoped>
 @import '~css/consts';
+@import '~css/utils';
 
+$color-gray-500: palegreen;
+$color-carrot: #ccc;
+$color-gray-800: black;
 
 .slider {
-
+  overflow: hidden;
 }
 .slider-header {
   display: flex;
   justify-content: space-between;
-}
-.title {
-}
-.slider-body {
-}
-.slider-item {
-}
-.arrows {
-
+  text-align: center;
 }
 
-.pagination {
+.slider-title {
+  margin-top: 1rem;
+  color: $color-gray-900;
+}
+
+.slider-arrows {
   display: flex;
-  align-items: center;
-  gap: 1.2rem;
+  align-items: flex-end;
+} 
+.slider-arrow {
+  flex: 0 0 auto;
+  user-select: none;
 }
-.cursor-area {
-  height: 3rem;
-  cursor: pointer;
 
-  &._active {
-    & .page-icon {
-      background: $color-gray-800;
-    }
+/* slider items*/
+.slider-window {
+  margin-top: 6rem;
+  min-height: 30rem;
+
+  /* overflow: hidden; */
+}
+
+.slider-items {
+  display: flex;
+  gap: 3rem;
+
+  transition: all ease .3s;
+
+  :slotted(& > *) {
+    flex: 1 0 auto;
   }
-}
-.page-icon {
-  width: 3rem;
-  height: 1px;
 
+}
+
+.slider-pagination {
+  z-index: -1;
+  margin-top: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  & > * + * {
+    margin-left: 1rem;
+  }
+  
+
+}
+.slider-pagination-item {
+  cursor: pointer;
+  width: 3rem;
+  height: 2rem;
+
+  border-radius: .4px;
   background: $color-gray-500;
+
+  &:hover {
+    background: $color-carrot;
+  }
+  &._active {
+    background: $color-gray-800;
+  }
+
 }
 
 

@@ -8,12 +8,7 @@ import ProductCard from '~/components/features/ProductCard.vue'
 
 
 // products
-const products = ref<Product[]>([])
-onMounted(async () => {
-  const data = await api.getProducts(8)
-  products.value = data
-})
-
+const products = useFetchItems(() => api.getProducts(8))
 
 
 
@@ -27,10 +22,11 @@ onMounted(async () => {
   <section class="section">
     <div class="container">
       <Slider class="slider"
-        title="Trending now"
+        title="Sale up to 70%"
+        isPaginationHidden
       >
         <ProductCard class="product-card"
-          v-for="product, ind in products" :key="+product.id + ind" 
+          v-for="product in products" :key="product.id" 
           :="product"
           :img="product.imgs[0]"
         ></ProductCard>
@@ -39,6 +35,9 @@ onMounted(async () => {
       <AppLinkBtn class="link"
         outlined
         size="l"
+        :to="{
+          name: 'products'
+        }"
       >
         Explore top sales
       </AppLinkBtn>
@@ -55,20 +54,21 @@ onMounted(async () => {
   margin-bottom: 18rem;
 }
 .container {
-  display: flex;
-  gap: 3rem;
+  
 }
 .slider {
-
+  
 }
 .title {
 }
 
 .product-card {
+  z-index: 1;
 }
 
 .link {
   display: block;
+  width: max-content;
   margin: 8rem auto 0;
 }
 

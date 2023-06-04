@@ -18,7 +18,5 @@
 <style scoped>
 @import '~css/consts';
 
-.div  {
-}
 
 </style>

@@ -185,7 +185,18 @@ const router = createRouter({
   routes,
   history: createWebHistory(),
   linkActiveClass: '_active',
+  scrollBehavior(to, from, savedPostition) {
+    if (to.hash) return {
+      el: to.hash,
+      top: 0,
+    }
+    if (savedPostition) return savedPostition
+    return {
+      top: 0
+    }
+  }
 })
+
 
 // declare module 'vue-router' {
 //   export interface Router {

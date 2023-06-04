@@ -20,7 +20,7 @@ export { default as PasswordGroup } from './PasswordGroup.vue'
 // 
 export { default as Popup } from './Popup.vue'
 export { default as NavTabs } from './NavTabs.vue'
-export { default as Slider } from './Slider.vue'
+// export { default as Slider } from './Slider.vue'
 export { default as Spoiler } from './Spoiler.vue'
 export { default as WithSpoiler } from './WithSpoiler.vue'
 // Icons
@@ -53,7 +53,7 @@ export interface AppGlobalComponents {
   // 
   Popup: typeof import('./Popup.vue')['default']
   NavTabs: typeof import('./NavTabs.vue')['default']
-  Slider: typeof import('./Slider.vue')['default']
+  // Slider: typeof import('./Slider.vue')['default']
   Spoiler: typeof import('./Spoiler.vue')['default']
   WithSpoiler: typeof import('./WithSpoiler.vue')['default']
   // icons

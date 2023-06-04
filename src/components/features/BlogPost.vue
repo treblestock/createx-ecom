@@ -1,17 +1,9 @@
 <script setup lang="ts">
-import type { Id, BlogThemeCategory, DateRecord, } from '~/types'
+import type { BlogPost } from '~/types'
 import { dateToHumanCase } from '~/utils'
 
-
-const props = defineProps<{
-  id: Id
-  img: string
-  category: BlogThemeCategory
-  date: DateRecord
-  commentsNumber: number
-  title: string
-  description: string
-}>()
+type Props = 'id' | 'category' | 'commentsIds' | 'title' | 'date' | 'description' | 'img'
+const props = defineProps<Pick<BlogPost, Props>>()
 
 
 </script>
@@ -23,13 +15,13 @@ const props = defineProps<{
     </div>
 
     <div class="post-body">
-      <div class="product-title">{{ title }}</div>
+      <div class="product-title text_xlb">{{ title }}</div>
       <div class="labels">
-        <div class="label test_s">{{ category }} </div>
+        <div class="label test_s">{{ category[0] }} </div>
         <div class="label test_s">{{ dateToHumanCase(date) }} </div>
         <div class="label test_s">
           <Icon icon="Chat"></Icon>&#x2800;
-          {{ commentsNumber }} comments
+          {{ commentsIds.length }} comments
         </div>
       </div>
       <div class="description">{{ description }}</div>
@@ -41,15 +33,37 @@ const props = defineProps<{
 @import '~css/consts';
 @import '~css/utils';
 
+$img-ratio: 50%; /* 600px / 300px */
 .post {
-  width: clamp(28rem, 100%, 39rem);
+  width: 60rem;
+
+  box-shadow: $shadow-card;
 }
 
+.img {
+  width: 100%;
 
+  height: 0;
+  padding-top: $img-ratio;
+
+  position: relative;
+
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* post-body */
 .post-body {
   padding: 2.4rem;
 }
 .product-title {
+  color: $color-gray-900;
   margin-bottom: 1.2rem;
 }
 .labels {
@@ -64,13 +78,12 @@ const props = defineProps<{
 .label {
 }
 
-.img {
-  width: 60rem;
-  height: 30rem;
-
-  & img {
-    object-fit: cover;
-  }
+.description {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
 }
+
+
 
 </style>
