@@ -8,7 +8,8 @@ import ProductColors from '~/components/features/ProductColors.vue'
 
 
 const props = defineProps<{
-  img: string
+  id: number
+  imgs: string[]
   name: string
   price: number
   discount?: number
@@ -30,7 +31,7 @@ const selectedSize = ref(props.sizes[0])
   <div class="card">
     <div class="visible">
       <div class="img">
-        <Img :src="img"></Img>
+        <Img :src="imgs[0]"></Img>
         <div class="labels">
           <SaleLabel class="sale-label"
             v-if="discount"
@@ -44,7 +45,12 @@ const selectedSize = ref(props.sizes[0])
         </div>
       </div>
       <div class="description">
-        <div class="product-name">{{ name }}</div>
+        <AppLink class="product-name text_l"
+          :to="{
+            name: 'product',
+            params: {id},
+          }"
+        >{{ name }}</AppLink>
         <Price class="product-price"
           :price="price"
           :discount="discount"
@@ -141,6 +147,11 @@ $shadow: 0 10px 10px 0 $color-gray-800;
 }
 .product-name {
   margin-bottom: 0.8rem;
+
+  color: $color-gray-800;
+  &:hover {
+    color: $color-green;
+  }
 }
 .product-price {
 

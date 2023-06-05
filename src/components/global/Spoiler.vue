@@ -65,7 +65,7 @@ function togglespoiler() {
 }
 
 
-.spoiler:not(._active) {
+.spoiler._active {
   .plus:after {
     display: none;
   }
