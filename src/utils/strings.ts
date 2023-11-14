@@ -17,8 +17,14 @@ function humanToKebab(humanCase: string): string {
   return humanCase.split(' ').map(word => word.toLowerCase()).join('-')
 } 
 
+function capitalize(str: string): string {
+  return str[0].toUpperCase() + str.slice(1)
+}
+
+
 export {
   doesIncludeWords,
   toHumanCase,
   humanToKebab,
+  capitalize,
 }

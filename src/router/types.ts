@@ -6,9 +6,3 @@ export interface WithParamsAny extends Omit<RouterLinkProps, 'to'> {
     name?: AppRouteName
   } 
 }
-
-declare module 'vue-router' {
-  interface RouteMeta {
-    isAuthOnly?: boolean
-  }
-}

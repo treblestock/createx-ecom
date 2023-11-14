@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
-import api from '~/api'
 import { type Product } from '~/types'
 
 import Slider from '~/components/features/Slider.vue'
@@ -54,10 +53,14 @@ const products = useFetchItems(() => api.getProducts(8))
   margin-bottom: 18rem;
 }
 .container {
-  
+
+  /* solution to hide cards in slider horizontally,
+  but not verticaly in order to let product card's popover be visible */
+  overflow: hidden; 
+  padding-bottom: 1rem;
 }
 .slider {
-  
+  overflow: visible;
 }
 .title {
 }

@@ -1,15 +1,14 @@
 <script setup lang="ts">
 import { ref  } from 'vue'
-import type { Product } from '~/types'
 
-import SubscribeMailing from '~/components/sections/SubscribeMailing.vue'
 import ProductsSortAndPagination from '~/components/features/ProductsSortAndPagination.vue'
 import ProductCard from '~/components/features/ProductCard.vue'
 import ProductFilters from '~/components/features/ProductFilters.vue'
 
+import Filter from '~/components/icons/Filter.vue'
 
 
-import api from '~/api'
+
 import useFetchItems from '~/composables/useFetchItems'
 import useProductFilters from '~/composables/useProductFilters'
 
@@ -65,11 +64,11 @@ const {
 
     <div class="container">
       <div class="products-header">
-        <Btn class="toggle-sidebar"
+        <Btn class="toggle-sidebar _with-icon"
           @click="isSidebarOpen = !isSidebarOpen"
           size="l"
         >
-          <Icon icon="filter1"></Icon>
+          <Filter :class="{_active: isSidebarOpen}"></Filter>
           Hide filters
         </Btn>
         <ProductsSortAndPagination class="sorts"

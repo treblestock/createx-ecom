@@ -4,7 +4,9 @@ import ProductColorFilter from '~/components/features/ProductColorFilter.vue'
 import ProductCheckboxFilter from '~/components/features/ProductCheckboxFilter.vue'
 // import ProductPriceFilter from '~/components/features/ProductPriceFilter.vue'
 
-import type { Component } from 'vue';
+import type { Component } from 'vue'
+
+import { capitalize } from '~/utils'
 
 import {
   clothes,
@@ -27,13 +29,33 @@ const selectedColors = defineModel<Set<Product['colors'][number]>>('colors', {re
 
 
 const filterGroups = {
-  clothes: clothes,
-  accessories: accessories,
-  shoes: shoes,
-  brand: brands,
-  material: materials,
-  color: colors,
-  size: sizeLetter,
+  clothes: computed(() => {
+    return clothes.filter(prop => doesIncludeWords(prop, filterValuesFilterQueries.value.clothes))
+  }),
+  accessories: computed(() => {
+    return accessories.filter(prop => doesIncludeWords(prop, filterValuesFilterQueries.value.accessories))
+  }),
+  shoes: computed(() => {
+    return shoes.filter(prop => doesIncludeWords(prop, filterValuesFilterQueries.value.shoes))
+  }),
+  brand: computed(() => {
+    return brands.filter(prop => doesIncludeWords(prop, filterValuesFilterQueries.value.brand))
+  }),
+  material: computed(() => {
+    return materials.filter(prop => doesIncludeWords(prop, filterValuesFilterQueries.value.material))
+  }),
+  color: computed(() => {
+    return colors
+  }),
+  size: computed(() => {
+    return sizeLetter.filter(prop => doesIncludeWords(prop, filterValuesFilterQueries.value.size))
+  }),
+  // accessories: accessories,
+  // shoes: shoes,
+  // brand: brands,
+  // material: materials,
+  // color: colors,
+  // size: sizeLetter,
 }
 
 
@@ -50,6 +72,19 @@ const getWhiteListByFilterName = {
 
 
 
+// 
+const filterValuesFilterQueries = ref({
+  clothes: '',
+  accessories: '',
+  shoes: '',
+  brand: '',
+  material: '',
+  size: '',
+})
+
+
+
+
 
 const predefinedfitlerComponents: Record<string, Component> = {
   color: ProductColorFilter,
@@ -57,8 +92,20 @@ const predefinedfitlerComponents: Record<string, Component> = {
 }
 
 
+const _ = {
+  clothes: computed(() => {
+    return clothes.filter(prop => doesIncludeWords(prop, filterValuesFilterQueries.value.clothes))
+  })
+}
+
 function getFilterComponentByFilterGroup(filterGroupName: string): Component {
   return predefinedfitlerComponents[filterGroupName] || ProductCheckboxFilter
+}
+
+
+function getFilteredFilterOptions(filterGroupName: keyof typeof filterGroups): string[] {
+  
+  return filterGroups[filterGroupName].value
 }
 
 
@@ -73,11 +120,21 @@ function getFilterComponentByFilterGroup(filterGroupName: string): Component {
       v-for="possibleValues, filterGroupName in filterGroups" :key="filterGroupName"
       innerBorder
     >
-      <template #title>{{ filterGroupName }}</template>
+      <template #title>
+          {{ capitalize(filterGroupName) }}
+      </template>
+      <template #header
+          v-if="filterGroupName in filterValuesFilterQueries"
+      >
+        <Input class="spoiler _s"
+          v-model="filterValuesFilterQueries[filterGroupName as keyof typeof filterValuesFilterQueries]"
+          placeholder="Search for clothes type"
+        />
+      </template>
       <template #default>
         <component :is="getFilterComponentByFilterGroup(filterGroupName)"
           v-model="getWhiteListByFilterName[filterGroupName].value"
-          :possibleValues="possibleValues"
+          :possibleValues="getFilteredFilterOptions(filterGroupName)"
         ></component>
       </template>
     </Spoiler>
@@ -99,6 +156,10 @@ function getFilterComponentByFilterGroup(filterGroupName: string): Component {
   & + & {
     border-top: 1px solid $color-gray-300;
   }
+}
+
+.spoiler {
+  width: 100%;
 }
 
 

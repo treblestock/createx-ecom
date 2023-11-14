@@ -33,6 +33,14 @@ const modelValue = defineModel<string | number>()
     color: $color-gray-700;
     text-transform: lowercase;
   }
+
+  &._s {
+    padding: .9rem 1.2rem;
+
+    /* text-xxxs */
+    font-size: 1.2rem;
+    line-height: 1.5;
+  }
 }
   
   

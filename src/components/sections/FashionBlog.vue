@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import api from '~/api'
 import BlogPost from '../features/BlogPost.vue'
 
 

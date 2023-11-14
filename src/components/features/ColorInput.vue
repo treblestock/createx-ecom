@@ -45,7 +45,7 @@ const inputType = typeof selectedColor.value === 'string' ? 'radio' : 'checkbox'
 /* animations */
   &:checked {
     & + .big-circle {
-      box-shadow: 0 0 0 1px $color-green;
+      box-shadow: 0 0 0 3px $color-green;
     }
   }
   &:disabled {

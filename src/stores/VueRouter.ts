@@ -14,9 +14,14 @@ export default defineStore('vueRouter', {
     
   },
   actions: {
+    requestSignup() {
+      usePopupManager().showPopup('Signup')
+    },
+    requestSignin() {
+      usePopupManager().showPopup('Signin')
+    },
     onSignin() { // continue navigation aborted before auth
       const lastAbortedRoute = this.redirects.onSignin
-      console.log(lastAbortedRoute)
       if (!lastAbortedRoute) return
 
       this.redirects.onSignin = null

@@ -3,6 +3,8 @@ import { ref } from 'vue'
 
 import useSlider from '~/composables/useSlider.js'
 
+import Arrow from '~/components/icons/Arrow.vue';
+
 
 const props = defineProps<{
   title: string
@@ -31,22 +33,24 @@ const slider = useSlider({
     <div class="slider-header">
       <h2 class="slider-title h1">{{ title || '' }}</h2>
       <div class="slider-arrows">
-        <ArrowLeft class="slider-arrow" 
+        <Arrow class="slider-arrow" 
+          direction="left"
           @click="slider.prevSlide()" 
         />
-        <ArrowRight class="slider-arrow" 
+        <Arrow class="slider-arrow" 
+          direction="right"
           @click="slider.nextSlide()" 
         />
       </div>
     </div>
 
-      <div class="slider-window">
-        <div class="slider-items"
-          ref="HTMLbody"
-        >
-          <slot></slot>
-        </div>
+    <div class="slider-window">
+      <div class="slider-items"
+        ref="HTMLbody"
+      >
+        <slot></slot>
       </div>
+    </div>
 
     <div class="slider-pagination"
       ref="HTMLpagination"
@@ -63,9 +67,7 @@ const slider = useSlider({
 @import '~css/consts';
 @import '~css/utils';
 
-$color-gray-500: palegreen;
-$color-carrot: #ccc;
-$color-gray-800: black;
+
 
 .slider {
   overflow: hidden;
@@ -124,15 +126,19 @@ $color-gray-800: black;
 
 }
 .slider-pagination-item {
-  cursor: pointer;
   width: 3rem;
-  height: 2rem;
+  height: 1px;
+
+  cursor: pointer;
+  border-top: 3px solid transparent;
+  border-bottom: 3px solid transparent;
+
 
   border-radius: .4px;
   background: $color-gray-500;
 
   &:hover {
-    background: $color-carrot;
+    background: $color-gray-800;
   }
   &._active {
     background: $color-gray-800;

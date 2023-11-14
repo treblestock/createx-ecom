@@ -1,17 +1,19 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="T extends unknown">
 import { ref } from 'vue'
 
+const props = defineProps<{
+  slotId: T
+}>()
 
+const emit = defineEmits<{
+  (event: 'close', id: T): void
+}>()
 
-const isActive = ref(true)
 
 function close() {
-  isActive.value = false
+  emit('close', props.slotId)
 }
 
-defineExpose({
-  close,
-})
 
 
 
@@ -19,7 +21,7 @@ defineExpose({
 
 <template>
   <Teleport to="body">
-    <div class="popup" v-if="isActive"
+    <div class="popup"
       @click="close"
     >
       <div class="popup__body"
@@ -38,6 +40,10 @@ defineExpose({
 @import '~css/consts';
 
 
+
+
+$color-popup-bgc: #1E212CAA;
+
 .popup {
   /* cover screen */
   z-index: 100;
@@ -54,8 +60,7 @@ defineExpose({
 
 
   /* wrapper */
-  background: $color-gray-900;
-  opacity: 0.75;
+  background: $color-popup-bgc;
 
 
   &__body {

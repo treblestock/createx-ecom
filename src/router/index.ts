@@ -3,7 +3,7 @@ import {} from '~/router/types.ts'
 
 import { propsParser } from './utils/index.ts'
 
-import auth from '~/middleware/auth.ts'
+import authMiddleware from '~/middleware/auth.ts'
 
 
 
@@ -17,6 +17,15 @@ const routes: RouteRecordRaw[] = [
     component: () => import('~/layouts/default.vue'),
     redirect: {name: 'home'},
     children: [
+      {
+        path: 'test',
+        name: 'test',
+        props: propsParser,
+        component: () => import('~/pages/_test.vue'),
+        children: [
+          
+        ],
+      },
       {
         path: 'account',
         name: 'account',
@@ -77,6 +86,7 @@ const routes: RouteRecordRaw[] = [
       {
         path: 'blog',
         name: 'blog',
+        meta: {isAuthOnly: true},
         props: propsParser,
         component: () => import('~/pages/blog.vue'),
         children: [
@@ -217,7 +227,7 @@ const router = createRouter({
 
 
 
-router.beforeEach(auth)
+router.beforeEach(authMiddleware)
 
 
 

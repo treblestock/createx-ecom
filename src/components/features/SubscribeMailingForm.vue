@@ -4,7 +4,7 @@ import { ref } from 'vue'
 
 
 type sexCategories = 'woman' | 'man' | 'girls' | 'boys'
-const selectedSexCategories = ref<Set<sexCategories>>(new Set())
+const selectedSexCategories = ref<Set<sexCategories>>(new Set(['woman']))
 const email = ref<string>('')
 const isMailingAllowed = ref<boolean>(true)
 
@@ -102,6 +102,11 @@ function onSubmit(event: Event) {
     box-shadow: 0 0 0 $border-w $color-gray-400;
     color: $color-gray-700;
     font-weight: 700;
+  }
+
+  ::placeholder {
+    color: $color-gray-600;
+    font-weight: 400;
   }
 }
 .submit-btn {

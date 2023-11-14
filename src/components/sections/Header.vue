@@ -1,5 +1,5 @@
 <script setup lang="ts">
-// <!-- todo: implement header.hover -> header.expanded()
+// <!-- todo: implement header.select(Category) -> header.expanded()
 import { ref } from 'vue'
 import { clothes, shoes, accessories } from '~/public/data/different.json'
 
@@ -7,14 +7,9 @@ import Favourite from '~/components/icons/Favourite.vue'
 import Cart from '~/components/icons/Cart.vue'
 import HeaderAdv from '~/components/features/HeaderAdv.vue'
 import Logo from '~/components/features/Logo.vue'
+import HeaderAuth from '../features/HeaderAuth.vue'
 
 
-import useStoreAuth from '~/stores/Auth'
-const AuthStore = useStoreAuth()
-
-const isAuth = computed(() => AuthStore.isAuth)
-const signin = () => AuthStore.signin()
-const signout = () => AuthStore.signout()
 
 
 
@@ -30,29 +25,26 @@ const isExpanded = ref(false)
         <div class="phone">Available 24/7 at <a href="tel:4055550128" class="link">(405) 555-0128</a></div>
         <nav class="header-top-nav">
           <AppLink>Track order</AppLink>
-          <AppLink>Blog</AppLink>
+          <AppLink :to="{name: 'blog'}">Blog</AppLink>
           <AppLink>Contacts</AppLink>
         </nav>
 
-        <div class="auth">
-          <!-- <Icon icon="Profile"></Icon>
-          <span>Log in / Register</span> -->
-          <Btn v-if="!isAuth" @click="signin">sing in</Btn>
-          <Btn v-else @click="signout">sing out</Btn>
-        </div>
+        <HeaderAuth></HeaderAuth>
       </div>
     </div>
     <div class="header-middle">
       <div class="container">
         <Logo></Logo>
         <nav class="major-category-nav">
-          <AppLink>Men</AppLink>
+          <AppLink :to="{name: 'products'}">Men</AppLink>
           <AppLink>Women</AppLink>
           <AppLink>Kids</AppLink>
           <AppLink class="_red">Sale</AppLink>
         </nav>
         <div class="toolbar">
-          <Input class="search-product"></Input>
+          <Input class="search-product"
+            placeholder="Search for products..."
+          ></Input>
           <Favourite class="favourite"></Favourite>
           <Cart class="cart"></Cart>
         </div>
@@ -194,6 +186,12 @@ const isExpanded = ref(false)
   gap: 4rem;
 }
 .search-product {
+  width: 38rem;
+  box-shadow: 0 0 0 1px $color-gray-400;
+
+  &::placeholder {
+    color: $color-gray-600;
+  }
 }
 .favourite {
 }
@@ -278,4 +276,4 @@ const isExpanded = ref(false)
 }
 
 
-</style>
+</style>~/stores/auth

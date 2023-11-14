@@ -1,4 +1,4 @@
-import type { Product, RefOrComputed } from "~/types"
+import type { Product } from "~/types"
 
 
 
@@ -28,7 +28,6 @@ function applyFilter(
   const pickedValues = whiteLists[itemKey].value
   if (!pickedValues.size) return items.value
   
-  console.log(itemKey)
   return items.value.filter(product => {
     let isChosen = false
     pickedValues.forEach((pickedValue: any) => {
@@ -51,7 +50,6 @@ export default function(initialItems: Ref<Product[]> | ComputedRef<Product[]>): 
   const filtredItems = computed<Product[]>(() => {
     const productKeysToFilterBy = Object.keys(whiteLists) as ProductKey[]
     
-    setTimeout( () => console.log({filtredItems: filtredItems.value.length}), 0)
     return productKeysToFilterBy.reduce((items, currentItemKey) => {
       const filtered = computed(() => 
         applyFilter(items, whiteLists, currentItemKey)

@@ -2,6 +2,7 @@
 import img1 from '~/assets/img/from-inst/1.jpg'
 import img2 from '~/assets/img/from-inst/2.jpg'
 import img3 from '~/assets/img/from-inst/3.jpg'
+import Inst from '~/components/icons/Inst.vue'
 
 
 
@@ -19,7 +20,10 @@ import img3 from '~/assets/img/from-inst/3.jpg'
           outlined
           to="https://google.com"
         >
-          <Icon icon="inst"></Icon>&#x2800;
+          <!-- <Icon icon="inst"></Icon> -->
+          <Inst class="link-icon"
+            :small="true"/>
+          &#x2800;
           Follow instagram
         </AppLinkBtn>
       </div>
@@ -66,6 +70,15 @@ import img3 from '~/assets/img/from-inst/3.jpg'
   display: flex;
   align-items: center;
   width: max-content;
+  padding: 1rem 4rem;
+
+  &:hover .svg {
+    color: $color-white;
+  }
+}
+
+.link-icon {
+  margin-right: -1rem;
 }
 
 /* imgs */

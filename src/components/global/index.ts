@@ -26,8 +26,6 @@ export { default as WithSpoiler } from './WithSpoiler.vue'
 // Icons
 export { default as IconRounded } from './IconRounded.vue'
 export { default as Icon } from './Icon.vue'
-export { default as ArrowRight } from './ArrowRight.vue'
-export { default as ArrowLeft } from './ArrowLeft.vue'
 
 
 export interface AppGlobalComponents {
@@ -59,8 +57,6 @@ export interface AppGlobalComponents {
   // icons
   IconRounded: typeof import('./IconRounded.vue')['default']
   Icon: typeof import('./Icon.vue')['default']
-  ArrowRight: typeof import('./ArrowRight.vue')['default']
-  ArrowLeft: typeof import('./ArrowLeft.vue')['default']
 }
 
 declare module 'vue' {

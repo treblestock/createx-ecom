@@ -17,7 +17,7 @@ import img4 from '~/assets/img/illustrations/1.png'
         </div>
         <div class="collection-name text_sb">Summer Collections</div>
         <div class="collection-title h2">Sale Up to 70%</div>
-        <AppLinkBtn class="collection-link" outlined
+        <AppLinkBtn class="collection-link _transparent" outlined
           size="l"
           :to="{name: 'products'}"
         >Explore new prices</AppLinkBtn>
@@ -29,7 +29,7 @@ import img4 from '~/assets/img/illustrations/1.png'
         </div>
         <div class="collection-name text_sb">Deal of the week</div>
         <div class="collection-title h2">Stay Warm With Our&#x000A;New Sweaters</div>
-        <AppLinkBtn class="collection-link" outlined
+        <AppLinkBtn class="collection-link _transparent" outlined
           size="l"
           :to="{name: 'products'}"
         >Shop now</AppLinkBtn>
@@ -40,8 +40,8 @@ import img4 from '~/assets/img/illustrations/1.png'
           <img :src="img3" alt="">
         </div>
         <div class="collection-name text_sb">New collection</div>
-        <div class="collection-title h2">Shoes & Bags &#x000A;autumn / winter 2020</div>
-        <AppLinkBtn class="collection-link" outlined
+        <div class="collection-title h2">Shoes & Bags <br/>autumn / winter 2020</div>
+        <AppLinkBtn class="collection-link _transparent" outlined
           size="l"
           :to="{name: 'products'}"
         >See offers</AppLinkBtn>

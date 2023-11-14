@@ -17,8 +17,8 @@ const props = defineProps<Pick<BlogPost, Props>>()
     <div class="post-body">
       <div class="product-title text_xlb">{{ title }}</div>
       <div class="labels">
-        <div class="label test_s">{{ category[0] }} </div>
-        <div class="label test_s">{{ dateToHumanCase(date) }} </div>
+        <div class="label test_s">{{ category[0] }}</div>
+        <div class="label test_s">{{ dateToHumanCase(date) }}</div>
         <div class="label test_s">
           <Icon icon="Chat"></Icon>&#x2800;
           {{ commentsIds.length }} comments
@@ -73,15 +73,19 @@ $img-ratio: 50%; /* 600px / 300px */
   flex-wrap: wrap;
   gap: 2.4rem;
 
-  @mixin slashBetween 1.2rem;
+  @mixin slashBetween 80%, $color-text, 1.2rem; 
 }
 .label {
 }
+
+
 
 .description {
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+
+  color: $color-gray-800;
 }
 
 

@@ -1,1 +1,1 @@
-export {default as class} from './class'
+export {default as addClass} from './class'

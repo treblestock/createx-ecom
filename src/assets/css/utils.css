@@ -31,7 +31,7 @@
 
 $color-slash-gradient: $color-gray-300;
 /* decor */
-@define-mixin slashBetween $w, $color: $color-slash-gradient {
+@define-mixin slashBetween $height: 100%, $color: $color-slash-gradient, $gap: 2rem {
   & > * + * {
     position: relative;
 
@@ -41,12 +41,12 @@ $color-slash-gradient: $color-gray-300;
       display: block;
       position: absolute;
       top: 0;
-      left: calc(-1 * $w);
+      left: calc(-1 * $gap);
 
       /* view */
-      height: 100%;
-      width: 1px;
-      border-color: $color;
+      height: $height;
+      width: 2px;
+      background: $color;
     }
   }
 }
@@ -65,7 +65,7 @@ $color-slash-gradient: $color-gray-300;
       /* view */
       width: 100%;
       height: 1px;
-      border-color: $color;
+      background: $color;
     }
   }
 }

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import api from '~/api'
 import ProductCard from '~/components/features/ProductCard.vue'
 import Slider from '~/components/features/Slider.vue'
 import ProductWidget from '~/components/sections/ProductWidget.vue'

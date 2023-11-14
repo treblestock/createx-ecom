@@ -1,10 +1,13 @@
 <script setup lang="ts">
+import PopupManager from '~/components/features/PopupManager.vue';
+
 
 
 </script>
 
 <template>
   <div class="app">
+    <PopupManager></PopupManager>
     <RouterView></RouterView>
   </div>  
 </template>

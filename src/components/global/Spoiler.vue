@@ -35,6 +35,9 @@ function togglespoiler() {
       <slot name="title">some tilte</slot>
       <div class="plus"></div>
     </div>
+    <div class="spoiler-header">
+      <slot name="header"></slot>
+    </div>
     <div class="spoiler-body" 
       :class="{_fixedHeight: maxBodyHeight}"
     >
@@ -49,13 +52,17 @@ function togglespoiler() {
 
 .spoiler {
   max-width: 60rem;
-  padding: 1rem 0;
+  /* padding: 1rem 0; */
+
+  cursor: pointer;
+  overflow: hidden;
 }
 .title {
   position: relative;
 
-  padding: 1rem 0;
+  padding: 2rem 0;
   color: $color-gray-900;
+  background: $color-white;
 
   /* children */
   display: flex;
@@ -71,6 +78,25 @@ function togglespoiler() {
   }
 }
 
+.spoiler-header {
+  margin: 0 .2rem 1.6rem .2rem;
+
+  translate: 0 0;
+  transition: all .2s linear;
+  
+
+  opacity: 1;
+
+  position: relative;
+  .spoiler:not(._active) & {
+    z-index: -1;
+    translate: 0 -100%;
+    height: 0;
+    margin: 0;
+
+    opacity: 0;
+  }
+}
 
 
 .spoiler-body {
