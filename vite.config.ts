@@ -4,6 +4,7 @@ import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
 import autoImport from 'unplugin-auto-import/vite'
+import svgLoader from 'vite-svg-loader'
 
 
 
@@ -48,6 +49,7 @@ export default defineConfig({
         defineModel: true
       },
     }),
+    svgLoader(),
   ],
 
   css: {

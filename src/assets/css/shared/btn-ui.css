@@ -41,7 +41,6 @@ btn_l {
   box-shadow: 0 0 0 $border-w $color-green;
 
   /* animations */
-  /* animations */
   &:not(&:disabled) {
     
     &:hover,
@@ -56,17 +55,53 @@ btn_l {
     opacity: 0.5;
   }
 }
+.btn_transparent-bordered {
+  color: $color-gray-600;
+  background: none;
+  /* animations */
+  &:not(&:disabled) {
+    
+    &:hover,
+    &:active,
+    &._hover,
+    &._active {
+      background: none;
+      color: $color-green;
+      box-shadow: 0 0 0 $border-w $color-green;
+    }
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
 
 /* global modifiers */
 ._transparent {
-  background: transparent;
+  background: none;
+
+  &:not(&:disabled) {
+    
+    &:hover,
+    &:active,
+    &._hover,
+    &._active {
+      background: none;
+    }
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
 }
-._with-icon, &._with-icon-reverse {
+._with-icon, ._with-icon-reverse {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   flex-wrap: nowrap;
+
+  & .svg-icon {
+    color: inherit !important;
+  }
 }
 ._with-icon-reverse {
   flex-direction: row-reverse;

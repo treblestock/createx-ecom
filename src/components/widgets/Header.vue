@@ -7,7 +7,7 @@ import Favourite from '~/components/icons/Favourite.vue'
 import Cart from '~/components/icons/Cart.vue'
 import HeaderAdv from '~/components/features/HeaderAdv.vue'
 import Logo from '~/components/features/Logo.vue'
-import HeaderAuth from '../features/HeaderAuth.vue'
+import HeaderAuth from '~/components/features/HeaderAuth.vue'
 
 
 
@@ -123,7 +123,7 @@ const isExpanded = ref(false)
     font-weight: 700;
 
     &:hover {
-      color: $color-green-dark;
+      color: $color-white;
     }
   }
 }

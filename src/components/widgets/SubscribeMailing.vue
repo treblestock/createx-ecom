@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import img from '~/assets/img/illustrations/2.png'
-import SubscribeMailingForm from '~/components/features/SubscribeMailingForm.vue'
+import SubscribeMailingForm from '~/components/widgets/SubscribeMailingForm.vue'
 
 </script>
 

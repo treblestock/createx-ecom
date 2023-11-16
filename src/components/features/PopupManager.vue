@@ -3,7 +3,7 @@ import { type Component } from 'vue'
 
 
 import Popup from '~/components/global/Popup.vue'
-import * as staticPopups from '~/components/popups/index.ts'
+import * as staticPopups from '~/components/widgets/popups/index'
 
 import { installPopupManager } from '~/composables/usePopupManager'
 
@@ -32,7 +32,7 @@ function getPopupId(compOrPopupId: PopupId | Component): PopupId | null {
 
 
 // test
-// import Btn from '../global/Btn.vue';
+// import Btn from '~/components/global/Btn.vue';
 onMounted(() => {
   // showPopup('AuthPopup')
   // showPopup(Btn)
@@ -98,4 +98,4 @@ provide('closePopup', closePopup)
 
 
 
-</style>
+</style>~/components/widgets/popups

@@ -1,14 +1,10 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue'
-import { type Product } from '~/types'
-
-import Slider from '~/components/features/Slider.vue'
-import ProductCard from '~/components/features/ProductCard.vue'
+import Slider from '~/components/widgets/Slider.vue'
+import ProductCard from '~/components/widgets/ProductCard.vue'
 
 
 // products
 const products = useFetchItems(() => api.getProducts(8))
-
 
 
 
@@ -21,7 +17,7 @@ const products = useFetchItems(() => api.getProducts(8))
   <section class="section">
     <div class="container">
       <Slider class="slider"
-        title="Trending now"
+        title="Sale up to 70%"
         isPaginationHidden
       >
         <ProductCard class="product-card"
@@ -56,7 +52,7 @@ const products = useFetchItems(() => api.getProducts(8))
 
   /* solution to hide cards in slider horizontally,
   but not verticaly in order to let product card's popover be visible */
-  overflow: hidden; 
+  overflow: hidden;
   padding-bottom: 1rem;
 }
 .slider {

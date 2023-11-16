@@ -17,9 +17,9 @@ export default function(): Res {
   const onResize = () => {
     vw.value = document.body.clientWidth
   }
-  window.addEventListener('resize', onResize)
+  Window.addEventListener('resize', onResize)
   onUnmounted(() => {
-    window.removeEventListener('resize', onResize)
+    Window.removeEventListener('resize', onResize)
     console.log('cleanded')
     isCalced = false
   })

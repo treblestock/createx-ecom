@@ -1,7 +1,6 @@
 <script setup lang="ts">
-import { emit } from 'process';
-import InputGroup from '../global/InputGroup.vue'
-import PasswordGroup from '../global/PasswordGroup.vue'
+import InputGroup from '~/components/global/InputGroup.vue'
+import PasswordGroup from '~/components/global/PasswordGroup.vue'
 
 import useStoreAuth from '~/stores/auth'
 const authStore = useStoreAuth()

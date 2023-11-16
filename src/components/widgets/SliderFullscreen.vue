@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-import useSlider from '~/composables/useSlider.js'
 
 
 const props = defineProps<{
@@ -10,20 +7,20 @@ const props = defineProps<{
   activeClass?: string
 }>()
 
-const HTMLbody = ref<null | HTMLElement>(null)
-const HTMLpagination = ref<null | HTMLElement>(null)
+const {
+  activeInd,
+  setSlide,
+  prevSlide,
+  nextSlide,
+  SliderWindow,
+  setItemsCount,
+} = useSlider2()
 
 
-
-
-const slider = useSlider({
-  HTMLbody,
-  HTMLpagination,
-  activeClass: props.activeClass || '_active'
-})
-
-
-
+const itemsCount = ref(0)
+function onItemsCountChanged(n: number) {
+  itemsCount.value = n
+}
 
 
 </script>
@@ -31,23 +28,24 @@ const slider = useSlider({
 <template>
   <div class="slider _fullscreen">
 
-    <div class="slider-body">
-      <div class="slider-items"
-        ref="HTMLbody"
-      >
-        <slot></slot>
-      </div>
-    </div>
+    <SliderWindow class="slider-body"
+      :activeInd="activeInd"
+      :setItemsCount="setItemsCount"
+      itemsClass="slider-items"
+      @onItemsCountChanged="onItemsCountChanged"
+    >
+      <slot></slot>
+    </SliderWindow>
 
     <div class="slider-toolbar">
       <div class="arrows"
         v-if="!isArrowsHidden"
       >
         <IconRounded icon="ArrowLeft"
-          @click="slider.prevSlide()"
+          @click="prevSlide()"
         ></IconRounded>
         <IconRounded icon="ArrowRight"
-          @click="slider.nextSlide()"
+          @click="nextSlide()"
         ></IconRounded>
       </div>
       <div class="pagination"
@@ -57,10 +55,11 @@ const slider = useSlider({
           ref="HTMLpagination"
         >
           <div class="page"
-            v-for="ind in slider.pagesCount.value" :key="ind"
-            @click="slider.setSlide(ind - 1)"
+            v-for="i in itemsCount" :key="i"
+            :class="{_active: i === activeInd + 1}"
+            @click="setSlide(i - 1)"
           >
-            <div class="page-count h3">0{{ ind }}</div>
+            <div class="page-count h3">0{{ i }}</div>
             <div class="page-icon"></div>
           </div>
         </div>
@@ -96,11 +95,10 @@ $slider-arrows-padding: 3.2rem;
   /* children */
   overflow: hidden;
 }
-.slider-items {
+:deep(.slider-items) {
   height: 100%;
   display: flex;
-
-  :slotted( > *) {
+  & > * {
     flex: 0 0 100%;
     height: 100%;
   }

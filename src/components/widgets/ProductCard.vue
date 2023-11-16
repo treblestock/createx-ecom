@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import type { ProductColor, ProductSize as ProductSizeType, Rating as RatingType } from '~/types'
-import Price from './Price.vue'
+import Rating from '~/components/features/Rating.vue'
 import SaleLabel from '../icons/SaleLabel.vue'
-import Rating from './Rating.vue'
+import Price from '~/components/features/Price.vue'
 import ProductSizes from '~/components/features/ProductSizes.vue'
 import ProductColors from '~/components/features/ProductColors.vue'
 

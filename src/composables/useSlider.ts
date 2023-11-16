@@ -32,10 +32,10 @@ class Slider {
       const HTMLbodyItems = this.HTMLbody.value.children
       const swipedItems: HTMLElement[] = Array.prototype.slice.call(HTMLbodyItems, 0, this.currentInd.value)
 
-      const bodyGap: number = Number.parseFloat(window.getComputedStyle(this.HTMLbody.value).gap) || 0
+      const bodyGap: number = Number.parseFloat(Window.getComputedStyle(this.HTMLbody.value).gap) || 0
       const itemProps = ['width', 'marginRight', 'marginLeft'] as const
       return swipedItems.reduce((shift: number, bodyItem: HTMLElement) => {
-        const itemStyles = window.getComputedStyle(bodyItem)
+        const itemStyles = Window.getComputedStyle(bodyItem)
         shift += bodyGap
         itemProps.forEach((prop) => shift += Number.parseFloat(itemStyles[prop]))
         return shift

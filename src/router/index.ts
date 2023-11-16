@@ -31,14 +31,14 @@ const routes: RouteRecordRaw[] = [
         name: 'account',
         props: propsParser,
         component: () => import('~/pages/account/index.vue'),
-        redirect: {name: 'profile'},
+        redirect: {name: 'accountProfile'},
         meta: {
           isAuthOnly: true
         },
         children: [
           {
             path: 'profile',
-            name: 'profile',
+            name: 'accountProfile',
             props: propsParser,
             component: () => import('~/pages/account/profile.vue'),
             children: [
@@ -47,7 +47,7 @@ const routes: RouteRecordRaw[] = [
           },
           {
             path: 'orders',
-            name: 'orders',
+            name: 'accountOrders',
             props: propsParser,
             component: () => import('~/pages/account/orders.vue'),
             children: [
@@ -56,7 +56,7 @@ const routes: RouteRecordRaw[] = [
           },
           {
             path: 'favourite',
-            name: 'favourite',
+            name: 'accountFavourite',
             props: propsParser,
             component: () => import('~/pages/account/favourite.vue'),
             children: [
@@ -65,7 +65,7 @@ const routes: RouteRecordRaw[] = [
           },
           {
             path: 'recientlyViewed',
-            name: 'recientlyViewed',
+            name: 'accountRecientlyViewed',
             props: propsParser,
             component: () => import('~/pages/account/recientlyViewed.vue'),
             children: [
@@ -74,7 +74,7 @@ const routes: RouteRecordRaw[] = [
           },
           {
             path: 'reviews',
-            name: 'reviews',
+            name: 'accountReviews',
             props: propsParser,
             component: () => import('~/pages/account/reviews.vue'),
             children: [
@@ -157,19 +157,46 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       {
+        path: 'products/:id',
+        name: 'product',
+        props: propsParser,
+        component: () => import('~/pages/product/index.vue'),
+        redirect: {name: 'productGeneralInfo'},
+        children: [
+          {
+            path: 'generalInfo',
+            name: 'productGeneralInfo',
+            props: propsParser,
+            component: () => import('~/pages/product/generalInfo.vue'),
+            children: [
+              
+            ],
+          },
+          {
+            path: 'details',
+            name: 'productDetails',
+            props: propsParser,
+            component: () => import('~/pages/product/details.vue'),
+            children: [
+              
+            ],
+          },
+          {
+            path: 'reviews',
+            name: 'productReviews',
+            props: propsParser,
+            component: () => import('~/pages/product/reviews.vue'),
+            children: [
+              
+            ],
+          },
+        ],
+      },
+      {
         path: 'products',
         name: 'products',
         props: propsParser,
         component: () => import('~/pages/products.vue'),
-        children: [
-          
-        ],
-      },
-      {
-        path: 'products/:id',
-        name: 'product',
-        props: propsParser,
-        component: () => import('~/pages/product.vue'),
         children: [
           
         ],

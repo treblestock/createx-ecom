@@ -165,3 +165,29 @@ body > * {
     color: $color-green-dark;
   }
 }
+
+
+/* svg */
+.svg-icon {
+  /* gray to green */
+  color: $color-gray-900;
+
+  &:hover {
+    color: $color-green-dark;
+  }
+  
+  /* white to green */
+  &._white {
+    color: $color-white;
+
+    &:hover {
+      color: $color-green-dark;
+    }
+  }
+}
+
+
+/* sections */
+._bgc-gray {
+  background: $color-gray-300;
+}

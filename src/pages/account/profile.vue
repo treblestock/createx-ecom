@@ -1,5 +1,5 @@
 <script setup lang="ts">
-
+import ProfileForm from '~/components/widgets/ProfileForm.vue'
 
 
 
@@ -10,15 +10,16 @@
 </script>
 
 <template>
-  <div class="div">
-    {{ $route.path }}
+  <div class="profile-page">
+    <ProfileForm></ProfileForm>
   </div>
 </template>
 
 <style scoped>
 @import '~css/consts';
 
-.div  {
+.profile-page  {
+  max-width: 81rem;
 }
 
 </style>

@@ -33,23 +33,32 @@ function signout() {
     <!-- <Icon icon="Profile"></Icon>
     <span>Log in / Register</span> -->
     <template v-if="!isAuth">
-      <button class="auth-button" 
+      <button class="auth-btn" 
         @click="signin"
       >
         sing in
       </button>
       <span>/</span>
-      <button class="auth-button" 
+      <button class="auth-btn" 
         @click="signup"
       >
         sign up
       </button>
     </template>
-    <button class="auth-button" 
-      v-else @click="signout"
+    <template 
+      v-else
     >
-      sing out
-    </button>
+      <AppLink class="auth-btn"
+      :to="{
+        name: 'accountProfile'
+      }">my profile</AppLink>
+      <span>/</span>
+      <button class="auth-btn" 
+        @click="signout"
+      >
+        sing out
+      </button>
+    </template>
   </div>  
 </template>
 
@@ -63,7 +72,8 @@ function signout() {
 }
 
 
-.auth-button {
+.auth-btn {
+  color: inherit;
   &:hover {
     color: $color-white;
   }

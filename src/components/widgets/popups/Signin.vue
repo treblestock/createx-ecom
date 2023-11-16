@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import InputGroup from '../global/InputGroup.vue'
-import PasswordGroup from '../global/PasswordGroup.vue'
+import InputGroup from '~/components/global/InputGroup.vue'
+import PasswordGroup from '~/components/global/PasswordGroup.vue'
 import usePopupManager from '~/composables/usePopupManager'
 
 const formData = ref({

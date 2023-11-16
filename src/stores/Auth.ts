@@ -44,7 +44,11 @@ export default defineStore('auth', {
     },
 
     async fetchUserProfile() {
-      const res = await api.getUserProfile()
+      // const res = await api.getUserProfile()
+      const res = {
+        email: 'user',
+        fullname: 'Ann Black'
+      }
 
       if ('error' in res) {
         throw new Error(`Failed to fetch user's profile. \nGot: ${res}`)
@@ -59,6 +63,6 @@ export default defineStore('auth', {
     if (!accessToken) {
       return useStoreVueRouter().requestSignin()
     }
-    
+    this.fetchUserProfile()
   },
 })

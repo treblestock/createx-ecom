@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BlogPost from '../features/BlogPost.vue'
+import BlogPost from '~/components/widgets/BlogPost.vue'
 
 
 const posts = useFetchItems(() => api.getBlogPosts(2))

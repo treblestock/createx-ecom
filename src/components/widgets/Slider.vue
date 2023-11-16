@@ -1,28 +1,29 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
-import useSlider from '~/composables/useSlider.js'
-
 import Arrow from '~/components/icons/Arrow.vue';
+
 
 
 const props = defineProps<{
   title: string
   isPaginationHidden?: true
   isArrowsHidden?: true
-  activeClass?: string
 }>()
 
-const HTMLbody = ref<null | HTMLElement>(null)
-const HTMLpagination = ref<null | HTMLElement>(null)
+
+const {
+  activeInd,
+  setSlide,
+  prevSlide,
+  nextSlide,
+  SliderWindow,
+  setItemsCount,
+} = useSlider2()
 
 
-const slider = useSlider({
-  HTMLbody,
-  HTMLpagination,
-  activeClass: props.activeClass || '_active'
-})
-
+const itemsCount = ref(0)
+function onItemsCountChanged(n: number) {
+  itemsCount.value = n
+}
 
 
 
@@ -35,29 +36,31 @@ const slider = useSlider({
       <div class="slider-arrows">
         <Arrow class="slider-arrow" 
           direction="left"
-          @click="slider.prevSlide()" 
+          @click="prevSlide()" 
         />
         <Arrow class="slider-arrow" 
           direction="right"
-          @click="slider.nextSlide()" 
+          @click="nextSlide()" 
         />
       </div>
     </div>
 
-    <div class="slider-window">
-      <div class="slider-items"
-        ref="HTMLbody"
-      >
-        <slot></slot>
-      </div>
-    </div>
+    <SliderWindow class="slider-window"
+      :activeInd="activeInd"
+      :setItemsCount="setItemsCount"
+      itemsClass="slider-items"
+      @onItemsCountChanged="onItemsCountChanged"
+    >
+      <slot></slot>
+    </SliderWindow>
 
     <div class="slider-pagination"
       ref="HTMLpagination"
     >
       <div class="slider-pagination-item"
-        v-for="i in slider.pagesCount.value" :key="i"
-        @click="slider.setSlide(i - 1)"
+        v-for="i in itemsCount" :key="i"
+        :class="{_active: i === activeInd + 1}"
+        @click="setSlide(i - 1)"
       ></div>
     </div>
   </div>  
@@ -100,16 +103,15 @@ const slider = useSlider({
   /* overflow: hidden; */
 }
 
-.slider-items {
+:deep(.slider-items) {
   display: flex;
   gap: 3rem;
 
   transition: all ease .3s;
 
-  :slotted(& > *) {
+  & > * {
     flex: 1 0 auto;
   }
-
 }
 
 .slider-pagination {
@@ -122,7 +124,6 @@ const slider = useSlider({
   & > * + * {
     margin-left: 1rem;
   }
-  
 
 }
 .slider-pagination-item {

@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import Header from '~/components/sections/Header.vue'
-import Footer from '~/components/sections/Footer.vue'
+import Header from '~/components/widgets/Header.vue'
+import Footer from '~/components/widgets/Footer.vue'
 import {onBeforeRouteLeave, onBeforeRouteUpdate} from 'vue-router'
 
 </script>

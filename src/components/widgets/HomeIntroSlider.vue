@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import img from '~/assets/img/clothes/collections/intro.jpg'
 
-import SliderFullscreen from '~/components/features/SliderFullscreen.vue'
+import SliderFullscreen from '~/components/widgets/SliderFullscreen.vue'
 
 
 

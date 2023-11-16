@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import ProductsGrid from '~/components/sections/ProductsGrid.vue'
-import SubscribeMailing from '~/components/sections/SubscribeMailing.vue'
+import ProductsGrid from '~/components/widgets/ProductsGrid.vue'
+import SubscribeMailing from '~/components/widgets/SubscribeMailing.vue'
 
 
 </script>

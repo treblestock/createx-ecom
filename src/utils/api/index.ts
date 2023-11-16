@@ -119,6 +119,9 @@ const api = {
   async getProducts(count: number = 16): Promise<Product[]> {
     return (await import("../../public/data/products.min.json")).default.slice(0, count) as Product[]
   },
+  async findProduct(id: Product['id']): Promise<Product | undefined> {
+    return (await import("../../public/data/products.min.json")).default.find(p => p.id === id) as Product | undefined
+  },
 
 
   
