@@ -14,7 +14,7 @@ const {
   nextSlide,
   SliderWindow,
   setItemsCount,
-} = useSlider2()
+} = useSlider()
 
 
 const itemsCount = ref(0)
@@ -84,7 +84,6 @@ $slider-arrows-padding: 3.2rem;
 }
 /* items */
 .slider-body {
-  z-index: -1;
   position: absolute;
   top: 0;
   left: 0;
@@ -94,8 +93,9 @@ $slider-arrows-padding: 3.2rem;
 
   /* children */
   overflow: hidden;
+
 }
-:deep(.slider-items) {
+.slider :deep(.slider-items) {
   height: 100%;
   display: flex;
   & > * {
@@ -111,6 +111,7 @@ $slider-arrows-padding: 3.2rem;
 
 /* upper-layer */
 .slider-toolbar {
+  z-index: 1;
   height: 50%;
   width: 100%;
 

@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import img from '~/assets/img/illustrations/2.png'
-import SubscribeMailingForm from '~/components/widgets/SubscribeMailingForm.vue'
+import MailingSubscribtionForm from '~/components/widgets/MailingSubscribtionForm.vue'
 
 </script>
 
 <template>
   <section class="section" id="subscribe-mailing">
     <div class="container">
-      <SubscribeMailingForm class="form"></SubscribeMailingForm>
+      <MailingSubscribtionForm class="form"></MailingSubscribtionForm>
 
       <div class="img">
         <img :src="img" alt="">

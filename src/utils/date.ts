@@ -8,7 +8,7 @@ const timeInMs = {
   second: 1000,
   minute: 1000 * 60,
   hour:   1000 * 60 * 60,
-  date:   1000 * 60 * 60 * 24,
+  day:   1000 * 60 * 60 * 24,
   month:  1000 * 60 * 60 * 24 * 30,
   year:   1000 * 60 * 60 * 24 * 365,
 } as const
@@ -16,12 +16,12 @@ const timeInMs = {
 interface DateLike {
   year: number,
   month: typeof monthMap[number],
-  date: number,
+  days: number,
 }
 
 function separateDate(date: Date): DateLike {
   return {
-    date: date.getDate(),
+    days: date.getDate(),
     month: monthMap[date.getMonth()],
     year: date.getFullYear(),
   }
@@ -37,7 +37,7 @@ const parseDateHandler = (key: string, value: any): any =>
 
 // toJSDate 
 const toJSDate = (dateObj: DateLike): Date =>
-  new Date(dateObj.year, monthMap.indexOf(dateObj.month), dateObj.date )
+  new Date(dateObj.year, monthMap.indexOf(dateObj.month), dateObj.days )
   
 
 // duration
@@ -60,8 +60,49 @@ function dateToHumanCase(data: string | Date | DateLike): string {
     date = separateDate(data)
   }
 
-  return `${date?.month} ${date?.date}, ${date?.year}`
-} 
+  return `${date?.month} ${date?.days}, ${date?.year}`
+}
+
+
+
+function getSemanticTimeDifference(dateStart: Date | string, dateEnd: Date | string): {
+  days: number
+  hours: number
+  mins: number
+  secs: number
+} {
+  const date1 = new Date(dateStart)
+  const date2 = new Date(dateEnd)
+
+  if (date1.toString() === 'Invalid Date' ||
+  date2.toString() === 'Invalid Date' || 
+  (date2.getTime() - date1.getTime() < 0)
+  ) throw new Error(`date.ts: invalid data passed: \ndateStart: ${dateStart}\ndateEnd: ${dateEnd}`)
+  
+  let restTimestampDelta = date2.getTime() - date1.getTime()
+
+  const res = {
+    day: 0,
+    hour: 0,
+    minute: 0,
+    second: 0,
+  }
+
+  const timeUnits = ['day', 'hour', 'minute', 'second'] as const
+  for (const timeUnit of timeUnits) {
+    const timeUnitInMs = timeInMs[timeUnit]
+    const integerRatio = +(restTimestampDelta / timeUnitInMs).toFixed(0)
+    res[timeUnit] = integerRatio
+    restTimestampDelta %= timeUnitInMs
+  }
+
+  return {
+    days: res.day,
+    hours: res.hour,
+    mins: res.minute,
+    secs: res.second,
+  }
+}
 
 
 export {
@@ -71,4 +112,5 @@ export {
 
   toTimeInSec,
   dateToHumanCase,
+  getSemanticTimeDifference,
 }

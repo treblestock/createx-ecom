@@ -1,17 +1,12 @@
-<script setup lang="ts" generic="T extends unknown">
-import { ref } from 'vue'
-
-const props = defineProps<{
-  slotId: T
-}>()
+<script setup lang="ts">
 
 const emit = defineEmits<{
-  (event: 'close', id: T): void
+  close: []
 }>()
 
 
 function close() {
-  emit('close', props.slotId)
+  emit('close')
 }
 
 

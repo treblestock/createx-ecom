@@ -7,38 +7,18 @@ import * as staticPopups from '~/components/widgets/popups/index'
 
 import { installPopupManager } from '~/composables/usePopupManager'
 
-
-// 
-
-const popupId = Symbol('popupId')
 type PopupId = string
-
-const activePopups = ref<Map<PopupId, Component>>(new Map())
-
-function setPopupId<C extends Component>(comp: C): C & {[popupId]: string}  {
-  //@ts-ignore
-  const compName: string = comp?.__name || Math.random() + ''
-  //@ts-ignore
-  const compWithId: C & {[popupId]: string} = comp
-  compWithId[popupId] = compName
-  return compWithId
-}
-function getPopupId(compOrPopupId: PopupId | Component): PopupId | null {
-  // @ts-ignore
-  const id = typeof compOrPopupId === 'string' ? compOrPopupId : compOrPopupId[popupId]
-  if (!id) return null
-  return id
-}
+const activePopups = ref<Map<Component, PopupId>>(new Map())
 
 
 // test
 // import Btn from '~/components/global/Btn.vue';
-onMounted(() => {
-  // showPopup('AuthPopup')
-  // showPopup(Btn)
-  // setTimeout( () => closePopup('AuthPopup'), 2000)
-  
-})
+// onMounted(() => {
+//   showPopup('Signin')
+//   console.log('here')
+//   showPopup(Btn)
+//   setTimeout( () => closePopup('Signin'), 2000)
+// })
 
 
 
@@ -47,18 +27,19 @@ onMounted(() => {
 // public
 function showPopup(compNameOrComp: keyof typeof staticPopups | Component) {
   const comp: Component = typeof compNameOrComp === 'string' ? staticPopups[compNameOrComp] : compNameOrComp
-  const compWithPopupId = setPopupId(comp)
-  const id = getPopupId(compWithPopupId) as string
-  activePopups.value.set(id, markRaw(compWithPopupId))
+  const compId = Math.random() + ''
+
+  activePopups.value.set(markRaw(comp), compId)
 }
 
 function closePopup(compNameOrComp: Component | keyof typeof staticPopups) {
-  const id = getPopupId(compNameOrComp)
-  if (!id || !activePopups.value.has(id)) {
-    console.warn(`PopupManager.vue: Tried to close popup with non-existing popupId.\n Provided data: (${compNameOrComp})`)
-  } else {
-    activePopups.value.delete(id)
-  }
+  const comp: Component = typeof compNameOrComp === 'string' ? staticPopups[compNameOrComp] : compNameOrComp
+  if (!activePopups.value.has(comp)) {
+    console.warn(`[PopupManage.vue]: tried to close non-existing by key: ${compNameOrComp}`)
+    return
+  } 
+
+  activePopups.value.delete(comp)
 }
 
 
@@ -84,9 +65,8 @@ provide('closePopup', closePopup)
 
 <template>
   <div>
-    <Popup v-for="[compId, comp] in activePopups" :key="compId"
-      :slotId="compId"
-      @close="((slotId: keyof typeof staticPopups) => closePopup(slotId))"
+    <Popup v-for="[comp, compId] in activePopups" :key="compId"
+      @close="() => closePopup(comp)"
     >
       <Component :is="comp"></Component>
     </Popup> 

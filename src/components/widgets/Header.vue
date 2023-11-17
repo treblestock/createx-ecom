@@ -1,6 +1,5 @@
 <script setup lang="ts">
 // <!-- todo: implement header.select(Category) -> header.expanded()
-import { ref } from 'vue'
 import { clothes, shoes, accessories } from '~/public/data/different.json'
 
 import Favourite from '~/components/icons/Favourite.vue'

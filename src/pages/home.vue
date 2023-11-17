@@ -11,7 +11,7 @@ import CreatexAdvantages from '~/components/widgets/CreatexAdvantages.vue'
 import InstAdv from '~/components/widgets/InstAdv.vue'
 import FashionBlog from '~/components/widgets/FashionBlog.vue'
 import Sponsors from '~/components/widgets/Sponsors.vue'
-import SubscribeMailing from '~/components/widgets/SubscribeMailing.vue'
+import MailingSubscribtion from '~/components/widgets/MailingSubscribtion.vue'
 
 
 
@@ -34,7 +34,7 @@ import SubscribeMailing from '~/components/widgets/SubscribeMailing.vue'
     <InstAdv></InstAdv>
     <FashionBlog></FashionBlog>
     <Sponsors></Sponsors>
-    <SubscribeMailing></SubscribeMailing>
+    <MailingSubscribtion></MailingSubscribtion>
   </div>
 </template>
 

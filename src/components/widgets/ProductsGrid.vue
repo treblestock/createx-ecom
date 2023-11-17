@@ -1,8 +1,6 @@
 <script setup lang="ts">
-import { ref  } from 'vue'
-
 import ProductsSortAndPagination from '~/components/features/ProductsSortAndPagination.vue'
-import ProductCard from '~/components/features/ProductCard.vue'
+import ProductCard from '~/components/widgets/ProductCard.vue'
 import ProductFilters from '~/components/features/ProductFilters.vue'
 
 import Filter from '~/components/icons/Filter.vue'

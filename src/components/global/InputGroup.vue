@@ -2,6 +2,7 @@
 const props = defineProps<{
   label?: string
   vertical?: boolean
+  classInput?: string
 }>()
 const modelValue = defineModel<string | number>()
 
@@ -19,6 +20,7 @@ const modelValue = defineModel<string | number>()
       v-model="modelValue"
       :placeholder="label"
       :="$attrs"
+      :class="classInput"
     ></Input>
   </div>
 </template>

@@ -1,12 +1,4 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue'
-
-// const props = defineProps<{
-//   modelValue?: string | boolean | [] 
-// }>()
-// const emit = defineEmits([
-//   'update:modelValue'
-// ])
 
 const isPassVisivle = ref(false)
 const currentType = computed(() => isPassVisivle.value ? 'text' : 'password')
@@ -16,18 +8,7 @@ const modelValue = defineModel<string | number>()
 </script>
 
 <template>
-
   <div class="wrapper">
-    <!-- <input class="input"
-      :type="type"
-      :value="modelValue"
-      @input="event => emit('update:modelValue', (event.target as HTMLInputElement).value)"
-      placeholder="your password"
-      :="$attrs"
-    >
-    <div class="decor"
-      @click="isPassVisivle = !isPassVisivle"
-    ></div> -->
     <input class="input"
       :type="currentType"
       v-model="modelValue"

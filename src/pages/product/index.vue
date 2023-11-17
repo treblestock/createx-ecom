@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ProductPageWidget from '~/components/widgets/ProductPageWidget.vue'
-import SubscribeMailing from '~/components/widgets/SubscribeMailing.vue'
+import MailingSubscribtion from '~/components/widgets/MailingSubscribtion.vue'
 
 
 import SliderRecientlyViewed from '~/components/widgets/SliderRecientlyViewed.vue'
@@ -21,7 +21,7 @@ const props = defineProps<{
     <SliderRecomendations class="section" />
     <SliderRecientlyViewed class="section _bgc-gray" />
 
-    <SubscribeMailing/>
+    <MailingSubscribtion/>
   </div>
 </template>
 

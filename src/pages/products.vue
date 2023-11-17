@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ProductsGrid from '~/components/widgets/ProductsGrid.vue'
-import SubscribeMailing from '~/components/widgets/SubscribeMailing.vue'
+import MailingSubscribtion from '~/components/widgets/MailingSubscribtion.vue'
 
 
 </script>
@@ -8,7 +8,7 @@ import SubscribeMailing from '~/components/widgets/SubscribeMailing.vue'
 <template>
   <div class="products-page">
     <ProductsGrid class="products-section"></ProductsGrid>
-    <SubscribeMailing></SubscribeMailing>
+    <MailingSubscribtion></MailingSubscribtion>
   </div>
 </template>
 

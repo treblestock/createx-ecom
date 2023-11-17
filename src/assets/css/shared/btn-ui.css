@@ -3,13 +3,13 @@
   background: $color-green;
   color: $color-white;
   border-radius: $radius;
-
+  
   padding: 1.2rem 3.2rem;
   font-size: 1.4rem;
-
+  
   font-weight: 700;
   line-height: $lh;
-
+  
   /* animations */
   &:not(&:disabled) {
     
@@ -17,6 +17,7 @@
     &:active,
     &._hover,
     &._active {
+      color: $color-white;
       background: $color-green-dark;
     }
   }
@@ -38,6 +39,27 @@ btn_l {
   /* shape */
   color: $color-green;
   background: $color-white;
+  box-shadow: 0 0 0 $border-w $color-green;
+
+  /* animations */
+  &:not(&:disabled) {
+    
+    &:hover,
+    &:active,
+    &._hover,
+    &._active {
+      color: $color-white;
+      background: $color-green-dark;
+    }
+  }
+  &:disabled {
+    opacity: 0.5;
+  }
+}
+.btn_outlined-transparent {
+  /* shape */
+  color: $color-green;
+  background: none;
   box-shadow: 0 0 0 $border-w $color-green;
 
   /* animations */

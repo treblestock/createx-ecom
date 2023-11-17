@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { ref } from 'vue'
-
 import AuthSocials from '~/components/features/AuthSocials.vue'
 
 const name = ref<string>('')

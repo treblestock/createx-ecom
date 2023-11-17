@@ -16,7 +16,7 @@ const {
   nextSlide,
   SliderWindow,
   setItemsCount,
-} = useSlider2()
+} = useSlider()
 
 
 

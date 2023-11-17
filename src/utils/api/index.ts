@@ -1,5 +1,4 @@
-import type { BlogPost, BlogPostComment, Product, ProductReview,  } from "~/types"
-import { AccessTokenPayload } from "~/server/types"
+import type { BlogPost, BlogPostComment, Collection, Product, ProductReview,  } from "~/types"
 
 
 const API_BASE = 'http://localhost:3000/api'
@@ -121,6 +120,9 @@ const api = {
   },
   async findProduct(id: Product['id']): Promise<Product | undefined> {
     return (await import("../../public/data/products.min.json")).default.find(p => p.id === id) as Product | undefined
+  },
+  async getCollections(count: number = 4): Promise<Collection[]> {
+    return (await import("../../public/data/collections.json")).default.slice(0, count) as Collection[]
   },
 
 

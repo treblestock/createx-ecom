@@ -11,6 +11,7 @@ const HTMLitems = ref<HTMLElement | null>(null)
 const totalShift = ref('0px')
 
 function calcShift()  {
+  console.log('calcShift')
   if (!HTMLitems.value) throw new Error(`Slider.vue: calcShift() used before component's root element rendered)`)
 
   const parent = HTMLitems.value
@@ -45,12 +46,6 @@ const emit = defineEmits<{
 
 
 function forceUpdate() {
-  // const itemsCount = HTMLitems.value?.children.length
-  // if (!itemsCount) throw new Error(`SliderWindow.vue: itemsCount === ${itemsCount}`)
-  // emit('onItemsCountChanged', itemsCount)
-  // props.setItemsCount(itemsCount)
-
-  // calcShift()
   const itemsCount = HTMLitems.value?.children.length || 1
   emit('onItemsCountChanged', itemsCount)
   props.setItemsCount(itemsCount)
@@ -58,8 +53,11 @@ function forceUpdate() {
   calcShift()
 }
 
+const debouncedCalcShift = useDebounce(calcShift, 100)
+window.addEventListener('resize', debouncedCalcShift)
 onMounted(forceUpdate)
 onUpdated(forceUpdate)
+onBeforeMount(() => window.removeEventListener('resize', debouncedCalcShift))
 
 
 

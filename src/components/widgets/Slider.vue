@@ -17,7 +17,7 @@ const {
   nextSlide,
   SliderWindow,
   setItemsCount,
-} = useSlider2()
+} = useSlider()
 
 
 const itemsCount = ref(0)

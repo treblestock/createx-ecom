@@ -1,0 +1,43 @@
+[
+  {
+    "description": "New collection",
+    "title": "Menswear 2020",
+    "backgroundImg": "clothes/collections/0.jpg",
+    "linkOutlined": {
+      "text": "Shop Sale",
+      "url": "products"
+    },
+    "linkSolid": {
+      "text": "Shop the menswear",
+      "url": "products"
+    }    
+  },
+  {
+    "description": "Summer Collections",
+    "title": "Sale Up to 70%",
+    "backgroundImg": "clothes/collections/1.jpg",
+    "linkOutlined": {
+      "text": "Explore new prices",
+      "url": "products"
+    }    
+  },
+  {
+    "description": "Deal of the week",
+    "title": "Stay Warm With Our New Sweaters",
+    "backgroundImg": "clothes/collections/2.jpg",
+    "linkOutlined": {
+      "text": "Shop now",
+      "url": "products"
+    },
+    "expiresWhen": "2023-12-31T21:00:00.000Z"
+  },
+  {
+    "description": "New collections",
+    "title": "Shoes & Bags autumn / winter 2020 ",
+    "backgroundImg": "clothes/collections/3.jpg",
+    "linkOutlined": {
+      "text": "See offers",
+      "url": "products"
+    }    
+  }
+]

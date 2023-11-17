@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import img from '~/assets/img/clothes/collections/intro.jpg'
-
 import SliderFullscreen from '~/components/widgets/SliderFullscreen.vue'
+import Collection from '~/components/widgets/Collection.vue'
 
 
 
+
+const collections = useFetch(api.getCollections, [])
 
 
 </script>
@@ -12,11 +13,13 @@ import SliderFullscreen from '~/components/widgets/SliderFullscreen.vue'
 <template>
   <section class="section">
     <SliderFullscreen class="slider">
-      <div class="img"
-        v-for="n in 4" :key="n"
-      >
-        <img :src="img" alt="">
-      </div>
+      <Collection class="collection _scaled" 
+        v-for="collection in collections" :key="collection.title" 
+        :="collection"
+        :fzScale="2.25"
+        classCollectionContainer="container"
+        fullScreen
+      />
     </SliderFullscreen>
   </section>
   
@@ -25,43 +28,14 @@ import SliderFullscreen from '~/components/widgets/SliderFullscreen.vue'
 <style scoped>
 @import '~css/consts';
 
-
 .section {
   margin-bottom: 18rem;
 }
-.container {
+:deep(.container) {
   display: flex;
   gap: 3rem;
-}
-.slider {
-  
-}
-.title {
-}
 
-.product-card {
+  padding-top: 14rem;
 }
-
-.link {
-  display: block;
-  margin: 8rem auto 0;
-}
-
-/* slider  */
-.img {
-  /* flex: 0 0 100%;
-  height: 100%; */
-  position: relative;
-
-  img {
-    position: absolute;
-    left: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-}
-
 
 </style>

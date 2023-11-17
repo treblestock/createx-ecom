@@ -94,6 +94,23 @@ export interface ProductReview {
 }
 
 
+// Collections
+export type Collection = {
+  description: string
+  title: string
+  backgroundImg: string
+  linkOutlined?: {
+    text: string
+    url: string
+  }
+  linkSolid?: {
+    text: string
+    url: string
+  }
+  expiresWhen?: string
+}
+
+
 
 // todo: SizeChar
 
@@ -305,6 +322,8 @@ export interface BlogPostDataTypes {
 }
 export type BlogPostData<E extends keyof BlogPostDataTypes> = BlogPostDataTypes[E]
 export type BlogPostEntitiy = keyof BlogPostDataTypes
+
+
 
 
 

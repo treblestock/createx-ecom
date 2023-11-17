@@ -30,7 +30,7 @@ function upd() {
   >
     <SliderProductImgs class="product-imgs"
       :imgs="productImgs"
-      @vnodeUpdated="upd"
+      @vue:updated="upd"
     />
     <!-- <ProductCartForm class="product-cart-form"></ProductCartForm> -->
   </div>

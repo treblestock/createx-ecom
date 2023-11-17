@@ -1,8 +1,4 @@
 <script setup lang="ts">
-import img from '~/assets/img/illustrations/2.png'
-import { ref } from 'vue'
-
-
 type sexCategories = 'woman' | 'man' | 'girls' | 'boys'
 const selectedSexCategories = ref<Set<sexCategories>>(new Set(['woman']))
 const email = ref<string>('')

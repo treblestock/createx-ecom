@@ -13,8 +13,8 @@
 
 
 ._fullscreen {
-  
   height: calc(100vh - $header-height-full);
+  width: 100vw;
 }
 
 
