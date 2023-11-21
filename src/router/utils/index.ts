@@ -1,4 +1,5 @@
 import type { RouteLocationRaw, RouteLocationNormalized } from "vue-router"
+import type { TypedTo } from "../types"
 
 const BASE_URL = import.meta.env.BASE_URL || '/'
 export function withBaseUrl(string: string): string {
@@ -22,7 +23,7 @@ export function paramsValuesToStrings(to: Exclude<RouteLocationRaw, string> & {p
   }
 }
 
-export function modifyRouteTo (to: RouteLocationRaw) {
+export function modifyRouteTo (to: TypedTo) {
   if (typeof to !== 'string') return paramsValuesToStrings(to)
 
   if (to.startsWith('#') ) return withHash(to)

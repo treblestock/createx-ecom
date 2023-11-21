@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import Img from '~/components/global/Img.vue'
+import Arrow from '~/components/icons/Arrow.vue'
 
 
 
@@ -9,31 +10,57 @@ const props = defineProps<{
 }>()
 
 
+
+
 const {
   activeInd,
   setSlide,
   prevSlide,
   nextSlide,
-  SliderWindow,
   setItemsCount,
 } = useSlider()
 
 
+setItemsCount(props.imgs.length)
+watch(props.imgs, () => {
+  setItemsCount(props.imgs.length)
+})
+
+const activeImg = computed(() => {
+  return props.imgs[activeInd.value]
+})
 
 </script>
 
 <template>
-  <div class="img-slider">
-    <SliderWindow class="slider"
-      :activeInd="activeInd"
-      :setItemsCount="setItemsCount"
-    >
-      <div class="img"
-        v-for="img, ind in imgs" :key="img"
-      >
-        <Img :src="img" alt=""/>
+  <div class="slider">
+    <div class="active-img">
+      <Img :src="activeImg" />
+
+
+      <div class="slider-arrows">
+        <Arrow class="arrow" 
+          direction="left"
+          @click="prevSlide"
+        />
+        <Arrow class="arrow" 
+          direction="right"
+          @click="nextSlide"
+        />
       </div>
-    </SliderWindow>
+    </div>
+
+
+    <div class="slider-pagination">
+      <div class="pagination-img"
+        v-for="img, ind in imgs" :key="img"
+        :ind="ind"
+        :class="{_active: ind === activeInd}"
+        @click="() => setSlide(ind)"
+      >
+        <Img :src="img"/>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -41,11 +68,63 @@ const {
 @import "~css/consts";
 
 
-.img {
-  margin-right: 2rem;
+.slider {
+}
+.active-img {
+  width: 60rem;
+  height: 60rem;
+  position: relative;
+
+  margin-bottom: 2rem;
+
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    user-select: none;
+  }
+}
+.slider-arrows {
+  z-index: 1;
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  padding: 0 3.2rem;
+
+  display: flex;
+  justify-content: space-between;
+}
+.arrow {
+  background: $color-white;
+}
+.slider-pagination {
+  display: flex;
+  gap: 2rem;
+}
+.pagination-img {
+  width: 10rem;
+  height: 10rem;
+  position: relative;
+  & img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    user-select: none;
+    cursor: pointer;
+  }
+
+
+  &._active {
+    box-shadow: 0 0 0 1px $color-green-dark;
+  }
 }
 
-.slider {
-  width: 30rem;
-}
 </style>

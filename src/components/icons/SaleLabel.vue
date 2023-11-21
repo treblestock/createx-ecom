@@ -5,9 +5,9 @@
 
 <template>
   <span class="label">
-    <div class="text_b">
+    <span class="text_b">
       -<slot></slot>%
-    </div>
+    </span>
   </span>
   
 </template>
@@ -16,11 +16,13 @@
 @import '~css/consts';
 .label {
   display: inline-block;
+
   border-radius: $radius;
-  padding: 0 .8rem;
+  padding: .4rem .8rem;
   background: $color-red;
 
-  .text_b {
+  & .text_b {
+    line-height: 0;
     color: $color-white;
   }
 }

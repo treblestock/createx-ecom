@@ -6,6 +6,9 @@ import Price from '~/components/features/Price.vue'
 import ProductSizes from '~/components/features/ProductSizes.vue'
 import ProductColors from '~/components/features/ProductColors.vue'
 
+import useStoreCart from '~/stores/cart'
+const cartStore = useStoreCart()
+
 
 const props = defineProps<{
   id: number
@@ -23,7 +26,13 @@ const props = defineProps<{
 const selectedColor = ref(props.colors[0])
 const selectedSize = ref(props.sizes[0])
 
-
+function addToCart() {
+  cartStore.setCount({
+    productId: props.id,
+    size: selectedSize.value,
+    color: selectedColor.value,
+  }, 1)
+}
 
 </script>
 
@@ -57,7 +66,9 @@ const selectedSize = ref(props.sizes[0])
         ></Price>
       </div>
     </div>
-    <div class="popover">
+    <form class="popover"
+      @submit.prevent="addToCart"
+    >
       <ProductSizes class="sizes"
         :sizes="sizes"
         v-model="selectedSize"
@@ -66,8 +77,10 @@ const selectedSize = ref(props.sizes[0])
         :colors="colors"
         v-model="selectedColor"
       ></ProductColors>
-      <Btn class="cart-add-btn">add to cart</Btn>
-    </div>
+      <Btn class="cart-add-btn"
+        type="submit"
+      >add to cart</Btn>
+    </form>
   </div>
 </template>
 
@@ -157,6 +170,7 @@ $shadow: 0 10px 10px 0 $color-gray-800;
 
 }
 .popover {
+  display: block;
   visibility: hidden;
 
   /* pos relative to card */

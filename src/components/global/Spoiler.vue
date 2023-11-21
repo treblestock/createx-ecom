@@ -5,6 +5,8 @@ type cssUnit = 'px' | 'rem' | 'em' | '%'
 const props = defineProps<{
   maxBodyHeight?: number | `${string}${cssUnit}`
   innerBorder?: boolean
+  title?: string
+  classBody?: string
 }>()
 
 const exactMaxBodyHeight = computed(() => {
@@ -32,14 +34,14 @@ function togglespoiler() {
     <div class="title text_b"
       @click="togglespoiler"
     >
-      <slot name="title">some tilte</slot>
+      <slot name="title">{{ title }}</slot>
       <div class="plus"></div>
     </div>
     <div class="spoiler-header">
       <slot name="header"></slot>
     </div>
     <div class="spoiler-body" 
-      :class="{_fixedHeight: maxBodyHeight}"
+      :class="[{_fixedHeight: maxBodyHeight}, classBody]"
     >
       <slot>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil recusandae accusantium modi blanditiis non sapiente dolores? Natus quisquam assumenda voluptatibus aliquam minima necessitatibus! Explicabo ab amet doloribus soluta recusandae aut.</slot>
     </div>
@@ -54,7 +56,6 @@ function togglespoiler() {
   max-width: 60rem;
   /* padding: 1rem 0; */
 
-  cursor: pointer;
   overflow: hidden;
 }
 .title {
@@ -63,6 +64,7 @@ function togglespoiler() {
   padding: 2rem 0;
   color: $color-gray-900;
   background: $color-white;
+  cursor: pointer;
 
   /* children */
   display: flex;
@@ -80,6 +82,7 @@ function togglespoiler() {
 
 .spoiler-header {
   margin: 0 .2rem 1.6rem .2rem;
+
 
   translate: 0 0;
   transition: all .2s linear;

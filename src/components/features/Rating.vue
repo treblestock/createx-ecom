@@ -3,7 +3,7 @@ import type { Rating } from '~/types'
 import RatingStar from '~/components/icons/RatingStar.vue'
 
 const props = withDefaults(defineProps<{
-  rating?: Rating
+  rating?: Rating | 0
 }>(), {
   rating: 0
 })

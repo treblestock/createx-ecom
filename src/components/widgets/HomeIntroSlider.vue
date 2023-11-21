@@ -5,7 +5,7 @@ import Collection from '~/components/widgets/Collection.vue'
 
 
 
-const collections = useFetch(api.getCollections, [])
+const { data: collections } = useFetch(api.getCollections, [])
 
 
 </script>

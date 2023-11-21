@@ -7,7 +7,7 @@ const props = defineProps<{
 }>()
 
 
-const selectedColor = defineModel<Ref<Set<ProductColor>> | ProductColor>()
+const selectedColor = defineModel<Set<ProductColor> | ProductColor>()
 
 </script>
 

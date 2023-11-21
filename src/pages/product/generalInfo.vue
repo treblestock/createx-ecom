@@ -1,17 +1,13 @@
 <script setup lang="ts">
-import SliderProductImgs from '~/components/widgets/SliderProductImgs.vue';
-// import ProductCartForm from '~/components/features/ProductCartForm.vue';
+import SliderProductImgs from '~/components/widgets/SliderProductImgs.vue'
+import ProductCartForm from '~/components/widgets/ProductCartForm.vue'
 
 const props = defineProps<{
   id: number
 }>()
 
 
-const product = useFetch(async () => {
-  await sleep(500)
-  return api.findProduct(props.id)
-}, null)
-
+const { data: product } = useFetch(() => api.findProduct(props.id), null)
 
 const productImgs = computed(() => {
   return product.value?.imgs || []
@@ -19,9 +15,6 @@ const productImgs = computed(() => {
 
 
 
-function upd() {
-  console.log('generalInfo: upd')
-}
 </script>
 
 <template>
@@ -30,9 +23,10 @@ function upd() {
   >
     <SliderProductImgs class="product-imgs"
       :imgs="productImgs"
-      @vue:updated="upd"
     />
-    <!-- <ProductCartForm class="product-cart-form"></ProductCartForm> -->
+    <ProductCartForm class="product-cart-form"
+      :product="product"
+    ></ProductCartForm>
   </div>
 </template>
 
@@ -42,11 +36,14 @@ function upd() {
 .product-general-info {
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
   gap: 6rem;
 }
 .product-imgs {
 }
 .product-cart-form {
+  flex: 0 1 52.5rem;
+
 }
 
 </style>

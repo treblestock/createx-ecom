@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { type Component } from 'vue'
+import type { Component, VNodeProps, AllowedComponentProps } from 'vue'
 
 
 import Popup from '~/components/global/Popup.vue'
@@ -7,8 +7,16 @@ import * as staticPopups from '~/components/widgets/popups/index'
 
 import { installPopupManager } from '~/composables/usePopupManager'
 
+
 type PopupId = string
-const activePopups = ref<Map<Component, PopupId>>(new Map())
+type PropsToExclude = keyof VNodeProps | keyof AllowedComponentProps | `on${string}` // internal vue's ones and custom emits
+type PopupProps = Omit<InstanceType<typeof Popup>['$props'], PropsToExclude>
+
+
+const defaultStaticPopupsProps: Partial<Record<keyof typeof staticPopups, PopupProps>> = {
+  'Cart': {_side: true}
+}
+const activePopups = ref<Map<Component, {id: PopupId, props?: PopupProps}>>(new Map())
 
 
 // test
@@ -25,11 +33,13 @@ const activePopups = ref<Map<Component, PopupId>>(new Map())
 // ===
 
 // public
-function showPopup(compNameOrComp: keyof typeof staticPopups | Component) {
+function showPopup(compNameOrComp: keyof typeof staticPopups | Component, popupProps?: PopupProps) {
   const comp: Component = typeof compNameOrComp === 'string' ? staticPopups[compNameOrComp] : compNameOrComp
+  popupProps ??= typeof compNameOrComp === 'string' ? defaultStaticPopupsProps[compNameOrComp] : undefined 
+    // default static popup Props if there are 
   const compId = Math.random() + ''
 
-  activePopups.value.set(markRaw(comp), compId)
+  activePopups.value.set(markRaw(comp), {id: compId, props: popupProps})
 }
 
 function closePopup(compNameOrComp: Component | keyof typeof staticPopups) {
@@ -65,11 +75,12 @@ provide('closePopup', closePopup)
 
 <template>
   <div>
-    <Popup v-for="[comp, compId] in activePopups" :key="compId"
+    <Popup v-for="[comp, {id, props}] in activePopups" :key="id"
       @close="() => closePopup(comp)"
+      :="props"
     >
       <Component :is="comp"></Component>
-    </Popup> 
+    </Popup>
   </div>
 </template>
 

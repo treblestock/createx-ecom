@@ -1,5 +1,4 @@
 import { createRouter, createWebHistory, type RouteRecordRaw } from 'vue-router'
-import {} from '~/router/types.ts'
 
 import { propsParser } from './utils/index.ts'
 

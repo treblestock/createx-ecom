@@ -166,6 +166,14 @@ body > * {
   }
 }
 
+.ul li {
+  &:before {
+    content: '\2022'; /* circle */
+    color: $color-green;
+    margin-right: 2rem;
+  }
+}
+
 
 /* svg */
 .svg-icon {

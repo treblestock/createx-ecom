@@ -1,11 +1,12 @@
 <script setup lang="ts">
+import Select from '~/components/global/Select.vue'
+
+// const props = defineProps<Props<typeof Select> & {label?: string} >
 const props = defineProps<{
   label?: string
-  options: {
-    [text: string]: any
-    length?: undefined
-  }
+  options: string[] | Record<string, any> | Set<string>
   vertical?: boolean
+  disabledValue?: string
 }>()
 
 const modelValue = defineModel<any>()
@@ -21,9 +22,10 @@ const modelValue = defineModel<any>()
       <slot>{{ label }}</slot>
     </div>
     <Select class="select-group__select"
+      :="$attrs"
       v-model="modelValue"
       :options="options"
-      :="$attrs"
+      :disabledValue="disabledValue"
     ></Select>
   </div>
 </template>

@@ -23,6 +23,12 @@ export type Id = number
 export type DateRecord = string
 export type Timestamp = number
 
+// Users
+export type User = {
+  id: Id
+  fullName: string
+}
+
 // Products
 /*
   Category Sex
@@ -44,7 +50,7 @@ export type ShoesCategory = string
 export type AccessoriesCategory = string
 
 export type ProductColor = string
-export type Rating = 0 | 1 | 2 | 3 | 4 | 5
+export type Rating = 1 | 2 | 3 | 4 | 5
 
 
 export interface Product {
@@ -80,6 +86,15 @@ export type careClause = {
   explanation: string
 }
 
+// Cart
+export interface CartProductVariant {
+  productId: ProductId
+  size: ProductSize
+  color: ProductColor
+}
+
+// product review
+
 export type UserId = Id
 export type reviewId = Id
 export interface ProductReview {
@@ -88,7 +103,7 @@ export interface ProductReview {
   userId: UserId
   date: DateRecord
   rating: Rating
-  review: string
+  comment: string
   likes: number
   dislikes: number
 }

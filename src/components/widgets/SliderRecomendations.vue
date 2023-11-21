@@ -3,7 +3,7 @@ import Slider from '~/components/widgets/Slider.vue'
 import ProductCard from '~/components/widgets/ProductCard.vue'
 
 //<!-- todo: stub
-const recomendedProducts = useFetch(api.getProducts, []) 
+const { data: recomendedProducts } = useFetch(api.getProducts, []) 
 
 
 </script>

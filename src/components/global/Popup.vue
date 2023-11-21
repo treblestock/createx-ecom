@@ -1,5 +1,13 @@
 <script setup lang="ts">
 
+export type Props = {
+  classBody?: string
+  _side?: true
+}
+const props = defineProps<Props>()
+
+
+
 const emit = defineEmits<{
   close: []
 }>()
@@ -18,11 +26,13 @@ function close() {
   <Teleport to="body">
     <div class="popup"
       @click="close"
+      :class="{_side: _side}"
     >
-      <div class="popup__body"
+      <div class="body"
         @click.stop
+        :class="classBody"
       >
-        <div class="popup__cross"
+        <div class="cross"
           @click="close"
         >&#x2573;</div>
         <slot :close="close"></slot>
@@ -57,34 +67,44 @@ $color-popup-bgc: #1E212CAA;
   /* wrapper */
   background: $color-popup-bgc;
 
+  &._side {
+    justify-content: end;
+    align-items: stretch;
 
-  &__body {
-    max-width: 90%;
-    max-height: 90%;
-    padding: 7rem 5rem 5rem;
-
-    background: $color-white;
-
-    /* cross position */
-    position: relative;
-  }
-  
-  &__cross {
-    position: absolute;
-    top: 2.4rem;
-    right: 2rem;
-
-    width: 2.4rem;
-    height: 2.4rem;
-
-    color: $color-gray-700;
-    cursor: pointer;
-
-    &:hover {
-      color: $color-green;
+    & .body {
+      max-height: 100%;
+      padding: 3.2rem 2.4rem;
     }
   }
 }
+.body {
+  max-width: 90%;
+  max-height: 90%;
+  padding: 7rem 5rem 5rem;
+
+  background: $color-white;
+
+  /* cross position */
+  position: relative;
+}
+
+.cross {
+  position: absolute;
+  top: 2.4rem;
+  right: 2rem;
+
+  width: 2.4rem;
+  height: 2.4rem;
+
+  color: $color-gray-700;
+  cursor: pointer;
+
+  &:hover {
+    color: $color-green;
+  }
+}
+
+  
 
     
 

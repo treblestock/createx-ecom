@@ -27,10 +27,19 @@ async function applyFetch<T>(refForData: Ref<T>, cb: () => Promise<T>): Promise<
 //   //@ts-ignore
 //   return data
 // }
-export default function useFetch<T, I>(cb: () => Promise<T>, initialValue: I): Ref<UnwrapRef<T | I>>  {
+export default function useFetch<T, I>(cb: () => Promise<T>, initialValue: I): {
+  data: Ref<UnwrapRef<T | I>>
+  refetch: () => void
+} {
   const data = ref<T | I>(initialValue)
-  cb().then(resolved => {
-    data.value = resolved as UnwrapRef<T | I>
-  })
-  return data
+  function refetch() {
+    cb().then(resolved => {
+      data.value = resolved as UnwrapRef<T | I>
+    })
+  }
+  refetch()
+  return {
+    data,
+    refetch,
+  }
 }

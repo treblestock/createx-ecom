@@ -1,9 +1,7 @@
 <script setup lang="ts">
 const props = defineProps<{
-  options: {
-    [text: string]: any
-    length?: undefined // typescript hack to exclude array
-  }
+  options: string[] | Record<string, any> | Set<string>
+  disabledValue?: string
 }>()
 
 const modelValue = defineModel<any>()
@@ -15,12 +13,19 @@ const modelValue = defineModel<any>()
     v-model="modelValue"
   >
     <slot>
-      <option class="select__option" disabled value="">choose</option>
+      <option class="select__option"
+        disabled
+        value=""
+      >{{ disabledValue || 'choose' }}</option>
       <option class="select__option"
         v-for="optionValue, optionText in options" :key="optionValue"
         :value="optionValue"
       >
-        {{ optionText }}
+        <!-- 
+          if key is like '0', then +key returns valid number (which is case in v-for="Set | Array").
+          That means we should use it's string value as text in template too   
+        -->
+        {{ Number.isNaN(+optionText) ? optionText : optionValue }}
       </option>
     </slot>
   </select>
@@ -34,7 +39,7 @@ const modelValue = defineModel<any>()
 @define-mixin baseUI {
   padding: 1rem 1.5rem;
   box-shadow: 0 0 0 1px $color-green;
-  color: $color-green;
+  color: $color-gray-800;
 }
 
 
@@ -60,6 +65,9 @@ const modelValue = defineModel<any>()
 }
 
 .select {
+  display: inline-block;
+  width: 100%;
+
   @mixin baseUI;
   border-radius: $radius;
 
@@ -73,6 +81,8 @@ const modelValue = defineModel<any>()
 
   &__option {
     @mixin baseUI;
+
+    
   }
 }
   

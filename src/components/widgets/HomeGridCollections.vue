@@ -3,7 +3,7 @@ import Collection from '~/components/widgets/Collection.vue'
 import MailingSubscribtionSale from '~/components/widgets/MailingSubscribtionSale.vue'
 
 
-const collections = useFetch(async () => {
+const { data: collections } = useFetch(async () => {
   const allCollections = await api.getCollections()
   return allCollections.slice(1)
 }, [])

@@ -1,22 +1,24 @@
 <script setup lang="ts">
-import useIcon from '~/composables/useIcon.js'
+import IconCart from '~/assets/img/icons/decor/Cart.svg'
 
+import useStoreCart from '~/stores/cart'
+const cartStore = useStoreCart()
 
-const Icon = useIcon('Profile')
-
-const cartItems = ref<number>(0)
+const cartItemsCount = computed(() => cartStore.cartItemsCount)
 
 
 
 </script>
 
 <template>
-  <div class="cart">
-    <Icon class="icon"></Icon>
+  <Btn class="cart _transparent"
+    @click="$router.$showPopup('Cart')"
+  >
+    <IconCart class="icon"></IconCart>
     <div class="label text_xsb">
-      {{ cartItems }}
+      {{ cartItemsCount }}
     </div>
-  </div>
+  </Btn>
   
 </template>
 
@@ -24,10 +26,13 @@ const cartItems = ref<number>(0)
 @import '~css/consts';
 
 .cart {
+  padding: 0;
+
   display: flex;
+  align-items: stretch;
   gap: 0.8rem;
   
-
+  color: $color-gray-800 !important;
 }
 .icon {
   

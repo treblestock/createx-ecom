@@ -1,8 +1,8 @@
 <script setup lang="ts">
-import img1 from '~/assets/img/icons/advantages/delivery.svg'
-import img2 from '~/assets/img/icons/advantages/support.svg'
-import img3 from '~/assets/img/icons/advantages/secure.svg'
-import img4 from '~/assets/img/icons/advantages/payment.svg'
+import img1 from '~/assets/img/icons/advantages/delivery.svg?url'
+import img2 from '~/assets/img/icons/advantages/support.svg?url'
+import img3 from '~/assets/img/icons/advantages/secure.svg?url'
+import img4 from '~/assets/img/icons/advantages/payment.svg?url'
 
 
 

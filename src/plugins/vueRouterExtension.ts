@@ -1,15 +1,17 @@
 import type { App as VueApp } from 'vue'
-import type { Router, RouteLocationRaw } from 'vue-router'
+import type { Router } from 'vue-router'
+import type { TypedTo } from '~/router/types'
 
 import { modifyRouteTo } from '~/router/utils'
 
+
 export const navigateInjectionKey = Symbol('navigate')
 export interface Navigate {
-  (to: RouteLocationRaw): void
+  (to: TypedTo): void
 }
 
 function createNavigate(router: Router) {
-  return function navigate(to: RouteLocationRaw) {
+  return function navigate(to: TypedTo) {
     const serializedTo = modifyRouteTo(to)
     router.push(serializedTo)
   }
