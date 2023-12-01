@@ -69,5 +69,12 @@ const modelValue = defineModel<any>()
       display: block;
     }
   }
+
+
+  &:disabled {
+    &:before {
+      box-shadow: 0 0 0 1px $color-gray-500;
+    }
+  }  
 }
 </style>

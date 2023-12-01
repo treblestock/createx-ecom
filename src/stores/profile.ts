@@ -1,16 +1,40 @@
 import { defineStore } from "pinia"
-import type { Product } from "~/types"
+import type { Order, Product, ProductId } from "~/types"
 
-export default defineStore('profile', {
-  state: () => ({
-    
-  }),
-  getters: {
-    
-  },
-  actions: {
-    async toggleFavouriteProducts(id: number) {
-      console.log('add fovourite')
-    }
-  },
+import ordersData from '~/public/data/orders.json'
+
+
+
+export default defineStore('profile', () => {
+  // user bio
+  const email = ref('')
+  const fullname = ref('')
+
+  function fetchUserProfile() {
+    email.value = 'annblack@gmail.com'
+    fullname.value = 'Ann Black'
+  }
+
+
+  // orders
+  const orders = ref<Order[]>(ordersData as Order[])
+  function findOrder(id: string) {
+    return orders.value.find(order => order.id === id)
+  }
+
+  // favourite products
+  const favouriteProducts = ref<Set<ProductId>>(new Set() )
+  
+  
+
+
+
+  return {
+    email,
+    fullname,
+    fetchUserProfile,
+
+    orders,
+    findOrder,  
+  }
 })

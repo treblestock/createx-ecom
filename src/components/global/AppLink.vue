@@ -42,10 +42,15 @@ const isExternalLink = computed(() =>
 </template>
 
 <style scoped>
-
+@import '~css/consts';
 .link {
   &__inner {
     user-select: none;
+  }
+
+  &:hover,
+  &._active {
+    color: $color-green;
   }
 }
 

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import BlogPost from '~/components/widgets/BlogPost.vue'
+import BlogPostCard from '~/components/widgets/BlogPostCard.vue'
 
 
 const posts = useFetchItems(() => api.getBlogPosts(2))
@@ -30,10 +30,10 @@ const posts = useFetchItems(() => api.getBlogPosts(2))
         </div>
 
         <div class="posts">
-          <BlogPost 
+          <BlogPostCard 
             v-for="post in posts" :key="post.id"
             :="post"
-          ></BlogPost>
+          ></BlogPostCard>
         </div>
       </div>
     </div>

@@ -52,7 +52,7 @@ const getDuration = (dateA: Date | DateLike, dateB: Date | DateLike, period: key
 var toTimeInSec = (time: number) => (time / 1000).toFixed(1) + ' sec'
 
 
-function dateToHumanCase(data: string | Date | DateLike): string {
+function dateToNumberRecord(data: string | Date | DateLike): string {
   let date
   if (typeof data === 'string') {
     date = separateDate(new Date(data))
@@ -61,6 +61,19 @@ function dateToHumanCase(data: string | Date | DateLike): string {
   }
 
   return `${date?.month} ${date?.days}, ${date?.year}`
+}
+
+function dateToSemanticRecord(data: string | Date | DateLike): string {
+  let date
+  if (typeof data === 'string' || data instanceof Date) {
+    date = separateDate(new Date(data))
+  }
+  return `${date?.month} ${date?.days}, ${date?.year}`
+}
+
+function dateToHumanCase(data: string | Date | DateLike, options?: 'numeric' | 'long'): string {
+  if (!options || options === 'numeric') return dateToNumberRecord(data)
+  return dateToSemanticRecord(data)
 }
 
 

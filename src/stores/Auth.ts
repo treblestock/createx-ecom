@@ -1,30 +1,29 @@
 import { defineStore } from "pinia"
 import useStoreVueRouter from '~/stores/vueRouter'
 
+import useStoreProfile from '~/stores/profile'
+
 
 
 export default defineStore('auth', {
   state: () => ({
-    email: '' as string,
-    fullname: '' as string
+    _isAuth: false
   }),
   getters: {
     isAuth(): boolean {
-      return this.email !== '' && this.fullname !== ''
+      return this._isAuth
     },
   },
   actions: {
     requestSignin() {
       useStoreVueRouter().requestSignin()
     },
-
     async signup(email: string, pass: string, fullname: string) {
       const res = await api.signup(email, pass, fullname)
       if (typeof res !== 'string') {
         throw new Error(`Failed to sign up. \nGot: ${res}`)
       }
-      this.email = email
-      this.fullname = fullname
+      useStoreProfile().fetchUserProfile()
       useStoreVueRouter().onSignin()
     },
     async signin(email: string, pass: string) {
@@ -33,36 +32,22 @@ export default defineStore('auth', {
       if (typeof ref !== 'string') {
         throw new Error(`Failed to sign in\nGot: ${res}`)
       }
-      this.fetchUserProfile()
+      useStoreProfile().fetchUserProfile()
       useStoreVueRouter().onSignin()
     },
     async signout() {
       localStorage.removeItem('accessToken')
-      this.email = ''
-      this.fullname = ''
+      this._isAuth = false
       useStoreVueRouter().onSignout()
     },
-
-    async fetchUserProfile() {
-      // const res = await api.getUserProfile()
-      const res = {
-        email: 'user',
-        fullname: 'Ann Black'
-      }
-
-      if ('error' in res) {
-        throw new Error(`Failed to fetch user's profile. \nGot: ${res}`)
-      }
-      this.email = res.email
-      this.fullname = res.fullname
-
-    }
   },
   async onRegister() {
+    localStorage.setItem('accessToken', '__')
     const accessToken = localStorage.getItem('accessToken')
     if (!accessToken) {
       return useStoreVueRouter().requestSignin()
     }
-    this.fetchUserProfile()
+    this._isAuth = true
+    useStoreProfile().fetchUserProfile()
   },
 })

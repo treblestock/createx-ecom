@@ -28,6 +28,7 @@ const props = defineProps<{
 }
 .new-price {
   color: $color-gray-900;
+  font-size: inherit;
 }
 .old-price {
   margin-left: 1.2rem;

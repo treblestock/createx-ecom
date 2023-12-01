@@ -2,9 +2,6 @@ export { assetsIcons } from './assetsIcons'
 export * from './clientView'
 
 
-// todo: sizeChart
-// todo: productCollections
-// todo: manage product type inheritance hierarcy
 // todo: manage product type inheritance hierarcy
 
 // utils
@@ -75,6 +72,7 @@ export interface Product {
     careClauses: careClause[]
   }
 }
+export type ProductId = Id
 
 export type ProductPreview = Pick<Product, 'id' | 'categorySex' | 'categoryMajorClothType' | 'name' | 'price' | 'discount' | 'rating' | 'sizes' | 'colors' >
 export type ProductMainCharacteristics = Pick<Product, 'brand' | 'materials' | 'colors' | 'sizes'>
@@ -84,13 +82,6 @@ export type ProductDetails = Product['details']
 export type careClause = {
   icon: string
   explanation: string
-}
-
-// Cart
-export interface CartProductVariant {
-  productId: ProductId
-  size: ProductSize
-  color: ProductColor
 }
 
 // product review
@@ -170,30 +161,34 @@ export interface UserProfileForm extends Omit<UserProfile, 'password'> {
 }
 
 // Cart
-export interface Cart { //+ userId: UserId (server
-  [key: ProductId]: Count
+export type Cart = CartRecord[]
+export type CartRecord = CartProductVariant & {count: number}
+export interface CartProductVariant {
+  productId: ProductId
+  size: ProductSize
+  color: ProductColor
 }
-export type ProductId = Id
 export type Count = number
 
-export interface CartProduct { // client
-  name: string
-  img: string
-  price: number
-  color: ProductColor
-  size: ProductSize
-  isFavourite: boolean
-}
+// export interface CartProduct { // client
+//   name: string
+//   img: string
+//   price: number
+//   color: ProductColor
+//   size: ProductSize
+//   isFavourite: boolean
+// }
 
 
 // Make Order 
 export interface Order {
+  id: string
   cart: Cart
-  shipping: Shipping
-  payment: Payment
-  comment: string
-  promocode: string
+  tracking: OrderTracking
+  promocode?: string
+  comment?: string
 }
+export type OrderId = string
 
 export interface Shipping {
   firstName: string
@@ -238,30 +233,27 @@ export interface OrderPreview {
   expectedDate: DateRecord
   status: OrderStatus
   cart: Cart
-  total: number //+ cart -> total
+  total: number
 }
 export type OrderStatus = 'In progress' | 'Delivered' | 'Canceled'
 
 // Track Order
-export type OrderId = Id
-export interface TrackOrder {
-  orderId: OrderId
-  shipedVia: ShippingMethod
-  shippedOn: DateRecord
-  destination: string
+export interface OrderTracking {
+  shipping: Shipping
+  orderDate: DateRecord
   expectedDate: DateRecord
-  status: TrackOrderStatus
+  history: OrderTrackingHistory,
+  status: OrderTrackingStatus
   isNotifyWhenDeliveried: boolean
-  history: TrackOrderHistory,
 }
 
-export type TrackOrderHistory = TrachHistoryType[]
+export type OrderTrackingHistory = TrachHistoryType[]
 export interface TrachHistoryType {
-  status: TrackOrderStatus
+  status: OrderTrackingStatus
   location: string
-  time: Timestamp
+  time: string
 }
-export type TrackOrderStatus = 'Order Placed' | 'Documentation Prepared' | 'Booking Arranged' | 'Collected' | 'In Transit to Destination' | 'Arrived at Destination' | 'Out for Delivery' | 'Delivered'
+export type OrderTrackingStatus = 'Order Placed' | 'Documentation Prepared' | 'Booking Arranged' | 'Collected' | 'In Transit to Destination' | 'Arrived at Destination' | 'Out for Delivery' | 'Delivered' | 'Canceled'
 
 // Contacts
 export interface ContactUsForm {
@@ -299,6 +291,7 @@ export interface BlogPost {
   tags: BlogPostTag[]
   content: BlogPostContent
 }
+export type BlogPostId = Id
 
 export interface BlogPostPreview extends Pick<BlogPost, 'category' | 'date' | 'title' | 'description' | 'tags'> {
   commentsIds: number
@@ -307,8 +300,6 @@ export interface BlogPostPreview extends Pick<BlogPost, 'category' | 'date' | 't
 export type BlogThemeCategory = 'Fashion' | 'Designers' | 'Lifestyle' | 'Celebrity style'
 export type BlogPostTag = 'trends' | 'inspiration' | 'designers' | 'kidsfashion' | 'streetstyle' | 'models'
 
-export type BlogPostId = Id
-export type commmentId = Id
 export interface BlogPostComment {
   id: Id
   postId: BlogPostId
@@ -318,6 +309,7 @@ export interface BlogPostComment {
   likes: number
   dislikes: number
 }
+export type commmentId = Id
 
 export interface LeaveCommentForm {
   comment: string

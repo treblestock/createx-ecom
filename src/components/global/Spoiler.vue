@@ -1,13 +1,18 @@
 <script setup lang="ts">
-import {ref } from 'vue'
-
 type cssUnit = 'px' | 'rem' | 'em' | '%'
-const props = defineProps<{
+const props = withDefaults(defineProps<{
   maxBodyHeight?: number | `${string}${cssUnit}`
   innerBorder?: boolean
   title?: string
+  classTitle?: string
   classBody?: string
-}>()
+  noIcon?: true
+  active?: boolean
+}>(), {
+  active: undefined
+})
+
+
 
 const exactMaxBodyHeight = computed(() => {
   return typeof props.maxBodyHeight === 'number'
@@ -17,22 +22,40 @@ const exactMaxBodyHeight = computed(() => {
 
 
 
+function externalToggleSpoiler() {
+  // external spoiiler management if there is related prop
+  if (props.active === undefined) return
+  if (props.active) spoilerHtml.value?.classList.add('_active')
+  else spoilerHtml.value?.classList.remove('_active')
+}
+
+onMounted(externalToggleSpoiler)
+onUpdated(externalToggleSpoiler)
+
 
 const spoilerHtml = ref<HTMLElement | null>(null)
 
-function togglespoiler() {
-  spoilerHtml.value?.classList.toggle('_active')
+function internalToggleSpoiler() {
+  // internal spoiiler management if there no props.active provided
+  if (props.active === undefined) {
+    spoilerHtml.value?.classList.toggle('_active')
+  }
 }
+
 
 </script>
 
 <template>
   <div class="spoiler"
-    :class="{'_with-border': innerBorder}"
+    :class="{
+      '_with-border': innerBorder,
+      '_no-icon': noIcon,
+    }"
     ref="spoilerHtml"
   >
     <div class="title text_b"
-      @click="togglespoiler"
+      :class="classTitle"
+      @click="internalToggleSpoiler"
     >
       <slot name="title">{{ title }}</slot>
       <div class="plus"></div>
@@ -57,6 +80,11 @@ function togglespoiler() {
   /* padding: 1rem 0; */
 
   overflow: hidden;
+
+
+  &._no-icon .plus {
+    display: none;
+  }
 }
 .title {
   position: relative;

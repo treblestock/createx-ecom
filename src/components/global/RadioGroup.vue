@@ -1,13 +1,4 @@
 <script setup lang="ts">
-// const props = defineProps<{
-//   modelValue?:  string
-//   label?: string
-//   value: string
-//   name?: string
-// }>()
-// const emit = defineEmits([
-//   'update:modelValue'
-// ])
 const props = defineProps<{
   label?: string
   value: any
@@ -19,20 +10,13 @@ const modelValue = defineModel<any>()
 <template>
 
   <label class="radio-group">
-    <!-- <Radio class="radio-group__radio"
-      :name="name || modelValue"
-      :modelValue="modelValue"
-      @update:model-value="value => emit('update:modelValue', value)"
-      :value="value"
-      :checked="modelValue === value"
-    ></Radio> -->
     <Radio class="radio-group__radio"
       v-model="modelValue"
       :value="value"
       :name="name"
       :="$attrs"
     ></Radio>
-    <div class="radio-group-label">
+    <div class="radio-group__label">
       <slot>{{ label }}</slot>
     </div>
   </label>

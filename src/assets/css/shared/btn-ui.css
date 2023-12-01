@@ -39,7 +39,7 @@ btn_l {
   /* shape */
   color: $color-green;
   background: $color-white;
-  box-shadow: 0 0 0 $border-w $color-green;
+  box-shadow: inset 0 0 0 $border-w $color-green;
 
   /* animations */
   &:not(&:disabled) {
@@ -60,7 +60,7 @@ btn_l {
   /* shape */
   color: $color-green;
   background: none;
-  box-shadow: 0 0 0 $border-w $color-green;
+  box-shadow: inset 0 0 0 $border-w $color-green;
 
   /* animations */
   &:not(&:disabled) {
@@ -89,7 +89,7 @@ btn_l {
     &._active {
       background: none;
       color: $color-green;
-      box-shadow: 0 0 0 $border-w $color-green;
+      box-shadow: inset 0 0 0 $border-w $color-green;
     }
   }
   &:disabled {
@@ -116,7 +116,7 @@ btn_l {
     opacity: 0.5;
   }
 }
-._with-icon, ._with-icon-reverse {
+/* ._with-icon, ._with-icon-reverse {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -129,4 +129,4 @@ btn_l {
 }
 ._with-icon-reverse {
   flex-direction: row-reverse;
-}
+} */

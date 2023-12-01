@@ -19,6 +19,14 @@ function close() {
 
 
 
+onMounted(() => {
+  document.body.classList.add('_scroll-hidden')
+})
+onBeforeUnmount(() => {
+  document.body.classList.remove('_scroll-hidden')
+})
+
+
 
 </script>
 
@@ -74,6 +82,10 @@ $color-popup-bgc: #1E212CAA;
     & .body {
       max-height: 100%;
       padding: 3.2rem 2.4rem;
+
+      &._no-padding {
+        padding: 0;
+      }
     }
   }
 }
@@ -86,6 +98,10 @@ $color-popup-bgc: #1E212CAA;
 
   /* cross position */
   position: relative;
+
+  &._no-padding {
+    padding: 0;
+  }
 }
 
 .cross {
@@ -106,6 +122,10 @@ $color-popup-bgc: #1E212CAA;
 
   
 
+:global(body._scroll-hidden) {
+  overflow: hidden;
+  padding-right: $custom-scrollbar-width;
+}
     
 
 

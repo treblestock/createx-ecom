@@ -38,7 +38,7 @@ import Socials from '~/components/features/Socials.vue'
             <span class="_bold _white">Email:&#x2800;</span>
             <AppLink href="mailto:hello@createx.com">hello@createx.com</AppLink>
           </div>
-          <Socials class="socials"></Socials>
+          <Socials class="socials" theme="dark"></Socials>
         </div>
 
         <div class="footer-group">

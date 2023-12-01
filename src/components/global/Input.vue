@@ -20,7 +20,11 @@ const modelValue = defineModel<string | number>()
   display: inline-block;
 
   padding: 1rem 1.5rem;
-  box-shadow: 0 0 0 1px $color-green;
+  
+  box-shadow: 0 0 0 1px $color-gray-400;
+  &:focus-visible {
+    box-shadow: 0 0 0 1px $color-green;
+  }
 
   border-radius: $radius;
   cursor: text;
@@ -40,6 +44,10 @@ const modelValue = defineModel<string | number>()
     /* text-xxxs */
     font-size: 1.2rem;
     line-height: 1.5;
+  }
+
+  &:disabled {
+    background: $color-gray-400;
   }
 }
   

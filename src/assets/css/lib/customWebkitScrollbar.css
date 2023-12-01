@@ -8,13 +8,13 @@
 } */
 
 ::-webkit-scrollbar {
-  width: 0.5rem;
+  width: $custom-scrollbar-width;
 }
 ::-webkit-scrollbar-track {
-  scrollbar-width: .5rem;
+  scrollbar-width: $custom-scrollbar-width;
   background-color: $color-gray-400;
 }
 ::-webkit-scrollbar-thumb {
-  width: 0.5rem;
+  width: $custom-scrollbar-width;
   background-color: $color-gray-500;
 }

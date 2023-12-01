@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { Rating, DateRecord } from '~/types'
-import RatingComponent from './Rating.vue'
+import RatingComponent from '~/components/features/Rating.vue'
 
 import IconReply from '~/assets/img/icons/decor/share-arrow.svg'
 import IconLike from '~/assets/img/icons/decor/like.svg'

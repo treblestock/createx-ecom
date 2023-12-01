@@ -4,9 +4,11 @@ $lh: 1.5;
 $color-green: #17696A;
 $color-green-dark: #145C5D;
 $color-green-light: #03CEA4;
+$color-green-transparent: rgba(23, 105, 106, 0.06);
 
 $color-red: #FF4242;
 $color-orange: #F89828;
+$color-blue: #5A87FC;
 $color-blue-dark: #17696A;
 $color-white: #fff;
 $color-white-op: rgba(255, 255, 255, .6);
@@ -40,7 +42,18 @@ $color-text: #C4C4C4;
 $border-w: 1px;
 $radius: 4px;
 
-
-$shadow-card: 0px 80px 80px -20px rgba(154, 156, 165, 0.08), 0px 30px 24px -10px rgba(154, 156, 165, 0.05), 0px 12px 10px -6px rgba(154, 156, 165, 0.04), 0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+$shadow: 0 0 4px 1px $color-gray-400;
+$shadow-card: 
+  0px 80px 80px -20px rgba(154, 156, 165, 0.08), 
+  0px 30px 24px -10px rgba(154, 156, 165, 0.05), 
+  0px 12px 10px -6px rgba(154, 156, 165, 0.04), 
+  0px 4px 4px -4px rgba(30, 33, 44, 0.03);
+$shadow-card-hover: 
+  0px 80px 80px -20px rgba(154, 156, 165, 0.4), 
+  0px 30px 24px -10px rgba(154, 156, 165, 0.05), 
+  0px 12px 10px -6px rgba(154, 156, 165, 0.04), 
+  0px 4px 4px -4px rgba(30, 33, 44, 0.03);
 
 $header-height-full: 16.6rem;
+
+$custom-scrollbar-width: 0.5rem;

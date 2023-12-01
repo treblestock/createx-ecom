@@ -23,9 +23,9 @@ const isExpanded = ref(false)
       <div class="container">
         <div class="phone">Available 24/7 at <a href="tel:4055550128" class="link">(405) 555-0128</a></div>
         <nav class="header-top-nav">
-          <AppLink>Track order</AppLink>
+          <AppLink :to="{name: 'trackOrder'}">Track order</AppLink>
           <AppLink :to="{name: 'blog'}">Blog</AppLink>
-          <AppLink>Contacts</AppLink>
+          <AppLink :to="{name: 'contacts'}">Contacts</AppLink>
         </nav>
 
         <HeaderAuth></HeaderAuth>

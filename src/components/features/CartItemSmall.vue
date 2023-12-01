@@ -76,7 +76,7 @@ const emit = defineEmits<{
 
 .cart-item-small {
   display: flex;
-  align-items: top;
+  align-items: start;
   gap: 1.6rem;
 }
 .left {
@@ -107,6 +107,7 @@ const emit = defineEmits<{
   gap: 1rem;
 
   margin-bottom: .5rem;
+  
 }
 .name {
   color: $color-gray-800;
@@ -118,7 +119,10 @@ const emit = defineEmits<{
 }
 .delete {
   padding: 0;
-  color: $color-gray-800;
+  color: $color-gray-700;
+  &:hover {
+    color: $color-red;
+  }
 }
 .color-and-size {
   margin-bottom: 1rem;

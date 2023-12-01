@@ -115,11 +115,11 @@ const routes: RouteRecordRaw[] = [
         name: 'contacts',
         props: propsParser,
         component: () => import('~/pages/contacts/index.vue'),
-        redirect: {name: 'feedback'},
+        redirect: {name: 'contactsFeedback'},
         children: [
           {
             path: 'feedback',
-            name: 'feedback',
+            name: 'contactsFeedback',
             props: propsParser,
             component: () => import('~/pages/contacts/feedback.vue'),
             children: [
@@ -128,7 +128,7 @@ const routes: RouteRecordRaw[] = [
           },
           {
             path: 'stores',
-            name: 'stores',
+            name: 'contactsStores',
             props: propsParser,
             component: () => import('~/pages/contacts/stores.vue'),
             children: [
@@ -137,7 +137,7 @@ const routes: RouteRecordRaw[] = [
           },
           {
             path: 'faq',
-            name: 'faq',
+            name: 'contactsFAQ',
             props: propsParser,
             component: () => import('~/pages/contacts/faq.vue'),
             children: [
@@ -201,7 +201,7 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       {
-        path: 'trackOrder',
+        path: 'trackOrder/:orderId?',
         name: 'trackOrder',
         props: propsParser,
         component: () => import('~/pages/trackOrder.vue'),
@@ -221,6 +221,7 @@ const router = createRouter({
   routes,
   history: createWebHistory(),
   linkActiveClass: '_active',
+  linkExactActiveClass: '_active-exact',
   scrollBehavior(to, from, savedPostition) {
     if (to.hash) return {
       el: to.hash,

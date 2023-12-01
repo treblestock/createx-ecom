@@ -17,10 +17,7 @@ export default ((to, from, next) => {
   
   if (isAuthRequired && !isAuth) {
     const routerStore = useVueRouterStore()
-    // routerStore.redirects.onSignin = to.fullPath
-    // return '/'
-    // next(from)
-    routerStore.redirects.onSignin = to 
+    routerStore.redirects.onSignin = to
     routerStore.requestSignin()
     next(from)
   }

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { ProductColor, ProductSize as ProductSizeType, Rating as RatingType } from '~/types'
 import Rating from '~/components/features/Rating.vue'
-import SaleLabel from '../icons/SaleLabel.vue'
 import Price from '~/components/features/Price.vue'
 import ProductSizes from '~/components/features/ProductSizes.vue'
 import ProductColors from '~/components/features/ProductColors.vue'
@@ -42,9 +41,9 @@ function addToCart() {
       <div class="img">
         <Img :src="imgs[0]"></Img>
         <div class="labels">
-          <SaleLabel class="sale-label"
+          <div class="sale-label"
             v-if="discount"
-          >{{ discount }}</SaleLabel>
+          >{{ discount }}</div>
           <Rating class="rating"
             :rating="rating"
           ></Rating>
@@ -138,6 +137,7 @@ $shadow: 0 10px 10px 0 $color-gray-800;
   align-self: start;
   justify-self: start;
   grid-area: 1 / 1 / 2 / 2;
+
 }
 .rating {
   align-self: start;

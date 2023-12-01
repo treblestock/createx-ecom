@@ -12,21 +12,7 @@
 
 
 
-._fullscreen {
-  height: calc(100vh - $header-height-full);
-  width: 100vw;
-}
 
-
-._hidden-smart {
-  position: absolute;
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-}
 
 
 $color-slash-gradient: $color-gray-300;

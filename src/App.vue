@@ -2,7 +2,6 @@
 import PopupManager from '~/components/features/PopupManager.vue';
 
 
-
 </script>
 
 <template>

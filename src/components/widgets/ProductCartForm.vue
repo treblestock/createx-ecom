@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import type { Product, ProductSize } from '~/types'
 import Price from '~/components/features/Price.vue'
-import SaleLabel from '~/components/icons/SaleLabel.vue'
 import Rating from '~/components/features/Rating.vue'
 import ColorInput from '~/components/features/ColorInput.vue'
 import IconCart from '~/assets/img/icons/decor/Cart.svg'
@@ -51,7 +50,7 @@ function onSubmit() {
           :price="product.price"
           :discount="product.discount"
         ></Price>
-        <SaleLabel v-if="product.discount">{{ product.discount }}</SaleLabel>
+        <div class="sale-label" v-if="product.discount">{{ product.discount }}</div>
       </div>
 
       <div class="product-reviews">

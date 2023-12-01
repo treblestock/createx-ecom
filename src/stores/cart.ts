@@ -1,28 +1,31 @@
-import type { CartProductVariant, ProductSize } from '~/types'
 import { defineStore } from "pinia"
-
+import type { CartProductVariant, ProductSize, Cart, ShippingMethod, CartRecord } from '~/types'
 
 import useStoreProducts from '~/stores/products'
 
 
+const TAX_RATE = 0.06
+
+const SHIPPING_COST: Record<ShippingMethod, number> = {
+  Courier: 25,
+  createxGlobalExport: 10,
+  createxLocker: 0,
+  UPS: 12,
+  Store: 0,
+}
 
 type CartItemId = string
 export default defineStore('cart', () => {
 
-  const cart = ref<Map<CartItemId, CartProductVariant & {count: number}>>(new Map())
+  const cart = ref<Map<CartItemId, CartRecord>>(new Map())
+
+  const cartItemsData = computed(() => fetchCartItemData([...cart.value.values()]))
+
+  
   const cartItemsCount = computed(() => cart.value.size)
-
   const subtotal = computed(() => {
-    const productsStore = useStoreProducts()
-    if (!productsStore.isLoaded) return 0
-
-    let res = 0
-    cart.value.forEach(cartItem => {
-      const product = productsStore.findProduct(cartItem.productId)
-      const actualPrice = product.price * (1 - (product.discount || 0) / 100 )
-      res += actualPrice * cartItem.count 
-    })
-    return res
+    const { subtotal } = calcCartTotal([...cart.value.values()], 'Store')
+    return subtotal
   })
 
 
@@ -55,12 +58,52 @@ export default defineStore('cart', () => {
     return cart.value.get(cartItemId)?.count || 0
   }
 
+  // calc arbitary calc
+  function calcCartTotal(cart: Cart, shippingMethod: ShippingMethod) {
+    const subtotal = cart.reduce((subtotal, cartRecord) => {
+      const product = useStoreProducts().findProduct(cartRecord.productId)
+      return subtotal += cartRecord.count * product.price
+    }, 0)
+
+    const tax = subtotal * TAX_RATE
+
+    return {
+      shippingCost: SHIPPING_COST[shippingMethod],
+      tax,
+      subtotal,
+      total: subtotal + tax + SHIPPING_COST[shippingMethod],
+    }
+  }
+  
+  function fetchCartItemData(cartItems: CartRecord[]) {
+    const productsStore = useStoreProducts()    
+    
+    return cartItems.map(cartItem => {
+      const product = productsStore.findProduct(cartItem.productId)
+      return {
+        productId: product.id,
+        name: product.name,
+        price: product.price,
+        discount: product.discount,
+        img: product.imgs[0],
+        color: cartItem.color,
+        size: cartItem.size,
+        count: cartItem.count
+      }
+    })
+  }
+  
+
   function onRegister() {
     setCount('1:S:Black', 1)
+    setCount('2:S:Black', 1)
+    setCount('3:S:Black', 1)
+    setCount('4:S:Black', 1)
   }
 
   return {
     cart,
+    cartItemsData,
     cartItemsCount,
     subtotal,
 
@@ -68,6 +111,9 @@ export default defineStore('cart', () => {
     getProductVariant,
     setCount,
     getCount,
+
+    calcCartTotal,
+    fetchCartItemData,
     onRegister,
   }
 })

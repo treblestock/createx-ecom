@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { Product, ProductReview as ProductReviewType, Rating } from '~/types'
 import ProductReviewStats from '~/components/widgets/ProductReviewStats.vue'
-import ProductReview from '~/components/features/ProductReview.vue'
+import ProductReview from '~/components/widgets/ProductReview.vue'
 
 
 

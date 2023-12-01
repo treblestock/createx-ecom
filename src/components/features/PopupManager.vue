@@ -14,7 +14,10 @@ type PopupProps = Omit<InstanceType<typeof Popup>['$props'], PropsToExclude>
 
 
 const defaultStaticPopupsProps: Partial<Record<keyof typeof staticPopups, PopupProps>> = {
-  'Cart': {_side: true}
+  'Cart': {
+    _side: true,
+    classBody: '_no-padding',
+  }
 }
 const activePopups = ref<Map<Component, {id: PopupId, props?: PopupProps}>>(new Map())
 
@@ -89,4 +92,5 @@ provide('closePopup', closePopup)
 
 
 
-</style>~/components/widgets/popups
+
+</style>

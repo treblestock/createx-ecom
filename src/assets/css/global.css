@@ -161,6 +161,7 @@ body > * {
   cursor: pointer;
   
   &._active,
+  &._active-exact,
   &:hover {
     color: $color-green-dark;
   }
@@ -194,8 +195,88 @@ body > * {
   }
 }
 
+.label {
+  padding: .8rem;
+  line-height: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: $radius;
+
+  background: $color-green-light;
+  color: $color-white;
+  
+}
+.sale-label {
+  padding: 0.2rem .8rem;
+  border-radius: $radius;
+
+  background: $color-red;
+  color: $color-white;
+
+  
+  &:before {
+    content: '-';
+  }
+  &:after {
+    content: '%';
+  }
+
+}
+
+
+
 
 /* sections */
 ._bgc-gray {
   background: $color-gray-300;
+}
+
+
+._fullscreen {
+  height: calc(100vh - $header-height-full);
+  width: 100vw;
+}
+
+
+._hidden-smart {
+  position: absolute;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+
+/* tags */
+.tag {
+  &:before {
+    content: "#";
+  }
+
+  display: inline-block;
+  padding: 0.4rem 1.6rem;
+
+  border-radius: $radius;
+  box-shadow: 0 0 0 1px $color-gray-400;
+  color: $color-gray-700;
+}
+
+
+._with-icon, ._with-icon-reverse {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: nowrap;
+
+  & .svg-icon {
+    color: inherit !important;
+  }
+}
+._with-icon-reverse {
+  flex-direction: row-reverse;
 }

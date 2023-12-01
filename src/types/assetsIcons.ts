@@ -99,7 +99,6 @@ export enum assetsIcons {
   mic = 'icons/decor/mic.svg',
   MinusRound = 'icons/decor/Minus-round.svg',
   Minus = 'icons/decor/Minus.svg',
-  pin = 'icons/decor/pin.svg',
   Play = 'icons/decor/Play.svg',
   PlusRound = 'icons/decor/Plus-round.svg',
   plus = 'icons/decor/plus.svg',

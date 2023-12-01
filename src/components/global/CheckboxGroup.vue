@@ -35,6 +35,9 @@ const modelValue = defineModel<any>()
 }
 
 .checkbox-group-checkbox {
+  &:disabled + * {
+    color: $color-gray-500;
+  }
 }
 
 

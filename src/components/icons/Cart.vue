@@ -39,18 +39,10 @@ const cartItemsCount = computed(() => cartStore.cartItemsCount)
 }
 
 .label {
-  padding: .8rem;
-  line-height: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border-radius: $radius;
-
-  background: $color-green-light;
   color: $color-white;
+  background: $color-green-light;
 }
+
 
 
 </style>

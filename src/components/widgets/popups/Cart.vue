@@ -7,35 +7,12 @@ import CartItemSmall from '~/components/features/CartItemSmall.vue'
 import useStoreCart from '~/stores/cart'
 const cartStore = useStoreCart()
 
-import useStoreProducts from '~/stores/products'
-const productsStore = useStoreProducts()
-
 const router = useRouter()
 
 // fetch data
-const subTotal = computed(() => cartStore.subtotal)
+const subtotal = computed(() => cartStore.subtotal)
 const distinctiveProductsCount = computed(() => cartStore.cartItemsCount)
-
-
-const cartItemsData = computed(() => {
-  const cartItems = [...cartStore.cart.values()]
-  
-  if (!productsStore.isLoaded) return
-
-  return cartItems.map(cartItem => {
-    const product = productsStore.findProduct(cartItem.productId)
-    return {
-      productId: product.id,
-      name: product.name,
-      price: product.price,
-      discount: product.discount,
-      img: product.imgs[0],
-      color: cartItem.color,
-      size: cartItem.size,
-      count: cartItem.count
-    }
-  })
-})
+const cartItemsData = computed(() => cartStore.cartItemsData)
 
 
 
@@ -61,27 +38,34 @@ function redirect() {
 
 
 
+
+
+
 </script>
 
 <template>
     <form class="form"
       @submit.prevent=""
     >
-      <div class="top">
-        <div class="title h5">Your cart ({{ distinctiveProductsCount }})</div>
-        <CartItemSmall class="cart-item"
-          v-for="cartItemData in cartItemsData" :key="cartStore.getCartItemId(cartItemData)" 
-          :="cartItemData"
-          @setCount="(count) => setCount(cartItemData, count)"
-          @deleteProduct="() => deleteProduct(cartItemData)"
-        >
-        </CartItemSmall>
+      <div class="title h5">Your cart ({{ distinctiveProductsCount }})</div>
+
+      <div class="middle">
+        <div class="cart-items">
+          <CartItemSmall class="cart-item"
+            v-for="cartItemData in cartItemsData" :key="cartStore.getCartItemId(cartItemData)" 
+            :="cartItemData"
+            @setCount="(count) => setCount(cartItemData, count)"
+            @deleteProduct="() => deleteProduct(cartItemData)"
+          >
+          </CartItemSmall>
+        </div>
       </div>
+
       <div class="bottom">
         <div class="bottom-row">
-          <div>Subtotal</div>
+          <div>subtotal</div>
           <Price class="price"
-            :price="subTotal"
+            :price="subtotal"
           ></Price>
         </div>
         <AppLinkBtn class="submit _with-icon"
@@ -99,7 +83,7 @@ function redirect() {
 @import "~css/consts";
 
 .form {
-  width: 30rem;
+  width: 35rem;
   height: 100%;
 
   display: flex;
@@ -107,19 +91,47 @@ function redirect() {
   justify-content: space-between;
 }
 .top {
-  flex: 1 1 auto;
+  flex: 0 0 auto;
 }
+
 .title {
+  padding: 3.2rem 2.4rem;
+  border-bottom: 1px solid $color-gray-300;
+}
+
+.middle {
+  flex: 1 1 auto;
+
+  position: relative;
+}
+.cart-items {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  padding: 2.4rem;
+  overflow-y: auto;
 }
 .cart-item {
   padding: 3.2rem 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+  &:last-child {
+    padding-bottom: 0;
+  }
 
   & + & {
     border-top: 1px solid $color-gray-300;
   }
 }
 .bottom {
-  
+  padding: 2rem 3.2rem 2.4rem;
+  border-top: 1px solid $color-gray-300;
+
+  flex: 0 0 10rem;
 }
 .bottom-row {
   display: flex;

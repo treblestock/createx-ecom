@@ -1,8 +1,5 @@
 <script setup lang="ts">
-import useIcon from '~/composables/useIcon.js'
-
-
-const Icon = useIcon('heart')
+import IconHeart from '~/assets/img/icons/decor/heart.svg'
 
 const favouriteItems = ref<number>(0)
 
@@ -11,12 +8,14 @@ const favouriteItems = ref<number>(0)
 </script>
 
 <template>
-  <div class="favourite">
-    <Icon class="icon"></Icon>
+  <AppLink class="favourite _with-icon"
+    :to="{name: 'accountFavourite'}"
+  >
+    <IconHeart class="icon"></IconHeart>
     <div class="label">
       {{ favouriteItems }}
     </div>
-  </div>
+  </AppLink>
   
 </template>
 
@@ -26,7 +25,11 @@ const favouriteItems = ref<number>(0)
 .favourite {
   display: flex;
   gap: 0.8rem;
-  
+  color: $color-gray-800;
+
+  &:hover {
+    color: $color-green;
+  }
 
 }
 .icon {
@@ -34,8 +37,8 @@ const favouriteItems = ref<number>(0)
 }
 
 .label {
-  color: $color-gray-800;
-
+  background: none;
+  color: inherit;
 }
 
 
