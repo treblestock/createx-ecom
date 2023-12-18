@@ -12,31 +12,29 @@ import img6 from '~/assets/img/sponsors/6.png'
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <div class="sponsors">
-        <div class="sponsor">
-          <img :src="img1" alt="">
-        </div>
-        <div class="sponsor">
-          <img :src="img2" alt="">
-        </div>
-        <div class="sponsor">
-          <img :src="img3" alt="">
-        </div>
-        <div class="sponsor">
-          <img :src="img4" alt="">
-        </div>
-        <div class="sponsor">
-          <img :src="img5" alt="">
-        </div>
-        <div class="sponsor">
-          <img :src="img6" alt="">
-        </div>
-
+  <div class="wrapper">
+    <div class="sponsors grid">
+      <div class="sponsor">
+        <img :src="img1" alt="">
       </div>
+      <div class="sponsor">
+        <img :src="img2" alt="">
+      </div>
+      <div class="sponsor">
+        <img :src="img3" alt="">
+      </div>
+      <div class="sponsor">
+        <img :src="img4" alt="">
+      </div>
+      <div class="sponsor">
+        <img :src="img5" alt="">
+      </div>
+      <div class="sponsor">
+        <img :src="img6" alt="">
+      </div>
+
     </div>
-  </section>
+  </div>
   
 </template>
 
@@ -44,18 +42,15 @@ import img6 from '~/assets/img/sponsors/6.png'
 @import '~css/consts';
 
 
-.section {
-  margin-bottom: 18rem;
-}
-.container {
+.wrapper {
   
 }
 .sponsors {
-  display: flex;
-  gap: 9rem;
+  gap: 3rem;
+
+  --min-width: 12rem;
 }
 .sponsor {
-  width: 12rem;
   height: 6.5rem;
 
   & img {

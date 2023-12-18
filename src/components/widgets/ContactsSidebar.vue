@@ -5,7 +5,7 @@
 </script>
 
 <template>
-  <aside class="account-sidebar">
+  <div class="account-sidebar">
     <AppLink class="link h3"
       :to="{name: 'contactsFeedback'}"
     >Contact Us</AppLink>
@@ -15,7 +15,7 @@
     <AppLink class="link h3"
       :to="{name: 'contactsFAQ'}"
     >FAQ</AppLink>
-  </aside>
+  </div>
 </template>
 
 <style scoped>
@@ -23,16 +23,13 @@
 
 
 .account-sidebar {
-  max-width: 28.5rem;
 }
 .link {
   display: block;
   margin-bottom: 1rem;
 
+  text-wrap: nowrap;
   color: $color-gray-600;
-  /* &:hover, &. {
-    color: $color-green;
-  } */
 }
 
 </style>

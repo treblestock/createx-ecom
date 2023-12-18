@@ -13,24 +13,24 @@ const products = computed(() => productsStore.products.slice(0, 6))
 </script>
 
 <template>
-  <div class="reciently-viewed-page">
+  <main class="reciently-viewed-page">
     <section class="reciently-viewed">
       <div class="reciently-viewed-header">
-        <h1 class="h1">Wishlist</h1>
+        <h1 class="h1">Recently viewed</h1>
         <Btn class="_transparent _with-icon _delete">
           <IconDelete class="icon-delete"></IconDelete>
           Delete all
         </Btn>
       </div>
 
-      <div class="product-cards">
+      <div class="product-cards grid">
         <ProductCard class="product-card"
           v-for="product in products" :key="product.id" 
           :="product"
         ></ProductCard>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 
 <style scoped>
@@ -55,12 +55,14 @@ const products = computed(() => productsStore.products.slice(0, 6))
 .icon-delete {
 }
 .product-cards {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   gap: 3rem;
+
+  --min-width: 28rem;
 }
 .product-card {
-  flex: 0 0 39rem;
+  /* flex: 0 0 39rem; */
 }
 
 </style>

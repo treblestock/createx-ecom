@@ -1,23 +1,18 @@
 <script setup lang="ts">
-import type { Product, ProductReview as ProductReviewType, Rating } from '~/types'
+import type { ProductReview, Rating } from '~/types'
 import ProductReviewStats from '~/components/widgets/ProductReviewStats.vue'
-import ProductReview from '~/components/widgets/ProductReview.vue'
 
 
 
 const props = defineProps<{
   rating: Rating
-  reviewIds: Product['reviewsIds']
+  reviews: ProductReview[]
+  sortOptions: Record<string, any>
 }>()
 
 
-const { data: reviews } = useFetch(async () => {
-  const allReviews = await api.getProductReviews(60)
-  return props.reviewIds.map(id => allReviews[id + 1])
-}, [])
+const selectedSort = defineModel<any>('selectedSort', {required: true})
 
-const selectOptions = ['newest', 'oldest', 'good marks', 'bad marks', 'likes', 'dislikes']
-const selectedSort = ref(selectOptions[0])
 
 function leaveReview() {
   usePopupManager().showPopup('LeaveReview')
@@ -26,45 +21,42 @@ function leaveReview() {
 </script>
 
 <template>
-  <div class="review-section">
+  <header class="review-section-header">
     <ProductReviewStats class="review-stats"
       :rating="rating"
       :reviews="reviews"
     ></ProductReviewStats>
+
     <div class="review-toolbar">
       <Btn class="leave-review"
         @click="leaveReview"
       >Leave a review</Btn>
       <div class="review-sort">
-        <span class="text_b">Sort by</span>
+        <span class="text-b">Sort by</span>
         <Select class="review-sort-select"
           v-model="selectedSort"
-          :options="selectOptions"
+          :options="sortOptions"
         ></Select>
       </div>
     </div>
-    <div class="reviews">
-      <ProductReview class="review"
-        v-for="review in reviews" :key="review.id" 
-        :="review"
-      ></ProductReview>
-    </div>
-  </div>  
+  </header>  
 </template>
 
 <style scoped>
 @import "~css/consts";
-.review-section {
-
+.review-section-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 .review-stats {
-  margin-bottom: 8rem;
+  margin-bottom: var(--leng-80);
 }
 .review-toolbar {
   display: flex;
   justify-content: space-between;
 
-  margin-bottom: 6rem;
+  margin-bottom: var(--leng-60);
 }
 
 .leave-review {
@@ -75,21 +67,11 @@ function leaveReview() {
   align-items: center;
   gap: 1rem;
 }
-.text_b {
+.text-b {
   text-wrap: nowrap;
   color: $color-gray-900;
 }
 .review-sort-select {
 
 }
-
-
-.reviews {}
-.review {
-  & + & {
-    border-top: 1px solid $color-gray-300;
-  }
-}
-
-
 </style>

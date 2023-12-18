@@ -9,14 +9,12 @@ const props = defineProps<{
 }>()
 
 
-// defineOptions({inheritAttrs: false})
-
 const modelValue = defineModel<any>()
 
 </script>
 
 <template>
-  <label class="text_sb"
+  <label class="text-s-b"
     :class="classWrapper"
   >
     <input class="input _hidden-smart"

@@ -66,6 +66,7 @@ function onSubmit() {
   flex-wrap: wrap;
   row-gap: 2.4rem;
   column-gap: 3rem;
+
 }
 .item {
   background: $color-gray-200;
@@ -75,7 +76,7 @@ function onSubmit() {
   }
 }
 .input-group {
-  flex: 1 0 clamp(23rem, 100% / 2 - 1.5rem , 39rem);
+  flex: 1 0 max(calc(50% - 1.5rem), 20rem);
 }
 
 </style>

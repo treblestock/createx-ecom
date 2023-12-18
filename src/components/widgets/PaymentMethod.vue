@@ -113,7 +113,7 @@ const paypalForm = ref({
 }
 .form-item {
   box-shadow: $shadow;
-  width: 39rem;
+  max-width: 39rem;
 }
 :deep(.spoiler-title) {
   padding: 0;
@@ -134,7 +134,7 @@ const paypalForm = ref({
   flex: 0 0 100%;
 }
 .card-expiry {
-  flex: 0 1 18rem;
+  flex: 1 0 10rem;
 }
 .card-cvc {
   flex: 0 0 14rem;

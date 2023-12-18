@@ -10,9 +10,91 @@
   @mixin addProp $name, $value, html;
 }
 
+/* leng-smooth */
 
+/*
+  This allowes to set linear dependency between font-size and view port size.
+  In other words, each view port width value defines font-font-size value.
+  This may be used as value for base font size (html { font-size: $value }) and
+  any item, using rem as size-unit will be recalculated depending on view port size.
 
+  There are several implementations:
+  - v1 (leng-smooth)
+  - v2 (leng-smooth-v2)
+  - And not implemented v3, which should be compile only (where css-vars aren't used)
 
+  Implementations based on linear function fz = fz_0 + vp * fz_per_viewport
+  (E.g. we have base fz-min = 10 value and font-size grows 1px each 
+  100px vp incrementaion. Then at vp = 400 we will have 10px + 4px = 14px)
+
+  We can find this fuction via 2 points the line goes through.
+  The points are: 
+  p1 = (vp-min, fz-min)
+  p2 = (vp-max, fz-max) 
+    // It means we have font-size = fz-min, when we have vp = vp-min
+    // As fz dependes on vp, we can say vp is X and fz is Y
+  
+  /* todo: complete doc
+*/
+
+@define-mixin leng-smooth $fz-min: 8, $fz-max: 10, $vp-min: 320, $vp-max: 1440, $size-unit: 1px {
+  
+  html,
+  body {
+    --fz-min: $fz-min;
+    --fz-max: $fz-max;
+    --vp-min: $vp-min;
+    --vp-max: $vp-max;
+  
+    --fz-delta: calc(var(--fz-max) - var(--fz-min));
+    --vp-delta: calc(var(--vp-max) - var(--vp-min));
+    --fz-per-vp: calc(var(--fz-delta) / var(--vp-delta));
+        /* 
+          how many px font-size will be incremented in, 
+          if view port size increments 1px
+        */
+  
+    --fz-dynamic: calc(
+        (var(--fz-min) * $size-unit)
+        + var(--fz-per-vp) * (100vw - var(--vp-min) * $size-unit)
+      );
+  
+    font-size: clamp(
+      calc(var(--fz-min) * $size-unit),
+      var(--fz-dynamic),
+      calc(var(--fz-max) * $size-unit)
+    );
+
+  }
+  body {}
+}
+
+@define-mixin leng-smooth-v2 $fz-min: 8, $fz-max: 10, $vp-min: 320, $vp-max: 1440, $size-unit: 1px {
+  
+  html,
+  body {
+    --fz-min: $fz-min;
+    --fz-max: $fz-max;
+    --vp-min: $vp-min;
+    --vp-max: $vp-max;
+
+    --fz-delta: calc(var(--fz-max) - var(--fz-min));
+    --vp-delta: calc(var(--vp-max) - var(--vp-min));
+    --fz-per-vp: calc(var(--fz-delta) / var(--vp-delta));
+    --fz-initial: calc(var(--fz-min) - var(--fz-per-vp) * var(--vp-min));
+
+    --fz-dynamic: calc(
+        var(--fz-initial) * $size-unit + var(--fz-per-vp) * 100vw
+      );
+
+    font-size: clamp(
+      calc(var(--fz-min) * $size-unit),
+      /* calc(var(--fz-dynamic) * $size-unit), */
+      var(--fz-dynamic),
+      calc(var(--fz-max) * $size-unit)
+    );
+  }
+}
 
 
 $color-slash-gradient: $color-gray-300;
@@ -39,7 +121,7 @@ $color-slash-gradient: $color-gray-300;
 @define-mixin slashBetweenVertical $w, $color: $color-slash-gradient {
   & > * + * {
     position: relative;
-
+    
     &:before {
       content: '';
       /* parent pos */

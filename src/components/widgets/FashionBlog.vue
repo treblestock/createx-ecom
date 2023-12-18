@@ -6,47 +6,37 @@ const posts = useFetchItems(() => api.getBlogPosts(2))
 
 
 
-
-
-
-
-
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <div class="blog-preview">
-        <div class="header">
-          <div class="title h1">Fashion blog</div>
-          <AppLinkBtn class="link"
-            outlined
-            :to="{
-              name: 'blog'
-            }"
-          >
-            View blog
-          </AppLinkBtn>
-        </div>
+  <div class="wrapper">
+    <div class="blog-preview">
+      <div class="header">
+        <div class="title h1">Fashion blog</div>
+        <AppLinkBtn class="link"
+          outlined
+          :to="{
+            name: 'blog'
+          }"
+        >
+          View blog
+        </AppLinkBtn>
+      </div>
 
-        <div class="posts">
-          <BlogPostCard 
-            v-for="post in posts" :key="post.id"
-            :="post"
-          ></BlogPostCard>
-        </div>
+      <div class="posts grid">
+        <BlogPostCard class="post"
+          v-for="post in posts" :key="post.id"
+          :="post"
+        ></BlogPostCard>
       </div>
     </div>
-  </section>
+  </div>
   
 </template>
 
 <style scoped>
 @import '~css/consts';
 
-.section {
-  margin-bottom: 12rem;
-}
 .blog-preview {
 
 }
@@ -65,8 +55,9 @@ const posts = useFetchItems(() => api.getBlogPosts(2))
 }
 
 .posts {
-  display: flex;
   gap: 3rem;
+  --min-width: 39rem;
 }
+
 
 </style>

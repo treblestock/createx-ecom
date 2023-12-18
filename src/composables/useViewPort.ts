@@ -1,34 +1,29 @@
 import { type ComputedRef, type Ref, computed, onUnmounted, ref } from 'vue'
 
-let isCalced: boolean = false
-let res: null | Res = null 
+let _vw: Ref<number>
+let vw: ComputedRef<number>
+let isMobile: ComputedRef<boolean>
 
-interface Res {
-  vw: Ref,
-  isMobile: ComputedRef,
-}
 
-export default function(): Res {
-  if (isCalced) return res as Res 
+export default function(): {vw: Ref<number>, isMobile: ComputedRef<boolean>} {
+  _vw ??= ref(document.body.clientWidth)
+  vw ??= computed(() => _vw.value)
+  isMobile ??= computed(() => vw.value < 400)
 
-  const vw = ref(document.body.clientWidth)
-  const isMobile = computed(() => vw.value < 400)
   
   const onResize = () => {
-    vw.value = document.body.clientWidth
+    _vw.value = document.body.clientWidth
   }
-  Window.addEventListener('resize', onResize)
-  onUnmounted(() => {
-    Window.removeEventListener('resize', onResize)
-    console.log('cleanded')
-    isCalced = false
-  })
   
-  res = {
-    vw,
-    isMobile,
-  } as Res
-  isCalced = true
+  window.addEventListener('resize', onResize)
 
-  return res
+  onUnmounted(() => {
+    window.removeEventListener('resize', onResize)
+    console.log('cleanded')
+  })
+
+  return {
+    vw,
+    isMobile
+  }
 }

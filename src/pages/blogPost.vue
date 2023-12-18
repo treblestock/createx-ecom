@@ -1,11 +1,13 @@
 <script setup lang="ts">
-import BlogPost from '~/components/widgets/BlogPost.vue'
+import type { BlogPost } from '~/types'
+import BlogPostBody from '~/components/widgets/BlogPostBody.vue'
 import BlogPostCard from '~/components/widgets/BlogPostCard.vue'
 import PrevNextPosts from '~/components/widgets/PrevNextPosts.vue'
 import BlogPostComment from '~/components/widgets/BlogPostComment.vue'
 import LeaveBlogPostCommentForm from '~/components/widgets/LeaveBlogPostCommentForm.vue'
 import MailingSubscribtion from '~/components/widgets/MailingSubscribtion.vue'
-
+import BlogPostHeader from '~/components/widgets/BlogPostHeader.vue'
+import BlogPostFooter from '~/components/widgets/BlogPostFooter.vue'
 
 
 
@@ -14,15 +16,18 @@ const props = defineProps<{
 }>()
 
 import useStoreBlogPosts from '~/stores/blogPosts'
-import type { BlogPost as BlogPostType } from '~/types'
 const blogPostsStore = useStoreBlogPosts()
 
-const post = computed(() => blogPostsStore.findPost(props.id))
-const relatedPosts = computed(() => blogPostsStore.blogPosts.slice(3, 5))
-const prevPost = computed<BlogPostType | null>(() => {
+const post = computed<BlogPost | undefined>(() => blogPostsStore.findPost(props.id))
+
+
+
+const { data: relatedPosts } = useFetch(() => api.getRelatedBlogPosts(props.id, 3), [] as BlogPost[])
+
+const prevPost = computed<BlogPost | null>(() => {
   return post.value?.id && blogPostsStore.findPost(post.value.id - 1) || null
 })
-const nextPost = computed<BlogPostType | null>(() => {
+const nextPost = computed<BlogPost | null>(() => {
   return post.value?.id && blogPostsStore.findPost(post.value.id + 1) || null
 })
 
@@ -35,17 +40,43 @@ const comments = computed(() => {
 })
 
 
-
 </script>
 
 
 <template>
-  <div class="page">
-    <BlogPost :id="id"></BlogPost>
+  <div class="page"
+    v-if="post"
+  >
+    <header class="blog-post-header">
+      <div class="container-s">
+        <BlogPostHeader class="blog-post-header-content"
+          :key="post.id"
+          :title="post.title"
+          :commentsIds="post.commentsIds"
+          :category="post.category"
+          :date="post.date"
+        ></BlogPostHeader>
+      </div>
+    </header>
+
+    <div class="blog-post-body _with-border">
+      <div class="container-s">
+        <BlogPostBody class="blog-post-body-content"
+          :key="post.id"
+          :="post"
+        ></BlogPostBody>
+        <footer class="blog-post-footer">
+          <BlogPostFooter class="blog-post-footer-content"
+            :key="post.id"
+            :tags="post.tags"
+          ></BlogPostFooter>
+        </footer>
+      </div>
+    </div>
 
 
-    <div class="section blog-post-footer">
-      <div class="container container-small">
+    <div class="section-120 neighboring-posts _with-border">
+      <div class="container-s">
         <PrevNextPosts
           :prevPost="prevPost"
           :nextPost="nextPost"
@@ -53,7 +84,7 @@ const comments = computed(() => {
       </div>
     </div>
 
-    <div class="section related-posts _bgc-gray">
+    <div class="section-120 related-posts-section bgc-gray-200">
       <div class="container">
         <div class="related-posts-header">
           <div class="title h1">Related Posts</div>
@@ -62,18 +93,21 @@ const comments = computed(() => {
           >View all</AppLinkBtn>
         </div>
 
-        <div class="related-posts-posts">
-          <BlogPostCard v-for="post in relatedPosts" :key="post.id" 
-          :="post"></BlogPostCard>
+        <div class="related-posts grid">
+          <BlogPostCard class="related-post"
+            v-for="post in relatedPosts" :key="post.id" 
+            :="post"
+          ></BlogPostCard>
         </div>
       </div>
     </div>
 
 
-    <div class="section post-comments-section"
+    <div class="section-120 post-comments-section"
       v-if="comments.length"
+      id="comments"
     >
-      <div class="container container-small">
+      <div class="container-s">
         <div class="post-comments">
           <div class="post-comments-title h1">
             {{ comments.length }} Comments
@@ -88,33 +122,35 @@ const comments = computed(() => {
     </div>
 
     <div class="leave-comments-section section">
-      <div class="container container-small">
+      <div class="container-s">
         <LeaveBlogPostCommentForm class="leave-comment-form"></LeaveBlogPostCommentForm>
       </div>
     </div>
 
-    <MailingSubscribtion></MailingSubscribtion>
+    <section class="pv-100 bgc-gray-200" id="subscribe-mailing">
+      <div class="container">
+        <MailingSubscribtion></MailingSubscribtion>
+      </div>
+    </section>
     
   </div>
 </template>
 
 <style scoped>
 @import '~css/consts';
+.blog-post-header {
+}
 
-.section {
-  padding: 8rem 0;
-  
+._with-border {
   border-top: 1px solid $color-gray-300;
 }
-.container-small {
-  max-width: 85rem; /* 81 + 2 + 2 */
-}
 .blog-post-footer {
-  padding: 3.2rem 0;
-  padding-bottom: 10rem;
 }
-.related-posts.section {
-  padding: 8rem 0;
+.neighboring-posts {
+  
+}
+.related-posts-section {
+  padding: var(--leng-80) 0;
 }
 
 .related-posts-header {
@@ -123,22 +159,23 @@ const comments = computed(() => {
   align-items: center;
   gap: 3rem;
 
-  margin-bottom: 6rem;
+  margin-bottom: var(--leng-60);
 }
 
-.related-posts-posts {
-  display: flex;
+.related-posts {
+  /* display: flex;
+  gap: 3rem; */
+
   gap: 3rem;
+  --min-width: 40rem;
+}
+.related-post {
+  height: 100%;
 }
 
 
 /* comments */
 .post-comments-section {
-
-  & .container {
-    max-width: 85rem; /* 81 + 2 + 2 */
-
-  }
 }
 .post-comments-title {
   margin-bottom: 4rem;
@@ -147,7 +184,7 @@ const comments = computed(() => {
 .comments {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: var(--leng-40);
 }
 .blog-post-comment {
   max-width: 81rem;

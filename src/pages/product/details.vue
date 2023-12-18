@@ -8,7 +8,7 @@ const props = defineProps<{
 }>()
 
 
-const { data: product } = useFetch(() => api.findProduct(props.id), null)
+const { data: product } = useFetch(() => api.findProductById(props.id), null)
 
 
 </script>
@@ -17,12 +17,12 @@ const { data: product } = useFetch(() => api.findProduct(props.id), null)
   <div class="product-details-page"
     v-if="product"
   >
-    <ProductDetails class="details" 
-      :="product"
-    />
     <ProductCard class="product-card"
       :="product"
     ></ProductCard>
+    <ProductDetails class="details" 
+      :="product"
+    />
   </div>
 </template>
 
@@ -31,14 +31,17 @@ const { data: product } = useFetch(() => api.findProduct(props.id), null)
 
 .product-details-page {
   display: flex;
-  gap: 14.5rem;
+  flex-wrap: wrap;
+  flex-direction: row-reverse;
+  column-gap: var(--leng-120);
   align-items: start;
 }
 .details {
-  flex: 1 1 auto;
+  flex: 1 0 40%;
 }
 .product-card {
-  flex: 0 0 auto;
+  flex: 0 0 rl(280, 390);
+  margin: 0 auto;
 }
 
 </style>

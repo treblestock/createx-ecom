@@ -11,56 +11,66 @@ import img6 from '~/assets/img/clothes/categories/6.png'
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <h1 class="title h1">Popular categories</h1>
-      
-      <div class="categories">
-        <div class="category">
-          <div class="img">
-            <img :src="img1" alt="">
-          </div>
-          <div class="category-title text_xlb">Tops</div>
+  <div class="wrapper">
+    <h1 class="section-title h1">Popular categories</h1>
+    
+    <div class="categories grid">
+      <AppLink class="category"
+        :to="{name: 'products', query: {categoryMinorClothType: 'Tops'}}"
+      >
+        <div class="img-a">
+          <img :src="img1" alt="">
         </div>
+        <div class="title text-xl-b">Tops</div>
+      </AppLink>
 
-        <div class="category">
-          <div class="img">
-            <img :src="img2" alt="">
-          </div>
-          <div class="category-title text_xlb">T-shirts</div>
+      <AppLink class="category"
+        :to="{name: 'products', query: {categoryMinorClothType: 'T-shirts<'}}"
+      >
+        <div class="img-a">
+          <img :src="img2" alt="">
         </div>
+        <div class="title text-xl-b">T-shirts</div>
+      </AppLink>
 
-        <div class="category">
-          <div class="img">
-            <img :src="img3" alt="">
-          </div>
-          <div class="category-title text_xlb">Caps</div>
+      <AppLink class="category"
+        :to="{name: 'products', query: {categoryMinorClothType: 'Caps'}}"
+      >
+        <div class="img-a">
+          <img :src="img3" alt="">
         </div>
+        <div class="title text-xl-b">Caps</div>
+      </AppLink>
 
-        <div class="category">
-          <div class="img">
-            <img :src="img4" alt="">
-          </div>
-          <div class="category-title text_xlb">Sandals</div>
+      <AppLink class="category"
+        :to="{name: 'products', query: {categoryMinorClothType: 'Sandals'}}"
+      >
+        <div class="img-a">
+          <img :src="img4" alt="">
         </div>
+        <div class="title text-xl-b">Sandals</div>
+      </AppLink>
 
-        <div class="category">
-          <div class="img">
-            <img :src="img5" alt="">
-          </div>
-          <div class="category-title text_xlb">Jackets</div>
+      <AppLink class="category"
+        :to="{name: 'products', query: {categoryMinorClothType: 'Jackets'}}"
+      >
+        <div class="img-a">
+          <img :src="img5" alt="">
         </div>
+        <div class="title text-xl-b">Jackets</div>
+      </AppLink>
 
-        <div class="category">
-          <div class="img">
-            <img :src="img6" alt="">
-          </div>
-          <div class="category-title text_xlb">Coats</div>
+      <AppLink class="category"
+        :to="{name: 'products', query: {categoryMinorClothType: 'Coats'}}"
+      >
+        <div class="img-a">
+          <img :src="img6" alt="">
         </div>
+        <div class="title text-xl-b">Coats</div>
+      </AppLink>
 
-      </div>
     </div>
-  </section>
+  </div>
   
 </template>
 
@@ -68,40 +78,42 @@ import img6 from '~/assets/img/clothes/categories/6.png'
 @import '~css/consts';
 
 
-.section {
-  margin-bottom: 18rem;
-}
 
-.title {
-  margin-bottom: 6rem;
-  
+.section-title {
+  margin-bottom: var(--leng-60);
+
   text-align: center;
   color: $color-gray-900;
 }
-.container {
+.title {
+  text-align: center;
+  color: $color-gray-900;
+}
+.wrapper {
   
 }
 .categories {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 3rem;
 }
 .category {
+  flex: 0 0 rl(100, 180);
+  
+  margin-bottom: var(--leng-60);
+  &:hover {
+    & .title {
+      color: $color-green;
+    }
+  }
 }
-.img {
-  width: 18rem;
-  height: 18rem;
+.img-a {
+  aspect-ratio: 1 / 1;
   border-radius: 50%;
 
   margin-bottom: 2.4rem;
 
-  & img {
-    object-fit: cover;
-  }
-}
-.category-title {
-  text-align: center;
-  color: $color-gray-900;
 }
 
 </style>

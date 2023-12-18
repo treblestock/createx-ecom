@@ -16,7 +16,8 @@ const modelValue = defineModel<any>()
       <option class="select__option"
         disabled
         value=""
-      >{{ disabledValue || 'choose' }}</option>
+        v-if="disabledValue"
+      >{{ disabledValue }}</option>
       <option class="select__option"
         v-for="optionValue, optionText in options" :key="optionValue"
         :value="optionValue"
@@ -38,7 +39,7 @@ const modelValue = defineModel<any>()
 
 @define-mixin baseUI {
   padding: 1rem 1.5rem;
-  box-shadow: 0 0 0 1px $color-green;
+  box-shadow: inset 0 0 0 1px $color-green;
   color: $color-gray-800;
 }
 

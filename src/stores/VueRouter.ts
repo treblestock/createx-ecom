@@ -14,12 +14,14 @@ export default defineStore('vueRouter', {
     
   },
   actions: {
+    // auth related
     requestSignup() {
       usePopupManager().showPopup('Signup')
     },
     requestSignin() {
       usePopupManager().showPopup('Signin')
     },
+    
     onSignin() { // continue navigation aborted before auth
       const lastAbortedRoute = this.redirects.onSignin
       if (!lastAbortedRoute) return
@@ -30,8 +32,17 @@ export default defineStore('vueRouter', {
     onSignout() { // isAuthOnly ? redirect('/') : doNothing()
       const isOnAuthOnlyPage = this.$router.currentRoute.value.meta.isAuthOnly
       if (!isOnAuthOnlyPage) return
-
+      
       this.$router.$navigate('/')
     },
+
+
+    // bread crumbs related
+    pushBreadCrumb() {
+      
+    }
+
+
+
   },
 })

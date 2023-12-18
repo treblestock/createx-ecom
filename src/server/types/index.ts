@@ -1,3 +1,5 @@
+export type * from "./endpoints.js"
+
 export type Role = 'user' | 'admin'
 
 export type UserData = {
@@ -20,3 +22,4 @@ export interface DB {
   deleteUser(email: string): Promise<boolean>
   getUsers(): Promise<UserData[]>
 }
+

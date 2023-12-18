@@ -138,7 +138,7 @@
 .shift-right-move,
 .shift-right-enter-active,
 .shift-right-leave-active {
-  transition: all, .6s ease;
+  transition: all, .3s ease;
 }
 
 .shift-right-leave-active {
@@ -156,5 +156,53 @@
 
 .shift-right-enter-to,
 .shift-right-leave-from {
+  /* animation: emerge ease .6s; */
+}
+/* shift-left */
+.shift-left-move,
+.shift-left-enter-active,
+.shift-left-leave-active {
+  transition: all, .3s ease;
+}
+
+.shift-left-leave-active {
+  /* position: absolute; */
+}
+
+.shift-left-enter-from {
+  transform: translate(180%)
+}
+
+.shift-left-leave-to {
+  transform: translate(180%)
+}
+  
+
+.shift-left-enter-to,
+.shift-left-leave-from {
+  /* animation: emerge ease .6s; */
+}
+
+/* shift-right-enter */
+.shift-right-enter-move,
+.shift-right-enter-enter-active {
+  transition: all, .6s ease;
+}
+
+.shift-right-enter-leave-active {
+  /* position: absolute; */
+}
+
+.shift-right-enter-enter-from {
+  transform: translate(-180%)
+}
+
+.shift-right-enter-leave-to {
+  transform: translate(-180%)
+}
+  
+
+.shift-right-enter-enter-to,
+.shift-right-enter-leave-from {
   /* animation: emerge ease .6s; */
 }

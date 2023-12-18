@@ -42,7 +42,9 @@ const emit = defineEmits<{
     </div>
     <div class="right">
       <div class="name-and-delete">
-        <div class="name text_sb">{{ name }}</div>
+        <AppLink class="name text-s-b"
+          :to="{name: 'product', params: {id: productId}}"
+        >{{ name }}</AppLink>
         <Btn class="delete _transparent"
           @click="emit('deleteProduct')"
         >
@@ -142,13 +144,15 @@ const emit = defineEmits<{
   display: flex;
   align-items: center;
   justify-content: start;
-  gap: 1rem;
+  gap: 1.6rem;
 
   margin-bottom: 1rem;
 }
 .count {
 }
 .price {
+  flex-direction: column;
+  gap: 1rem;
 }
 .favourite {
   padding: 0;

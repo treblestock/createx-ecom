@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import img from '~/assets/img/illustrations/3.png'
-import MobileApps from '../features/MobileApps.vue';
-
+import MobileApps from '~/components/features/MobileApps.vue'
 
 
 
@@ -9,19 +8,17 @@ import MobileApps from '../features/MobileApps.vue';
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <div class="content">
-        <div class="img">
-          <img :src="img" alt="">
-        </div>
-        <div class="body">
-          <div class="title h2">Enjoy mobile shopping with our Createx Store App!</div>
-          <MobileApps class="apps"></MobileApps>
-        </div>
+  <div class="wrapper">
+    <div class="content">
+      <div class="img-a">
+        <img :src="img" alt="">
+      </div>
+      <div class="body">
+        <div class="title h2">Enjoy mobile shopping with our Createx Store App!</div>
+        <MobileApps class="apps"></MobileApps>
       </div>
     </div>
-  </section>
+  </div>
   
 </template>
 
@@ -29,29 +26,35 @@ import MobileApps from '../features/MobileApps.vue';
 @import '~css/consts';
 
 
-.section {
-  margin-bottom: 18rem;
-
-  background: $color-gray-900;
-  color: $color-white;
-}
-.container {
+.wrapper {
   
 }
 .content {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  /* align-items: center; */
 
-  gap: 15rem;
+  gap: var(--leng-120);
+
+  @media (width < 750px) {
+    flex-wrap: wrap;
+    gap: 0;
+    & .img-a {
+      flex: 0 0 80%;
+      order: 2;
+    }
+  }
 }
-
+.img-a {
+  flex: 0 0 40%;
+  aspect-ratio: 49 / 33;
+}
 .body {
-
+  padding: var(--leng-60) 0;
 }
 
 .title {
-  margin-bottom: 5rem;
+  margin-bottom: var(--leng-60);
   color: $color-white;
 }
 

@@ -1,9 +1,14 @@
+$container-width-s: 81rem;
+$container-width: 123rem;
+$container-width-l: 186rem;
+
 $ff-lato: 'Lato';
 $lh: 1.5;
 
 $color-green: #17696A;
 $color-green-dark: #145C5D;
 $color-green-light: #03CEA4;
+$color-green-bright: #1FDF58;
 $color-green-transparent: rgba(23, 105, 106, 0.06);
 
 $color-red: #FF4242;
@@ -56,4 +61,4 @@ $shadow-card-hover:
 
 $header-height-full: 16.6rem;
 
-$custom-scrollbar-width: 0.5rem;
+$custom-scrollbar-width: 5px;

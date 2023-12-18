@@ -10,9 +10,9 @@ import ProfileForm from '~/components/widgets/ProfileForm.vue'
 </script>
 
 <template>
-  <div class="profile-page">
+  <main class="profile-page">
     <ProfileForm></ProfileForm>
-  </div>
+  </main>
 </template>
 
 <style scoped>

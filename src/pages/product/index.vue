@@ -15,27 +15,37 @@ const props = defineProps<{
 </script>
 
 <template>
-  <div class="product-page">
-    <ProductPageWidget class="product-widget"/>
+  <div class="page"
+    :key="id"
+  >
+    <section class="section">
+      <div class="container">
+        <ProductPageWidget/>
+      </div>
+    </section>
+    
+    <section class="section-100 bgc-gray-300 pv-100">
+      <div class="container">
+        <SliderRecomendations/>
+      </div>
+    </section>
 
-    <SliderRecomendations class="section" />
-    <SliderRecientlyViewed class="section _bgc-gray" />
+    <section class="section-100">
+      <div class="container">
+        <SliderRecientlyViewed/>
+      </div>
+    </section>
 
-    <MailingSubscribtion/>
+    <section class="pv-100 bgc-gray-200" id="subscribe-mailing">
+      <div class="container">
+        <MailingSubscribtion></MailingSubscribtion>
+      </div>
+    </section>
   </div>
 </template>
 
 <style scoped>
 @import '~css/consts';
 
-.product-card {
-  width: 28.5rem;
-}
-.product-widget {
-  margin-bottom: 18rem;
-}
-.section {
-  padding: 8rem 0 10rem;
-}
 
 </style>

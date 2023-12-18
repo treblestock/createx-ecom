@@ -5,10 +5,182 @@
 @import '~css/lib/plus';
 @import '~css/lib/smoothScroll';
 
+/* 
+  Table of content :)
+  * base *
+  #fz-setup
+  #vars
+  
+  * structure *
+  #page
+  #section
+  #container
+  #?list-h
+  #?list-v
+  #img-a
+  
+  * UI *
+  #font
+  #link
+  #btn
+  #input | textArea
+  #checkbox
+  #radio
+  #checkboxBtn
+  #radioBtn
+  #spoiler
 
+  #icons
+  #ul
+  #label
+  #tag
+
+  
+  * utils *
+  #hidden-smart
+  #mobile-scroll
+  #?slash-btw
+*/
+
+/* @mixin leng-smooth-v2; */
+
+/* * base * */
+/* #fz-setup */
+/* #vars */
+html, 
+body {
+  font-size: rl(8, 10);
+
+  --leng-180: rl(40, 180);
+  --leng-120: rl(35, 120);
+  --leng-100: rl(30, 100);
+  --leng-80: rl(25, 80);
+  --leng-60: rl(20, 60);
+  --leng-46: rl(23, 46);
+  --leng-40: rl(15, 40);
+  --leng-32: rl(12, 32);
+  --leng-30: rl(12, 30);
+  --leng-24: rl(12, 24);
+  --leng-20: rl(10, 20);
+  --leng-16: rl(10, 16);
+}
+
+
+html {
+  @mixin custom-scrollbar;
+}
+html {
+  scrollbar-gutter: stable;
+}
+
+/* * structure * */
+/* #page */
+.page {
+  padding: var(--leng-40) 0;
+}
+._with-sidebar {
+  display: flex;
+  align-items: start;
+  flex-wrap: wrap;
+  gap: var(--leng-60);
+  
+  & > .sidebar {
+    flex: 0 0 auto;
+  }
+
+  & > *:not(.sidebar) {
+    flex: 1 1 100%;
+  }
+}
+/* #section */
+.section,
+.section-180 {
+  margin-bottom: var(--leng-180);
+}
+.section-120 {
+  margin-bottom: var(--leng-120);
+}
+.section-100 {
+  margin-bottom: var(--leng-100);
+}
+.section-0 {
+  margin-bottom: 0;
+}
+
+/* section padding for colored background sections */
+.pv-100 {
+  padding: var(--leng-100) 0;
+}
+.pv-80 {
+  padding: var(--leng-80) 0;
+}
+.pv-60 {
+  padding: var(--leng-60) 0;
+}
+
+.bgc-gray-900 {
+  background: $color-gray-900;
+}
+.bgc-gray-300 {
+  background: $color-gray-300;
+}
+.bgc-gray-200 {
+  background: $color-gray-200;
+}
+
+/* #container */
+@define-mixin container-base {
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 rl(10, 20);
+  /* overflow: hidden; */
+}
+.container-s {
+  @mixin container-base;
+  max-width: $container-width-s;
+}
+.container {
+  @mixin container-base;
+  max-width: $container-width;
+}
+.container-l {
+  @mixin container-base;
+  max-width: $container-width-l;
+}
+
+
+/* grid */
+.grid {
+  --gap: 3rem;
+
+  display: grid;
+  grid-gap: var(--gap);
+  /* grid-template-columns: repeat(auto-fill, minmax(var(--min-width), 1fr) ); */
+  grid-template-columns: repeat(auto-fit, minmax(var(--min-width), 1fr) );
+  /* grid-template-columns: repeat(auto-fill, minmax(auto, 1fr) ); */
+
+}
+/* #?list-h */
+/* #?list-v */
+/* #img-a */
+.img-a {
+  /* position: relative; */
+  & > img {
+    /* position: absolute; */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* * UI * */
+/* #font */
 /* FONTS */
 .h1 {
-  font-size: 4.6rem;
+  /* font-size: 4.6rem; */
+  font-size: var(--leng-46);
   line-height: 1.3;
   font-weight: 900;
   color: $color-gray-900;
@@ -50,111 +222,83 @@
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontBold {
-  @mixin fontRegular;
-  font-weight: 700;
-}
 @define-mixin fontXLRegular {
   font-size: 2rem;
   line-height: 1.5;
   color: $color-text;
-}
-@define-mixin fontXLBold {
-  @mixin fontXLRegular;
-  font-weight: 700;
 }
 @define-mixin fontLRegular {
   font-size: 1.8rem;
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontLBold {
-  @mixin fontLRegular;
-  font-weight: 700;
-}
 @define-mixin fontSRegular {
   font-size: 1.4rem;
   line-height: 1.5;
   color: $color-text;
-}
-@define-mixin fontSBold {
-  @mixin fontSRegular;
-  font-weight: 700;
 }
 @define-mixin fontXSRegular {
   font-size: 1.2rem;
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontXSBold {
-  @mixin fontXSRegular;
-  font-weight: 900;
-}
 @define-mixin fontXXSRegular {
   font-size: 1.2rem;
   line-height: 1.5;
   color: $color-text;
 }
-@define-mixin fontXXSBold {
+
+
+
+.text-xl {
+  @mixin fontXLRegular;
+}
+.text-xl-b {
+  @mixin fontXLRegular;
+  font-weight: 700;
+}
+.text-l {
+  @mixin fontLRegular;
+}
+.text-l-b {
+  @mixin fontLRegular;
+  font-weight: 700;
+}
+.text {
+  @mixin fontRegular;
+}
+.text-b {
+  @mixin fontRegular;
+  font-weight: 700;
+}
+.text-s {
+  @mixin fontSRegular;
+}
+.text-s-b {
+  @mixin fontSRegular;
+  font-weight: 700;
+}
+.text-xs {
+  @mixin fontXSRegular;
+}
+.text-xs-b {
+  @mixin fontXSRegular;
+  font-weight: 900;
+}
+.text-xxs {
+  @mixin fontXXSRegular;
+}
+.text-xxs-b {
   @mixin fontXXSRegular;
   font-weight: 900;
 }
 
 
-
-.text {
-  @mixin fontRegular;
-}
-.text_b {
-  @mixin fontBold;
-}
-.text_xl {
-  @mixin fontXLRegular;
-}
-.text_xlb {
-  @mixin fontXLBold;
-}
-.text_l {
-  @mixin fontLRegular;
-}
-.text_lb {
-  @mixin fontLBold;
-}
-.text_s {
-  @mixin fontSRegular;
-}
-.text_sb {
-  @mixin fontSBold;
-}
-.text_xs {
-  @mixin fontXSRegular;
-}
-.text_xsb {
-  @mixin fontXSBold;
-}
-.text_xxs {
-  @mixin fontXXSRegular;
-}
-.text_xxsb {
-  @mixin fontXXSBold;
-}
-
-body {
-  font-family: $ff-lato;
-}
-
-
 body > * {
+  font-family: $ff-lato;
   @mixin fontRegular;
 }
-._bold {
-  @mixin fontBold;
-}
-
-
-._underlined {
-  text-decoration: underline;
-}
+/* #link */
 
 .link {
   color: $color-green;
@@ -166,26 +310,39 @@ body > * {
     color: $color-green-dark;
   }
 }
-
-.ul li {
-  &:before {
-    content: '\2022'; /* circle */
-    color: $color-green;
-    margin-right: 2rem;
+.link-underlined {
+  color: $color-green;
+  cursor: pointer;
+  text-decoration: underline;
+  
+  &:hover {
+    text-decoration: none;
   }
 }
-
-
+.link-idle {
+  color: inherit;
+  &._active,
+  &._active-exact,
+  &:hover {
+    color: $color-green;
+  }
+}
+/* #btn */
+/* #input | textArea */
+/* #checkbox */
+/* #radio */
+/* #checkboxBtn */
+/* #radioBtn */
+/* #spoiler */
+/* #icons */
 /* svg */
 .svg-icon {
-  /* gray to green */
   color: $color-gray-900;
 
   &:hover {
     color: $color-green-dark;
   }
   
-  /* white to green */
   &._white {
     color: $color-white;
 
@@ -195,27 +352,54 @@ body > * {
   }
 }
 
-.label {
-  padding: .8rem;
+/* .svg-icon {
+  & .icon-color {
+    color: $color-green;
+  }
+  & .icon-bgc {
+    color: $color-white;
+  }
+  & .icon-border {
+    color: $color-green;
+  }
+
+  &:hover {
+    & .icon-color {
+      color: $color-white;
+    }
+    & .icon-bgc {
+      color: $color-green;
+    }
+    & .icon-border {
+      color: $color-white;
+    }
+  }
+} */
+/* #ul */
+.ul li {
+  &:before {
+    content: '\2022'; /* circle */
+    color: $color-green;
+    margin-right: 2rem;
+  }
+}
+/* #label */
+@define-mixin label-base {
+  font-size: 14px;
   line-height: 0;
 
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  padding: 10px 8px;
 
   border-radius: $radius;
-
-  background: $color-green-light;
-  color: $color-white;
-  
 }
-.sale-label {
-  padding: 0.2rem .8rem;
-  border-radius: $radius;
-
+.label {
+  @mixin label-base;
+}
+.label-sale {
+  @mixin label-base;
+  
   background: $color-red;
   color: $color-white;
-
   
   &:before {
     content: '-';
@@ -223,35 +407,13 @@ body > * {
   &:after {
     content: '%';
   }
-
 }
-
-
-
-
-/* sections */
-._bgc-gray {
-  background: $color-gray-300;
+.label-l {
+  @mixin label-base;
+  padding: 14px 8px;
+  font-size: 16px;
 }
-
-
-._fullscreen {
-  height: calc(100vh - $header-height-full);
-  width: 100vw;
-}
-
-
-._hidden-smart {
-  position: absolute;
-  visibility: hidden;
-  width: 0;
-  height: 0;
-  line-height: 0;
-  margin: 0;
-  padding: 0;
-}
-
-/* tags */
+/* #tag */
 .tag {
   &:before {
     content: "#";
@@ -263,6 +425,51 @@ body > * {
   border-radius: $radius;
   box-shadow: 0 0 0 1px $color-gray-400;
   color: $color-gray-700;
+}
+/* * utils * */
+/* #hidden-smart */
+._hidden-smart {
+  position: absolute;
+  visibility: hidden;
+  width: 0;
+  height: 0;
+  line-height: 0;
+  margin: 0;
+  padding: 0;
+}
+/* #mobile-scroll */
+/* Increase/decrease this value for cross-browser compatibility */
+/* So the width will be 100% + 17px */
+/* .mobile-slider {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+
+  & > * {
+    width: 100%;
+    height: 100%;
+    overflow-x: scroll;
+    padding-bottom: 17px; 
+    box-sizing: content-box; 
+  }
+} */
+.mobile-slider {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+  &::-webkit-scrollbar { 
+    display: none;  /* Safari and Chrome */
+  }
+}
+/* #?slash-btw */
+
+._inline {
+  display: inline;
+}
+
+._fullscreen {
+  /* height: calc(100vh - $header-height-full); */
+  height: calc(100vh - var(--header-height));
+  width: 100vw;
 }
 
 

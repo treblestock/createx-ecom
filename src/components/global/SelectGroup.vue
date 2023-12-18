@@ -7,6 +7,7 @@ const props = defineProps<{
   options: string[] | Record<string, any> | Set<string>
   vertical?: boolean
   disabledValue?: string
+  classSelect?: string
 }>()
 
 const modelValue = defineModel<any>()
@@ -21,7 +22,8 @@ const modelValue = defineModel<any>()
     <div class="select-group-label">
       <slot>{{ label }}</slot>
     </div>
-    <Select class="select-group__select"
+    <Select class="select"
+      :class="classSelect"
       :="$attrs"
       v-model="modelValue"
       :options="options"
@@ -45,14 +47,12 @@ const modelValue = defineModel<any>()
   }
 }
 .select-group-label {
-  margin-bottom: 1rem;
 
   font-size: 1.6rem;
   color: $color-gray-800;
 }
 
-.select-group-select {
-  width: 100%;
+.select {
 }
 
 

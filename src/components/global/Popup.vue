@@ -1,10 +1,22 @@
 <script setup lang="ts">
+import {Teleport} from 'vue'
+type TeleportTo = InstanceType<typeof Teleport>['$props']['to']
 
 export type Props = {
+  teleportTo?: TeleportTo,
+  transitionName?: string,
   classBody?: string
-  _side?: true
+  sideRight?: true
+  sideLeft?: true
+  headerVisible?: boolean
+  noCross?: boolean
+  noPadding?: boolean
+  isHidden?: boolean
 }
-const props = defineProps<Props>()
+const props = withDefaults(defineProps<Props>(), {
+  teleportTo: 'body',
+  transitionName: 'shift-right',
+})
 
 
 
@@ -19,38 +31,60 @@ function close() {
 
 
 
+
+
+
 onMounted(() => {
-  document.body.classList.add('_scroll-hidden')
+  if (!props.isHidden) document.body.classList.add('_scroll-hidden')
 })
+
+onUpdated(() => {
+  if (props.isHidden) document.body.classList.remove('_scroll-hidden')
+  else document.body.classList.add('_scroll-hidden')
+})
+
 onBeforeUnmount(() => {
   document.body.classList.remove('_scroll-hidden')
 })
 
 
 
+
 </script>
 
 <template>
-  <Teleport to="body">
+  <Teleport :to="teleportTo">
     <div class="popup"
+      v-show="!isHidden"
       @click="close"
-      :class="{_side: _side}"
+      :class="{
+        ['_side-left']: sideLeft,
+        ['_side-right']: sideRight,
+        ['_header-visible']: headerVisible,
+        ['_no-padding']: noPadding,
+      }"
     >
-      <div class="body"
-        @click.stop
-        :class="classBody"
-      >
-        <div class="cross"
-          @click="close"
-        >&#x2573;</div>
-        <slot :close="close"></slot>
-      </div>
+      <Transition :name="transitionName" appear>
+        <div class="body"
+          @click.stop
+          :class="[classBody]"
+        >
+          <div class="cross"
+            v-if="!noCross"
+            @click="close"
+          >&#x2573;</div>
+          <slot :close="close"></slot>
+        </div>
+      </Transition>
     </div>
   </Teleport>
 </template>
 
 <style scoped>
 @import '~css/consts';
+@import '~css/vueAnimations';
+@import '~css/lib/customWebkitScrollbar';
+
 
 
 
@@ -63,8 +97,10 @@ $color-popup-bgc: #1E212CAA;
   position: fixed;
   top: 0;
   right: 0;
-  left: 0;
-  bottom: 0;
+  width: 100%;
+  height: 100%;
+  /* left: 0;
+  bottom: 0; */
 
   /* body pos */
   display: flex;
@@ -75,33 +111,48 @@ $color-popup-bgc: #1E212CAA;
   /* wrapper */
   background: $color-popup-bgc;
 
-  &._side {
+  &._side-left {
+    justify-content: start;
+    align-items: stretch;
+
+    & .body {
+      max-height: 100%;
+      padding: 3.2rem 2.4rem;
+    }
+  }
+  &._side-right {
     justify-content: end;
     align-items: stretch;
 
     & .body {
       max-height: 100%;
       padding: 3.2rem 2.4rem;
-
-      &._no-padding {
-        padding: 0;
-      }
     }
   }
+
+  &._no-padding .body{
+    padding: 0;
+  }
+
+  &._header-visible {
+    z-index: 99;
+    top: var(--header-height);
+    height: calc(100vh - var(--header-height));
+  }
 }
+
+
 .body {
   max-width: 90%;
   max-height: 90%;
-  padding: 7rem 5rem 5rem;
+  overflow-y: auto;
+  padding: var(--leng-80) var(--leng-60) var(--leng-60);
 
   background: $color-white;
+  @mixin custom-scrollbar;
 
   /* cross position */
   position: relative;
-
-  &._no-padding {
-    padding: 0;
-  }
 }
 
 .cross {
@@ -124,9 +175,9 @@ $color-popup-bgc: #1E212CAA;
 
 :global(body._scroll-hidden) {
   overflow: hidden;
-  padding-right: $custom-scrollbar-width;
 }
-    
+
+
 
 
 

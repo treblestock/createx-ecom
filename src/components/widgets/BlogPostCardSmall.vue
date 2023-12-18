@@ -23,7 +23,7 @@ const props = defineProps<{
         <IconClock class="icon"></IconClock>
         {{ dateToHumanCase(date, 'long') }}
       </div>
-      <AppLink class="title text_b"
+      <AppLink class="title text-b"
         :to="{name: 'blogPost', params: {id: id}}"
       >{{ title }}</AppLink>
     </div>

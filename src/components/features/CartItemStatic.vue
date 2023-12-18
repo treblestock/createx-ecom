@@ -16,10 +16,6 @@ const props = defineProps<{
   count: number
 }>()
 
-const selectedCount = computed({
-  get: () => props.count,
-  set: (newCount) => emit('setCount', newCount),
-})
 
 
 const emit = defineEmits<{
@@ -35,36 +31,44 @@ const emit = defineEmits<{
 
 <template>
   <div class="cart-item">
-    <div class="col img">
-      <Img :src="img" />
+    <div class="left">
+      <div class="col img-a">
+        <Img :src="img" />
+      </div>
     </div>
     
-    <div class="col name-size-color">
-        <div class="name text_sb">{{ name }}</div>
+    <div class="right">
+      <div class="name-size-color">
+        <AppLink class="name text-s-b"
+          :to="{name: 'product', params: {id: productId}}"
+        >{{ name }}</AppLink>
         <div class="color-and-size">
           <div class="color"><span class="_color-gray">Color: </span> {{ color }}</div>
           <div class="size"><span class="_color-gray">Size: </span> {{ size }}</div>
         </div>
-    </div>
+      </div>
 
-    <div class="col price">
-      <div class="_color-gray">Price: </div>
-      <Price class="price-feature"
-        :price="discount ? price * (1 - discount / 100) : price"
-      ></Price>
-    </div>
+      <div class="right-right">
+        <div class="col price-col">
+          <div class="_color-gray">Price: </div>
+          <Price class="price-feature"
+            :price="discount ? price * (1 - discount / 100) : price"
+          ></Price>
+        </div>
 
-    <div class="col count">
-      <div class="_color-gray">Quantity: </div>
-      <div>{{ count }}</div>
-    </div>
+        <div class="col count">
+          <div class="_color-gray">Quantity: </div>
+          <div>{{ count }}</div>
+        </div>
 
 
-    <div class="col subtotal">
-      <div class="_color-gray">Subtotal: </div>
-      <Price class="subtotal-price"
-        :price="discount ? price * (1 - discount / 100) : price"
-      ></Price>
+        <div class="col subtotal">
+          <div class="_color-gray">Subtotal: </div>
+          <Price class="subtotal-price"
+            :price="discount ? price * (1 - discount / 100) : price"
+          ></Price>
+        </div>
+      </div>
     </div>
 
   </div>
@@ -76,7 +80,7 @@ const emit = defineEmits<{
 .cart-item {
   display: flex;
   justify-content: space-between;
-  gap: 4rem;
+  gap: var(--leng-40);
 
   padding: 2rem 2.4rem;
   background: $color-gray-200;
@@ -84,29 +88,63 @@ const emit = defineEmits<{
   color: $color-gray-900;
 }
 
-.col {
-  & > *:first-child {
-    margin-bottom: .7rem;
+
+.left {
+  flex: 0 0 auto;
+}
+.right {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: start;
+  gap: 2rem;
+  justify-content: space-between;
+}
+.right-right {
+  flex: 1 1 36.5rem;
+
+  display: flex;
+  justify-content: space-between;
+  column-gap: var(--leng-40);
+  row-gap: 1rem;
+
+
+  @media (width < 400px) {
+
+
+
+    flex-direction: column;
+
+    row-gap: .7rem;
+
+    & .col {
+      flex: 0 0 auto;
+      justify-content: space-between;
+
+      flex-direction: row;
+    }
+    & .price {
+      justify-content: end;
+    }
   }
 }
-.img  {
+
+.col {
+  display: flex;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  gap: .7rem;
+  /* & > *:first-child {
+    margin-bottom: .7rem;
+  } */
+}
+.img-a  {
   width: 8rem;
   height: 8rem;
-  margin-right: -2rem;
-
-  position: relative;
-
-  & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
 }
 .name-size-color {
-  flex: 0 0 21rem;
+  flex: 1 0 13rem;
 }
 .name {
   color: $color-gray-800;
@@ -116,41 +154,25 @@ const emit = defineEmits<{
     margin-right: 1rem;
   }
 }
+.subtotal-price {
+  justify-content: end;
+}
 
 .count {
   flex: 0 0 7rem;
 }
-.price {
+.price-col {
   flex: 0 0 10rem;
 }
-.delete-and-favourite {
-  flex: 0 0 9rem;
+.subtotal {
+  flex: 0 0 10rem;
+  justify-content: end;
 }
 
-
-.delete {
-  color: $color-gray-800;
-  margin-bottom: 1.6rem;
-}
 .color {
   margin-bottom: .3rem;
 }
 .size {
-}
-.count-and-price {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 1rem;
-
-  margin-bottom: 1rem;
-}
-.favourite {
-  padding: 0;
-  color: $color-gray-800;
-  &:hover {
-    color: $color-green !important;
-  }
 }
 
 ._color-gray {

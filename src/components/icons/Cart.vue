@@ -1,4 +1,4 @@
-<script setup lang="ts">
+  <script setup lang="ts">
 import IconCart from '~/assets/img/icons/decor/Cart.svg'
 
 import useStoreCart from '~/stores/cart'
@@ -15,7 +15,7 @@ const cartItemsCount = computed(() => cartStore.cartItemsCount)
     @click="$router.$showPopup('Cart')"
   >
     <IconCart class="icon"></IconCart>
-    <div class="label text_xsb">
+    <div class="label text-xs-b">
       {{ cartItemsCount }}
     </div>
   </Btn>

@@ -5,15 +5,13 @@ import MailingSubscribtionForm from '~/components/widgets/MailingSubscribtionFor
 </script>
 
 <template>
-  <section class="section" id="subscribe-mailing">
-    <div class="container">
-      <MailingSubscribtionForm class="form"></MailingSubscribtionForm>
+  <div class="wrapper">
+    <MailingSubscribtionForm class="form"></MailingSubscribtionForm>
 
-      <div class="img">
-        <img :src="img" alt="">
-      </div>
+    <div class="img-a">
+      <img :src="img" alt="">
     </div>
-  </section>
+  </div>
 
   
 </template>
@@ -21,35 +19,27 @@ import MailingSubscribtionForm from '~/components/widgets/MailingSubscribtionFor
 <style scoped>
 @import '~css/consts';
 
-
-
-.section {
-  padding: 6.5rem;
-  background: $color-gray-200;
-}
-.container {
+.wrapper {
   display: flex;
-  gap: 3rem;
+  flex-wrap: wrap;
   justify-content: space-between;
+  
+  gap: var(--leng-32);
+
+
+  @media (800px < width < 930px) {
+    flex-wrap: nowrap;
+  }
+
 }
 .form {
+  flex: 0 1 49.5rem;
 }
-.img {
-  width: 46rem;
-  height: 41.5rem;
+.img-a {
+  flex: 0 0 min(80%, 46rem);
+  aspect-ratio: 46 / 41;
 
-  position: relative;
-
-  img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-  }
+  margin-left: auto;
 }
 
 

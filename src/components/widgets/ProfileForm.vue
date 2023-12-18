@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import IconDelete from '~/assets/img/icons/decor/delete.svg'
+import type { UserBio } from '~/types'
 
-const profileForm = ref({
+const profileForm = ref<UserBio>({
   firstName: '',
   lastName: '',
   email: '',
@@ -106,8 +107,8 @@ function onSubmit() {
   column-gap: 3rem;
 }
 .input-group {
-  flex: 1 0 clamp(23rem, 100% / 2 - 1.5rem , 39rem);
-
+  /* flex: 1 0 clamp(23rem, 100% / 2 - 1.5rem , 39rem); */
+  flex: 1 0 max(calc(50% - 1.5rem), 20rem);
 }
 .submit {
   margin-top: 5rem;

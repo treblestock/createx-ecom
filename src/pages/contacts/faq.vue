@@ -6,7 +6,7 @@
 <template>
   <div class="questions">
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>
@@ -18,7 +18,7 @@
     </Spoiler>
 
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>
@@ -30,7 +30,7 @@
     </Spoiler>
 
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>
@@ -41,7 +41,7 @@
       </template>
     </Spoiler>
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>
@@ -53,7 +53,7 @@
     </Spoiler>
 
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>
@@ -65,7 +65,7 @@
     </Spoiler>
 
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>
@@ -77,7 +77,7 @@
     </Spoiler>
 
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>
@@ -89,7 +89,7 @@
     </Spoiler>
 
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>
@@ -101,7 +101,7 @@
     </Spoiler>
 
     <Spoiler class="spoiler"
-      classTitle="spoiler-title text_lb"
+      classTitle="spoiler-title text-l-b"
       classBody="spoiler-body"
     >
       <template #title>

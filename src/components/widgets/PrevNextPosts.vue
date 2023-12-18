@@ -10,6 +10,7 @@ const props = defineProps<{
   nextPost: BlogPost | null
 }>()
 
+
 </script>
 
 <template>
@@ -28,6 +29,8 @@ const props = defineProps<{
         :=prevPost
       ></BlogPostCardSmall>
     </div>
+    <div v-else></div>
+
     
     <div class="post-next"
       v-if="nextPost"
@@ -43,6 +46,7 @@ const props = defineProps<{
         :=nextPost
       ></BlogPostCardSmall>
     </div>
+    <div v-else></div>
     
   </div>
 </template>
@@ -60,6 +64,7 @@ const props = defineProps<{
 }
 .posts {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: start;
 
@@ -82,6 +87,7 @@ const props = defineProps<{
   }
 }
 .post-next {
+  margin-left: auto;
   font-weight: 700;
   color: $color-gray-800;
 

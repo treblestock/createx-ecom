@@ -1,6 +1,4 @@
-import type { Component, InstaceType } from "vue"
 import PopupManager from "~/components/features/PopupManager.vue"
-import type { Router } from "vue-router" 
 
 type PopupManager = InstanceType<typeof PopupManager>
 type PopupManagerAPI = Pick<PopupManager, 'showPopup' | 'closePopup'>

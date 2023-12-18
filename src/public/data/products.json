@@ -30,7 +30,6 @@
       "S"
     ],
     "price": 30,
-    "discount": 60,
     "rating": 4,
     "reviewsIds": [1, 7, 8, 9, 12, 22, 24, 30, 37, 52, 53],
     "details": {
@@ -109,7 +108,6 @@
       "Plus Size"
     ],
     "price": 80,
-    "discount": 20,
     "rating": 4,
     "reviewsIds": [18, 19, 32, 42, 57],
     "details": {
@@ -320,7 +318,6 @@
       "L "
     ],
     "price": 190,
-    "discount": 60,
     "rating": 0,
     "reviewsIds": [23, 35, 49],
     "details": {
@@ -386,7 +383,6 @@
       "Plus Size"
     ],
     "price": 160,
-    "discount": 40,
     "rating": 1,
     "reviewsIds": [29, 56],
     "details": {
@@ -736,7 +732,6 @@
       "XL"
     ],
     "price": 20,
-    "discount": 90,
     "rating": 2,
     "reviewsIds": [5, 16, 41, 51, 54, 58, 59],
     "details": {
@@ -805,7 +800,6 @@
       "Plus Size"
     ],
     "price": 190,
-    "discount": 10,
     "rating": 3,
     "reviewsIds": [3, 4, 17, 21, 27, 33],
     "details": {
@@ -876,7 +870,6 @@
       "Plus Size"
     ],
     "price": 20,
-    "discount": 10,
     "rating": 1,
     "reviewsIds": 4,
     "details": {
@@ -943,7 +936,6 @@
       "Plus Size"
     ],
     "price": 140,
-    "discount": 70,
     "rating": 2,
     "reviewsIds": 3,
     "details": {
@@ -1017,7 +1009,6 @@
       "L "
     ],
     "price": 100,
-    "discount": 10,
     "rating": 1,
     "reviewsIds": 2,
     "details": {
@@ -1087,7 +1078,6 @@
       "XL"
     ],
     "price": 70,
-    "discount": 70,
     "rating": 4,
     "reviewsIds": 0,
     "details": {
@@ -1229,7 +1219,6 @@
       "L "
     ],
     "price": 160,
-    "discount": 30,
     "rating": 3,
     "reviewsIds": 2,
     "details": {
@@ -1515,7 +1504,6 @@
       "Plus Size"
     ],
     "price": 140,
-    "discount": 80,
     "rating": 3,
     "reviewsIds": 2,
     "details": {
@@ -1583,7 +1571,6 @@
       "Plus Size"
     ],
     "price": 30,
-    "discount": 90,
     "rating": 3,
     "reviewsIds": 2,
     "details": {
@@ -1725,7 +1712,6 @@
       "Plus Size"
     ],
     "price": 60,
-    "discount": 80,
     "rating": 2,
     "reviewsIds": 0,
     "details": {
@@ -1941,7 +1927,6 @@
       "XL"
     ],
     "price": 30,
-    "discount": 20,
     "rating": 0,
     "reviewsIds": 0,
     "details": {
@@ -2290,7 +2275,6 @@
       "Plus Size"
     ],
     "price": 30,
-    "discount": 30,
     "rating": 4,
     "reviewsIds": 1,
     "details": {
@@ -2426,7 +2410,6 @@
       "L "
     ],
     "price": 70,
-    "discount": 10,
     "rating": 4,
     "reviewsIds": 1,
     "details": {
@@ -2710,7 +2693,6 @@
       "Plus Size"
     ],
     "price": 160,
-    "discount": 30,
     "rating": 5,
     "reviewsIds": 2,
     "details": {
@@ -2778,7 +2760,6 @@
       "XL"
     ],
     "price": 130,
-    "discount": 80,
     "rating": 4,
     "reviewsIds": 0,
     "details": {
@@ -2921,7 +2902,6 @@
       "Plus Size"
     ],
     "price": 160,
-    "discount": 70,
     "rating": 4,
     "reviewsIds": 2,
     "details": {
@@ -2988,7 +2968,6 @@
       "XL"
     ],
     "price": 120,
-    "discount": 70,
     "rating": 0,
     "reviewsIds": 2,
     "details": {
@@ -3066,7 +3045,6 @@
       "XL"
     ],
     "price": 170,
-    "discount": 20,
     "rating": 1,
     "reviewsIds": 0,
     "details": {

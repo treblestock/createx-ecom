@@ -20,9 +20,9 @@ function signout() {
 </script>
 
 <template>
-  <aside class="account-sidebar">
+  <div class="account-sidebar">
     <div class="sidebar-item user-bio">
-      <div class="user-name text_xl">Anne Block</div>
+      <div class="user-name text-xl">Anne Block</div>
       <div class="user-email">annetteb@example.com</div>
     </div>
     <AppLinkBtn class="sidebar-item btn_outlined _with-icon"
@@ -61,7 +61,7 @@ function signout() {
       <IconSignout></IconSignout>
       sign out
     </Btn>
-  </aside>
+  </div>
 </template>
 
 <style scoped>
@@ -70,7 +70,6 @@ function signout() {
 
 $shadow-btn: inset 1px 1px 0 0 $color-gray-400, 1px 1px 0 0 $color-gray-400, $shadow-card;
 .account-sidebar {
-  max-width: 28.5rem;
 }
 .sidebar-item {
   width: 100%;

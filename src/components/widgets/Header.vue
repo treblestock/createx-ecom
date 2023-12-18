@@ -1,95 +1,112 @@
 <script setup lang="ts">
 // <!-- todo: implement header.select(Category) -> header.expanded()
-import { clothes, shoes, accessories } from '~/public/data/different.json'
 
 import Favourite from '~/components/icons/Favourite.vue'
 import Cart from '~/components/icons/Cart.vue'
-import HeaderAdv from '~/components/features/HeaderAdv.vue'
+// import HeaderAdv from '~/components/features/HeaderAdv.vue'
 import Logo from '~/components/features/Logo.vue'
 import HeaderAuth from '~/components/features/HeaderAuth.vue'
+import SearchProduct from '~/components/features/SearchProduct.vue'
 
 
+import BreadCrumbs from '~/components/widgets/BreadCrumbs.vue'
 
 
+const headerTopHtml = ref<HTMLElement | null>(null)
+const headerHeight = useHeaderHeight()
+
+function calcHeaderHeight() {
+  const headerTopHeight = headerTopHtml.value?.offsetHeight || 0
+  headerHeight.value = headerTopHeight
+}
 
 
-const isExpanded = ref(false)
+function setCssVarHeaderHeight() {
+  document.documentElement.style.setProperty(`--header-height`, `${headerHeight.value}px`)
+}
+
+watch(
+  headerHeight,
+  setCssVarHeaderHeight,
+)
+
+window.addEventListener('resize', useDebounce(calcHeaderHeight, 100))
+
+onMounted(calcHeaderHeight)
+onUpdated(calcHeaderHeight)
+
+
 
 </script>
 
 <template>
-  <header class="header">
+  <header class="header"
+    ref="headerTopHtml"
+  >
     <div class="header-top">
       <div class="container">
         <div class="phone">Available 24/7 at <a href="tel:4055550128" class="link">(405) 555-0128</a></div>
         <nav class="header-top-nav">
-          <AppLink :to="{name: 'trackOrder'}">Track order</AppLink>
-          <AppLink :to="{name: 'blog'}">Blog</AppLink>
-          <AppLink :to="{name: 'contacts'}">Contacts</AppLink>
+          <ul class="header-top-nav-list">
+            <li><AppLink :to="{name: 'trackOrder'}">Track order</AppLink></li>
+            <li><AppLink :to="{name: 'blog'}">Blog</AppLink></li>
+            <li><AppLink :to="{name: 'contacts'}">Contacts</AppLink></li>
+          </ul>
         </nav>
-
-        <HeaderAuth></HeaderAuth>
+        <HeaderAuth class="header-top-auth"></HeaderAuth>
       </div>
     </div>
+    
+
     <div class="header-middle">
       <div class="container">
-        <Logo></Logo>
-        <nav class="major-category-nav">
-          <AppLink :to="{name: 'products'}">Men</AppLink>
-          <AppLink>Women</AppLink>
-          <AppLink>Kids</AppLink>
-          <AppLink class="_red">Sale</AppLink>
+        <Logo class="header-logo"></Logo>
+
+        <nav class="major-category-nav mobile-slider">
+          <ul class="major-category-nav">
+            <li><AppLink :to="{name: 'products', query: {categorySex: 'men'}}">Men</AppLink></li>
+            <li><AppLink :to="{name: 'products', query: {categorySex: 'women'}}">Women</AppLink></li>
+            <li><AppLink :to="{name: 'products', query: {categorySex: 'kids'}}">Kids</AppLink></li>
+            <li><AppLink class="_red" :to="{name: 'products', query: {sale: 'y'}}">sale</AppLink></li>
+          </ul>
         </nav>
-        <div class="toolbar">
-          <Input class="search-product"
-            placeholder="Search for products..."
-          ></Input>
+
+
+        <SearchProduct class="search-product"
+          placeholder="Search for products..."
+        ></SearchProduct>
+        <div class="toolbar-icons">
           <Favourite class="favourite"></Favourite>
           <Cart class="cart"></Cart>
         </div>
       </div>
+
     </div>
+
     <div class="sale-adv">
       <div class="container">
-        <AppLink>
+        <AppLink
+          :to="{name: 'products', query: {sale: 'y'}}"
+        >
           <Icon icon="LeftChevron"></Icon>
           <span class="bold">Up to 70% Off. &#x2800;</span><span class="_underlined">Shop our latest sale styles</span>
           <Icon icon="RightChevron"></Icon>
         </AppLink>
       </div>
     </div>
-    <div class="expanded"
-      :class="!isExpanded ? '_hidden-smart' : ''"
-    >
-      <div class="container">
-        <nav class="minor-category-nav">
-          <div class="nav-category-group">
-            <AppLink>New collection</AppLink>
-            <AppLink>Best Sellers</AppLink>
-            <AppLink>Plus Size</AppLink>
-            <AppLink>Sale up to 70%</AppLink>
-          </div>
-          <div class="nav-category-group">
-            <AppLink v-for="category in clothes" :key="category">{{ category }}</AppLink>
-          </div>
-          <div class="nav-category-group">
-            <AppLink v-for="category in shoes" :key="category">{{ category }}</AppLink>
-          </div>
-          <div class="nav-category-group">
-            <AppLink v-for="category in accessories" :key="category">{{ category }}</AppLink>
-          </div>
-        </nav>
-        <div class="product-adv">
-          <HeaderAdv></HeaderAdv>
-        </div>
-      </div>
-    </div>
+
+    <BreadCrumbs class="breadcrumbs-section"
+      @vue:updated="calcHeaderHeight"
+      @vue:unmount="calcHeaderHeight"
+    ></BreadCrumbs>
   </header>
 </template>
 
 <style scoped>
 @import '~css/consts';
 @import '~css/utils';
+
+
 
 .bold {
   font-weight: 700;
@@ -111,9 +128,26 @@ const isExpanded = ref(false)
   & .container {
     /* structure */
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 1rem;
+
+
+
+    @media (width <= 600px) {
+      & .phone {
+        display: none;
+        order: 1;
+      }
+      & .header-top-nav {
+        order: 1;
+      }
+      & .header-top-auth {
+        order: 2;
+      }
+    }
   }
 
   & .link {
@@ -129,12 +163,24 @@ const isExpanded = ref(false)
 
 .phone {
 }
+.burger {
+  display: none;
+  @media (width < 400px) {
+    display: flex;
+  }
+}
 .header-top-nav {
+
+}
+.header-top-nav-list {
   /* structure */
   display: flex;
   justify-content: space-between;
   align-items: center;
   gap: 3.2rem;
+  @media (width <= 600px) {
+    gap: 1rem;
+  }
 }
 .auth {
   & .btn {
@@ -149,9 +195,11 @@ const isExpanded = ref(false)
   & .container {
     /* structure */
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    gap: 2rem;
+    column-gap: 2rem;
+    row-gap: 1rem;
   }
 
   & .link {
@@ -166,30 +214,61 @@ const isExpanded = ref(false)
       color: $color-green;
     }
   }
-}
 
+  @media (width < 510px) {
+    padding: 1rem 0;
+  }
+    @media (width < 350px) {
+    box-shadow: 0 0 5px 1px $color-gray-700;
+  }
+}
+.header-logo {
+  flex: 0 0 130px;
+  @media (width < 400px) {
+    display: none;
+  }
+}
 
 .major-category-nav {
     /* structure */
+  max-width: 26rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 4rem;
+  gap: var(--leng-40);
+  @media (width < 600px) {
+    gap: 2rem;
+  }
 }
 
-.toolbar {
-  /* structure */
+/* .toolbar {
+  flex: 1 1 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 4rem;
+  gap: var(--leng-40); 
+} */
+.toolbar-icons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--leng-40);
+  @media (width < 600px) {
+    gap: .7rem;
+  }
+
 }
 .search-product {
+
   width: 38rem;
-  box-shadow: 0 0 0 1px $color-gray-400;
+  box-shadow: inset 0 0 0 1px $color-gray-400;
 
   &::placeholder {
     color: $color-gray-600;
+  }
+
+  @media (width < 1000px) {
+    width: auto;
   }
 }
 .favourite {
@@ -200,11 +279,6 @@ const isExpanded = ref(false)
 
 /* bottom section */
 .sale-adv {
-  /* pos */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
 
   padding: 0.7rem 0;
 
@@ -226,33 +300,33 @@ const isExpanded = ref(false)
       font-weight: 700;
     }
   }
+
+  @media (width < 350px) {
+    display: none;
+  }
 }
 
 .chevron {
   font-size: 5rem;
 }
 
+/* breadcrumbs */
+.breadcrumbs-section {
+  padding: var(--leng-16) 0;
+  background: $color-gray-200;
 
-/* expanded */
-.expanded {
-  /* pos */
-  position: absolute;
-  top: 100%;
-  left: 0;
-  width: 100%;
-
-  padding: 2rem 0 4rem;
-
-  /* decor */
-  @mixin slashBetween 7rem;
-
-  & .container {
-    /* structure */
-    display: flex;
-    justify-content: space-between;
-    gap: 2rem;
-  }
+  /* @media (width < 400px) {
+    display: none;
+  } */
+  
+  /* @media (width < 600px) {
+    display: none;
+    padding: 1rem 0;
+  } */
 }
+.container {
+}
+
 .minor-category-nav {
   flex: 1 1 auto;
 
@@ -275,4 +349,4 @@ const isExpanded = ref(false)
 }
 
 
-</style>~/stores/auth
+</style>

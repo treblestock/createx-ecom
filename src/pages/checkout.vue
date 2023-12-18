@@ -20,28 +20,30 @@ import OrderTotalPrice from '~/components/widgets/OrderTotalPrice.vue'
       <div class="main">
         <div class="row">
           <div class="h1">Checkout</div>
-          <AppLink class="back-to-shopping">Back to shopping</AppLink>
+          <AppLink class="back-to-shopping"
+            :to="{name: 'products'}"
+          >Back to shopping</AppLink>
         </div>
 
         <SignInPrompt class="sign-in-prompt"></SignInPrompt>
 
-        <section class="section">
+        <section class="section-0">
           <div class="section-title h4">1. Item Review</div>
           <OrderItemsReview class="section-content item-review"></OrderItemsReview>
         </section>
-        <section class="section">
+        <section class="section-0">
           <div class="section-title h4">2. Shipping & Billing Address</div>
           <ShippingBillingForm class="section-content shiping-billing-form"></ShippingBillingForm>
         </section>
-        <section class="section">
+        <section class="section-0">
           <div class="section-title h4">3. Shipping Method</div>
           <ShippingMethodForm class="section-content shipping-method-form"></ShippingMethodForm>
         </section>
-        <section class="section">
+        <section class="section-0">
           <div class="section-title h4">4. Payment Method</div>
           <PaymentMethod class="section-content payment-method"></PaymentMethod>
         </section>
-        <section class="section">
+        <section class="section-0">
           <div class="section-title h4">5. Additional Information (Optional)</div>
           <TextareaGroup class="comment-group"
             placeholder="Notes about your order, e.g. special noted for delivery."
@@ -49,9 +51,8 @@ import OrderTotalPrice from '~/components/widgets/OrderTotalPrice.vue'
             Order notes
           </TextareaGroup>
         </section>
-
-        
       </div>
+
       <div class="sidebar">
         <OrderPromoForm class="apply-promo"></OrderPromoForm>
         <OrderTotalPrice></OrderTotalPrice>
@@ -69,10 +70,16 @@ import OrderTotalPrice from '~/components/widgets/OrderTotalPrice.vue'
 }
 .container {
   display: flex;
-  gap: 6rem;
+  column-gap: var(--leng-100);
+
+  @media (width < 1270px) {
+    flex-wrap: wrap;
+    justify-content: center;
+
+    max-width: 81rem;
+  }
 }
 .main {
-  flex: 1 1 auto;
 }
 .row {
   display: flex;
@@ -80,8 +87,7 @@ import OrderTotalPrice from '~/components/widgets/OrderTotalPrice.vue'
 
   margin-bottom: 3.2rem;
 }
-.section {
-  margin-top: 3.2rem;
+.section-0 {
   padding: 3.2rem 0;
   border-top: 1px solid $color-gray-300;
 }
@@ -108,7 +114,7 @@ import OrderTotalPrice from '~/components/widgets/OrderTotalPrice.vue'
 .payment-method {
 }
 .sidebar {
-  flex: 0 0 39rem;
+  flex: 1 0 39rem;
 
   & > * {
     margin-bottom: 2.4rem;

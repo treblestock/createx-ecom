@@ -1,0 +1,6 @@
+CREATE DATABASE createx_ecom;
+CREATE TABLE users(
+  id SERIAL PRIMARY KEY,
+  fullname VARCHAR(64)
+)
+CREATE TABLE 

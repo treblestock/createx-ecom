@@ -3,54 +3,61 @@ import manImg from '~/assets/img/people/man.png'
 import womanImg from '~/assets/img/people/woman.png'
 import kidImg from '~/assets/img/people/kid.png'
 
-
-
-
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <div class="category">
-        <div class="img">
-          <img :src="womanImg" alt="">
-        </div>
-        <div class="title text_xlb">women's</div>
+  <div class="content-wrapper grid">
+    <AppLink class="category"
+      :to="{name: 'products', query: {categorySex: 'women'}}"
+    >
+      <div class="img">
+        <img :src="womanImg" alt="">
       </div>
-      
-      <div class="category">
-        <div class="img">
-          <img :src="manImg" alt="">
-        </div>
-        <div class="title text_xlb">men's</div>
+      <div class="title text-xl-b">women's</div>
+    </AppLink>
+    
+    <AppLink class="category"
+      :to="{name: 'products', query: {categorySex: 'men'}}"
+    >
+      <div class="img">
+        <img :src="manImg" alt="">
       </div>
+      <div class="title text-xl-b">men's</div>
+    </AppLink>
 
-      <div class="category">
-        <div class="img">
-          <img :src="kidImg" alt="">
-        </div>
-        <div class="title text_xlb">kids'</div>
+    <AppLink class="category"
+      :to="{name: 'products', query: {categorySex: 'kids'}}"
+    >
+      <div class="img">
+        <img :src="kidImg" alt="">
       </div>
+      <div class="title text-xl-b">kids'</div>
+    </AppLink>
+  </div>
 
-    </div>
-  </section>
   
 </template>
 
 <style scoped>
 @import '~css/consts';
 
-
-.section {
-  margin-bottom: 18rem;
-}
-.container {
-  display: flex;
-  flex-wrap: wrap;
+.content-wrapper {
+  /* display: flex;
+  flex-wrap: wrap; */
   gap: 3rem;
+
+  --min-width: 10rem;
+  --gap: 3rem;
 }
 .category {
-  flex: 0 0 39rem;
+  width: clamp(10rem, 100%, 39rem);
+  /* flex: 0 0 clamp(10rem, auto, 39rem); */
+
+  &:hover {
+    & .title {
+      color: $color-green;
+    }
+  }
 }
 .img {
   /* width: 39rem;

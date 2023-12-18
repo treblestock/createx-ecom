@@ -1,7 +1,9 @@
 <script setup lang="ts">
 const modelValue = defineModel<any>()
 
-
+const props = defineProps<{
+  classBtn?: string
+}>()
 </script>
 
 <template>
@@ -10,7 +12,9 @@ const modelValue = defineModel<any>()
       v-model="modelValue"
       :="$attrs"
     >
-    <div class="btn">
+    <div class="btn"
+      :class="classBtn"
+    >
       <slot></slot>
     </div>
   </label>
@@ -29,8 +33,6 @@ const modelValue = defineModel<any>()
   padding: 1.2rem 3.2rem;
   font-size: 1.4rem;
 
-  font-weight: 700;
-  line-height: $lh;
 
   user-select: none;
 }

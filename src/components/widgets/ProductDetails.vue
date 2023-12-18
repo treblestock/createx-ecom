@@ -13,7 +13,7 @@ const props = defineProps<{
 <template>
   <div class="product-details">
     <div class="row">
-      <div class="title text_xlb">Details</div>
+      <div class="title text-xl-b">Details</div>
       <div class="desciption">{{ details.desctiption }}</div>
       <ul class="ul">
         <li v-for="characteristic in details.characteristics" :key="characteristic">{{ characteristic }}</li>
@@ -21,15 +21,15 @@ const props = defineProps<{
     </div>
 
     <div class="row">
-      <div class="title text_xlb">Fabric</div>
+      <div class="title text-xl-b">Fabric</div>
       <ul class="ul">
         <li v-for="fabricClauses in details.fabricClauses" :key="fabricClauses">{{ fabricClauses }}</li>
       </ul>
     </div>
 
     <div class="row">
-      <div class="title text_xlb">Care</div>
-      <ul class="_with-icon">
+      <div class="title text-xl-b">Care</div>
+      <ul>
         <li v-for="fabricClauses in details.careClauses" :key="fabricClauses.icon">
           <Img class="icon"
             :src="fabricClauses.icon"
@@ -49,8 +49,9 @@ const props = defineProps<{
   color: $color-gray-800;
 }
 .row {
-  padding-bottom: 2.4rem;
-  margin-bottom: 2.4rem;
+  /* padding-bottom: 2.4rem;
+  margin-top: 2.4rem; */
+  padding: var(--leng-24) 0;
   & + & {
     border-top: 1px solid $color-gray-300;
   }

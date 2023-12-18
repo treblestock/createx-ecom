@@ -17,7 +17,7 @@ const props = defineProps<{
   dislikes: number
 }>()
 const { data: autorName} = useFetch(async () => {
-  return (await api.findUser(props.userId)).fullName
+  return (await api.findUserById(props.userId))?.fullName || 'ups'
 }, '')
 
 </script>
@@ -25,7 +25,7 @@ const { data: autorName} = useFetch(async () => {
 <template>
   <div class="comment">
     <div class="left">
-      <div class="commenter-name text_xlb">{{ autorName }}</div>
+      <div class="commenter-name text-xl-b">{{ autorName }}</div>
       <div class="comment-date">{{ dateToHumanCase(date) }}</div>
     </div>
     <div class="right">
@@ -45,7 +45,8 @@ const { data: autorName} = useFetch(async () => {
 
 .comment {
   display: flex;
-  gap: 3rem;
+  flex-wrap: wrap;
+  column-gap: 3rem;
 
   padding: 3.2rem 0;
 }
@@ -66,6 +67,7 @@ const { data: autorName} = useFetch(async () => {
 
 
 .right {
+  flex: 1 1 40rem;
 }
 .comment-text {
   margin-bottom: 1.6rem;

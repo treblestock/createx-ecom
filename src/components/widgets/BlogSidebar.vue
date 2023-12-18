@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import Tag from '~/components/features/Tag.vue'
 import BlogPostCardSmall from '~/components/widgets/BlogPostCardSmall.vue'
+import SearchBlogPost from '~/components/features/SearchBlogPost.vue'
 
 
 import useStoreBlogPosts from '~/stores/blogPosts'
@@ -17,11 +18,9 @@ const featuredPosts = computed(() => blogPostsStore.blogPosts.slice(0, 3) )
 </script>
 
 <template>
-  <aside class="sidebar">
+  <div class="sidebar">
     <div class="search-blog sidebar-row">
-      <Input class="search-input"
-        placeholder="search the blog..."
-      ></Input>
+      <SearchBlogPost class="search-input"></SearchBlogPost>
     </div>
 
     <div class="blog-categories sidebar-row">
@@ -34,7 +33,7 @@ const featuredPosts = computed(() => blogPostsStore.blogPosts.slice(0, 3) )
           v-model="selectedCategories"
           :value="category"
         >
-        <div class="category-name text_b">{{ category }}</div>
+        <div class="category-name text-b">{{ category }}</div>
         <div class="category-count">23</div>
       </label>
     </div>
@@ -61,7 +60,7 @@ const featuredPosts = computed(() => blogPostsStore.blogPosts.slice(0, 3) )
         ></Tag>
       </div>
     </div>
-  </aside>
+  </div>
 </template>
 
 <style scoped>

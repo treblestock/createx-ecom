@@ -9,18 +9,14 @@ const { data: recomendedProducts } = useFetch(api.getProducts, [])
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <Slider
-        title="You may be interested in"
-        isPaginationHidden
-      >
-        <ProductCard class="product-card"
-          v-for="product in recomendedProducts" :key="product.id" :="product"
-        ></ProductCard>
-      </Slider>
-    </div>
-  </section>
+  <Slider
+    title="You may be interested in"
+    isPaginationHidden
+  >
+    <ProductCard class="product-card"
+      v-for="product in recomendedProducts" :key="product.id" :="product"
+    ></ProductCard>
+  </Slider>
 </template>
 
 <style scoped>

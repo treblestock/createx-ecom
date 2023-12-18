@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import type { ProductColor, ProductSize } from '~/types'
-import IconDelete from '~/assets/img/icons/decor/delete.svg'
 import IconHeart from '~/assets/img/icons/decor/heart.svg'
 import Price from '~/components/features/Price.vue'
 
@@ -36,41 +35,52 @@ const emit = defineEmits<{
 </script>
 
 <template>
-  <div class="cart-item">
-    <div class="col img">
-      <Img :src="img" />
+  <article class="cart-item">
+
+    <div class="left">
+      <div class="col img-a">
+        <Img :src="img" />
+      </div>
     </div>
-    
-    <div class="col name-size-color">
-        <div class="name text_sb">{{ name }}</div>
-        <div class="color-and-size">
-          <div class="color">Color: <span>{{ color }}</span></div>
-          <div class="size">Size: <span>{{ size }}</span></div>
+      
+    <div class="right">
+      <div class="col name-size-color">
+          <AppLink class="name text-s-b"
+            :to="{name: 'product', params: {id: productId}}"
+          >{{ name }}</AppLink>
+          <div class="color-and-size">
+            <div class="color">Color: <span>{{ color }}</span></div>
+            <div class="size">Size: <span>{{ size }}</span></div>
+          </div>
+      </div>
+
+      <div class="count-and-price">
+          <div class="col count">
+          <InputNumber class="count-input"
+            v-model="selectedCount"
+          ></InputNumber>
         </div>
+
+        <div class="col price">
+          <Price class="price-feature"
+            :price="price"
+            :discount="discount"
+          ></Price>
+        </div>
+      </div>
+
+      <div class="col delete-and-favourite">
+        <Btn class="delete btn_s btn_outlined-transparent"
+          @click="$emit('deleteProduct')"
+        >Delete</Btn>      
+        <Btn class="favourite _transparent _with-icon">
+          Move to
+          <IconHeart></IconHeart>
+        </Btn>
+      </div>
     </div>
 
-    <div class="col count">
-      <InputNumber class="count-input"
-        v-model="selectedCount"
-      ></InputNumber>
-    </div>
-
-    <div class="col price">
-      <Price class="price-feature"
-        :price="price"
-        :discount="discount"
-      ></Price>
-    </div>
-
-    <div class="col delete-and-favourite">
-      <Btn class="delete btn_outlined-transparent">Delete</Btn>      
-      <Btn class="favourite _transparent _with-icon">
-        Move to
-        <IconHeart></IconHeart>
-      </Btn>
-    </div>
-
-  </div>
+  </article>
 </template>
 
 <style scoped>
@@ -78,32 +88,70 @@ const emit = defineEmits<{
 
 .cart-item {
   display: flex;
-  justify-content: space-between;
-  gap: 4rem;
+  column-gap: var(--leng-40);
+  row-gap: var(--leng-40);
 
-  padding: 2rem 2.4rem;
+  padding: 2rem var(--leng-24);
   background: $color-gray-200;
-}
-.img  {
-  width: 8rem;
-  height: 8rem;
-  margin-right: -2rem;
 
-  position: relative;
-
-  & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  @media (width < 600px) {
+    & .name-size-color {
+      flex: 1 0 13rem;
+    }
   }
+  @media (width < 550px) {
+    & .count-and-price {
+
+      flex: 1 1 auto;
+      flex-direction: column;
+    }
+  @media (420px < width < 550px) {
+    & .count {
+      flex: 1 1 auto;
+    }
+    & .price {
+      flex: 1 1 auto;
+    }
+  }
+  }
+  @media (width < 420px) {
+    & .count-and-price {
+      order: 3;
+      flex-direction: row;
+    }
+  }
+}
+.left {
+  flex: 0 0 auto;
+}
+.right {
+  flex: 1 1 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--leng-40);
+}
+.count-and-price {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  align-items: start;
+  gap: var(--leng-40);
+
+  margin-bottom: 1rem;
+}
+.img-a  {
+  /* flex: 0 0 8rem; */
+  width: 8rem;  
+  height: 8rem;
 }
 .name-size-color {
   flex: 0 0 21rem;
 }
 .name {
+  max-width: fit-content;
+  text-wrap: wrap;
   color: $color-gray-800;
 }
 .color-and-size {
@@ -112,7 +160,6 @@ const emit = defineEmits<{
   & span {
     color: $color-gray-800;
   }
-  
 }
 
 .count {
@@ -120,6 +167,10 @@ const emit = defineEmits<{
 }
 .price {
   flex: 0 0 10rem;
+  height: 4rem;
+  display: flex;
+  flex-direction: column;
+  /* justify-content: start; */
 }
 .delete-and-favourite {
   flex: 0 0 9rem;
@@ -135,14 +186,6 @@ const emit = defineEmits<{
 }
 .size {
   margin-bottom: .5rem;
-}
-.count-and-price {
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  gap: 1rem;
-
-  margin-bottom: 1rem;
 }
 .favourite {
   padding: 0;

@@ -30,7 +30,7 @@ timeUnitsToTimeCount.value
 
 <template>
   <div class="time-counter">
-    <div class="title text_s">Limited time offer</div>
+    <div class="title text-s">Limited time offer</div>
     <div class="counter">
       <div class="counter-group"
         v-for="timeUnitCount, timeUnitName in timeUnitsToTimeCount" :key="timeUnitName"

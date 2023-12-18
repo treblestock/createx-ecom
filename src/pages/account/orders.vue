@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import OrderInfo from '~/components/widgets/OrderInfo.vue'
-import IconDelete from '~/assets/img/icons/decor/delete.svg'
 
 
 import useStoreProfile from '~/stores/profile'
@@ -17,7 +16,7 @@ const orders = computed(() => profileStore.orders)
 </script>
 
 <template>
-  <div class="orders-page">
+  <main class="orders-page">
     <section class="orders-section">
       <div class="orders-header">
         <h1 class="h1">My orders</h1>
@@ -31,7 +30,7 @@ const orders = computed(() => profileStore.orders)
         ></OrderInfo>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 
 <style scoped>

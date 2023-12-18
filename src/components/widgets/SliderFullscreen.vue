@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import IconArrow from '~/components/icons/Arrow.vue'
 
 
 const props = defineProps<{
@@ -23,6 +24,7 @@ function onItemsCountChanged(n: number) {
 }
 
 
+
 </script>
 
 <template>
@@ -41,12 +43,15 @@ function onItemsCountChanged(n: number) {
       <div class="arrows"
         v-if="!isArrowsHidden"
       >
-        <IconRounded icon="ArrowLeft"
-          @click="prevSlide()"
-        ></IconRounded>
-        <IconRounded icon="ArrowRight"
-          @click="nextSlide()"
-        ></IconRounded>
+        <IconArrow class="icon-arrow"
+          direction="left"
+          @click="prevSlide"
+
+        ></IconArrow>
+        <IconArrow class="icon-arrow"
+          direction="right"
+          @click="nextSlide"
+        ></IconArrow>
       </div>
       <div class="pagination"
         v-if="!isPaginationHidden"
@@ -75,7 +80,6 @@ function onItemsCountChanged(n: number) {
 @import '~css/consts';
 
 
-$slider-arrows-padding: 3.2rem;
 
 .slider {
   position: relative;
@@ -122,7 +126,9 @@ $slider-arrows-padding: 3.2rem;
 }
 
 .arrows {
-  width: calc(100% - 2 * ($slider-arrows-padding) );
+  /* width: calc(100% - 2 * 3.2rem ); */
+  width: 100%;
+  padding: 0 var(--leng-30);
   margin: 0 auto;
   /* structure */
   display: flex;
@@ -133,8 +139,20 @@ $slider-arrows-padding: 3.2rem;
     user-select: none;
   }
 }
+
+.icon-arrow {
+  width: 3rem;
+  height: 3rem;
+  
+  color: $color-gray-800;
+  background: $color-white !important;
+  &:hover {
+    color: $color-gray-800 !important;
+  }
+}
 /* pagination */
 .pagination {
+  padding: 0 var(--leng-60);
 
   /* structure */
   & .container {
@@ -147,6 +165,7 @@ $slider-arrows-padding: 3.2rem;
 }
 .page {
   cursor: pointer;
+  flex: 0 0 min(25%, 18rem);
 
   &._active {
     & .page-count {
@@ -162,7 +181,6 @@ $slider-arrows-padding: 3.2rem;
   text-align: left;
 }
 .page-icon {
-  width: 18rem;
   height: 1px;
 
   background: $color-gray-500;

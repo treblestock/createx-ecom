@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import type { CartProductVariant } from '~/types';
+import type { CartProductVariant } from '~/types'
 import CartItem from '~/components/features/CartItem.vue'
 import Price from '~/components/features/Price.vue'
 
@@ -11,15 +11,13 @@ const cartItemsData = computed(() => cartStore.cartItemsData)
 const subtotal = computed(() => cartStore.subtotal)
 
 function deleteProduct(uniqueKey: CartProductVariant) {
+  console.log(uniqueKey)
   cartStore.setCount(uniqueKey, 0)
 }
 function setCount(productVariant: CartProductVariant, count: number) {
   cartStore.setCount(productVariant, count)
 }
 
-function addFavourite(id: number) {
-  
-}
 
 </script>
 
@@ -31,7 +29,7 @@ function addFavourite(id: number) {
       @setCount="(count) => setCount(cartItem, count)"
       @deleteProduct="() => deleteProduct(cartItem)"
     ></CartItem>
-    <div class="item subtotal text_xlb">
+    <div class="item subtotal text-xl-b">
       Subtotal: <Price class="price" :price="subtotal" ></Price>
     </div>
   </div>
@@ -43,8 +41,9 @@ function addFavourite(id: number) {
 .cart-items {
 }
 .item {
+  width: 100%;
   background: $color-gray-200;
-  padding: 2rem 2.4rem;
+  padding: 2rem var(--leng-24);
   & + & {
     border-top: 1px solid $color-gray-300;
   }

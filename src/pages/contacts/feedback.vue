@@ -10,7 +10,7 @@ import IconTwitter from '~/assets/img/icons/socials-share/tw.svg'
 
 <template>
   <div class="page">
-    <div class="text_lb">If you have any questions, concerns or comments, we would love to hear from you! Submit your query using any of the methods below:</div>
+    <div class="text-l-b">If you have any questions, concerns or comments, we would love to hear from you! Submit your query using any of the methods below:</div>
     <div class="contacs-list">
       <div class="row">
         <IconIphone class="icon"></IconIphone>
@@ -32,7 +32,7 @@ import IconTwitter from '~/assets/img/icons/socials-share/tw.svg'
         <a class="link" href="">Tweet us</a>
       </div>
     </div>
-    <div class="text_lb">Or get in touch with us by completing the below form:</div>
+    <div class="text-l-b">Or get in touch with us by completing the below form:</div>
 
     <form class="form">
       <InputGroup class="input-group"
@@ -63,7 +63,7 @@ import IconTwitter from '~/assets/img/icons/socials-share/tw.svg'
 
 .page {
 }
-.text_lb {
+.text-l-b {
   margin-bottom: 3.2rem;
 
   color: $color-gray-900;
@@ -93,7 +93,7 @@ import IconTwitter from '~/assets/img/icons/socials-share/tw.svg'
   row-gap: 2.4rem;
 }
 .input-group {
-  flex: 0 0 39rem;
+  flex: 1 0 max(calc(50% - 1.5rem), 20rem);
 }
 .textarea-group {
   flex: 0 0 100%;

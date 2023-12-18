@@ -7,8 +7,14 @@ import useStoreProducts from '~/stores/products'
 const productsStore = useStoreProducts()
 
 
-const products = computed(() => productsStore.products.slice(0, 6))
+import useStoreProfile from '~/stores/profile'
+const profileStore = useStoreProfile()
 
+
+const products = computed(() => productsStore.products.slice(0, 6))
+function clearFavourite() {
+  // profileStore.
+}
 
 </script>
 
@@ -18,12 +24,14 @@ const products = computed(() => productsStore.products.slice(0, 6))
       <div class="favourite-header">
         <h1 class="h1">Wishlist</h1>
         <Btn class="_transparent _with-icon _delete">
-          <IconDelete class="icon-delete"></IconDelete>
+          <IconDelete class="icon-delete"
+            @click="clearFavourite"
+          ></IconDelete>
           Delete all
         </Btn>
       </div>
 
-      <div class="product-cards">
+      <div class="product-cards grid">
         <ProductCard class="product-card"
           v-for="product in products" :key="product.id" 
           :="product"
@@ -55,12 +63,14 @@ const products = computed(() => productsStore.products.slice(0, 6))
 .icon-delete {
 }
 .product-cards {
-  display: flex;
-  flex-wrap: wrap;
+  /* display: flex;
+  flex-wrap: wrap; */
   gap: 3rem;
+
+  --min-width: 28rem;
 }
 .product-card {
-  flex: 0 0 39rem;
+  /* flex: 0 0 39rem; */
 }
 
 </style>

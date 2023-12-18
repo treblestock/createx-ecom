@@ -10,12 +10,12 @@ function onSubmit() {
 <template>
 
   <div class="email">
-    <div class="img">
+    <div class="img-a">
       <img :src="illustration" alt="">
     </div>
     
-    <div class="email-text">
-      <div class="description text_sb">For All new Email Subscribers</div>
+    <div class="content">
+      <div class="description text-s-b">For All new Email Subscribers</div>
       <div class="title h2">Get 5% Off & Free Delivery</div>
       
       <form class="email-form"
@@ -34,7 +34,7 @@ function onSubmit() {
           type="submit"
         >Subscribe</Btn>
       </form>
-      <div class="details text_s">
+      <div class="details text-s">
         *Sign up to be the first to hear about exclusive deals, special offers and upcoming collections.
       </div>
     </div>
@@ -53,9 +53,8 @@ $bg-img-ratio-width: calc(440 / 750 * 100%);
 
 
 .email {
-  height: 50rem;
   position: relative;
-  padding: 6rem;
+  padding: var(--leng-60);
 
 
   grid-column: span 2;
@@ -64,7 +63,7 @@ $bg-img-ratio-width: calc(440 / 750 * 100%);
   }
 }
 
-.img {
+.img-a {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -80,15 +79,10 @@ $bg-img-ratio-width: calc(440 / 750 * 100%);
 
   & img {
     position: absolute;
-    bottom: 0;
-    right: 0;
-    height: $bg-img-ratio-height;
-    width: $bg-img-ratio-width;
-    object-fit: cover;
   }
 
 }
-.email-text {
+.content {
   max-width: 36rem;
 }
 
@@ -99,8 +93,8 @@ $bg-img-ratio-width: calc(440 / 750 * 100%);
   color: $color-gray-900;
 }
 .title {
-  text-wrap: nowrap;
-  margin-bottom: 3.2rem;
+  /* text-wrap: nowrap; */
+  margin-bottom: var(--leng-30);
 
   color: $color-gray-900;
 

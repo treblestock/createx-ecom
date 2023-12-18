@@ -21,7 +21,8 @@ const props = defineProps<{
   dislikes: number
 }>()
 const { data: reviewerName} = useFetch(async () => {
-  return (await api.findUser(props.userId)).fullName
+  const foundUser = await api.findUserById(props.userId)
+  return foundUser ? foundUser.fullName : 'ups..'
 }, '')
 
 </script>
@@ -29,7 +30,7 @@ const { data: reviewerName} = useFetch(async () => {
 <template>
   <div class="review">
     <div class="left">
-      <div class="reviewer-name text_xlb">{{ reviewerName }}</div>
+      <div class="reviewer-name text-xl-b">{{ reviewerName }}</div>
       <div class="review-date">{{ dateToHumanCase(date) }}</div>
       <RatingComponent class="review-rating"
         :rating="rating"
@@ -65,7 +66,8 @@ const { data: reviewerName} = useFetch(async () => {
 
 .review {
   display: flex;
-  gap: 3rem;
+  flex-wrap: wrap;
+  gap: var(--leng-30);
 
   padding: 3.2rem 0;
 }
@@ -88,6 +90,7 @@ const { data: reviewerName} = useFetch(async () => {
 }
 
 .right {
+  flex: 1 1 40rem;
 }
 .comment {
   margin-bottom: 1.6rem;

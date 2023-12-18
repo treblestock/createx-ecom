@@ -27,15 +27,15 @@ const props = defineProps<{
   <div class="collection"
     :class="{_full: fullScreen}"
   >
-    <div class="img">
+    <div class="img-a">
       <Img :src="backgroundImg" />
     </div>
     
-    <div class="collection-container"
+    <div class="content"
       :class="classCollectionContainer"
     >
-      <div class="collection-container-top">
-        <div class="collection-description text_sb">{{ description }}</div>
+      <div class="content-top">
+        <div class="collection-description text-s-b">{{ description }}</div>
         <div class="collection-title h2">{{ title }}</div>
         <div class="collection-links">
           <AppLinkBtn class="collection-link btn_outlined-transparent"
@@ -51,11 +51,11 @@ const props = defineProps<{
         </div>
       </div>
 
-      <!-- <div class="collection-container-bottom"
+      <div class="content-bottom"
         v-if="expiresWhen"
       >
         <TimeCounter :expiresWhen="expiresWhen" />
-      </div> -->
+      </div>
     </div>
   </div>  
 </template>
@@ -64,54 +64,49 @@ const props = defineProps<{
 @import "~css/consts";
 
 .collection {
-  height: 50rem;
   position: relative;
-  padding: 6rem;
+  padding: var(--leng-60);
 
-
-  &._full {
+  /* &._full {
     & .collection-description {
       font-size: 1.8rem;
     }
     & .collection-title {
       font-size: 7.2rem;
-      margin-bottom: 6rem;
+      margin-bottom: var(--leng-60);
     }
+    & .content {
+      display: flex;
+      gap: 3rem;
 
-  }
+      padding-top: 14rem;
+    }
+  } */
 }
 
-
-
-.collection-container {
+.content {
+  max-width: 36rem;
   height: 100%;
   display: flex;
   flex-direction: column;
   align-items: start;
   justify-content: space-between;
+
+  gap: 4rem;
 }
-.collection-container-top {
-  max-width: 50%;
+.content-top {
 }
-.collection-container-bottom {
-  max-width: 50%;
+.content-bottom {
 }
 .collection-description {
   margin-bottom: 1.2rem;
-
-  /* font-size: 1.4rem;
-  font-weight: 700;
-  line-height: 1.5; */
   text-transform: uppercase;
 
   color: $color-gray-900;
 }
 .collection-title {
-  margin-bottom: 4rem;
+  margin-bottom: var(--leng-40);
 
-  /* font-size: 3.2rem;
-  line-height: 1.3;
-  font-weight: 700; */
   color: $color-gray-900;
 }
 .collection-links {
@@ -120,7 +115,7 @@ const props = defineProps<{
 }
 
 
-.img {
+.img-a {
   z-index: -1;
   position: absolute;
   top: 0;
@@ -130,20 +125,10 @@ const props = defineProps<{
   height: 100%;
   overflow: hidden;
 
-  /* margin-bottom: var(1.6rem; */
   margin-bottom: 1.6rem;
 
   & img {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
   }
 }
-
-
-
-
 </style>

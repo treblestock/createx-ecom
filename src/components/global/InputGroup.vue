@@ -49,10 +49,12 @@ const modelValue = defineModel<string | number>()
 
   font-size: 1.6rem;
   color: $color-gray-800;
+
 }
 
 .input-group-input {
   width: 100%;
+  background: $color-white !important;
 }
 
 

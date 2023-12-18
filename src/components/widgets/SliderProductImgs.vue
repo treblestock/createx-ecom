@@ -52,7 +52,7 @@ const activeImg = computed(() => {
 
 
     <div class="slider-pagination">
-      <div class="pagination-img"
+      <div class="pagination-img img-a"
         v-for="img, ind in imgs" :key="img"
         :ind="ind"
         :class="{_active: ind === activeInd}"
@@ -71,8 +71,8 @@ const activeImg = computed(() => {
 .slider {
 }
 .active-img {
-  width: 60rem;
-  height: 60rem;
+  width: 100%;
+  aspect-ratio: 1 / 1;
   position: relative;
 
   margin-bottom: 2rem;
@@ -93,7 +93,7 @@ const activeImg = computed(() => {
   position: absolute;
   top: 50%;
   width: 100%;
-  padding: 0 3.2rem;
+  padding: 0 var(--leng-32);
 
   display: flex;
   justify-content: space-between;
@@ -106,17 +106,9 @@ const activeImg = computed(() => {
   gap: 2rem;
 }
 .pagination-img {
-  width: 10rem;
-  height: 10rem;
-  position: relative;
+  flex: 0 0 calc((100% - 2rem * 4) / 5);
+  aspect-ratio: 1 / 1;
   & img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-
     user-select: none;
     cursor: pointer;
   }

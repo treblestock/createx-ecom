@@ -1,12 +1,17 @@
 <script setup lang="ts">
-type sexCategories = 'woman' | 'man' | 'girls' | 'boys'
-const selectedSexCategories = ref<Set<sexCategories>>(new Set(['woman']))
-const email = ref<string>('')
-const isMailingAllowed = ref<boolean>(true)
+type SexCategories = 'woman' | 'man' | 'girls' | 'boys'
+
+const initaialFormData = {
+  selectedSexCategories: ['woman'],
+  email: '',
+  isMailingAllowed: true,
+}
+const formData = ref({...initaialFormData})
 
 
 function onSubmit(event: Event) {
-  console.log(event)
+  console.log(formData.value)
+  formData.value = {...initaialFormData}
 }
 </script>
 
@@ -15,29 +20,33 @@ function onSubmit(event: Event) {
     @submit.prevent="onSubmit"
   >
     <div class="title h1">Subscribe for updates</div>
-    <div class="text text_xl">Subscribe for exclusive early sale access and new arrivals.</div>
+    <div class="text-xl">Subscribe for exclusive early sale access and new arrivals.</div>
     <div class="checkboxes">
       <CheckboxBtn class="checkbox"
-        v-model="selectedSexCategories"
+        classBtn="btn_s"
+        v-model="formData.selectedSexCategories"
         value="woman"
       >woman</CheckboxBtn>
       <CheckboxBtn class="checkbox"
-        v-model="selectedSexCategories"
+        classBtn="btn_s"
+        v-model="formData.selectedSexCategories"
         value="man"
       >man</CheckboxBtn>
       <CheckboxBtn class="checkbox"
-        v-model="selectedSexCategories"
+        classBtn="btn_s"
+        v-model="formData.selectedSexCategories"
         value="girls"
       >girls</CheckboxBtn>
       <CheckboxBtn class="checkbox"
-        v-model="selectedSexCategories"
+        classBtn="btn_s"
+        v-model="formData.selectedSexCategories"
         value="boys"
       >boys</CheckboxBtn>
     </div>
 
     <div class="email-and-submit">
       <InputGroup class="email-group"
-        v-model="email"
+        v-model="formData.email"
         placeholder="Your working email"
       >Email</InputGroup>
       <Btn class="submit-btn"
@@ -48,7 +57,7 @@ function onSubmit(event: Event) {
     </div>
 
     <CheckboxGroup class="agree"
-      v-model="isMailingAllowed"
+      v-model="formData.isMailingAllowed"
     >
       I agree to receive communications from Createx Store.
     </CheckboxGroup>
@@ -67,17 +76,19 @@ function onSubmit(event: Event) {
 .title {
   margin-bottom: 2.4rem;
 }
-.text {
+.text-xl {
   margin-bottom: 3.2rem;
+  color: $color-gray-700;
 }
 .checkboxes {
   margin-bottom: 3.2rem;
 
   display: flex;
+  flex-wrap: wrap;
   gap: 1.2rem;
 }
 .checkbox {
-  :deep(.btn) {
+  &:deep(.btn) {
     background: transparent;
     box-shadow: 0 0 0 $border-w $color-gray-400;
     color: $color-gray-700;

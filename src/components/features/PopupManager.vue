@@ -15,8 +15,9 @@ type PopupProps = Omit<InstanceType<typeof Popup>['$props'], PropsToExclude>
 
 const defaultStaticPopupsProps: Partial<Record<keyof typeof staticPopups, PopupProps>> = {
   'Cart': {
-    _side: true,
-    classBody: '_no-padding',
+    sideRight: true,
+    noPadding: true,
+    transitionName: 'shift-left'
   }
 }
 const activePopups = ref<Map<Component, {id: PopupId, props?: PopupProps}>>(new Map())
@@ -89,7 +90,6 @@ provide('closePopup', closePopup)
 
 <style scoped>
 @import '~css/consts';
-
 
 
 

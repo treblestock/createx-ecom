@@ -19,7 +19,7 @@ const selectedSize = ref<string | number>(props.sizes[0])
       :value="size"
       v-model="selectedSize"
     >
-      <span class="text_xs">{{ size }}</span>
+      <span class="text-xs">{{ size }}</span>
     </RadioBtn>
   </div>
 </template>

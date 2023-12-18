@@ -39,15 +39,18 @@ const statusClasess: Record<OrderStatus, string> = {
 
 <template>
   <Spoiler class="order-record">
+
     <template #title>
       <div class="order-header">
         <AppLink class="order-id"
+          @click.stop=""
           :to="{name: 'trackOrder', params: {orderId: id}}"
         ># {{ id }}</AppLink>
         <Date class="order-date"
           :date="tracking.orderDate"
         ></Date>
-        <div class="order-status label text_s"
+
+        <div class="order-status label text-s"
           :class="statusClasess[orderStatus]"
         >{{ orderStatus }}</div>
         <Price class="order-total"
@@ -55,6 +58,7 @@ const statusClasess: Record<OrderStatus, string> = {
         />
       </div>
     </template>
+
     <template #default>
       <div class="order-body">
         <CartItemStatic class="cart-item"
@@ -62,26 +66,26 @@ const statusClasess: Record<OrderStatus, string> = {
           :="cartItem"
         ></CartItemStatic>
         <div class="cart-total">
-          <div>
-            <span class="_color-gray">Subtotal: </span>
+          <div class="cart-total-record">
+            <div class="cart-total-record-name">Subtotal: </div>
             <Price class="total-price"
               :price="costs.subtotal"
             ></Price>
           </div>
-          <div>
-            <span class="_color-gray">Shipping: </span>
+          <div class="cart-total-record">
+            <div class="cart-total-record-name">Shipping: </div>
             <Price class="total-price"
               :price="costs.shippingCost"
             ></Price>
           </div>
-          <div>
-            <span class="_color-gray">Tax: </span>
+          <div class="cart-total-record">
+            <div class="cart-total-record-name">Tax: </div>
             <Price class="total-price"
               :price="costs.tax"
             ></Price>
           </div>
-          <div>
-            <span class="_color-gray">Total: </span>
+          <div class="cart-total-record">
+            <div class="cart-total-record-name">Total: </div>
             <Price class="total-price"
               :price="costs.total"
             ></Price>
@@ -89,7 +93,7 @@ const statusClasess: Record<OrderStatus, string> = {
         </div>
 
         <div class="order-track-redirect">
-          <span class="text_b">You can track your order here</span>
+          <span class="text-b">You can track your order here</span>
           <AppLinkBtn class="btn_outlined"
             :to="{name: 'trackOrder', params: { orderId: id}}"
           >Order Tracking</AppLinkBtn>
@@ -109,30 +113,50 @@ const statusClasess: Record<OrderStatus, string> = {
 }
 .order-header {
   /* padding: 2.4rem 0; */
+  width: 100%;
+  padding-right: 0.5rem;
+
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center; 
+  justify-content: space-between;
+  column-gap: var(--leng-60);
+}
+
+.left {
+  flex: 1 1 auto;
   display: flex;
   align-items: center;
-  
+  justify-content: space-between;
+  column-gap: var(--leng-40);
 }
+.right {
+  flex: 1 1 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  column-gap: var(--leng-60);
+}
+
 .order-id {
-  flex: 0 0 18rem;
-  margin-right: 3rem;
+  flex: 0 0 16rem;
+  /* margin-right: 3rem; */
 
   .order-record._active & {
     color: $color-green;
   }
 }
 .order-date {
-  flex: 0 0 21rem;
-  margin-right: 7rem;
+  flex: 0 0 17rem;
+  /* margin-right: 7rem; */
 }
 .order-status {
-  flex: 0 0 9.5rem;
-  margin-right: 9.5rem;
+  flex: 0 0 9rem;
 
   height: 2.4rem;
 }
 .order-total {
-  
+  flex: 1 0 10rem;
 }
 
 
@@ -166,12 +190,33 @@ const statusClasess: Record<OrderStatus, string> = {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  column-gap: 2rem;
+  row-gap: 1rem;
 
   margin-bottom: 2.4rem;
 
   color: $color-gray-700;
-}
 
+  @media (width < 400px) {
+    flex-wrap: wrap;
+  }
+  @media (width < 360px) {
+    flex-direction: column;
+    & .cart-total-record {
+      width: 100%;
+      justify-content: space-between;
+    }
+    
+  }
+}
+.cart-total-record {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+.cart-total-record-name {
+  padding-left: 10px;
+}
 .total-price {
   display: inline;
   margin-left: 1rem;

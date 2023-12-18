@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import MobileApps from '~/components/features/MobileApps.vue'
 import Socials from '~/components/features/Socials.vue'
+import IconHeart from '~/assets/img/icons/decor/heart.svg'
 
 
 
@@ -13,29 +14,28 @@ import Socials from '~/components/features/Socials.vue'
 
         <div class="footer-group">
           <div class="footer-group-title">help</div>
-          <AppLink>Delivery & returns</AppLink>
-          <AppLink>FAQ</AppLink>
-          <AppLink>Track order</AppLink>
-          <AppLink>Contacts</AppLink>
-          <AppLink>Blog</AppLink>
+          <AppLink :to="{name: 'contactsFAQ'}">FAQ</AppLink>
+          <AppLink :to="{name: 'trackOrder'}">Track order</AppLink>
+          <AppLink :to="{name: 'contactsStores'}">Contacts</AppLink>
+          <AppLink :to="{name: 'blog'}">Blog</AppLink>
         </div>
 
         <div class="footer-group">
           <div class="footer-group-title">shop</div>
-          <AppLink>New arrivals</AppLink>
-          <AppLink>Trending now</AppLink>
-          <AppLink>Sales</AppLink>
-          <AppLink>Brands</AppLink>
+          <AppLink :to="{name: 'products'}">New arrivals</AppLink>
+          <AppLink :to="{name: 'products'}">Trending now</AppLink>
+          <AppLink :to="{name: 'products', query: {sale: 'y'}}">Sales</AppLink>
+          <AppLink :to="{name: 'products'}">Brands</AppLink>
         </div>
         <div class="footer-group">
           <div class="footer-group-title">get in touch</div>
           <div class="footer-group-row">
-            <span class="_bold _white">Call:&#x2800;</span>
+            <span class="bold-white">Call:&#x2800;</span>
             <AppLink href="tel:4055550128">(405) 555-0128</AppLink>
           </div>
 
           <div class="footer-group-row">
-            <span class="_bold _white">Email:&#x2800;</span>
+            <span class="bold-white">Email:&#x2800;</span>
             <AppLink href="mailto:hello@createx.com">hello@createx.com</AppLink>
           </div>
           <Socials class="socials" theme="dark"></Socials>
@@ -43,7 +43,7 @@ import Socials from '~/components/features/Socials.vue'
 
         <div class="footer-group">
           <div class="footer-group-title">Download our app</div>
-          <MobileApps class="footer-group-row"></MobileApps>
+          <MobileApps class="footer-group-row mobile-apps"></MobileApps>
 
         </div>      
       </div>
@@ -52,9 +52,9 @@ import Socials from '~/components/features/Socials.vue'
       <div class="container">    
         <div class="copy">
           © All rights reserved. Made with
-          <Icon class="copy-icon"
-            icon="heart"
-          ></Icon>
+          &nbsp;
+          <IconHeart class="copy-icon"></IconHeart>
+          &nbsp;
           by Createx Studio 
         </div>
         <AppLink class="scroll-top"
@@ -70,7 +70,8 @@ import Socials from '~/components/features/Socials.vue'
 
 $color-footer-devidor: rgba(255, 255, 255, .15);
 
-._white {
+.bold-white {
+  font-weight: 700;
   color: $color-white;
 }
 
@@ -80,7 +81,8 @@ $color-footer-devidor: rgba(255, 255, 255, .15);
     color: $color-white-op;
 
     &:hover {
-      color: $color-green;
+      font-weight: 700;
+      color: $color-white;
     }
   }  
 }
@@ -92,6 +94,7 @@ $color-footer-devidor: rgba(255, 255, 255, .15);
 
   & .container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 3rem;
   }
@@ -99,6 +102,7 @@ $color-footer-devidor: rgba(255, 255, 255, .15);
 .footer-group {
   display: flex;
   flex-direction: column;
+  /* flex: 0 0 auto; */
   & > * {
     margin-bottom: .4rem;
   }
@@ -133,10 +137,21 @@ $color-footer-devidor: rgba(255, 255, 255, .15);
 }
 .copy {
   color: $color-white;
+  vertical-align: middle;
 }
 .copy-icon {
+  color: $color-green;
 }
 .scroll-top {
+}
+
+.mobile-apps {
+  flex-wrap: wrap;
+  /* max-width: 100%; */
+
+  :deep(> *) {
+    flex: 0 0 16rem;
+  }
 }
 
 </style>

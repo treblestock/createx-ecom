@@ -30,7 +30,7 @@ const props = defineProps<{
           {{ commentsIds.length }} comment(-s)
         </div>
       </div>
-      <AppLink class="post-title text_xlb"
+      <AppLink class="post-title text-xl-b"
         :to="{name: 'blogPost', params: {id: id}}"
       >{{ title }}</AppLink>
       <div class="description">{{ description }}</div>
@@ -106,14 +106,14 @@ $img-ratio: 50%; /* 600px / 300px */
 }
 
 /* webkit */
-@media screen and (-webkit-min-device-pixel-ratio:0) and (min-resolution:.001dpcm) {
+@media screen and (-webkit-min-device-pixel-ratio: 0) and (min-resolution: .001dpcm) {
   .description{ 
-    white-space: initial;
-    text-overflow: initial;
-
     display: -webkit-box;
-    -weblit-line-clamp: 3;
-    -weblit-box-orient: vertical;
+    white-space: normal;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
   }
 }
 

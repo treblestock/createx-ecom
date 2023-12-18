@@ -11,47 +11,41 @@ const { data: collections } = useFetch(async () => {
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <Collection class="collection"
-        v-for="collection, ind in collections" :key="collection.title" 
-        :="collection"
-        :class="{_l: ind === 1 || ind === 2}"
-      ></Collection>
+  <div class="wrapper">
+    <Collection class="collection"
+      v-for="collection, ind in collections" :key="collection.title" 
+      :="collection"
+      :class="{_l: ind === 1 || ind === 2}"
+    ></Collection>
 
-    <MailingSubscribtionSale></MailingSubscribtionSale>
+    <MailingSubscribtionSale class="email collection"></MailingSubscribtionSale>
 
-    </div>
-  </section>
+  </div>
   
 </template>
 
 <style scoped>
 @import '~css/consts';
 
-
-.section {
-  margin-bottom: 18rem;
-}
-.container {
-  max-width: 100%;
-  padding: 0 3rem;
-
-
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  grid-template-rows: repeat(2, 1fr);
-  grid-gap: 1.6rem;
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.6rem;
 }
 .collection {
-  height: 50rem;
-  position: relative;
-  padding: 6rem;
+  flex: 1 0 max(calc(40% - .8rem), 36rem);
 
-  grid-column: span 2;
+  min-height: 30rem;
+  /* height: 40vw; */
+  max-height: 50rem;
+
   &._l {
-    grid-column: span 3;
+    flex: 2 0 max(calc(60% - .8rem), 36rem);
   }
+}
+
+.email {
+  height: auto;
 }
 
 </style>

@@ -8,11 +8,22 @@ import svgLoader from 'vite-svg-loader'
 
 
 
+
 // postcss
 import cssImport from 'postcss-import'
 import cssNested from 'postcss-nested'
 import cssSimpleVars from 'postcss-simple-vars'
 import cssMixins from 'postcss-mixins'
+import cssFunctionsPlugin from 'postcss-functions'
+import * as cssCustomFunctions from './src/assets/css/functions'
+
+/* 
+  todo: 
+  provide support scss inline comments in SFC
+  (installed 'postcss-scss' parser and passed to parser options
+  in postcss config. It works correct, but toggle comment creates 
+  css block comment as before instead of many inline comments.)
+*/  
 
 
 
@@ -58,8 +69,14 @@ export default defineConfig({
         cssImport,
         cssNested,
         cssSimpleVars,
+        cssFunctionsPlugin({
+          functions: cssCustomFunctions,
+        }),
         cssMixins,
-      ]
+      ],
     },
+    modules: {
+      localsConvention: 'camelCase'
+    }
   },
 })

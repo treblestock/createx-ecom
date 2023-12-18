@@ -6,7 +6,9 @@ export function withBaseUrl(string: string): string {
   return (BASE_URL + string).replace('//', '/')
 }
 export function withHash(string: string): string {
-  return useRoute().fullPath + string
+  const route = useRoute()
+  const beforeHash = route.fullPath.split('#')[0]
+  return beforeHash + string
 }
 
 export function paramsValuesToStrings(to: Exclude<RouteLocationRaw, string> & {params?: Record<string, any> }): RouteLocationRaw & JSONedParams {

@@ -37,7 +37,11 @@ function redirect() {
 }
 
 
-
+function closePopup(event: Event) {
+  const target = event.target as HTMLElement
+  const isLinkClicked = target.closest('.link') ? true : false
+  if (isLinkClicked) usePopupManager().closePopup('Cart')
+}
 
 
 
@@ -56,6 +60,7 @@ function redirect() {
             :="cartItemData"
             @setCount="(count) => setCount(cartItemData, count)"
             @deleteProduct="() => deleteProduct(cartItemData)"
+            @click="closePopup"
           >
           </CartItemSmall>
         </div>

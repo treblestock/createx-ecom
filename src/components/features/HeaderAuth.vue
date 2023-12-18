@@ -74,6 +74,7 @@ function signout() {
 
 .auth-btn {
   color: inherit;
+  &._active,
   &:hover {
     color: $color-white;
   }

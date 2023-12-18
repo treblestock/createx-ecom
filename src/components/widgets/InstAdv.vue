@@ -2,7 +2,7 @@
 import img1 from '~/assets/img/from-inst/1.jpg'
 import img2 from '~/assets/img/from-inst/2.jpg'
 import img3 from '~/assets/img/from-inst/3.jpg'
-import Inst from '~/components/icons/Inst.vue'
+import IconInst from '~/assets/img/icons/socials/inst.svg'
 
 
 
@@ -11,35 +11,31 @@ import Inst from '~/components/icons/Inst.vue'
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <div class="body">
-        <div class="title h6">Follow us on Instagram</div>
-        <div class="inst-acc h1">@createx_store</div>
-        <AppLinkBtn class="link"
-          outlined
-          to="https://google.com"
-        >
-          <!-- <Icon icon="inst"></Icon> -->
-          <Inst class="link-icon"
-            :small="true"/>
-          &#x2800;
-          Follow instagram
-        </AppLinkBtn>
+  <div class="wrapper">
+    <div class="body">
+      <div class="title h6">Follow us on Instagram</div>
+      <div class="inst-acc h1">@createx_store</div>
+      <AppLinkBtn class="link"
+        outlined
+        to="https://google.com"
+      >
+        <IconInst class="inst-icon"></IconInst>
+        &#x2800;
+        Follow instagram
+      </AppLinkBtn>
+    </div>
+    <div class="imgs">
+      <div class="img-a">
+        <img :src="img1" alt="">
       </div>
-      <div class="imgs">
-        <div class="img">
-          <img :src="img1" alt="">
-        </div>
-        <div class="img">
-          <img :src="img2" alt="">
-        </div>
-        <div class="img">
-          <img :src="img3" alt="">
-        </div>
+      <div class="img-a">
+        <img :src="img2" alt="">
+      </div>
+      <div class="img-a">
+        <img :src="img3" alt="">
       </div>
     </div>
-  </section>
+  </div>
   
 </template>
 
@@ -47,11 +43,9 @@ import Inst from '~/components/icons/Inst.vue'
 @import '~css/consts';
 
 
-.section {
-  margin-bottom: 18rem;
-}
-.container {
+.wrapper {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   gap: 3rem;
 }
@@ -64,7 +58,7 @@ import Inst from '~/components/icons/Inst.vue'
 }
 .inst-acc {
   color: $color-gray-900;
-  margin-bottom: 6rem;
+  margin-bottom: var(--leng-60);
 }
 .link {
   display: flex;
@@ -77,22 +71,27 @@ import Inst from '~/components/icons/Inst.vue'
   }
 }
 
-.link-icon {
+.inst-icon {
   margin-right: -1rem;
+  &:deep(.icon-color) {
+    color: $color-white;
+  }
+  &:deep(.icon-bgc) {
+    color: transparent;
+  }
 }
 
 /* imgs */
 .imgs {
+  flex: 1 1 81rem;
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
 }
-.img {
-  width: 26rem;
+.img-a {
+  flex: 1 0 max(calc((100% - 3rem) / 3), 26rem);
   height: 26rem;
 
-  & img {
-    object-fit: cover;
-  }
 }
 
 </style>

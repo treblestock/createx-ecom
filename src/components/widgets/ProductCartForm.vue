@@ -50,21 +50,21 @@ function onSubmit() {
           :price="product.price"
           :discount="product.discount"
         ></Price>
-        <div class="sale-label" v-if="product.discount">{{ product.discount }}</div>
+        <div class="label-sale" v-if="product.discount">{{ product.discount }}</div>
       </div>
 
       <div class="product-reviews">
         <Rating class="rating"
           :rating="product.rating"
         />
-        <div class="reviews-count text_xs">{{ product.reviewsIds.length }} reviews</div>
+        <div class="reviews-count text-xs">{{ product.reviewsIds.length }} reviews</div>
       </div>
     </div>
     <form  class="form"
       @submit.prevent="onSubmit"
     >
       <div class="color-row">
-        <div class="color-title text_xs">Color</div>
+        <div class="color-title text-xs">Color</div>
         <div class="colors">
           <ColorInput class="color"
             v-for="color in product.colors" :key="color" 
@@ -75,29 +75,32 @@ function onSubmit() {
         </div>
       </div>
 
-      <div class="product-cart-form-row size-row">
-        <SelectGroup class="size"
-          v-model="formData.selectedSize"
-          :options="product.sizes.reduce((sizes, size) => {return (sizes[size] = size, sizes) }, {} as Record<ProductSize, ProductSize>)"
-          disabledValue="Please select"
-        >Size</SelectGroup>
-        <!-- <SizeChart class="size-chart"></SizeChart> -->
+      <div class="product-cart-form-row size-and-btns">
+        <div class="product-cart-form-row size-row">
+          <SelectGroup class="size"
+            v-model="formData.selectedSize"
+            :options="product.sizes.reduce((sizes, size) => {return (sizes[size] = size, sizes) }, {} as Record<ProductSize, ProductSize>)"
+            disabledValue="Please select"
+          >Size</SelectGroup>
+        </div>
+
+        <div class="product-cart-form-row btns">
+          <InputNumber class="selected-count" 
+            v-model="formData.selectedCount"
+            
+          />
+          <Btn class="submit _with-icon" type="submit">
+            <IconCart></IconCart>
+            Add to cart
+          </Btn>
+          <Btn class="add-to-favourite btn_outlined _with-icon">
+            <IconHeart></IconHeart>
+            Favourite
+          </Btn>
+        </div>
+
       </div>
 
-      <div class="product-cart-form-row btns">
-        <InputNumber class="selected-count" 
-          v-model="formData.selectedCount"
-          
-        />
-        <Btn class="submit _with-icon" type="submit">
-          <IconCart></IconCart>
-          Add to cart
-        </Btn>
-        <Btn class="add-to-favourite btn_outlined _with-icon">
-          <IconHeart></IconHeart>
-          Favourite
-        </Btn>
-      </div>
     </form>
     <Spoiler class="product-cart-form-spoiler"
       title="Delivery"
@@ -123,6 +126,7 @@ function onSubmit() {
 }
 .product-cart-form-row {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 
@@ -144,6 +148,10 @@ function onSubmit() {
 .reviews-count {
   text-align: center;
   font-size: 1.4rem;
+}
+.size-and-btns {
+  align-items: end;
+  margin-bottom: 0;
 }
 .colors {
   display: flex;
@@ -173,6 +181,7 @@ function onSubmit() {
 
 .btns {
   display: flex;
+  flex-wrap: wrap;
   gap: 2.4rem;
 
   margin-bottom: 4rem;
@@ -180,9 +189,9 @@ function onSubmit() {
 .submit {
   flex: 1 0 auto;
 }
-
 /* spoilers */
 .product-cart-form-spoiler {
+  max-width: 100%;
   border-bottom: 1px solid $color-gray-400;
 }
 :deep(.spoiler-body) {

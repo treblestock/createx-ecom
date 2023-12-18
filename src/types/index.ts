@@ -26,6 +26,19 @@ export type User = {
   fullName: string
 }
 
+export type UserBio = {
+  firstName: string,
+  lastName: string,
+  email: string,
+  phone: string,
+  passNew: string,
+  passConfirm: string,
+  country: string,
+  city: string,
+  address: string,
+  zipCode: string,
+}
+
 // Products
 /*
   Category Sex
@@ -183,6 +196,7 @@ export type Count = number
 // Make Order 
 export interface Order {
   id: string
+  userId: User['id']
   cart: Cart
   tracking: OrderTracking
   promocode?: string
@@ -247,13 +261,23 @@ export interface OrderTracking {
   isNotifyWhenDeliveried: boolean
 }
 
-export type OrderTrackingHistory = TrachHistoryType[]
-export interface TrachHistoryType {
+export type OrderTrackingHistory = TrackHistoryType[]
+export interface TrackHistoryType {
   status: OrderTrackingStatus
   location: string
   time: string
 }
 export type OrderTrackingStatus = 'Order Placed' | 'Documentation Prepared' | 'Booking Arranged' | 'Collected' | 'In Transit to Destination' | 'Arrived at Destination' | 'Out for Delivery' | 'Delivered' | 'Canceled'
+
+// Mailing
+export interface SubscribeMailingForSale {
+  email: string
+}
+export interface SubscribeMailing {
+  email: string
+  selectedSexCategories: 'Women' | 'Men' | 'Girls' | 'Boys'
+  isAgreeToReciveMails: boolean
+}
 
 // Contacts
 export interface ContactUsForm {
@@ -332,5 +356,11 @@ export type BlogPostEntitiy = keyof BlogPostDataTypes
 
 
 
-
-
+export type OfflineStore = {
+  img: string
+  storeName: string
+  phoneNumber: string 
+  email: string
+  workingHours: string 
+  address: string
+}

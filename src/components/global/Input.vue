@@ -21,9 +21,9 @@ const modelValue = defineModel<string | number>()
 
   padding: 1rem 1.5rem;
   
-  box-shadow: 0 0 0 1px $color-gray-400;
+  box-shadow: inset 0 0 0 1px $color-gray-400;
   &:focus-visible {
-    box-shadow: 0 0 0 1px $color-green;
+    box-shadow: inset 0 0 0 1px $color-green;
   }
 
   border-radius: $radius;

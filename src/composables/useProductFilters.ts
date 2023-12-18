@@ -4,13 +4,15 @@ import type { Product } from "~/types"
 
 type useProductFiltersOutput = {
   items: ComputedRef<Product[]>
+  categorySex: Ref<Set<Product['categorySex']>>
   categoryMinorClothType: Ref<Set<Product['categoryMinorClothType']>>
   brand: Ref<Set<Product['brand']>>
   materials: Ref<Set<Product['materials'][number]>>
   colors: Ref<Set<Product['colors'][number]>>
   sizes: Ref<Set<Product['sizes'][number]>>
+  resetFilters: () => void
 }
-type WhiteLists = Omit<useProductFiltersOutput, 'items'>
+type WhiteLists = Omit<useProductFiltersOutput, 'items' | 'resetFilters'>
 type ProductKey = keyof WhiteLists
 
 function isIntersects(data1: any | any[], data2: any | any[]): boolean {
@@ -39,11 +41,21 @@ function applyFilter(
 
 export default function(initialItems: Ref<Product[]> | ComputedRef<Product[]>): useProductFiltersOutput {
   const whiteLists = {
+    categorySex: ref(new Set<Product['categorySex']>()),
     categoryMinorClothType: ref(new Set<Product['categoryMinorClothType']>()),
     brand: ref(new Set<Product['brand']>()),
     materials: ref(new Set<Product['materials'][number]>()),
     colors: ref(new Set<Product['colors'][number]>()),
     sizes: ref(new Set<Product['sizes'][number]>()),
+  }
+
+  function resetFilters() {
+    whiteLists.categorySex.value.clear()
+    whiteLists.categoryMinorClothType.value.clear()
+    whiteLists.brand.value.clear()
+    whiteLists.materials.value.clear()
+    whiteLists.colors.value.clear()
+    whiteLists.sizes.value.clear()
   }
 
   
@@ -65,5 +77,6 @@ export default function(initialItems: Ref<Product[]> | ComputedRef<Product[]>): 
   return {
     items: filtredItems,
     ...whiteLists,
+    resetFilters,
   }
 }

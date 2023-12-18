@@ -7,7 +7,7 @@ const props = defineProps<{
 }>()
 
 
-const { data: product } = useFetch(() => api.findProduct(props.id), null)
+const { data: product } = useFetch(() => api.findProductById(props.id), null)
 
 const productImgs = computed(() => {
   return product.value?.imgs || []
@@ -36,13 +36,21 @@ const productImgs = computed(() => {
 .product-general-info {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 6rem;
+  gap: var(--leng-60);
+
+
+  @media (width < 840px) {
+    flex-wrap: wrap;
+    & .product-cart-form {
+      flex: 1 1 auto;
+    }
+  }
 }
 .product-imgs {
+  flex: 0 1 auto;
 }
 .product-cart-form {
-  flex: 0 1 52.5rem;
+  flex: 1 0 52.5rem;
 
 }
 

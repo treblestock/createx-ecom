@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import AuthSocials from '~/components/features/AuthSocials.vue'
+import Socials from '~/components/features/Socials.vue'
 
 const name = ref<string>('')
 const password = ref<string>('')
@@ -39,7 +39,7 @@ function onSubmit(event: Event) {
     </div>
 
     <div class="form__footer">
-      <AuthSocials class="form__socials"></AuthSocials>
+      <Socials class="form__socials"></Socials>
     </div>
   </form>
 </template>

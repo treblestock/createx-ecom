@@ -1,26 +1,32 @@
 <script setup lang="ts">
-import Pagination from './Pagination.vue';
+import Pagination from '~/components/features/Pagination.vue'
 
+type SelectGroupComp = typeof import('~/components/global/SelectGroup.vue').default
+type SelectGroupOptionsProps = InstanceType<SelectGroupComp>['$props']['options']
 
 const props = defineProps<{
   pages: number[]
+  sortOptions: SelectGroupOptionsProps
 }>()
 
+const selectedSort = defineModel<any>('selectedSort', {required: true})
 const currentPage = defineModel<number>('currentPage', {required: true})
 const limit = defineModel<number>('limit', {required: true})
 
 
 
-const sortOptions = ref({
-  popularity: 'popularity'
-})
+
+
+
 </script>
 
 <template>
   <div class="sort-and-filters">
     <div class="toolbar">
       <SelectGroup class="sort"
+        classSelect="sort-select"
         vertical
+        v-model="selectedSort"
         :options="sortOptions"
       >
         Sort by
@@ -44,13 +50,21 @@ const sortOptions = ref({
 
 .sort-and-filters {
   display: flex;
-  gap: 6rem;
+  flex-wrap: wrap;
+  column-gap: var(--leng-60);
+  row-gap: var(--leng-30);
   justify-content: space-between;
 }
 .toolbar {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 6rem;
+  gap: var(--leng-60);
+
+}
+
+.sort-select {
+  
 }
 
 .limit {

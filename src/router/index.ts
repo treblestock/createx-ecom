@@ -5,10 +5,9 @@ import { propsParser } from './utils/index.ts'
 import authMiddleware from '~/middleware/auth.ts'
 
 
-
 const BASE_URL = import.meta.env.BASE_URL || '/'
 
-const routes: RouteRecordRaw[] = [
+const routes = [
   {
     path: BASE_URL,
     name: 'defaultLayout',
@@ -17,8 +16,8 @@ const routes: RouteRecordRaw[] = [
     redirect: {name: 'home'},
     children: [
       {
-        path: 'test',
-        name: 'test',
+        path: '_test',
+        name: '_test',
         props: propsParser,
         component: () => import('~/pages/_test.vue'),
         children: [
@@ -93,7 +92,7 @@ const routes: RouteRecordRaw[] = [
         ],
       },
       {
-        path: 'blogPost/:id',
+        path: 'blogPosts/:id',
         name: 'blogPost',
         props: propsParser,
         component: () => import('~/pages/blogPost.vue'),
@@ -211,21 +210,26 @@ const routes: RouteRecordRaw[] = [
       },
     ]
   },
-]
+] as const
 
 
 
-
+export type RoutesOptions = typeof routes
 
 const router = createRouter({
-  routes,
+  routes: routes as unknown as RouteRecordRaw[],
   history: createWebHistory(),
   linkActiveClass: '_active',
   linkExactActiveClass: '_active-exact',
   scrollBehavior(to, from, savedPostition) {
-    if (to.hash) return {
-      el: to.hash,
-      top: 0,
+    if (to.hash) {
+      const headerOffset = useHeaderHeight().value
+      console.log(headerOffset)
+
+      return {
+        el: to.hash,
+        top: headerOffset,
+      }
     }
     if (savedPostition) return savedPostition
     return {

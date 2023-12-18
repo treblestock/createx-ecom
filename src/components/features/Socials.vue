@@ -1,11 +1,11 @@
 <script setup lang="ts">
-
-
 import IconFacebook from '~/assets/img/icons/socials/fb.svg'
 import IconInst from '~/assets/img/icons/socials/inst.svg'
 import IconTwitter from '~/assets/img/icons/socials/tw.svg'
 import IconLinkedIn from '~/assets/img/icons/socials/in.svg'
-// import { socials as iconsData } from '~/public/data/different.json'
+import IconPinterest from '~/assets/img/icons/socials/pint.svg'
+import IconYoutube from '~/assets/img/icons/socials/yt.svg'
+
 
 // const ICONS = [IconFacebook, IconInst, IconTwitter, IconLinkedIn]
 
@@ -33,6 +33,12 @@ const props = withDefaults(defineProps<{
     <AppLink class="link">
       <IconLinkedIn class="icon"></IconLinkedIn>
     </AppLink>
+    <AppLink class="link">
+      <IconPinterest class="icon"></IconPinterest>
+    </AppLink>
+    <AppLink class="link">
+      <IconYoutube class="icon"></IconYoutube>
+    </AppLink>
   </div>
 </template>
 
@@ -47,20 +53,45 @@ const props = withDefaults(defineProps<{
 .icon {
   width: 3.2rem;
   height: 3.2rem;
-  color: $color-gray-700;
+
+  :deep(.icon-color) {
+    color: $color-gray-700;
+  }
+  :deep(.icon-bgc) {
+    color: $color-gray-700;
+    opacity: .12;
+  }
 
   &:hover {
-    color: $color-green;
+    :deep(.icon-color) {
+      color: $color-green;
+    }
+    :deep(.icon-bgc) {
+      color: $color-green;
+      opacity: .12;
+    } 
   }
 }
 
-.socials._dark {
+._dark {
   & .icon {
-    color: $color-white;
+    :deep(.icon-color) {
+      color: $color-white;
+    }
+    :deep(.icon-bgc) {
+      color: $color-white;
+      opacity: .12;
+    }
 
     &:hover {
-      color: $color-green;
-    }
+      :deep(.icon-color) {
+        color: $color-gray-800;
+      }
+      :deep(.icon-bgc) {
+        color: $color-white;
+        opacity: 1;
+      } 
+  }
   }
 }
 

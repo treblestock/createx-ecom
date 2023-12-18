@@ -36,24 +36,32 @@ function addToCart() {
 </script>
 
 <template>
-  <div class="card">
+  <article class="card">
     <div class="visible">
       <div class="img">
         <Img :src="imgs[0]"></Img>
         <div class="labels">
-          <div class="sale-label"
-            v-if="discount"
-          >{{ discount }}</div>
-          <Rating class="rating"
-            :rating="rating"
-          ></Rating>
+          <AppLink class="sale-link"
+            :to="{name: 'products', query: {sale: 'y'}}"
+          >
+            <div class="label-sale label-l"
+              v-if="discount"
+            >{{ discount }}</div>
+          </AppLink>
+          <AppLink class="rating"
+            :to="{name: 'productReviews', params: {id,}}"
+          >
+            <Rating class="start"
+              :rating="rating"
+            ></Rating>
+          </AppLink>
           <IconRounded class="favourite-label"
             icon="heart"
           ></IconRounded>
         </div>
       </div>
       <div class="description">
-        <AppLink class="product-name text_l"
+        <AppLink class="product-name text-l"
           :to="{
             name: 'product',
             params: {id},
@@ -80,7 +88,7 @@ function addToCart() {
         type="submit"
       >add to cart</Btn>
     </form>
-  </div>
+  </article>
 </template>
 
 <style scoped>
@@ -89,19 +97,22 @@ function addToCart() {
 
 /* $img-ratio: calc(100% * 320 / 285); */
 $img-ratio: 114%;
-$shadow: 0 10px 10px 0 $color-gray-800;
+$shadow: 0 -1px 1px 0 $color-gray-800;
+$shadow-popover: 0 10px 10px 0 $color-gray-800;
 /* $shadow: $shadow-card; */
 .card {
   width: clamp(28rem, 100%, 39rem);
 
   position: relative;
 
-  /* &:hover {
-    box-shadow: $shadow;
-  } */
+}
+
+.size-s {
+  /* width: 28.5rem; */
 }
 .visible {
-
+  .card:hover & {
+  }
 }
 .img {
   width: 100%;
@@ -133,11 +144,10 @@ $shadow: 0 10px 10px 0 $color-gray-800;
 
   padding: 1.6rem;
 }
-.sale-label {
+.sale-link {
   align-self: start;
   justify-self: start;
   grid-area: 1 / 1 / 2 / 2;
-
 }
 .rating {
   align-self: start;
@@ -154,12 +164,12 @@ $shadow: 0 10px 10px 0 $color-gray-800;
 .description {
   padding: 1.6rem;
 
-  .card:hover & {
-    box-shadow: $shadow;
-  }
+
 }
 .product-name {
-  margin-bottom: 0.8rem;
+  display: block;
+  text-align: left;
+  margin-bottom: 1.2rem;
 
   color: $color-gray-800;
   &:hover {
@@ -191,7 +201,7 @@ $shadow: 0 10px 10px 0 $color-gray-800;
     z-index: 1;
     visibility: visible;
     background: $color-white;
-    box-shadow: $shadow;
+    box-shadow: $shadow-popover;
   }
 }
 .sizes {

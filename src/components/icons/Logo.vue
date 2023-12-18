@@ -28,8 +28,8 @@
   --color-1: $color-green;
   --color-2: $color-gray-900;
 
-  width: 13rem;
-  height: 2.2rem;
+  width: 130px;
+  height: 22px;
 
   &:hover {
     --color-2: $color-green; 
@@ -38,8 +38,8 @@
 
 
 .rect {
-  width: 13rem;
-  height: 2.2rem;
+  width: 130px;
+  height: 22px;
 }
 
 

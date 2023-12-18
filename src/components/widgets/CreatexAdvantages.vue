@@ -10,43 +10,41 @@ import img4 from '~/assets/img/icons/advantages/payment.svg?url'
 </script>
 
 <template>
-  <section class="section">
-    <div class="container">
-      <div class="advantages">
-        <div class="advantage">
-          <div class="img">
-            <img :src="img1" alt="">
-          </div>
-          <div class="title text_xl">Fast Worldwide Shipping</div>
-          <div class="text">Get free shipping over $250</div>
+  <div class="wrapper">
+    <div class="advantages">
+      <div class="advantage">
+        <div class="img">
+          <img :src="img1" alt="">
         </div>
+        <div class="title text-xl">Fast Worldwide Shipping</div>
+        <div class="text">Get free shipping over $250</div>
+      </div>
 
-        <div class="advantage">
-          <div class="img">
-            <img :src="img2" alt="">
-          </div>
-          <div class="title text_xl">24/7 Customer Support</div>
-          <div class="text">Friendly 24/7 customer support</div>
+      <div class="advantage">
+        <div class="img">
+          <img :src="img2" alt="">
         </div>
+        <div class="title text-xl">24/7 Customer Support</div>
+        <div class="text">Friendly 24/7 customer support</div>
+      </div>
 
-        <div class="advantage">
-          <div class="img">
-            <img :src="img3" alt="">
-          </div>
-          <div class="title text_xl">Money Back Guarantee</div>
-          <div class="text">We return money within 30 days</div>
+      <div class="advantage">
+        <div class="img">
+          <img :src="img3" alt="">
         </div>
+        <div class="title text-xl">Money Back Guarantee</div>
+        <div class="text">We return money within 30 days</div>
+      </div>
 
-        <div class="advantage">
-          <div class="img">
-            <img :src="img4" alt="">
-          </div>
-          <div class="title text_xl">Secure Online Payment</div>
-          <div class="text">Accept all major credit cards</div>
+      <div class="advantage">
+        <div class="img">
+          <img :src="img4" alt="">
         </div>
+        <div class="title text-xl">Secure Online Payment</div>
+        <div class="text">Accept all major credit cards</div>
       </div>
     </div>
-  </section>
+  </div>
   
 </template>
 
@@ -54,15 +52,12 @@ import img4 from '~/assets/img/icons/advantages/payment.svg?url'
 @import '~css/consts';
 
 
-.section {
-  margin-bottom: 18rem;
-}
-.container {
+.wrapper {
   
 }
 .advantages {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 3rem;
 }

@@ -1,17 +1,15 @@
-<script lang="ts">
-export default {
-  inheritAttrs: false,
-}
-</script>
-
 <script setup lang="ts">
+defineOptions({
+  inheritAttrs: false
+})
+
 import { computed } from 'vue'
 import { RouterLink } from 'vue-router'
 
 import { modifyRouteTo } from '~/router/utils'
 import type { WithParamsAny } from '~/router/types'
 
-const props  = defineProps<WithParamsAny>() // vue-macros required for import types
+const props  = defineProps<WithParamsAny>()
 
 
 const isExternalLink = computed(() => 
@@ -50,6 +48,14 @@ const isExternalLink = computed(() =>
 
   &:hover,
   &._active {
+    color: $color-green;
+  }
+}
+
+.link-idle {
+  /* color: inherit; */
+  display: none;
+  &:hover {
     color: $color-green;
   }
 }

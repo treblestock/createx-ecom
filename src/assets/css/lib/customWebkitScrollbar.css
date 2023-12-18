@@ -7,14 +7,19 @@
   scrollbar-gutter: stable;
 } */
 
-::-webkit-scrollbar {
-  width: $custom-scrollbar-width;
-}
-::-webkit-scrollbar-track {
-  scrollbar-width: $custom-scrollbar-width;
-  background-color: $color-gray-400;
-}
-::-webkit-scrollbar-thumb {
-  width: $custom-scrollbar-width;
-  background-color: $color-gray-500;
+@define-mixin custom-scrollbar {
+  &::-webkit-scrollbar {
+    width: $custom-scrollbar-width;
+    height: $custom-scrollbar-width;
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-track {
+    scrollbar-width: $custom-scrollbar-width;
+    /* background-color: $color-gray-400; */
+    background-color: transparent;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: $custom-scrollbar-width;
+    background-color: $color-gray-500;
+  }
 }

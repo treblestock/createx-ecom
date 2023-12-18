@@ -43,7 +43,7 @@ const ratingOptions = [1, 2, 3, 4, 5]
 
 <template>
   <div class="review-popup">
-    <div class="review-title h3">Sign up</div>
+    <div class="review-title h3">Leave a review</div>
 
     <form class="review-form"
       @submit.prevent="onSubmit"

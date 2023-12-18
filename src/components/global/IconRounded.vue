@@ -1,15 +1,15 @@
 <script setup lang="ts">
-import { computed } from 'vue'
+// import { computed } from 'vue'
 import { assetsIcons } from '~/types'
 
 
 const props = defineProps<{
   icon: keyof typeof assetsIcons
-  radius?: number
+  // radius?: number
 }>()
 
 
-const cssRadius = computed(() => props.radius || 3.2 + 'rem')
+// const cssRadius = computed(() => props.radius || 3.2 + 'rem')
 
 
 const ASSETS_IMG_PATH = '../../assets/img/'
@@ -35,8 +35,11 @@ const url = new URL(`${ASSETS_IMG_PATH + iconPath}`, import.meta.url).href
 @import "~/assets/css/consts";
 
 .wrapper {
-  width: v-bind(cssRadius);
-  height: v-bind(cssRadius);
+  /* width: v-bind(cssRadius);
+  height: v-bind(cssRadius); */
+
+  width: 3.2rem;
+  height: 3.2rem;
 
   display: flex;
   justify-content: center;

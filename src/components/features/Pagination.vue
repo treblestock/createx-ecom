@@ -24,11 +24,11 @@ const currentPage = defineModel<number>({required: true})
     <template 
       v-show="currentPage > 3"
     >
-      <div class="page _bold">{{ pages[0] }}</div>
+      <div class="pagination-item">{{ pages[0] }}</div>
       <span>...</span>
     </template>
 
-    <div class="page _bold"
+    <div class="pagination-item"
       v-for="page in pages" :key="page"
       :class="page === currentPage ? '_active': ''"
       @click="currentPage = page"
@@ -38,7 +38,7 @@ const currentPage = defineModel<number>({required: true})
       v-show="currentPage < pages[pages.length] - 3"
     >
       <span>...</span>
-      <div class="page _bold">{{ pages[0] }}</div>
+      <div class="pagination-item">{{ pages[0] }}</div>
     </template>
 
     <div class="slide"
@@ -65,8 +65,9 @@ $items-gap: 2rem;
   align-items: center;
   gap: $items-gap;
 }
-.page {
+.pagination-item {
   cursor: pointer;
+  font-weight: 700;
   /* margin: 0 calc($items-gap / 2); */
 }
 .slide {

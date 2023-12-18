@@ -53,7 +53,7 @@ function internalToggleSpoiler() {
     }"
     ref="spoilerHtml"
   >
-    <div class="title text_b"
+    <div class="title text-b"
       :class="classTitle"
       @click="internalToggleSpoiler"
     >
@@ -76,11 +76,9 @@ function internalToggleSpoiler() {
 
 
 .spoiler {
-  max-width: 60rem;
   /* padding: 1rem 0; */
 
   overflow: hidden;
-
 
   &._no-icon .plus {
     display: none;
@@ -106,6 +104,9 @@ function internalToggleSpoiler() {
   .plus:after {
     display: none;
   }
+}
+.plus {
+  margin-left: 1rem;
 }
 
 .spoiler-header {

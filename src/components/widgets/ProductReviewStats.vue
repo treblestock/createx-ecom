@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import type { ProductReview, Rating } from '~/types'
 import RatingComponent from '~/components/features/Rating.vue'
+import RatingChart from '~/components/features/RatingChart.vue'
 
 
 const props = defineProps<{
@@ -24,7 +25,6 @@ const byRating = computed(() => {
 })
 const recomendCount = computed(() => byRating.value[4] + byRating.value[5])
 const recomendPercent = computed(() => Math.floor(recomendCount.value / totalCount.value * 100) )
-
 </script>
 
 <template>
@@ -34,12 +34,15 @@ const recomendPercent = computed(() => Math.floor(recomendCount.value / totalCou
         <RatingComponent class="stars"
           :rating="rating"
         ></RatingComponent>
-        <div class="recomendation-part text_xs">
+        <div class="recomendation-part text-s">
           {{ recomendCount }} out of {{ totalCount }} ({{ recomendPercent }}%)
         </div>
-        <div class="recomendation-text text_xs">Customers recommended this product</div>
+        <div class="recomendation-text text-s">Customers recommended this product</div>
     </div>
-    <div class="right"></div>
+
+    <RatingChart class="right"
+      :="byRating"
+    ></RatingChart>
   </div>
 </template>
 
@@ -47,13 +50,18 @@ const recomendPercent = computed(() => Math.floor(recomendCount.value / totalCou
 @import "~css/consts";
 .review-stats {
   display: flex;
-  gap: 8rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--leng-80);
 
 }
 .left {
   & > * {
     margin-bottom: 2rem;
   }
+}
+.right {
+  flex: 1 1 30rem;
 }
 .reviews-count {
   color: $color-gray-900;
@@ -65,10 +73,8 @@ const recomendPercent = computed(() => Math.floor(recomendCount.value / totalCou
   margin-bottom: 1rem;
 }
 .recomendation-text {
-  margin-bottom: 1rem;
+  margin-bottom: 0;
   color: $color-gray-700;
-}
-.right {
 }
 
 </style>

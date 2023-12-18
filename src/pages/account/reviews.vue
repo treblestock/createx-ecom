@@ -1,35 +1,57 @@
 <script setup lang="ts">
-import ProductReview from '~/components/widgets/ProductReview.vue'
+import type { ProductReview } from '~/types'
+import ProductReviewComp from '~/components/widgets/ProductReview.vue'
 
 
-import useStoreProductReviews from '~/stores/productReviews'
-const productReviewsStore = useStoreProductReviews()
 
 
-const reviews = computed(() => productReviewsStore.reviews.slice(0, 6))
+const { data: reviews } = useFetch(() => api.getUserProductReviews(1), [])
 
+const sorts = {
+  none: undefined,
+  newest: (a: ProductReview, b: ProductReview) => {
+    return new Date(b.date).getTime() - new Date(a.date).getTime()
+  },
+  oldest: (a: ProductReview, b: ProductReview) => {
+    return new Date(a.date).getTime() - new Date(b.date).getTime()
+  },
+  likes: (a: ProductReview, b: ProductReview) => {
+    return b.likes - a.likes
+  },
+  dislikes: (a: ProductReview, b: ProductReview) => {
+    return b.dislikes - a.dislikes
+  },
+}
+const selectedSort = ref(sorts.none)
+
+const sortedReviews = computed<ProductReview[]>(() => {
+  if (typeof selectedSort.value !== 'function') return reviews.value
+  return reviews.value.toSorted(selectedSort.value)
+})
 
 </script>
 
 <template>
-  <div class="reviews-page">
+  <main class="reviews-page">
     <section class="reviews">
       <div class="reviews-header">
-        <h1 class="h1">Wishlist</h1>
-        <Btn class="_transparent _with-icon _delete">
-          <IconDelete class="icon-delete"></IconDelete>
-          Delete all
-        </Btn>
+        <h1 class="h1">My reviews</h1>
+        <SelectGroup class="sort"
+          v-model="selectedSort"
+          :options="sorts"
+        >
+          <span class="sort-label">Sort by</span>
+        </SelectGroup>
       </div>
 
       <div class="product-cards">
-        <ProductReview class="product-card"
-          v-for="product in reviews" :key="product.id" 
-          :="product"
-        ></ProductReview>
+        <ProductReviewComp class="product-card"
+          v-for="review in sortedReviews" :key="review.id" 
+          :="review"
+        ></ProductReviewComp>
       </div>
     </section>
-  </div>
+  </main>
 </template>
 
 <style scoped>
@@ -48,10 +70,14 @@ const reviews = computed(() => productReviewsStore.reviews.slice(0, 6))
   margin-bottom: 4rem;
 }
 
-._delete {
-  color: $color-red;
+.sort {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
 }
-.icon-delete {
+.sort-label {
+  text-wrap: nowrap;
+  font-weight: 700;
 }
 .product-cards {
   display: flex;
@@ -63,5 +89,7 @@ const reviews = computed(() => productReviewsStore.reviews.slice(0, 6))
 
   border-top: 1px solid $color-gray-300;
 }
+
+
 
 </style>
