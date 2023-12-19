@@ -113,10 +113,10 @@ const api = {
     return (await import("../../public/data/users.json")).default.find(user => user.id === id) as User
   },
   async getBlogPostComments(count: number = 4): Promise<BlogPostComment[]> {
-    return (await import("../../public/data/blogPostComments.min.json")).default.slice(0, count) as BlogPostComment[]
+    return (await import("../../public/data/blogPostComments.json")).default.slice(0, count) as BlogPostComment[]
   },
   async getBlogPosts(count: number = 4): Promise<BlogPost[]> {
-    return (await import("../../public/data/blogPosts.min.json")).default.slice(0, count) as BlogPost[]
+    return (await import("../../public/data/blogPosts.json")).default.slice(0, count) as BlogPost[]
   },
   async getProductReviews(count: number = 4): Promise<ProductReview[]> {
     return (await import("../../public/data/productReviews.json")).default.slice(0, count) as ProductReview[]
@@ -125,7 +125,7 @@ const api = {
     return (await import("../../public/data/products.json")).default.slice(0, count) as Product[]
   },
   async findProduct(id: Product['id']): Promise<Product | undefined> {
-    return (await import("../../public/data/products.min.json")).default.find(p => p.id === id) as Product | undefined
+    return (await import("../../public/data/products.json")).default.find(p => p.id === id) as Product | undefined
   },
   async getCollections(count: number = 4): Promise<Collection[]> {
     return (await import("../../public/data/collections.json")).default.slice(0, count) as Collection[]

@@ -2,7 +2,7 @@
   {
     "description": "New collection",
     "title": "Menswear 2020",
-    "backgroundImg": "/clothes/collections/0.jpg",
+    "backgroundImg": "img/clothes/collections/0.jpg",
     "linkOutlined": {
       "text": "Shop Sale",
       "url": "products"
@@ -15,7 +15,7 @@
   {
     "description": "Summer Collections",
     "title": "Sale Up to 70%",
-    "backgroundImg": "/clothes/collections/1.jpg",
+    "backgroundImg": "img/clothes/collections/1.jpg",
     "linkOutlined": {
       "text": "Explore new prices",
       "url": "products"
@@ -24,7 +24,7 @@
   {
     "description": "Deal of the week",
     "title": "Stay Warm With Our New Sweaters",
-    "backgroundImg": "/clothes/collections/2.jpg",
+    "backgroundImg": "img/clothes/collections/2.jpg",
     "linkOutlined": {
       "text": "Shop now",
       "url": "products"
@@ -34,7 +34,7 @@
   {
     "description": "New collections",
     "title": "Shoes & Bags autumn / winter 2020 ",
-    "backgroundImg": "/clothes/collections/3.jpg",
+    "backgroundImg": "img/clothes/collections/3.jpg",
     "linkOutlined": {
       "text": "See offers",
       "url": "products"

@@ -3,7 +3,6 @@ import {computed} from 'vue'
 
 const props = withDefaults(defineProps<{
   src?: string,
-  public?: boolean 
 }>(), {
   src: 'test.jpg'
 })
@@ -29,13 +28,14 @@ const ASSETS_IMG_PATH = '../../assets/img/'
 // const imgUrl = import.meta.env.BASE_URL + props.src
 
 
-const assetsPrefix = import.meta.env.MODE === 'development'
-  ? 'src/assets' : 'assets'
+// const assetsPrefix = import.meta.env.MODE === 'development'
+//   ? 'src/assets' : 'assets'
 
 
-const imgUrl = props.src.startsWith(import.meta.env.BASE_URL + assetsPrefix) 
-  ? props.src
-  : '/img' + props.src
+// const imgUrl = props.src.startsWith(import.meta.env.BASE_URL + assetsPrefix) 
+//   ? props.src
+//   : import.meta.env.BASE_URL + 'img' + props.src
+
   // : props.src.startsWith('/') 
   //   ? '/img' + props.src
   //   : new URL(ASSETS_IMG_PATH + props.src, import.meta.url).href
@@ -48,7 +48,7 @@ const imgUrl = props.src.startsWith(import.meta.env.BASE_URL + assetsPrefix)
 </script>
 
 <template>
-  <img :src="imgUrl" alt="img">
+  <img :src="props.src" alt="img">
 </template>
 
 <style scoped>
