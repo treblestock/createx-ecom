@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import SearchProduct from '~/components/features/SearchProduct.vue';
+import imgStaticImport from '~img/clothes/product/1.png'
 
 // import { apiFlat} from '~/utils'
 
@@ -32,11 +32,23 @@ import SearchProduct from '~/components/features/SearchProduct.vue';
 //   console.log(res)
 // })
 
+
+
+/*
+  /img/clothes/1.png -> public/img/clothes/1.png
+
+  clothes/1.png ->  import.meta.url
+
+*/ 
+
 </script>
 
 <template>
   <div class="div">
-    <SearchProduct></SearchProduct>
+    <Img :src="imgStaticImport"></Img>
+    <Img src="clothes/product/1.png"></Img>
+    <Img src="/clothes/product/1.png"></Img>
+    <!-- <img src="/test.jpg" alt=""> -->
   </div>
 </template>
 

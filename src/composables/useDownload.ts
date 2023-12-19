@@ -1,5 +1,5 @@
 function download(fileName = 'untitled', blob: Blob) {
-  const urledData = Window.URL.createObjectURL(blob)
+  const urledData = window.URL.createObjectURL(blob)
   const link = document.createElement('a')
   link.download = fileName
   link.href = urledData
@@ -8,7 +8,7 @@ function download(fileName = 'untitled', blob: Blob) {
   link.click()
   document.body.removeChild(link)
 
-  Window.URL.revokeObjectURL(urledData)
+  window.URL.revokeObjectURL(urledData)
 }
 export default function downloadAsJson(fileName: string, json: string) {
   const blob = new Blob([json], {type: 'application/json'})

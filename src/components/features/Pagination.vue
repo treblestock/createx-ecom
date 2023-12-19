@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import IconArrow from '~/components/icons/Arrow.vue'
 
 const props = defineProps<{
   pages: number[]
@@ -18,7 +19,7 @@ const currentPage = defineModel<number>({required: true})
       v-show="currentPage !== pages[0]"
       @click="currentPage--"
     >
-      <Icon icon="ArrowLeft"></Icon>
+      <IconArrow class="icon-arrow" direction="left"></IconArrow>
 
     </div>
     <template 
@@ -45,7 +46,7 @@ const currentPage = defineModel<number>({required: true})
       v-show="currentPage !== pages[pages.length - 1]"
       @click="currentPage++"
     > 
-      <Icon icon="ArrowRight"></Icon>
+      <IconArrow class="icon-arrow" direction="right"></IconArrow>
     </div>
   </div>
 </template>
@@ -69,6 +70,10 @@ $items-gap: 2rem;
   cursor: pointer;
   font-weight: 700;
   /* margin: 0 calc($items-gap / 2); */
+}
+.icon-arrow {
+  width: 3rem;
+  height: 3rem;
 }
 .slide {
   cursor: pointer;

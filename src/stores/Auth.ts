@@ -19,9 +19,9 @@ export default defineStore('auth', {
       useStoreVueRouter().requestSignin()
     },
     async signup(email: string, pass: string, fullname: string) {
-      const res = await api.signup(email, pass, fullname)
+      const res = await api.signup(email, fullname, pass)
       if (typeof res !== 'string') {
-        throw new Error(`Failed to sign up. \nGot: ${res}`)
+      throw new Error(`Failed to sign up. \nGot: ${res}`)
       }
       useStoreProfile().fetchUserProfile()
       useStoreVueRouter().onSignin()

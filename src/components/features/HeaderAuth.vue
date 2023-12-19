@@ -30,8 +30,6 @@ function signout() {
 
 <template>
   <div class="auth">
-    <!-- <Icon icon="Profile"></Icon>
-    <span>Log in / Register</span> -->
     <template v-if="!isAuth">
       <button class="auth-btn" 
         @click="signin"

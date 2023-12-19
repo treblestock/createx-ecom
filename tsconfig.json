@@ -22,7 +22,9 @@
     "baseUrl": ".",
     "paths": {
       "~/*": ["./src/*"],
-      "~css/*": ["./src/assets/css*"],
+      "~css/*": ["./src/assets/css/*"],
+      "~img/*": ["./src/assets/img/*"],
+      "~icons/*": ["./src/assets/img/icons/*"],
     },
 
     /* Linting */
@@ -32,5 +34,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
+  "exclude": ["src/server/**/*.ts", "src/router/_types.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

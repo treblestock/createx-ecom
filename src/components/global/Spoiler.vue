@@ -73,6 +73,7 @@ function internalToggleSpoiler() {
 
 <style scoped>
 @import '~css/consts';
+@import '~css/lib/customWebkitScrollbar';
 
 
 .spoiler {
@@ -134,6 +135,7 @@ function internalToggleSpoiler() {
 .spoiler-body {
   padding: 1rem 0;
   transition: all .2s linear;
+  @mixin custom-scrollbar;
 
 
   .spoiler:not(._active) & {

@@ -7,7 +7,7 @@ import Cart from '~/components/icons/Cart.vue'
 import Logo from '~/components/features/Logo.vue'
 import HeaderAuth from '~/components/features/HeaderAuth.vue'
 import SearchProduct from '~/components/features/SearchProduct.vue'
-
+import IconChevron from '~/components/icons/Chevron.vue'
 
 import BreadCrumbs from '~/components/widgets/BreadCrumbs.vue'
 
@@ -88,9 +88,9 @@ onUpdated(calcHeaderHeight)
         <AppLink
           :to="{name: 'products', query: {sale: 'y'}}"
         >
-          <Icon icon="LeftChevron"></Icon>
+          <IconChevron class="icon-chevron" direction="left"></IconChevron>
           <span class="bold">Up to 70% Off. &#x2800;</span><span class="_underlined">Shop our latest sale styles</span>
-          <Icon icon="RightChevron"></Icon>
+          <IconChevron class="icon-chevron" direction="right"></IconChevron>
         </AppLink>
       </div>
     </div>
@@ -307,7 +307,9 @@ onUpdated(calcHeaderHeight)
 }
 
 .chevron {
-  font-size: 5rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  /* font-size: 5rem; */
 }
 
 /* breadcrumbs */

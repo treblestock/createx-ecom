@@ -1,6 +1,6 @@
 import { h, type VNode, type SetupContext, Component} from 'vue'
 
-import Slider from '~/components/Slider.vue'
+import Slider from '~/components/widgets/Slider.vue'
 
 interface WithDefaultSlot {
   slots: {

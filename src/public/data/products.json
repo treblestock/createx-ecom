@@ -2,11 +2,11 @@
   {
     "id": 1,
     "imgs": [
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png"
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png"
     ],
     "name": "Men fashion gray shoes",
     "categorySex": "men",
@@ -76,11 +76,11 @@
   {
     "id": 2,
     "imgs": [
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png"
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png"
     ],
     "name": "Black and white sport cap",
     "categorySex": "women",
@@ -149,11 +149,11 @@
   {
     "id": 3,
     "imgs": [
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png"
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png"
     ],
     "name": "Baby shoes with laces",
     "categorySex": "women",
@@ -217,11 +217,11 @@
   {
     "id": 4,
     "imgs": [
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png"
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png"
     ],
     "name": "Mid-rise slim cropped fit jeans",
     "categorySex": "men",
@@ -291,11 +291,11 @@
   {
     "id": 5,
     "imgs": [
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png"
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png"
     ],
     "name": "Green baby romper",
     "categorySex": "men",
@@ -356,11 +356,11 @@
   {
     "id": 6,
     "imgs": [
-      "clothes/product/2.png",
-      "clothes/product/2.png",
-      "clothes/product/2.png",
-      "clothes/product/2.png",
-      "clothes/product/2.png"
+      "/clothes/product/2.png",
+      "/clothes/product/2.png",
+      "/clothes/product/2.png",
+      "/clothes/product/2.png",
+      "/clothes/product/2.png"
     ],
     "name": "Skinny push-up jeans",
     "categorySex": "kids",
@@ -426,11 +426,11 @@
   {
     "id": 7,
     "imgs": [
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png"
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png"
     ],
     "name": "Baby shoes with laces",
     "categorySex": "women",
@@ -495,11 +495,11 @@
   {
     "id": 8,
     "imgs": [
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png"
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png"
     ],
     "name": "Green baby romper",
     "categorySex": "men",
@@ -564,11 +564,11 @@
   {
     "id": 9,
     "imgs": [
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png"
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png"
     ],
     "name": "Basic hooded sweatshirt in pink",
     "categorySex": "men",
@@ -633,11 +633,11 @@
   {
     "id": 10,
     "imgs": [
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png"
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png"
     ],
     "name": "Shirt with insertion lace trims",
     "categorySex": "women",
@@ -704,11 +704,11 @@
   {
     "id": 11,
     "imgs": [
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png"
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png"
     ],
     "name": "Basic hooded sweatshirt in pink",
     "categorySex": "men",
@@ -772,11 +772,11 @@
   {
     "id": 12,
     "imgs": [
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png"
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png"
     ],
     "name": "Shirt with insertion lace trims",
     "categorySex": "men",
@@ -840,11 +840,11 @@
   {
     "id": 13,
     "imgs": [
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png"
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png"
     ],
     "name": "Chrono watch with blue...",
     "categorySex": "kids",
@@ -908,11 +908,11 @@
   {
     "id": 14,
     "imgs": [
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png"
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png"
     ],
     "name": "Men fashion gray shoes",
     "categorySex": "women",
@@ -981,11 +981,11 @@
   {
     "id": 15,
     "imgs": [
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png"
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png"
     ],
     "name": "Black and white sport cap",
     "categorySex": "men",
@@ -1052,11 +1052,11 @@
   {
     "id": 16,
     "imgs": [
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png"
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png"
     ],
     "name": "Metal bridge sunglasses",
     "categorySex": "kids",
@@ -1117,11 +1117,11 @@
   {
     "id": 17,
     "imgs": [
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png"
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png"
     ],
     "name": "Baby shoes with laces",
     "categorySex": "women",
@@ -1189,11 +1189,11 @@
   {
     "id": 18,
     "imgs": [
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png",
-      "clothes/product/3.png"
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png",
+      "/clothes/product/3.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "men",
@@ -1263,11 +1263,11 @@
   {
     "id": 19,
     "imgs": [
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png"
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png"
     ],
     "name": "Skinny push-up jeans",
     "categorySex": "women",
@@ -1330,11 +1330,11 @@
   {
     "id": 20,
     "imgs": [
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png"
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png"
     ],
     "name": "Check coat with colour contrast",
     "categorySex": "kids",
@@ -1401,11 +1401,11 @@
   {
     "id": 21,
     "imgs": [
-      "clothes/product/15.png",
-      "clothes/product/15.png",
-      "clothes/product/15.png",
-      "clothes/product/15.png",
-      "clothes/product/15.png"
+      "/clothes/product/15.png",
+      "/clothes/product/15.png",
+      "/clothes/product/15.png",
+      "/clothes/product/15.png",
+      "/clothes/product/15.png"
     ],
     "name": "Chrono watch with blue...",
     "categorySex": "women",
@@ -1478,11 +1478,11 @@
   {
     "id": 22,
     "imgs": [
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png"
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png"
     ],
     "name": "Basic hooded sweatshirt in pink",
     "categorySex": "women",
@@ -1542,11 +1542,11 @@
   {
     "id": 23,
     "imgs": [
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png"
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png"
     ],
     "name": "Metal bridge sunglasses",
     "categorySex": "kids",
@@ -1614,11 +1614,11 @@
   {
     "id": 24,
     "imgs": [
-      "clothes/product/11.png",
-      "clothes/product/11.png",
-      "clothes/product/11.png",
-      "clothes/product/11.png",
-      "clothes/product/11.png"
+      "/clothes/product/11.png",
+      "/clothes/product/11.png",
+      "/clothes/product/11.png",
+      "/clothes/product/11.png",
+      "/clothes/product/11.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "kids",
@@ -1683,11 +1683,11 @@
   {
     "id": 25,
     "imgs": [
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png",
-      "clothes/product/14.png"
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png",
+      "/clothes/product/14.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "women",
@@ -1752,11 +1752,11 @@
   {
     "id": 26,
     "imgs": [
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png"
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png"
     ],
     "name": "Green baby romper",
     "categorySex": "kids",
@@ -1830,11 +1830,11 @@
   {
     "id": 27,
     "imgs": [
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png"
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "men",
@@ -1902,11 +1902,11 @@
   {
     "id": 28,
     "imgs": [
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png"
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png"
     ],
     "name": "Skinny push-up jeans",
     "categorySex": "men",
@@ -1968,11 +1968,11 @@
   {
     "id": 29,
     "imgs": [
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png"
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png"
     ],
     "name": "Check coat with colour contrast",
     "categorySex": "men",
@@ -2033,11 +2033,11 @@
   {
     "id": 30,
     "imgs": [
-      "clothes/product/2.png",
-      "clothes/product/2.png",
-      "clothes/product/2.png",
-      "clothes/product/2.png",
-      "clothes/product/2.png"
+      "/clothes/product/2.png",
+      "/clothes/product/2.png",
+      "/clothes/product/2.png",
+      "/clothes/product/2.png",
+      "/clothes/product/2.png"
     ],
     "name": "Shirt with insertion lace trims",
     "categorySex": "women",
@@ -2105,11 +2105,11 @@
   {
     "id": 31,
     "imgs": [
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png"
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png"
     ],
     "name": "Mid-rise slim cropped fit jeans",
     "categorySex": "women",
@@ -2173,11 +2173,11 @@
   {
     "id": 32,
     "imgs": [
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png"
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png"
     ],
     "name": "Shirt with insertion lace trims",
     "categorySex": "kids",
@@ -2244,11 +2244,11 @@
   {
     "id": 33,
     "imgs": [
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png",
-      "clothes/product/9.png"
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png",
+      "/clothes/product/9.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "kids",
@@ -2313,11 +2313,11 @@
   {
     "id": 34,
     "imgs": [
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png"
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "women",
@@ -2383,11 +2383,11 @@
   {
     "id": 35,
     "imgs": [
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png"
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png"
     ],
     "name": "Basic hooded sweatshirt in pink",
     "categorySex": "kids",
@@ -2451,11 +2451,11 @@
   {
     "id": 36,
     "imgs": [
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png"
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png"
     ],
     "name": "Basic hooded sweatshirt in pink",
     "categorySex": "women",
@@ -2525,11 +2525,11 @@
   {
     "id": 37,
     "imgs": [
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png"
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png"
     ],
     "name": "Baby shoes with laces",
     "categorySex": "men",
@@ -2597,11 +2597,11 @@
   {
     "id": 38,
     "imgs": [
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png"
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png"
     ],
     "name": "Check coat with colour contrast",
     "categorySex": "women",
@@ -2664,11 +2664,11 @@
   {
     "id": 39,
     "imgs": [
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png"
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png"
     ],
     "name": "Black and white sport cap",
     "categorySex": "women",
@@ -2733,11 +2733,11 @@
   {
     "id": 40,
     "imgs": [
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png",
-      "clothes/product/6.png"
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png",
+      "/clothes/product/6.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "women",
@@ -2801,11 +2801,11 @@
   {
     "id": 41,
     "imgs": [
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png"
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png"
     ],
     "name": "Mid-rise slim cropped fit jeans",
     "categorySex": "men",
@@ -2873,11 +2873,11 @@
   {
     "id": 42,
     "imgs": [
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png",
-      "clothes/product/5.png"
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png",
+      "/clothes/product/5.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "kids",
@@ -2942,11 +2942,11 @@
   {
     "id": 43,
     "imgs": [
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png",
-      "clothes/product/7.png"
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png",
+      "/clothes/product/7.png"
     ],
     "name": "Mid-rise slim cropped fit jeans",
     "categorySex": "kids",
@@ -3012,11 +3012,11 @@
   {
     "id": 44,
     "imgs": [
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png",
-      "clothes/product/13.png"
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png",
+      "/clothes/product/13.png"
     ],
     "name": "Shirt with insertion lace trims",
     "categorySex": "women",
@@ -3087,11 +3087,11 @@
   {
     "id": 45,
     "imgs": [
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png"
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png"
     ],
     "name": "Black and white sport cap",
     "categorySex": "kids",
@@ -3162,11 +3162,11 @@
   {
     "id": 46,
     "imgs": [
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png",
-      "clothes/product/1.png"
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png",
+      "/clothes/product/1.png"
     ],
     "name": "Leather crossbody bag with...",
     "categorySex": "men",
@@ -3231,11 +3231,11 @@
   {
     "id": 47,
     "imgs": [
-      "clothes/product/8.png",
-      "clothes/product/8.png",
-      "clothes/product/8.png",
-      "clothes/product/8.png",
-      "clothes/product/8.png"
+      "/clothes/product/8.png",
+      "/clothes/product/8.png",
+      "/clothes/product/8.png",
+      "/clothes/product/8.png",
+      "/clothes/product/8.png"
     ],
     "name": "Chrono watch with blue...",
     "categorySex": "women",
@@ -3300,11 +3300,11 @@
   {
     "id": 48,
     "imgs": [
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png",
-      "clothes/product/10.png"
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png",
+      "/clothes/product/10.png"
     ],
     "name": "Red dangle earrings",
     "categorySex": "kids",
@@ -3371,11 +3371,11 @@
   {
     "id": 49,
     "imgs": [
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png",
-      "clothes/product/4.png"
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png",
+      "/clothes/product/4.png"
     ],
     "name": "Baby shoes with laces",
     "categorySex": "kids",
@@ -3446,11 +3446,11 @@
   {
     "id": 50,
     "imgs": [
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png",
-      "clothes/product/12.png"
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png",
+      "/clothes/product/12.png"
     ],
     "name": "Mid-rise slim cropped fit jeans",
     "categorySex": "kids",

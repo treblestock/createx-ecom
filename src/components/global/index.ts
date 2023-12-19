@@ -26,7 +26,7 @@ export { default as NavTabs } from './NavTabs.vue'
 export { default as Spoiler } from './Spoiler.vue'
 // export { default as WithSpoiler } from './WithSpoiler.vue'
 // Icons
-export { default as IconRounded } from './IconRounded.vue'
+// export { default as IconRounded } from './IconRounded.vue'
 export { default as Icon } from './Icon.vue'
 
 
@@ -57,7 +57,7 @@ export interface AppGlobalComponents {
   Spoiler: typeof import('./Spoiler.vue')['default']
   // WithSpoiler: typeof import('./WithSpoiler.vue')['default']
   // icons
-  IconRounded: typeof import('./IconRounded.vue')['default']
+  // IconRounded: typeof import('./IconRounded.vue')['default']
   Icon: typeof import('./Icon.vue')['default']
 }
 

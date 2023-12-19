@@ -1,7 +1,7 @@
 [
   {
     "id": 1,
-    "img": "blog/preview/2.png",
+    "img": "/blog/preview/2.png",
     "category": [
       "Celebrity style"
     ],
@@ -37,7 +37,7 @@
   },
   {
     "id": 2,
-    "img": "blog/preview/3.png",
+    "img": "/blog/preview/3.png",
     "category": [
       "Fashion",
       "Lifestyle"
@@ -69,7 +69,7 @@
   },
   {
     "id": 3,
-    "img": "blog/preview/3.png",
+    "img": "/blog/preview/3.png",
     "category": [
       "Fashion",
       "Designers"
@@ -147,7 +147,7 @@
   },
   {
     "id": 4,
-    "img": "blog/preview/2.png",
+    "img": "/blog/preview/2.png",
     "category": [
       "Fashion",
       "Lifestyle",
@@ -218,7 +218,7 @@
   },
   {
     "id": 5,
-    "img": "blog/preview/2.png",
+    "img": "/blog/preview/2.png",
     "category": [
       "Designers"
     ],
@@ -271,7 +271,7 @@
   },
   {
     "id": 6,
-    "img": "blog/preview/2.png",
+    "img": "/blog/preview/2.png",
     "category": [
       "Fashion",
       "Designers",
@@ -327,7 +327,7 @@
   },
   {
     "id": 7,
-    "img": "blog/preview/2.png",
+    "img": "/blog/preview/2.png",
     "category": [
       "Designers",
       "Lifestyle",
@@ -385,7 +385,7 @@
   },
   {
     "id": 8,
-    "img": "blog/preview/2.png",
+    "img": "/blog/preview/2.png",
     "category": [
       "Fashion",
       "Lifestyle",
@@ -442,7 +442,7 @@
   },
   {
     "id": 9,
-    "img": "blog/preview/3.png",
+    "img": "/blog/preview/3.png",
     "category": [
       "Designers",
       "Lifestyle"
@@ -487,7 +487,7 @@
   },
   {
     "id": 10,
-    "img": "blog/preview/4.png",
+    "img": "/blog/preview/4.png",
     "category": [
       "Lifestyle"
     ],
@@ -522,7 +522,7 @@
   },
   {
     "id": 11,
-    "img": "blog/preview/4.png",
+    "img": "/blog/preview/4.png",
     "category": [
       "Celebrity style"
     ],
@@ -562,7 +562,7 @@
   },
   {
     "id": 12,
-    "img": "blog/preview/3.png",
+    "img": "/blog/preview/3.png",
     "category": [
       "Fashion",
       "Lifestyle",
@@ -606,7 +606,7 @@
   },
   {
     "id": 13,
-    "img": "blog/preview/3.png",
+    "img": "/blog/preview/3.png",
     "category": [
       "Fashion",
       "Designers"
@@ -650,7 +650,7 @@
   },
   {
     "id": 14,
-    "img": "blog/preview/3.png",
+    "img": "/blog/preview/3.png",
     "category": [
       "Fashion"
     ],
@@ -707,7 +707,7 @@
   },
   {
     "id": 15,
-    "img": "blog/preview/2.png",
+    "img": "/blog/preview/2.png",
     "category": [
       "Designers",
       "Celebrity style"
@@ -752,7 +752,7 @@
   },
   {
     "id": 16,
-    "img": "blog/preview/2.png",
+    "img": "/blog/preview/2.png",
     "category": [
       "Fashion"
     ],
@@ -802,7 +802,7 @@
   },
   {
     "id": 17,
-    "img": "blog/preview/1.png",
+    "img": "/blog/preview/1.png",
     "category": [
       "Designers"
     ],
@@ -838,7 +838,7 @@
   },
   {
     "id": 18,
-    "img": "blog/preview/4.png",
+    "img": "/blog/preview/4.png",
     "category": [
       "Designers",
       "Lifestyle",
@@ -880,7 +880,7 @@
   },
   {
     "id": 19,
-    "img": "blog/preview/1.png",
+    "img": "/blog/preview/1.png",
     "category": [
       "Fashion",
       "Designers",
@@ -927,7 +927,7 @@
   },
   {
     "id": 20,
-    "img": "blog/preview/3.png",
+    "img": "/blog/preview/3.png",
     "category": [
       "Fashion",
       "Celebrity style"

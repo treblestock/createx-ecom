@@ -352,6 +352,26 @@ body > * {
   }
 }
 
+.icon-circle {
+  width: 4rem;
+  height: 4rem;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border-radius: 50%;
+  color: $color-gray-900;
+  background: $color-white;
+
+  cursor: pointer;
+  
+  &:hover {
+    background: $color-green;
+    color: $color-white;
+  }
+}
+
 /* .svg-icon {
   & .icon-color {
     color: $color-green;

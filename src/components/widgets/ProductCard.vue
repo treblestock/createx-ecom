@@ -4,6 +4,7 @@ import Rating from '~/components/features/Rating.vue'
 import Price from '~/components/features/Price.vue'
 import ProductSizes from '~/components/features/ProductSizes.vue'
 import ProductColors from '~/components/features/ProductColors.vue'
+import IconHeart from '~/assets/img/icons/decor/heart.svg'
 
 import useStoreCart from '~/stores/cart'
 const cartStore = useStoreCart()
@@ -55,9 +56,9 @@ function addToCart() {
               :rating="rating"
             ></Rating>
           </AppLink>
-          <IconRounded class="favourite-label"
-            icon="heart"
-          ></IconRounded>
+          <div class="icon-circle favourite-label">
+            <IconHeart class="icon-heart"></IconHeart>
+          </div>
         </div>
       </div>
       <div class="description">

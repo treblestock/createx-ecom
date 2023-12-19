@@ -200,6 +200,8 @@ onMounted(() => {
         </section>
         <footer class="products-footer">
           <ProductsSortAndPagination class="sorts"
+            v-show="pages.length > 1"
+
             v-model:selectedSort="selectedSort"
             :sortOptions="sorts"
             :pages="pages"
@@ -274,11 +276,13 @@ $card-min-width: 24rem;
 
 /* main */
 .products-main {
+  min-height: 100vh;
   flex: 1 1 auto;
   
   /* children */
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
 }
 .products-grid {
   width: 100%;

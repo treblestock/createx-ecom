@@ -1,4 +1,4 @@
-import type { Product, BlogPost, BlogPostComment, ProductReview, Order, Collection, User, SubscribeMailing, ContactUsForm, SubscribeMailingForSale, UserBio, OfflineStore} from '~/types'
+import type { Product, BlogPost, BlogPostComment, ProductReview, Order, Collection, User, SubscribeMailing, ContactUsForm, SubscribeMailingForSale, UserBio, OfflineStore } from '~/types'
 import blogPostCommentsMock from '~/public/data/blogPostComments.json'
 const blogPostComments = blogPostCommentsMock as BlogPostComment[]
 import blogPostsMock from '~/public/data/blogPosts.json'
@@ -219,13 +219,13 @@ const clientOnlyApi = {
 
 
   // auth
-  async signUp(email: string, fullname: string, password: string, confirmPassword: string): Promise<boolean> {
+  async signup(email: string, fullname: string, password: string): Promise<boolean> {
     return true
   },
-  async signIn(email: string, password: string): Promise<boolean> {
+  async signin(email: string, password: string): Promise<boolean> {
     return true
   },
-  async signOut(): Promise<boolean> {
+  async signout(): Promise<boolean> {
     return true
   },
   async deleteAccount(): Promise<boolean> {

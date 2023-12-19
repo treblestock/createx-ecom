@@ -25,58 +25,61 @@ import * as cssCustomFunctions from './src/assets/css/functions'
   css block comment as before instead of many inline comments.)
 */  
 
-
+declare const __dirname: string
 
 // https://vitejs.dev/config/
-export default defineConfig({
-  resolve: {
-    alias: {
-      // @ts-ignore
-      '~': path.resolve(__dirname, 'src'),
-      // @ts-ignore
-      '~css': path.resolve(__dirname, 'src', 'assets', 'css'),
-    }
-  },
-  plugins: [
-    autoImport({
-      include: [
-        /\.[jt]sx?$/,
-        /\.vue$/,
-      ],
-      dts: './auto-imports.d.ts',
-      injectAtEnd: true,
-      imports: [
-        "vue",
-        "vue-router",
-      ],
-      dirs: [
-        './src/composables',
-        './src/stores',
-        './src/utils',
-      ],
-    }),
-    vue({
-      script: {
-        defineModel: true
-      },
-    }),
-    svgLoader(),
-  ],
-
-  css: {
-    postcss: {
-      plugins: [
-        cssImport,
-        cssNested,
-        cssSimpleVars,
-        cssFunctionsPlugin({
-          functions: cssCustomFunctions,
-        }),
-        cssMixins,
-      ],
+export default defineConfig(({mode}) => {
+  return {
+    base: mode === 'development' ? '/' : '/createx-ecom/',
+    resolve: {
+      alias: {
+        '~': path.resolve(__dirname, 'src'),
+        '~css': path.resolve(__dirname, 'src', 'assets', 'css'),
+        '~img': path.resolve(__dirname, 'src', 'assets', 'img'),
+        '~icons': path.resolve(__dirname, 'src', 'assets', 'img', 'icons'),
+      }
     },
-    modules: {
-      localsConvention: 'camelCase'
-    }
-  },
+    plugins: [
+      autoImport({
+        include: [
+          /\.[jt]sx?$/,
+          /\.vue$/,
+        ],
+        dts: './auto-imports.d.ts',
+        injectAtEnd: true,
+        imports: [
+          "vue",
+          "vue-router",
+        ],
+        dirs: [
+          './src/composables',
+          './src/stores',
+          './src/utils',
+        ],
+      }),
+      vue({
+        script: {
+          defineModel: true
+        },
+      }),
+      svgLoader(),
+    ],
+  
+    css: {
+      postcss: {
+        plugins: [
+          cssImport,
+          cssNested,
+          cssSimpleVars,
+          cssFunctionsPlugin({
+            functions: cssCustomFunctions,
+          }),
+          cssMixins,
+        ],
+      },
+      modules: {
+        localsConvention: 'camelCase'
+      }
+    },
+  }
 })
