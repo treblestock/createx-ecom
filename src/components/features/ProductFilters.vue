@@ -16,7 +16,7 @@ import {
   materials,
   colors,
   sizeLetter,
-} from '~/public/data/different.json'
+} from '~/assets/data/different.json'
 
 
 const selectedCategoryMinorClothType = defineModel<Set<Product['categoryMinorClothType']>>('categoryMinorClothType', {required: true})

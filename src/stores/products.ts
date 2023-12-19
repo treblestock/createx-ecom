@@ -1,6 +1,6 @@
 import { defineStore } from "pinia"
 import type { Product } from "~/types"
-import productsMock from '~/public/data/products.json'
+import productsMock from '~/assets/data/products.json'
 
 export default defineStore('products', () => {
   const products = ref<Product[]>(productsMock as Product[])

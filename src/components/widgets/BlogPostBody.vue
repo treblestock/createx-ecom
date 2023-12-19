@@ -55,13 +55,13 @@ const Content = computed<VNode>(() => {
 
 
 
-
+const BASE_URL = import.meta.env.BASE_URL
 </script>
 
 <template>
   <div class="post-body">
     <div class="img-a">
-      <Img :src="img" alt="" />
+      <img :src="BASE_URL + img" alt="" >
     </div>
     <div class="text-xl-b">{{ description }}</div>
     <Content></Content>

@@ -31,9 +31,9 @@ const props = defineProps<{
       <div class="title text-xl-b">Care</div>
       <ul>
         <li v-for="fabricClauses in details.careClauses" :key="fabricClauses.icon">
-          <Img class="icon"
+          <img class="icon"
             :src="fabricClauses.icon"
-          ></Img>
+          >
           {{ fabricClauses.explanation }}
         </li>
       </ul>

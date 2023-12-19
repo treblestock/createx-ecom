@@ -19,13 +19,13 @@ const props = defineProps<{
 }>()
 
 
-
+const BASE_URL = import.meta.env.BASE_URL
 </script>
 
 <template>
   <div class="collection">
     <div class="img-a">
-      <Img :src="backgroundImg" />
+      <img :src="BASE_URL + backgroundImg" >
     </div>
 
     <div class="container">

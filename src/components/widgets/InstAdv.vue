@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import img1 from '~/assets/img/from-inst/1.jpg'
-import img2 from '~/assets/img/from-inst/2.jpg'
-import img3 from '~/assets/img/from-inst/3.jpg'
+import img1 from '~/assets/img/from-inst/1.webp'
+import img2 from '~/assets/img/from-inst/2.webp'
+import img3 from '~/assets/img/from-inst/3.webp'
 import IconInst from '~/assets/img/icons/socials/inst.svg'
 
 

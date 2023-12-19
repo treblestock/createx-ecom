@@ -30,7 +30,7 @@ declare const __dirname: string
 // https://vitejs.dev/config/
 export default defineConfig(({mode}) => {
   return {
-    // base: mode === 'development' ? '/' : '/createx-ecom-site/',
+    base: mode === 'development' ? '/' : '/createx-ecom-site/',
     resolve: {
       alias: {
         '~': path.resolve(__dirname, 'src'),

@@ -1,5 +1,5 @@
 import { defineStore } from "pinia"
-import productReviews from '~/public/data/productReviews.json'
+import productReviews from '~/assets/data/productReviews.json'
 import type { ProductReview } from "~/types"
 
 export default defineStore('productReviews', () => {

@@ -1,11 +1,11 @@
 import { defineStore } from "pinia"
 import type { BlogPost, BlogPostComment } from '~/types'
-import blogPostsMock from '~/public/data/blogPosts.json'
-import commentsMock from '~/public/data/blogPostComments.json'
+import blogPostsMock from '~/assets/data/blogPosts.json'
+import commentsMock from '~/assets/data/blogPostComments.json'
 import {
   tags as allTags,
   blogPostsCategories,
-} from '~/public/data/different.json'
+} from '~/assets/data/different.json'
 
 
 export default defineStore('blogPosts', () => {

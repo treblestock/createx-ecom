@@ -12,13 +12,13 @@ const props = defineProps<{
   commentsIds: number[]
 }>()
 
-
+const BASE_URL = import.meta.env.BASE_URL
 </script>
 
 <template>
   <div class="post">
     <div class="img">
-      <Img :src="img"></Img>
+      <img :src="BASE_URL + img">
     </div>
 
     <div class="post-body">

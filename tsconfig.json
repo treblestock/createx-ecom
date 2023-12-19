@@ -34,6 +34,6 @@
     "noFallthroughCasesInSwitch": true
   },
   "include": ["src/**/*.ts", "src/**/*.d.ts", "src/**/*.tsx", "src/**/*.vue"],
-  "exclude": ["src/server/**/*.ts", "src/router/_types.ts"],
+  "exclude": ["src/server/**/*.ts", "src/router/_types.ts", "src/**/ignore/**/*.ts"],
   "references": [{ "path": "./tsconfig.node.json" }]
 }

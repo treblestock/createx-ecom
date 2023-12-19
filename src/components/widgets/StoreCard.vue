@@ -18,13 +18,14 @@ function parseNumber(str: string) {
   return str.match(/\d/g)?.join('')
 }
 
+const BASE_URL = import.meta.env.BASE_URL
 
 </script>
 
 <template>
   <div class="store-card">
     <div class="img">
-      <Img :src="img" alt="" />
+      <img :src="BASE_URL + img" alt="" >
     </div>
 
     <div class="card-inner">

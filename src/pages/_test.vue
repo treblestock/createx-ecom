@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import imgStaticImport from '~img/clothes/product/1.png'
 
 // import { apiFlat} from '~/utils'
 
@@ -44,12 +43,7 @@ import imgStaticImport from '~img/clothes/product/1.png'
 </script>
 
 <template>
-  <div class="div">
-    <Img :src="imgStaticImport"></Img>
-    <Img src="clothes/product/1.png"></Img>
-    <Img src="/clothes/product/1.png"></Img>
-    <!-- <img src="/test.jpg" alt=""> -->
-  </div>
+
 </template>
 
 <style scoped>

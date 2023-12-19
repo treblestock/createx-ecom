@@ -1,0 +1,3511 @@
+[
+  {
+    "id": 1,
+    "imgs": [
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp"
+    ],
+    "name": "Men fashion gray shoes",
+    "categorySex": "men",
+    "categoryMajorClothType": "accessories",
+    "brand": "Armani",
+    "materials": [
+      "Synthetics"
+    ],
+    "colors": [
+      "Black",
+      "Yellow",
+      "Red",
+      "Dark blue",
+      "Beige",
+      "Brown",
+      "Gray",
+      "Green",
+      "White"
+    ],
+    "sizes": [
+      "S"
+    ],
+    "price": 30,
+    "rating": 4,
+    "reviewsIds": [1, 7, 8, 9, 12, 22, 24, 30, 37, 52, 53],
+    "details": {
+      "desctiption": "Sollicitudin Dolor ut dignissim sollicitudin Dolor et dignissim quis commodo quisque. Et quis ut sollicitudin semper dignissim Dolor nec quisque quis risus. Luctus semper faucibus sollicitudin risus quis faucibus quis congue. Dolor quis quis sollicitudin massa quis commodo risus faucibus.",
+      "characteristics": [
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds",
+        "Rubber outsole pods for durability and traction",
+        "Clothing suitable for an official or important occasion",
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "any tumble dry",
+          "icon": "icons/products/tumble-dry-3.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sunglasses"
+  },
+  {
+    "id": 2,
+    "imgs": [
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp"
+    ],
+    "name": "Black and white sport cap",
+    "categorySex": "women",
+    "categoryMajorClothType": "clothes",
+    "brand": "Columbia",
+    "materials": [
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Red",
+      "Dark blue",
+      "Beige",
+      "Brown",
+      "Orange"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L ",
+      "Plus Size"
+    ],
+    "price": 80,
+    "rating": 4,
+    "reviewsIds": [18, 19, 32, 42, 57],
+    "details": {
+      "desctiption": "Quis sollicitudin nec magna faucibus quis quisque quis et congue. Et congue magna faucibus sollicitudin ut risus semper. Magna faucibus faucibus dignissim congue commodo commodo luctus congue. Et commodo faucibus luctus magna enim commodo faucibus et quisque magna.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "any tumble dry",
+          "icon": "icons/products/tumble-dry-3.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "any wash",
+          "icon": "icons/products/wash-3.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Cardigans & sweaters"
+  },
+  {
+    "id": 3,
+    "imgs": [
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp"
+    ],
+    "name": "Baby shoes with laces",
+    "categorySex": "women",
+    "categoryMajorClothType": "clothes",
+    "brand": "Banana Republic ",
+    "materials": [
+      "Cotton",
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Blue-gray",
+      "Yellow",
+      "Brown",
+      "Orange"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L "
+    ],
+    "price": 180,
+    "discount": 80,
+    "rating": 3,
+    "reviewsIds": [38, 48],
+    "details": {
+      "desctiption": "Dignissim enim quis commodo quis quis dignissim Dolor magna congue. Congue magna sollicitudin commodo faucibus dignissim luctus commodo commodo nec. Commodo quis ut et commodo massa enim massa massa. Luctus congue risus et et magna risus quis quisque luctus Dolor quis.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Lorem: 98% other materials"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "tumble medium dry",
+          "icon": "icons/products/tumble-dry-2.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "medium wash",
+          "icon": "icons/products/wash-2.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Jackets"
+  },
+  {
+    "id": 4,
+    "imgs": [
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp"
+    ],
+    "name": "Mid-rise slim cropped fit jeans",
+    "categorySex": "men",
+    "categoryMajorClothType": "clothes",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Blue-gray",
+      "Yellow",
+      "Beige",
+      "Brown",
+      "Gray",
+      "Purple",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L ",
+      "Plus Size"
+    ],
+    "price": 160,
+    "rating": 5,
+    "reviewsIds": [13, 36, 39, 40, 50],
+    "details": {
+      "desctiption": "Quis congue et dignissim et nec dignissim enim semper et. Risus magna risus luctus nec quis commodo semper congue. Semper massa sollicitudin risus dignissim semper quis quis Dolor. Enim et risus congue magna magna commodo quis quis massa.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Clothes that are loose and hanging in folds",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothing suitable for an official or important occasion",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Lingerie & nightwear"
+  },
+  {
+    "id": 5,
+    "imgs": [
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp"
+    ],
+    "name": "Green baby romper",
+    "categorySex": "men",
+    "categoryMajorClothType": "shoes",
+    "brand": "Columbia",
+    "materials": [
+      "Synthetics"
+    ],
+    "colors": [
+      "Color",
+      "Blue-gray",
+      "Yellow",
+      "Dark blue",
+      "Gray",
+      "Purple",
+      "Green"
+    ],
+    "sizes": [
+      "S",
+      "L "
+    ],
+    "price": 190,
+    "rating": 0,
+    "reviewsIds": [23, 35, 49],
+    "details": {
+      "desctiption": "Dignissim nec et et nec enim dignissim ut massa nec ut Dolor. Dolor risus faucibus congue commodo nec quisque quisque commodo sollicitudin semper congue. Commodo risus commodo quis et faucibus congue quis congue nec. Risus sollicitudin luctus dignissim et ut nec Dolor quisque faucibus luctus faucibus.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Sole: 100% other materials"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sandals"
+  },
+  {
+    "id": 6,
+    "imgs": [
+      "img/clothes/product/2.webp",
+      "img/clothes/product/2.webp",
+      "img/clothes/product/2.webp",
+      "img/clothes/product/2.webp",
+      "img/clothes/product/2.webp"
+    ],
+    "name": "Skinny push-up jeans",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Synthetics",
+      "Leather",
+      "Cashmere"
+    ],
+    "colors": [
+      "Blue-gray",
+      "Yellow",
+      "Red",
+      "Brown",
+      "Green",
+      "White"
+    ],
+    "sizes": [
+      "Plus Size"
+    ],
+    "price": 160,
+    "rating": 1,
+    "reviewsIds": [29, 56],
+    "details": {
+      "desctiption": "Magna risus et nec semper Dolor risus sollicitudin commodo sollicitudin nec. Sollicitudin massa ut commodo massa luctus et quis congue faucibus. Risus magna luctus nec massa sollicitudin risus risus congue luctus congue luctus. Quis luctus faucibus semper risus semper dignissim dignissim Dolor massa faucibus.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Rubber outsole pods for durability and traction",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "no ironing",
+          "icon": "icons/products/no-ironing.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Bags & bagpacks"
+  },
+  {
+    "id": 7,
+    "imgs": [
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp"
+    ],
+    "name": "Baby shoes with laces",
+    "categorySex": "women",
+    "categoryMajorClothType": "shoes",
+    "brand": "Banana Republic ",
+    "materials": [
+      "Cotton"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Red",
+      "Dark blue",
+      "Gray",
+      "Purple",
+      "Green",
+      "Orange"
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "L "
+    ],
+    "price": 110,
+    "discount": 40,
+    "rating": 2,
+    "reviewsIds": [28, 34, 55],
+    "details": {
+      "desctiption": "Dolor ut dignissim commodo quisque magna nec faucibus magna et ut quisque. Massa semper quis ut faucibus ut faucibus congue semper massa sollicitudin enim. Faucibus congue et Dolor congue dignissim luctus enim faucibus. Dolor semper quis risus risus congue sollicitudin dignissim et dignissim nec.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Wow: 100% velur"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "soft wash",
+          "icon": "icons/products/wash-1.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Slippers"
+  },
+  {
+    "id": 8,
+    "imgs": [
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp"
+    ],
+    "name": "Green baby romper",
+    "categorySex": "men",
+    "categoryMajorClothType": "accessories",
+    "brand": "Armani",
+    "materials": [
+      "Cotton",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Blue-gray",
+      "Yellow",
+      "Dark blue",
+      "Beige",
+      "Brown",
+      "Gray",
+      "Orange"
+    ],
+    "sizes": [
+      "M",
+      "Plus Size"
+    ],
+    "price": 120,
+    "discount": 80,
+    "rating": 5,
+    "reviewsIds": [6, 15, 25, 47],
+    "details": {
+      "desctiption": "Quis Dolor faucibus Dolor congue commodo semper quisque faucibus dignissim. Massa massa enim faucibus nec congue congue commodo luctus. Faucibus nec dignissim enim nec semper quisque Dolor dignissim massa semper massa. Congue quis semper nec dignissim quis commodo Dolor quis ut enim.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Grower: 30% real paper, 70% denim",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "no ironing",
+          "icon": "icons/products/no-ironing.svg"
+        },
+        {
+          "explanation": "soft wash",
+          "icon": "icons/products/wash-1.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Hats & scarves"
+  },
+  {
+    "id": 9,
+    "imgs": [
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp"
+    ],
+    "name": "Basic hooded sweatshirt in pink",
+    "categorySex": "men",
+    "categoryMajorClothType": "accessories",
+    "brand": "Columbia",
+    "materials": [
+      "Cashmere"
+    ],
+    "colors": [
+      "Red",
+      "Dark blue",
+      "Brown",
+      "Orange"
+    ],
+    "sizes": [
+      "M",
+      "Plus Size"
+    ],
+    "price": 130,
+    "discount": 20,
+    "rating": 1,
+    "reviewsIds": [2, 26, 31, 44, 45, 46],
+    "details": {
+      "desctiption": "Nec quis luctus et congue quis dignissim congue Dolor. Sollicitudin faucibus Dolor Dolor Dolor semper risus risus quis quisque semper Dolor. Massa dignissim nec risus semper dignissim magna congue magna congue. Sollicitudin faucibus semper semper ut quis enim commodo nec.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Clothes that are loose and hanging in folds",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "tumble dry",
+          "icon": "icons/products/tumble-dry.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Hats & scarves"
+  },
+  {
+    "id": 10,
+    "imgs": [
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp"
+    ],
+    "name": "Shirt with insertion lace trims",
+    "categorySex": "women",
+    "categoryMajorClothType": "shoes",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Cotton",
+      "Nappa leather",
+      "Leather",
+      "Cashmere"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Yellow",
+      "Dark blue",
+      "Beige",
+      "Brown",
+      "Purple",
+      "White"
+    ],
+    "sizes": [
+      "M",
+      "XL"
+    ],
+    "price": 80,
+    "discount": 90,
+    "rating": 0,
+    "reviewsIds": [10, 11, 14, 20, 43, 60],
+    "details": {
+      "desctiption": "Dolor semper sollicitudin luctus congue quis magna ut. Quis Dolor risus Dolor massa commodo ut congue dignissim. Enim massa massa enim Dolor quis quisque et quis. Commodo quis Dolor nec et Dolor massa magna enim quisque. Risus magna congue sollicitudin semper luctus faucibus congue enim quisque congue.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sliders"
+  },
+  {
+    "id": 11,
+    "imgs": [
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp"
+    ],
+    "name": "Basic hooded sweatshirt in pink",
+    "categorySex": "men",
+    "categoryMajorClothType": "accessories",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Cotton",
+      "Leather"
+    ],
+    "colors": [
+      "Red",
+      "Beige",
+      "Brown",
+      "Gray",
+      "Purple",
+      "Green"
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "XL"
+    ],
+    "price": 20,
+    "rating": 2,
+    "reviewsIds": [5, 16, 41, 51, 54, 58, 59],
+    "details": {
+      "desctiption": "Magna semper quis Dolor commodo quis Dolor quis semper sollicitudin Dolor quis. Et et faucibus massa ut enim nec Dolor quisque massa massa. Ut quis dignissim massa quis magna risus congue semper quis et. Enim quis magna Dolor magna sollicitudin quisque magna sollicitudin Dolor.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "tumble medium dry",
+          "icon": "icons/products/tumble-dry-2.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Watches"
+  },
+  {
+    "id": 12,
+    "imgs": [
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp"
+    ],
+    "name": "Shirt with insertion lace trims",
+    "categorySex": "men",
+    "categoryMajorClothType": "shoes",
+    "brand": "Banana Republic ",
+    "materials": [
+      "Cotton",
+      "Synthetics"
+    ],
+    "colors": [
+      "Dark blue",
+      "Beige",
+      "Purple",
+      "Green",
+      "Orange"
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "XL",
+      "Plus Size"
+    ],
+    "price": 190,
+    "rating": 3,
+    "reviewsIds": [3, 4, 17, 21, 27, 33],
+    "details": {
+      "desctiption": "Sollicitudin enim Dolor massa ut ut quis et. Nec quis Dolor dignissim quis et luctus enim luctus. Luctus magna magna luctus faucibus ut luctus dignissim sollicitudin massa. Quisque Dolor ut dignissim commodo commodo ut Dolor. Enim massa sollicitudin magna quisque luctus risus luctus massa nec.",
+      "characteristics": [
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "any tumble dry",
+          "icon": "icons/products/tumble-dry-3.svg"
+        },
+        {
+          "explanation": "no ironing",
+          "icon": "icons/products/no-ironing.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sandals"
+  },
+  {
+    "id": 13,
+    "imgs": [
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp"
+    ],
+    "name": "Chrono watch with blue...",
+    "categorySex": "kids",
+    "categoryMajorClothType": "shoes",
+    "brand": "Adidas",
+    "materials": [
+      "Synthetics",
+      "Nappa leather",
+      "Leather"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Beige",
+      "Gray",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "Plus Size"
+    ],
+    "price": 20,
+    "rating": 1,
+    "reviewsIds": 4,
+    "details": {
+      "desctiption": "Semper risus magna semper risus risus Dolor risus Dolor. Et magna faucibus enim congue ut congue luctus nec quisque dignissim. Risus dignissim enim quisque massa magna et nec semper semper. Quis dignissim quis quis dignissim nec dignissim sollicitudin massa nec.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "wash",
+          "icon": "icons/products/wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Slippers"
+  },
+  {
+    "id": 14,
+    "imgs": [
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp"
+    ],
+    "name": "Men fashion gray shoes",
+    "categorySex": "women",
+    "categoryMajorClothType": "shoes",
+    "brand": "Columbia",
+    "materials": [
+      "Synthetics"
+    ],
+    "colors": [
+      "Black",
+      "Blue-gray",
+      "Red",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "L ",
+      "XL",
+      "Plus Size"
+    ],
+    "price": 140,
+    "rating": 2,
+    "reviewsIds": 3,
+    "details": {
+      "desctiption": "Nec quis semper risus Dolor congue quisque faucibus risus quisque. Faucibus Dolor nec semper et faucibus quis congue. Semper semper nec magna faucibus enim nec commodo commodo dignissim quis luctus. Dolor massa ut congue enim dignissim luctus quis et quis enim nec.",
+      "characteristics": [
+        "Clothes that are loose and hanging in folds",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothing suitable for an official or important occasion",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Flat shoes"
+  },
+  {
+    "id": 15,
+    "imgs": [
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp"
+    ],
+    "name": "Black and white sport cap",
+    "categorySex": "men",
+    "categoryMajorClothType": "shoes",
+    "brand": "Armani",
+    "materials": [
+      "Nappa leather",
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Beige",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "L "
+    ],
+    "price": 100,
+    "rating": 1,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Massa Dolor luctus commodo nec luctus dignissim quis Dolor luctus. Quis Dolor Dolor commodo massa et ut massa dignissim enim. Sollicitudin et magna quis quisque Dolor enim et. Congue quisque semper commodo magna quis quis sollicitudin quis dignissim enim massa.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion",
+        "Clothes that are loose and hanging in folds",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "wash",
+          "icon": "icons/products/wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Flat shoes"
+  },
+  {
+    "id": 16,
+    "imgs": [
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp"
+    ],
+    "name": "Metal bridge sunglasses",
+    "categorySex": "kids",
+    "categoryMajorClothType": "clothes",
+    "brand": "Armani",
+    "materials": [
+      "Cotton",
+      "Nappa leather"
+    ],
+    "colors": [
+      "Yellow",
+      "Gray",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "XL"
+    ],
+    "price": 70,
+    "rating": 4,
+    "reviewsIds": 0,
+    "details": {
+      "desctiption": "Enim massa Dolor Dolor ut magna commodo faucibus enim magna quisque. Luctus enim congue commodo luctus sollicitudin nec et Dolor commodo enim massa. Semper enim risus Dolor quis commodo Dolor commodo. Dolor quisque nec magna dignissim Dolor quisque quisque sollicitudin sollicitudin quis.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "any wash",
+          "icon": "icons/products/wash-3.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sportswear"
+  },
+  {
+    "id": 17,
+    "imgs": [
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp"
+    ],
+    "name": "Baby shoes with laces",
+    "categorySex": "women",
+    "categoryMajorClothType": "clothes",
+    "brand": "Columbia",
+    "materials": [
+      "Synthetics"
+    ],
+    "colors": [
+      "Yellow",
+      "Red",
+      "Beige",
+      "Brown",
+      "Purple",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S"
+    ],
+    "price": 190,
+    "discount": 40,
+    "rating": 5,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Dolor magna semper risus luctus quis quis commodo quis. Risus sollicitudin quisque magna commodo enim quisque faucibus. Risus massa risus magna et et magna nec luctus quis. Commodo luctus ut risus sollicitudin massa massa massa faucibus dignissim. Dolor magna semper faucibus et magna congue sollicitudin.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion",
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Coats"
+  },
+  {
+    "id": 18,
+    "imgs": [
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp",
+      "img/clothes/product/3.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "men",
+    "categoryMajorClothType": "clothes",
+    "brand": "Adidas",
+    "materials": [
+      "Cotton",
+      "Synthetics",
+      "Leather",
+      "Denim"
+    ],
+    "colors": [
+      "Red",
+      "Beige",
+      "Brown",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "L "
+    ],
+    "price": 160,
+    "rating": 3,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Quisque Dolor enim dignissim commodo faucibus quisque ut quis semper. Quis commodo faucibus luctus quis semper enim enim ut et. Dolor congue sollicitudin faucibus quisque quis commodo magna ut enim. Luctus quisque risus magna ut quisque faucibus semper quis sollicitudin.",
+      "characteristics": [
+        "Clothing suitable for an official or important occasion",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Rubber outsole pods for durability and traction",
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "tumble dry",
+          "icon": "icons/products/tumble-dry.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "soft wash",
+          "icon": "icons/products/wash-1.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Skirts"
+  },
+  {
+    "id": 19,
+    "imgs": [
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp"
+    ],
+    "name": "Skinny push-up jeans",
+    "categorySex": "women",
+    "categoryMajorClothType": "clothes",
+    "brand": "Armani",
+    "materials": [
+      "Cotton",
+      "Synthetics"
+    ],
+    "colors": [
+      "Color",
+      "Yellow",
+      "Brown",
+      "Green",
+      "White"
+    ],
+    "sizes": [
+      "M",
+      "Plus Size"
+    ],
+    "price": 10,
+    "discount": 50,
+    "rating": 3,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Commodo massa luctus faucibus commodo massa quisque risus magna semper. Sollicitudin quisque quis faucibus congue luctus dignissim enim quisque massa risus. Magna ut sollicitudin ut enim massa semper ut. Quis enim quisque dignissim quis nec et congue. Nec commodo risus faucibus luctus et et faucibus quisque massa quis dignissim.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "soft tumble dry",
+          "icon": "icons/products/tumble-dry-1.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "medium wash",
+          "icon": "icons/products/wash-2.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Jackets"
+  },
+  {
+    "id": 20,
+    "imgs": [
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp"
+    ],
+    "name": "Check coat with colour contrast",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Banana Republic ",
+    "materials": [
+      "Cotton"
+    ],
+    "colors": [
+      "Blue-gray",
+      "Red",
+      "Beige",
+      "Brown",
+      "Gray",
+      "Purple",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "Plus Size"
+    ],
+    "price": 110,
+    "discount": 80,
+    "rating": 1,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Sollicitudin luctus quis semper quis faucibus congue sollicitudin faucibus dignissim dignissim risus. Faucibus dignissim magna et congue semper Dolor quis risus faucibus quis. Enim Dolor luctus commodo faucibus faucibus quisque quisque quisque enim quis. Faucibus magna sollicitudin faucibus quis quisque magna luctus.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "medium wash",
+          "icon": "icons/products/wash-2.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Purses"
+  },
+  {
+    "id": 21,
+    "imgs": [
+      "img/clothes/product/15.webp",
+      "img/clothes/product/15.webp",
+      "img/clothes/product/15.webp",
+      "img/clothes/product/15.webp",
+      "img/clothes/product/15.webp"
+    ],
+    "name": "Chrono watch with blue...",
+    "categorySex": "women",
+    "categoryMajorClothType": "clothes",
+    "brand": "Armani",
+    "materials": [
+      "Synthetics",
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Blue-gray",
+      "Yellow",
+      "Red",
+      "Brown",
+      "Gray",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "Plus Size"
+    ],
+    "price": 170,
+    "discount": 70,
+    "rating": 3,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Luctus magna commodo quis congue et semper magna. Quis sollicitudin massa risus semper nec risus ut nec enim faucibus luctus. Quisque enim congue dignissim et quis quisque massa sollicitudin magna commodo ut. Risus sollicitudin ut nec enim massa congue congue semper quis faucibus dignissim.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothing suitable for an official or important occasion",
+        "Clothes that are loose and hanging in folds",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "wash",
+          "icon": "icons/products/wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Suits"
+  },
+  {
+    "id": 22,
+    "imgs": [
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp"
+    ],
+    "name": "Basic hooded sweatshirt in pink",
+    "categorySex": "women",
+    "categoryMajorClothType": "shoes",
+    "brand": "Calvin Klein",
+    "materials": [
+      "Cotton",
+      "Synthetics",
+      "Leather"
+    ],
+    "colors": [
+      "Blue-gray",
+      "Yellow",
+      "Red",
+      "Brown"
+    ],
+    "sizes": [
+      "M",
+      "Plus Size"
+    ],
+    "price": 140,
+    "rating": 3,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Commodo quis commodo commodo et sollicitudin dignissim dignissim quis congue massa quis. Quis quisque et semper ut et magna dignissim Dolor. Faucibus Dolor ut Dolor quis enim nec sollicitudin. Quis faucibus magna luctus faucibus nec magna congue quis Dolor magna quisque.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "tumble dry",
+          "icon": "icons/products/tumble-dry.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Flat shoes"
+  },
+  {
+    "id": 23,
+    "imgs": [
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp"
+    ],
+    "name": "Metal bridge sunglasses",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Cotton",
+      "Leather"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Yellow",
+      "Dark blue",
+      "Brown",
+      "Green",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "XL",
+      "Plus Size"
+    ],
+    "price": 30,
+    "rating": 3,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Enim dignissim et et et quis congue commodo. Faucibus commodo congue luctus magna quis nec commodo semper quis quisque quis. Nec sollicitudin congue faucibus congue luctus sollicitudin commodo. Et Dolor luctus et luctus sollicitudin risus risus faucibus sollicitudin.",
+      "characteristics": [
+        "Clothes that are loose and hanging in folds",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion",
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Wow: 100% velur"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "no ironing",
+          "icon": "icons/products/no-ironing.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Socks & tights"
+  },
+  {
+    "id": 24,
+    "imgs": [
+      "img/clothes/product/11.webp",
+      "img/clothes/product/11.webp",
+      "img/clothes/product/11.webp",
+      "img/clothes/product/11.webp",
+      "img/clothes/product/11.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Adidas",
+    "materials": [
+      "Cotton",
+      "Nappa leather",
+      "Cashmere"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Beige",
+      "Gray",
+      "Orange"
+    ],
+    "sizes": [
+      "M",
+      "L "
+    ],
+    "price": 90,
+    "rating": 0,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Dolor congue magna magna congue semper quis commodo et luctus sollicitudin semper. Magna risus faucibus dignissim semper Dolor faucibus enim nec et magna quis. Enim risus quis quis Dolor semper quisque commodo sollicitudin magna faucibus massa. Dignissim enim Dolor enim quisque ut enim Dolor luctus quis quis.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "any wash",
+          "icon": "icons/products/wash-3.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Purses"
+  },
+  {
+    "id": 25,
+    "imgs": [
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp",
+      "img/clothes/product/14.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "women",
+    "categoryMajorClothType": "accessories",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Synthetics"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Beige",
+      "Gray"
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "L ",
+      "XL",
+      "Plus Size"
+    ],
+    "price": 60,
+    "rating": 2,
+    "reviewsIds": 0,
+    "details": {
+      "desctiption": "Luctus magna semper dignissim nec congue quis ut ut commodo congue sollicitudin. Ut quis faucibus et commodo quis Dolor luctus enim congue quis ut. Dolor quis quis enim commodo sollicitudin commodo nec. Luctus et ut enim sollicitudin risus massa quis quis risus.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Socks & tights"
+  },
+  {
+    "id": 26,
+    "imgs": [
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp"
+    ],
+    "name": "Green baby romper",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Armani",
+    "materials": [
+      "Nappa leather",
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Dark blue",
+      "Beige",
+      "Brown",
+      "Green",
+      "White"
+    ],
+    "sizes": [
+      "M",
+      "L "
+    ],
+    "price": 140,
+    "discount": 70,
+    "rating": 1,
+    "reviewsIds": 0,
+    "details": {
+      "desctiption": "Dolor sollicitudin semper congue enim quisque sollicitudin luctus sollicitudin. Semper quis congue magna enim Dolor commodo commodo luctus congue magna luctus. Faucibus nec luctus massa et risus faucibus faucibus sollicitudin. Commodo congue massa faucibus nec dignissim ut massa sollicitudin Dolor ut.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Clothing suitable for an official or important occasion",
+        "Clothes that are loose and hanging in folds",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "any tumble dry",
+          "icon": "icons/products/tumble-dry-3.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "medium wash",
+          "icon": "icons/products/wash-2.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Bags & bagpacks"
+  },
+  {
+    "id": 27,
+    "imgs": [
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "men",
+    "categoryMajorClothType": "accessories",
+    "brand": "Banana Republic ",
+    "materials": [
+      "Cotton"
+    ],
+    "colors": [
+      "Color",
+      "Blue-gray",
+      "Yellow",
+      "Dark blue",
+      "Brown",
+      "Purple",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "L ",
+      "XL",
+      "Plus Size"
+    ],
+    "price": 90,
+    "discount": 20,
+    "rating": 5,
+    "reviewsIds": 3,
+    "details": {
+      "desctiption": "Faucibus massa nec congue quis magna Dolor faucibus quis faucibus risus quis. Quisque et et faucibus sollicitudin quis quis luctus. Faucibus ut massa magna semper nec semper enim sollicitudin commodo semper faucibus. Dignissim risus massa commodo faucibus sollicitudin Dolor ut congue Dolor sollicitudin congue.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Wow: 100% velur"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "any tumble dry",
+          "icon": "icons/products/tumble-dry-3.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Bags & bagpacks"
+  },
+  {
+    "id": 28,
+    "imgs": [
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp"
+    ],
+    "name": "Skinny push-up jeans",
+    "categorySex": "men",
+    "categoryMajorClothType": "shoes",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Leather"
+    ],
+    "colors": [
+      "Color",
+      "Blue-gray",
+      "Dark blue",
+      "Beige",
+      "Orange"
+    ],
+    "sizes": [
+      "XS",
+      "XL"
+    ],
+    "price": 30,
+    "rating": 0,
+    "reviewsIds": 0,
+    "details": {
+      "desctiption": "Et quis enim ut et commodo nec dignissim risus ut. Commodo commodo quisque quis quis quis Dolor ut Dolor risus luctus nec. Luctus et et dignissim luctus risus faucibus quis nec et et massa. Risus Dolor enim nec congue sollicitudin congue faucibus quisque faucibus ut.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "tumble dry",
+          "icon": "icons/products/tumble-dry.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "any wash",
+          "icon": "icons/products/wash-3.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Heels"
+  },
+  {
+    "id": 29,
+    "imgs": [
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp"
+    ],
+    "name": "Check coat with colour contrast",
+    "categorySex": "men",
+    "categoryMajorClothType": "accessories",
+    "brand": "Calvin Klein",
+    "materials": [
+      "Synthetics",
+      "Nappa leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Black",
+      "Brown",
+      "White"
+    ],
+    "sizes": [
+      "Plus Size"
+    ],
+    "price": 130,
+    "discount": 20,
+    "rating": 0,
+    "reviewsIds": 1,
+    "details": {
+      "desctiption": "Massa dignissim nec magna risus magna quisque semper risus congue magna quis. Quis faucibus sollicitudin luctus dignissim nec quis quis et. Dolor quis et quis faucibus enim risus dignissim. Quis magna risus luctus quis commodo quis sollicitudin enim.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "dry clean",
+          "icon": "icons/products/dry-clean.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "wash",
+          "icon": "icons/products/wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Socks & tights"
+  },
+  {
+    "id": 30,
+    "imgs": [
+      "img/clothes/product/2.webp",
+      "img/clothes/product/2.webp",
+      "img/clothes/product/2.webp",
+      "img/clothes/product/2.webp",
+      "img/clothes/product/2.webp"
+    ],
+    "name": "Shirt with insertion lace trims",
+    "categorySex": "women",
+    "categoryMajorClothType": "accessories",
+    "brand": "Armani",
+    "materials": [
+      "Cotton"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Red",
+      "Beige",
+      "Gray",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "L ",
+      "XL",
+      "Plus Size"
+    ],
+    "price": 90,
+    "rating": 1,
+    "reviewsIds": 3,
+    "details": {
+      "desctiption": "Ut commodo dignissim risus Dolor faucibus risus risus. Semper Dolor enim et quisque quisque magna et quisque semper. Enim commodo quisque massa enim risus dignissim quis sollicitudin magna quis ut. Congue congue faucibus quis et ut luctus sollicitudin quis enim.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Hair accessories"
+  },
+  {
+    "id": 31,
+    "imgs": [
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp"
+    ],
+    "name": "Mid-rise slim cropped fit jeans",
+    "categorySex": "women",
+    "categoryMajorClothType": "shoes",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Synthetics"
+    ],
+    "colors": [
+      "Blue-gray",
+      "Yellow",
+      "Brown",
+      "Purple",
+      "Green"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "L ",
+      "XL"
+    ],
+    "price": 60,
+    "discount": 10,
+    "rating": 5,
+    "reviewsIds": 4,
+    "details": {
+      "desctiption": "Luctus semper magna ut massa commodo ut congue et Dolor luctus Dolor. Faucibus massa quisque luctus faucibus luctus quis et et faucibus risus. Faucibus sollicitudin risus ut massa magna risus risus magna commodo faucibus enim. Quisque magna magna sollicitudin semper nec ut magna enim quisque et magna.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "any wash",
+          "icon": "icons/products/wash-3.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sandals"
+  },
+  {
+    "id": 32,
+    "imgs": [
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp"
+    ],
+    "name": "Shirt with insertion lace trims",
+    "categorySex": "kids",
+    "categoryMajorClothType": "shoes",
+    "brand": "Armani",
+    "materials": [
+      "Synthetics",
+      "Leather"
+    ],
+    "colors": [
+      "Black",
+      "Blue-gray",
+      "Red",
+      "Dark blue",
+      "Purple",
+      "Orange"
+    ],
+    "sizes": [
+      "S",
+      "L ",
+      "XL",
+      "Plus Size"
+    ],
+    "price": 30,
+    
+    "rating": 1,
+    "reviewsIds": 0,
+    "details": {
+      "desctiption": "Faucibus quisque semper congue massa sollicitudin ut commodo massa quis. Dolor commodo dignissim commodo quis faucibus et quis quisque. Luctus congue sollicitudin faucibus et commodo dignissim magna. Luctus faucibus quis ut dignissim et faucibus quis quisque. Massa enim sollicitudin ut massa luctus enim dignissim magna faucibus.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Lorem: 98% other materials"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "any tumble dry",
+          "icon": "icons/products/tumble-dry-3.svg"
+        },
+        {
+          "explanation": "no ironing",
+          "icon": "icons/products/no-ironing.svg"
+        },
+        {
+          "explanation": "wash",
+          "icon": "icons/products/wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sneakers"
+  },
+  {
+    "id": 33,
+    "imgs": [
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp",
+      "img/clothes/product/9.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "kids",
+    "categoryMajorClothType": "shoes",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Dark blue",
+      "Brown",
+      "Purple",
+      "Green",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "L ",
+      "Plus Size"
+    ],
+    "price": 30,
+    "rating": 4,
+    "reviewsIds": 1,
+    "details": {
+      "desctiption": "Commodo quis sollicitudin Dolor dignissim magna massa nec. Quis congue luctus ut commodo Dolor nec quisque ut magna. Dolor Dolor congue et commodo commodo faucibus semper. Dignissim quisque luctus faucibus congue dignissim luctus quisque luctus congue faucibus semper.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Sole: 100% other materials"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "any wash",
+          "icon": "icons/products/wash-3.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Heels"
+  },
+  {
+    "id": 34,
+    "imgs": [
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "women",
+    "categoryMajorClothType": "accessories",
+    "brand": "Armani",
+    "materials": [
+      "Cotton"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Red",
+      "Beige",
+      "Brown",
+      "Gray",
+      "Orange"
+    ],
+    "sizes": [
+      "M",
+      "L ",
+      "XL"
+    ],
+    "price": 110,
+    "discount": 20,
+    "rating": 3,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Enim semper quis quisque magna Dolor massa semper enim. Quisque congue sollicitudin semper congue congue quisque semper massa quisque. Risus Dolor quis commodo quis faucibus sollicitudin ut et. Sollicitudin et et risus quis Dolor quis massa et faucibus massa nec.",
+      "characteristics": [
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "dry clean",
+          "icon": "icons/products/dry-clean.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "wash",
+          "icon": "icons/products/wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Watches"
+  },
+  {
+    "id": 35,
+    "imgs": [
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp"
+    ],
+    "name": "Basic hooded sweatshirt in pink",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Cashmere"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Dark blue",
+      "Beige",
+      "Brown",
+      "Gray"
+    ],
+    "sizes": [
+      "L "
+    ],
+    "price": 70,
+    "rating": 4,
+    "reviewsIds": 1,
+    "details": {
+      "desctiption": "Dolor faucibus dignissim enim luctus semper enim magna luctus magna massa faucibus. Sollicitudin quis dignissim risus commodo massa magna faucibus quis congue quisque luctus. Et faucibus et et et luctus nec magna magna commodo. Nec risus quis quis quisque sollicitudin et luctus sollicitudin.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "tumble medium dry",
+          "icon": "icons/products/tumble-dry-2.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Hats & scarves"
+  },
+  {
+    "id": 36,
+    "imgs": [
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp"
+    ],
+    "name": "Basic hooded sweatshirt in pink",
+    "categorySex": "women",
+    "categoryMajorClothType": "clothes",
+    "brand": "Armani",
+    "materials": [
+      "Synthetics",
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Dark blue",
+      "Purple",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "M"
+    ],
+    "price": 160,
+    "discount": 80,
+    "rating": 1,
+    "reviewsIds": 3,
+    "details": {
+      "desctiption": "Quis congue quis et enim semper commodo quis Dolor quisque congue dignissim. Quis enim risus enim magna et enim nec. Dolor quis et risus quis sollicitudin commodo congue semper faucibus quisque ut. Ut dignissim Dolor luctus quis quisque congue sollicitudin sollicitudin magna.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion",
+        "Clothes that are loose and hanging in folds",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "tumble dry",
+          "icon": "icons/products/tumble-dry.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "any wash",
+          "icon": "icons/products/wash-3.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Skirts"
+  },
+  {
+    "id": 37,
+    "imgs": [
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp"
+    ],
+    "name": "Baby shoes with laces",
+    "categorySex": "men",
+    "categoryMajorClothType": "accessories",
+    "brand": "Columbia",
+    "materials": [
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Blue-gray",
+      "Yellow",
+      "Beige",
+      "Brown",
+      "Green",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "L ",
+      "Plus Size"
+    ],
+    "price": 30,
+    "discount": 40,
+    "rating": 0,
+    "reviewsIds": 4,
+    "details": {
+      "desctiption": "Commodo nec nec semper quisque sollicitudin risus quisque congue luctus. Quis dignissim faucibus congue enim enim luctus luctus. Et quis risus quis faucibus et semper semper risus quis enim. Quisque enim sollicitudin enim ut et semper enim ut dignissim nec quisque.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "tumble medium dry",
+          "icon": "icons/products/tumble-dry-2.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sunglasses"
+  },
+  {
+    "id": 38,
+    "imgs": [
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp"
+    ],
+    "name": "Check coat with colour contrast",
+    "categorySex": "women",
+    "categoryMajorClothType": "clothes",
+    "brand": "Calvin Klein",
+    "materials": [
+      "Nappa leather"
+    ],
+    "colors": [
+      "Black",
+      "Yellow",
+      "Dark blue",
+      "Purple",
+      "Green",
+      "Orange"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "XL"
+    ],
+    "price": 90,
+    "discount": 90,
+    "rating": 2,
+    "reviewsIds": 1,
+    "details": {
+      "desctiption": "Ut semper magna quis faucibus et faucibus enim congue. Risus nec nec quis risus et magna dignissim quis quis. Faucibus sollicitudin sollicitudin sollicitudin quis faucibus quis congue quisque. Quisque ut luctus massa magna semper enim quis risus. Luctus nec et massa semper ut et magna.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no tumble dry",
+          "icon": "icons/products/no-tumble-dry.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "medium wash",
+          "icon": "icons/products/wash-2.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Jeans"
+  },
+  {
+    "id": 39,
+    "imgs": [
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp"
+    ],
+    "name": "Black and white sport cap",
+    "categorySex": "women",
+    "categoryMajorClothType": "shoes",
+    "brand": "Banana Republic ",
+    "materials": [
+      "Cotton",
+      "Synthetics"
+    ],
+    "colors": [
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Red",
+      "Beige",
+      "Gray",
+      "Purple"
+    ],
+    "sizes": [
+      "L ",
+      "XL",
+      "Plus Size"
+    ],
+    "price": 160,
+    "rating": 5,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Enim ut massa quisque dignissim enim risus nec ut massa Dolor luctus. Nec congue risus commodo dignissim risus sollicitudin Dolor sollicitudin congue semper quis. Risus quis et sollicitudin massa quis magna ut. Quis quisque dignissim nec semper faucibus congue congue luctus nec et.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Wow: 100% velur",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "dry clean",
+          "icon": "icons/products/dry-clean.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "soft wash",
+          "icon": "icons/products/wash-1.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Boots"
+  },
+  {
+    "id": 40,
+    "imgs": [
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp",
+      "img/clothes/product/6.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "women",
+    "categoryMajorClothType": "clothes",
+    "brand": "Banana Republic ",
+    "materials": [
+      "Cotton"
+    ],
+    "colors": [
+      "Black",
+      "Beige",
+      "Brown",
+      "Gray",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "L ",
+      "XL"
+    ],
+    "price": 130,
+    "rating": 4,
+    "reviewsIds": 0,
+    "details": {
+      "desctiption": "Luctus enim risus risus risus Dolor sollicitudin quis quis enim. Ut quis magna dignissim Dolor congue ut magna semper quisque magna. Et ut luctus congue congue quis quisque et ut quis et. Quis commodo magna dignissim nec commodo quis et risus Dolor.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "tumble dry",
+          "icon": "icons/products/tumble-dry.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "soft wash",
+          "icon": "icons/products/wash-1.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Suits"
+  },
+  {
+    "id": 41,
+    "imgs": [
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp"
+    ],
+    "name": "Mid-rise slim cropped fit jeans",
+    "categorySex": "men",
+    "categoryMajorClothType": "accessories",
+    "brand": "Armani",
+    "materials": [
+      "Cotton",
+      "Synthetics",
+      "Leather",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Blue-gray",
+      "Yellow",
+      "Red",
+      "Dark blue",
+      "Gray",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "Plus Size"
+    ],
+    "price": 40,
+    "rating": 2,
+    "reviewsIds": 4,
+    "details": {
+      "desctiption": "Luctus luctus ut et semper congue luctus quis enim dignissim sollicitudin nec. Dolor congue enim nec ut quis dignissim nec. Dignissim enim risus magna commodo dignissim semper ut. Sollicitudin semper nec sollicitudin dignissim Dolor nec nec. Et quis Dolor nec quisque quis massa ut.",
+      "characteristics": [
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "dry clean",
+          "icon": "icons/products/dry-clean.svg"
+        },
+        {
+          "explanation": "no ironing",
+          "icon": "icons/products/no-ironing.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Gloves"
+  },
+  {
+    "id": 42,
+    "imgs": [
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp",
+      "img/clothes/product/5.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "kids",
+    "categoryMajorClothType": "shoes",
+    "brand": "Columbia",
+    "materials": [
+      "Cotton",
+      "Synthetics",
+      "Cashmere"
+    ],
+    "colors": [
+      "Black",
+      "Blue-gray",
+      "Yellow",
+      "Brown",
+      "Purple",
+      "Green",
+      "Orange"
+    ],
+    "sizes": [
+      "L ",
+      "Plus Size"
+    ],
+    "price": 160,
+    "rating": 4,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Commodo congue massa quisque quis massa dignissim sollicitudin. Et commodo faucibus commodo dignissim nec ut Dolor. Congue enim semper nec luctus magna luctus luctus enim quisque magna. Quisque faucibus magna quis quis congue luctus nec quisque dignissim magna commodo.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "dry clean",
+          "icon": "icons/products/dry-clean.svg"
+        },
+        {
+          "explanation": "ironing",
+          "icon": "icons/products/ironing.svg"
+        },
+        {
+          "explanation": "wash",
+          "icon": "icons/products/wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Slippers"
+  },
+  {
+    "id": 43,
+    "imgs": [
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp",
+      "img/clothes/product/7.webp"
+    ],
+    "name": "Mid-rise slim cropped fit jeans",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Columbia",
+    "materials": [
+      "Cotton",
+      "Synthetics"
+    ],
+    "colors": [
+      "Black",
+      "Beige",
+      "Purple"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "XL"
+    ],
+    "price": 120,
+    "rating": 0,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Massa massa quis ut Dolor faucibus nec semper. Et dignissim sollicitudin enim et quisque enim sollicitudin magna nec. Ut faucibus faucibus semper semper sollicitudin risus magna. Sollicitudin congue Dolor quis quisque commodo magna ut dignissim sollicitudin. Sollicitudin Dolor ut massa quis luctus faucibus quis dignissim commodo congue.",
+      "characteristics": [
+        "Clothes that are loose and hanging in folds",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion",
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Sole: 100% other materials",
+        "Wow: 100% velur",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "any tumble dry",
+          "icon": "icons/products/tumble-dry-3.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Socks & tights"
+  },
+  {
+    "id": 44,
+    "imgs": [
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp",
+      "img/clothes/product/13.webp"
+    ],
+    "name": "Shirt with insertion lace trims",
+    "categorySex": "women",
+    "categoryMajorClothType": "accessories",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Synthetics",
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Color",
+      "Blue-gray",
+      "Red",
+      "Dark blue",
+      "Brown",
+      "Gray",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "M",
+      "XL"
+    ],
+    "price": 170,
+    "rating": 1,
+    "reviewsIds": 0,
+    "details": {
+      "desctiption": "Commodo dignissim Dolor quis magna ut ut congue quis et. Risus sollicitudin quis quis Dolor quis sollicitudin commodo sollicitudin faucibus. Semper Dolor risus et congue ut faucibus et. Magna et sollicitudin et quisque quis commodo magna congue faucibus congue risus.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion",
+        "Clothes that are loose and hanging in folds",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Sole: 100% other materials",
+        "Wow: 100% velur"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "soft tumble dry",
+          "icon": "icons/products/tumble-dry-1.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Hats & scarves"
+  },
+  {
+    "id": 45,
+    "imgs": [
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp"
+    ],
+    "name": "Black and white sport cap",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Ann Taylor",
+    "materials": [
+      "Cotton",
+      "Nappa leather",
+      "Leather",
+      "Denim"
+    ],
+    "colors": [
+      "Black",
+      "Yellow",
+      "Red",
+      "Beige",
+      "Brown",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "S",
+      "XL"
+    ],
+    "price": 20,
+    "discount": 60,
+    "rating": 1,
+    "reviewsIds": 3,
+    "details": {
+      "desctiption": "Commodo quisque faucibus congue enim luctus risus quisque quis luctus quisque semper. Quisque enim quis luctus faucibus magna dignissim quis. Ut faucibus enim commodo massa nec congue ut. Commodo commodo dignissim nec enim quisque faucibus semper semper. Enim commodo faucibus quisque quis semper Dolor luctus massa enim Dolor magna.",
+      "characteristics": [
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion",
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Lining: 100% textile",
+        "Sole: 100% other materials"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "dry clean",
+          "icon": "icons/products/dry-clean.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "no wash",
+          "icon": "icons/products/no-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Watches"
+  },
+  {
+    "id": 46,
+    "imgs": [
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp",
+      "img/clothes/product/1.webp"
+    ],
+    "name": "Leather crossbody bag with...",
+    "categorySex": "men",
+    "categoryMajorClothType": "shoes",
+    "brand": "Armani",
+    "materials": [
+      "Cotton",
+      "Leather"
+    ],
+    "colors": [
+      "Red",
+      "Beige",
+      "Purple",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "S",
+      "M",
+      "XL"
+    ],
+    "price": 150,
+    "discount": 70,
+    "rating": 4,
+    "reviewsIds": 4,
+    "details": {
+      "desctiption": "Enim risus risus semper quisque et ut semper risus. Quis Dolor semper magna massa quis semper congue semper quisque et. Nec quisque magna magna congue enim et dignissim ut quis sollicitudin ut. Enim commodo dignissim luctus ut massa congue ut massa enim quis enim.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "no bleach",
+          "icon": "icons/products/no-bleach.svg"
+        },
+        {
+          "explanation": "soft tumble dry",
+          "icon": "icons/products/tumble-dry-1.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "soft wash",
+          "icon": "icons/products/wash-1.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sliders"
+  },
+  {
+    "id": 47,
+    "imgs": [
+      "img/clothes/product/8.webp",
+      "img/clothes/product/8.webp",
+      "img/clothes/product/8.webp",
+      "img/clothes/product/8.webp",
+      "img/clothes/product/8.webp"
+    ],
+    "name": "Chrono watch with blue...",
+    "categorySex": "women",
+    "categoryMajorClothType": "accessories",
+    "brand": "Armani",
+    "materials": [
+      "Synthetics"
+    ],
+    "colors": [
+      "Blue-gray",
+      "Beige",
+      "Brown",
+      "Gray",
+      "Purple",
+      "Green",
+      "White"
+    ],
+    "sizes": [
+      "XS",
+      "M",
+      "L ",
+      "Plus Size"
+    ],
+    "price": 90,
+    "rating": 3,
+    "reviewsIds": 3,
+    "details": {
+      "desctiption": "Semper et enim Dolor quis nec enim congue. Magna commodo dignissim congue dignissim Dolor et commodo magna nec magna. Quis congue quis enim massa nec et quis quis Dolor. Semper massa Dolor semper quis Dolor massa enim massa.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds"
+      ],
+      "fabricClauses": [
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "no dry clean",
+          "icon": "icons/products/no-dry-clean.svg"
+        },
+        {
+          "explanation": "no ironing",
+          "icon": "icons/products/no-ironing.svg"
+        },
+        {
+          "explanation": "hand wash",
+          "icon": "icons/products/hand-wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Gloves"
+  },
+  {
+    "id": 48,
+    "imgs": [
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp",
+      "img/clothes/product/10.webp"
+    ],
+    "name": "Red dangle earrings",
+    "categorySex": "kids",
+    "categoryMajorClothType": "shoes",
+    "brand": "Columbia",
+    "materials": [
+      "Cotton",
+      "Leather",
+      "Cashmere",
+      "Denim"
+    ],
+    "colors": [
+      "Black",
+      "Brown",
+      "Purple",
+      "White"
+    ],
+    "sizes": [
+      "Plus Size"
+    ],
+    "price": 140,
+    "discount": 10,
+    "rating": 4,
+    "reviewsIds": 2,
+    "details": {
+      "desctiption": "Massa congue dignissim ut enim dignissim semper luctus congue Dolor commodo quisque. Enim magna dignissim enim enim ut commodo risus quis. Quis enim Dolor risus magna quis massa quisque congue. Luctus commodo ut quis semper sollicitudin magna luctus quis nec.",
+      "characteristics": [
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Rubber outsole pods for durability and traction",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Grower: 30% real paper, 70% denim",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "tumble medium dry",
+          "icon": "icons/products/tumble-dry-2.svg"
+        },
+        {
+          "explanation": "soft ironing",
+          "icon": "icons/products/ironing-1.svg"
+        },
+        {
+          "explanation": "any wash",
+          "icon": "icons/products/wash-3.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Sandals"
+  },
+  {
+    "id": 49,
+    "imgs": [
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp",
+      "img/clothes/product/4.webp"
+    ],
+    "name": "Baby shoes with laces",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Adidas",
+    "materials": [
+      "Cotton",
+      "Synthetics",
+      "Leather",
+      "Cashmere"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Blue-gray",
+      "Red",
+      "Brown",
+      "Green",
+      "Orange",
+      "White"
+    ],
+    "sizes": [
+      "M"
+    ],
+    "price": 40,
+    "rating": 1,
+    "reviewsIds": 1,
+    "details": {
+      "desctiption": "Nec quis Dolor congue Dolor semper Dolor semper quis quis. Quis ut magna luctus congue ut semper dignissim et dignissim dignissim. Faucibus et enim sollicitudin sollicitudin luctus quisque quis semper. Luctus et Dolor Dolor risus massa Dolor quis ut massa faucibus.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Clothes that are loose and hanging in folds",
+        "Rubber outsole pods for durability and traction",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothing suitable for an official or important occasion",
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Upper: 50% real leather, 50% textile",
+        "Wow: 100% velur",
+        "Lorem: 98% other materials",
+        "Special: 37% surprise, 63% unbelivable"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "tumble medium dry",
+          "icon": "icons/products/tumble-dry-2.svg"
+        },
+        {
+          "explanation": "any ironing",
+          "icon": "icons/products/ironing-3.svg"
+        },
+        {
+          "explanation": "wash",
+          "icon": "icons/products/wash.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Belts"
+  },
+  {
+    "id": 50,
+    "imgs": [
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp",
+      "img/clothes/product/12.webp"
+    ],
+    "name": "Mid-rise slim cropped fit jeans",
+    "categorySex": "kids",
+    "categoryMajorClothType": "accessories",
+    "brand": "Calvin Klein",
+    "materials": [
+      "Leather"
+    ],
+    "colors": [
+      "Color",
+      "Black",
+      "Yellow",
+      "Beige",
+      "Brown",
+      "White"
+    ],
+    "sizes": [
+      "M"
+    ],
+    "price": 120,
+    "discount": 80,
+    "rating": 0,
+    "reviewsIds": 0,
+    "details": {
+      "desctiption": "Et massa quis commodo nec congue enim luctus faucibus massa. Faucibus luctus et magna dignissim congue sollicitudin congue luctus massa quisque commodo. Congue luctus massa nec luctus faucibus luctus risus ut Dolor ut. Faucibus magna commodo risus magna congue enim ut massa quisque.",
+      "characteristics": [
+        "Moulded grooves in forefoot offer added flexibility",
+        "Padded cuff with inner nodes designed to offer comfort and support around the Achilles tendon",
+        "Clothes that are loose and hanging in folds",
+        "Clothing suitable for an official or important occasion"
+      ],
+      "fabricClauses": [
+        "Lining: 100% textile",
+        "Sole: 100% other materials",
+        "Grower: 30% real paper, 70% denim"
+      ],
+      "careClauses": [
+        {
+          "explanation": "bleach",
+          "icon": "icons/products/bleach.svg"
+        },
+        {
+          "explanation": "dry clean",
+          "icon": "icons/products/dry-clean.svg"
+        },
+        {
+          "explanation": "medium ironing",
+          "icon": "icons/products/ironing-2.svg"
+        },
+        {
+          "explanation": "soft wash",
+          "icon": "icons/products/wash-1.svg"
+        }
+      ]
+    },
+    "categoryMinorClothType": "Belts"
+  }
+]

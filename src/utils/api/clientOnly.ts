@@ -1,21 +1,21 @@
 import type { Product, BlogPost, BlogPostComment, ProductReview, Order, Collection, User, SubscribeMailing, ContactUsForm, SubscribeMailingForSale, UserBio, OfflineStore } from '~/types'
-import blogPostCommentsMock from '~/public/data/blogPostComments.json'
+import blogPostCommentsMock from '~/assets/data/blogPostComments.json'
 const blogPostComments = blogPostCommentsMock as BlogPostComment[]
-import blogPostsMock from '~/public/data/blogPosts.json'
+import blogPostsMock from '~/assets/data/blogPosts.json'
 const blogPosts = blogPostsMock as BlogPost[]
-import collectionsMock from '~/public/data/collections.json'
+import collectionsMock from '~/assets/data/collections.json'
 const collections = collectionsMock as Collection[]
-import differentMock from '~/public/data/different.json'
+import differentMock from '~/assets/data/different.json'
 const different = differentMock
-import ordersMock from '~/public/data/orders.json'
+import ordersMock from '~/assets/data/orders.json'
 const orders = ordersMock as Order[]
-import productReviewsMock from '~/public/data/productReviews.json'
+import productReviewsMock from '~/assets/data/productReviews.json'
 const productReviews = productReviewsMock as ProductReview[]
-import productsMock from '~/public/data/products.json'
+import productsMock from '~/assets/data/products.json'
 const products = productsMock as Product[]
-import usersMock from '~/public/data/users.json'
+import usersMock from '~/assets/data/users.json'
 const users = usersMock as User[]
-import offlineStoresMock from '~/public/data/offlineStores.json'
+import offlineStoresMock from '~/assets/data/offlineStores.json'
 const offlineStores = offlineStoresMock as OfflineStore[]
 
 

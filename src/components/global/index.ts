@@ -1,5 +1,5 @@
 export { default as AppLink } from './AppLink.vue'
-export { default as Img } from './Img.vue'
+// export { default as Img } from './Img.vue'
 export { default as AppLinkBtn } from './AppLinkBtn.vue'
 // Form
 export { default as Btn } from './Btn.vue'
@@ -25,13 +25,10 @@ export { default as NavTabs } from './NavTabs.vue'
 // export { default as Slider } from './Slider.vue'
 export { default as Spoiler } from './Spoiler.vue'
 // export { default as WithSpoiler } from './WithSpoiler.vue'
-// Icons
-// export { default as IconRounded } from './IconRounded.vue'
-export { default as Icon } from './Icon.vue'
 
 
 export interface AppGlobalComponents {
-  Img: typeof import('./Img.vue')['default']
+  // Img: typeof import('./Img.vue')['default']
   AppLink: typeof import('./AppLink.vue')['default']
   AppLinkBtn: typeof import('./AppLinkBtn.vue')['default']
   // from
@@ -56,9 +53,6 @@ export interface AppGlobalComponents {
   // Slider: typeof import('./Slider.vue')['default']
   Spoiler: typeof import('./Spoiler.vue')['default']
   // WithSpoiler: typeof import('./WithSpoiler.vue')['default']
-  // icons
-  // IconRounded: typeof import('./IconRounded.vue')['default']
-  Icon: typeof import('./Icon.vue')['default']
 }
 
 declare module 'vue' {

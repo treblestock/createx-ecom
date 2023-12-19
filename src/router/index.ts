@@ -16,6 +16,15 @@ const routes = [
     redirect: {name: 'home'},
     children: [
       {
+        path: BASE_URL,
+        name: 'home',
+        props: propsParser,
+        component: () => import('~/pages/home.vue'),
+        children: [
+          
+        ],
+      },
+      {
         path: '_test',
         name: '_test',
         props: propsParser,
@@ -143,15 +152,6 @@ const routes = [
               
             ],
           },
-        ],
-      },
-      {
-        path: 'home',
-        name: 'home',
-        props: propsParser,
-        component: () => import('~/pages/home.vue'),
-        children: [
-          
         ],
       },
       {

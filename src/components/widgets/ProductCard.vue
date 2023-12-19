@@ -34,13 +34,14 @@ function addToCart() {
   }, 1)
 }
 
+const BASE_URL = import.meta.env.BASE_URL
 </script>
 
 <template>
   <article class="card">
     <div class="visible">
       <div class="img">
-        <Img :src="imgs[0]"></Img>
+        <img :src="BASE_URL + imgs[0]">
         <div class="labels">
           <AppLink class="sale-link"
             :to="{name: 'products', query: {sale: 'y'}}"

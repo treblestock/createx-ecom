@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Img from '~/components/global/Img.vue'
 import Arrow from '~/components/icons/Arrow.vue'
 
 
@@ -29,13 +28,13 @@ watch(props.imgs, () => {
 const activeImg = computed(() => {
   return props.imgs[activeInd.value]
 })
-
+const BASE_URL = import.meta.env.BASE_URL
 </script>
 
 <template>
   <div class="slider">
     <div class="active-img">
-      <Img :src="activeImg" />
+      <img :src="BASE_URL + activeImg" >
 
 
       <div class="slider-arrows">
@@ -58,7 +57,7 @@ const activeImg = computed(() => {
         :class="{_active: ind === activeInd}"
         @click="() => setSlide(ind)"
       >
-        <Img :src="img"/>
+        <img :src="BASE_URL + img">
       </div>
     </div>
   </div>

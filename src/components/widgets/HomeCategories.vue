@@ -1,7 +1,7 @@
 <script setup lang="ts">
-import manImg from '~/assets/img/people/man.png'
-import womanImg from '~/assets/img/people/woman.png'
-import kidImg from '~/assets/img/people/kid.png'
+import manImg from '~/assets/img/people/man.webp'
+import womanImg from '~/assets/img/people/woman.webp'
+import kidImg from '~/assets/img/people/kid.webp'
 
 </script>
 

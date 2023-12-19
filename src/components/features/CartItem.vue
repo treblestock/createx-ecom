@@ -30,7 +30,7 @@ const emit = defineEmits<{
 
 
 
-
+const BASE_URL = import.meta.env.BASE_URL
 
 </script>
 
@@ -39,7 +39,7 @@ const emit = defineEmits<{
 
     <div class="left">
       <div class="col img-a">
-        <Img :src="img" />
+        <img :src="BASE_URL + img" >
       </div>
     </div>
       

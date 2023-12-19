@@ -1,7 +1,7 @@
 import { defineStore } from "pinia"
 import type { Order, Product, ProductId } from "~/types"
 
-import ordersData from '~/public/data/orders.json'
+import ordersData from '~/assets/data/orders.json'
 
 
 

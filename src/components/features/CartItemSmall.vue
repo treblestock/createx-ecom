@@ -31,14 +31,14 @@ const emit = defineEmits<{
 
 
 
-
+const BASE_URL = import.meta.env.BASE_URL
 
 </script>
 
 <template>
   <div class="cart-item-small">
     <div class="left img">
-      <Img :src="img" />
+      <img :src="BASE_URL + img" >
     </div>
     <div class="right">
       <div class="name-and-delete">

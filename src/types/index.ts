@@ -1,4 +1,4 @@
-export { assetsIcons } from './assetsIcons'
+// export { assetsIcons } from './assetsIcons'
 export * from './clientView'
 
 

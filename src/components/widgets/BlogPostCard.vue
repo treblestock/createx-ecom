@@ -6,13 +6,13 @@ import IconChat from '~/assets/img/icons/decor/Chat.svg'
 type Props = 'id' | 'category' | 'commentsIds' | 'title' | 'date' | 'description' | 'img'
 const props = defineProps<Pick<BlogPost, Props>>()
 
-
+const BASE_URL = import.meta.env.BASE_URL
 </script>
 
 <template>
   <div class="post">
     <div class="img">
-      <Img :src="img"></Img>
+      <img :src="BASE_URL + img">
     </div>
 
     <div class="post-body">
