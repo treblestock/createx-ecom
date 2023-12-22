@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { BlogPost } from '~/types';
+import type { BlogPost } from '~/types'
 import BlogPostCardSmall from '~/components/widgets/BlogPostCardSmall.vue'
 import IconArrow from '~/components/icons/Arrow.vue'
 

@@ -6,11 +6,15 @@ import MailingSubscribtion from '~/components/widgets/MailingSubscribtion.vue'
 import SliderRecientlyViewed from '~/components/widgets/SliderRecientlyViewed.vue'
 import SliderRecomendations from '~/components/widgets/SliderRecomendations.vue'
 
-
+import useStoreProfile from '~/stores/profile'
+const profileStore = useStoreProfile()
 
 const props = defineProps<{
   id: number
 }>()
+
+
+onMounted(() => profileStore.pushRecientlyViewedProdcts(props.id))
 
 </script>
 

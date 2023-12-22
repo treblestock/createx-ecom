@@ -1,6 +1,6 @@
-import type { Product, BlogPost, BlogPostComment, ProductReview, Order, Collection, User, SubscribeMailing, ContactUsForm, SubscribeMailingForSale, UserBio, OfflineStore } from '~/types'
+import type { Product, BlogPost, BlogPostComment, ProductReview, Order, Collection, User, Account, SubscribeMailing, ContactUsForm, SubscribeMailingForSale, UserBio, OfflineStore } from '~/types'
 import blogPostCommentsMock from '~/assets/data/blogPostComments.json'
-const blogPostComments = blogPostCommentsMock as BlogPostComment[]
+// const blogPostComments = blogPostCommentsMock as BlogPostComment[]
 import blogPostsMock from '~/assets/data/blogPosts.json'
 const blogPosts = blogPostsMock as BlogPost[]
 import collectionsMock from '~/assets/data/collections.json'
@@ -8,9 +8,9 @@ const collections = collectionsMock as Collection[]
 import differentMock from '~/assets/data/different.json'
 const different = differentMock
 import ordersMock from '~/assets/data/orders.json'
-const orders = ordersMock as Order[]
+// const orders = ordersMock as Order[]
 import productReviewsMock from '~/assets/data/productReviews.json'
-const productReviews = productReviewsMock as ProductReview[]
+// const productReviews = productReviewsMock as ProductReview[]
 import productsMock from '~/assets/data/products.json'
 const products = productsMock as Product[]
 import usersMock from '~/assets/data/users.json'
@@ -18,28 +18,69 @@ const users = usersMock as User[]
 import offlineStoresMock from '~/assets/data/offlineStores.json'
 const offlineStores = offlineStoresMock as OfflineStore[]
 
+import {
+  initLocalStorageMockData,
+  withLocalStorageData,
+  clearCurrentUserProfile,
+} from './initLocalStorage'
+import useLocalStorage from '~/composables/useLocalStorage'
 
-let productsNewIds = [21, 22, 32, 43, 17] 
-let trendingNowIds = [11, 32, 2, 13, 17] 
-let recientlyViewedIds = [12, 34, 1, 14, 18]
-let RECIENTLY_VIEWED_MAX_SIZE = 20
-let favouriteIds = [10, 36, 11, 34, 19]
-let userBio = {
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  passNew: '',
-  passConfirm: '',
-  country: '',
-  city: '',
-  address: '',
-  zipCode: '',
+initLocalStorageMockData()
+
+
+function getNextOrderId(): string {
+  const bigNumber = Math.random() * 1e15
+  return Math.floor(bigNumber).toString(32).toUpperCase()
 }
 
 
+const {
+  productReviews, 
+  blogPostComments, 
+  orders,
+} = withLocalStorageData({
+  productReviews: productReviewsMock as ProductReview[],
+  blogPostComments: blogPostCommentsMock,
+  orders: ordersMock as Order[],
+})
+
+
+const productsNewIds = [21, 22, 32, 43, 17, 25, 11, 13, 18]
+const trendingNowIds = [11, 32, 2, 13, 17, 24, 12, 38, 39]
+const RECIENTLY_VIEWED_MAX_SIZE = 20
+
+const localStorageApi = useLocalStorage()
+
 const clientOnlyApi = {
   // users
+  async createUser(fullname: string): Promise<User> {
+    let lastUserId = localStorageApi.get('users.lastId')
+    const newUser: User = {
+      id: ++lastUserId,
+      fullname,
+    }
+    const users = localStorageApi.get('users')
+    users.push(newUser)
+    
+    localStorageApi.set('users.lastId', lastUserId)
+    localStorageApi.set('users', users)
+
+    return newUser
+  },
+  async updateUser(fullname: string): Promise<User> {
+    let lastUserId = localStorageApi.get('users.lastId')
+    const newUser: User = {
+      id: ++lastUserId,
+      fullname,
+    }
+    const users = localStorageApi.get('users')
+    users.push(newUser)
+    
+    localStorageApi.set('users.lastId', lastUserId)
+    localStorageApi.set('users', users)
+
+    return newUser
+  },
   async findUserById(id: User['id']): Promise<User | null> {
     return users.find(item => item.id === id) || null
   },
@@ -76,39 +117,53 @@ const clientOnlyApi = {
   },
   
   // user favourite
-  async addFavouriteProduct(productId: Product['id']): Promise<Product['id']> {
+  async addFavouriteProduct(productId: Product['id']): Promise<Product['id'][]> {
+    const favouriteIds = localStorageApi.get('profile.favourite')
     favouriteIds.push(productId)
-    return productId
+    localStorageApi.set('profile.favourite', favouriteIds)
+    return localStorageApi.get('profile.favourite')
   },
-  async removeFavouriteProduct(productId: Product['id']): Promise<Product['id']> {
-    favouriteIds = favouriteIds.filter(i => i !== productId)
-    return productId
+  async removeFavouriteProduct(productId: Product['id']): Promise<Product['id'][]> {
+    const favouriteIds = localStorageApi.get('profile.favourite')
+    const newFavourite = favouriteIds.filter(i => i !== productId)
+    localStorageApi.set('profile.favourite', newFavourite)
+    return newFavourite
+  },
+  async getFavouriteProductsIds(): Promise<Product['id'][]> {
+    return localStorageApi.get('profile.favourite')
   },
   async getFavouriteProducts(): Promise<Product[]> {
-    return clientOnlyApi.findProductsById(favouriteIds)
+    return clientOnlyApi.findProductsById(localStorageApi.get('profile.favourite'))
+  },
+  async deleteFavouriteProducts(): Promise<void> {
+    localStorageApi.set('profile.favourite', [])
   },
 
   // user reviently viewed
-  async pushRecientlyViewedProdcts(productId: Product['id']): Promise<'push' | 'rewrite'> {
-    let operationState = 'push'
+  async pushRecientlyViewedProdcts(productId: Product['id']): Promise<void> {
+    const recientlyViewedIds = localStorageApi.get('profile.recientlyViewed')
     if (recientlyViewedIds.length >= RECIENTLY_VIEWED_MAX_SIZE) {
-      operationState = 'rewrite'
       recientlyViewedIds.unshift()
     }
     recientlyViewedIds.push(productId)
-    // @ts-ignore
-    return operationState
+    localStorageApi.set('profile.recientlyViewed', recientlyViewedIds)
+  },
+  async getRecientlyViewedProdctsIds(): Promise<Product['id'][]> {
+    return localStorageApi.get('profile.recientlyViewed')
   },
   async getRecientlyViewedProdcts(): Promise<Product[]> {
-    return clientOnlyApi.findProductsById(recientlyViewedIds)
+    return clientOnlyApi.findProductsById(localStorageApi.get('profile.recientlyViewed'))
   },
-  async deleteRecientlyViewedProdcts(): Promise<boolean> {
-    recientlyViewedIds.length = 0
-    return true
+  async deleteRecientlyViewedProdcts(): Promise<void> {
+    localStorageApi.set('profile.recientlyViewed', [])
   },
 
   // user recomendations
-  async getUserRecomendedProducts(userId: User['id']): Promise<Product[]> {
+  async getUserRecomendedProducts(): Promise<Product[]> {
+    const account = localStorageApi.get('profile.account')
+    if (!account) return products.slice(0, 10)
+
+    const favouriteIds = localStorageApi.get('profile.favourite')
     if (favouriteIds.length === 0) return products.slice(0, 10)
     const recomendedIds = favouriteIds.map(id => id + 1)
     
@@ -135,9 +190,19 @@ const clientOnlyApi = {
   async getUserProductReviews(userId: User['id']): Promise<ProductReview[]> {
     return productReviews.filter(item => item.userId === userId)
   },
-  async leaveProductReview(productReview: ProductReview): Promise<ProductReview | null> {
-    productReviews.push(productReview)
-    return productReview
+  async leaveProductReview(productReview: Omit<ProductReview, 'id'>): Promise<ProductReview> {
+    const storageProductReviews = localStorageApi.get('productReviews')
+    let lastId = localStorageApi.get('productReviews.lastId')
+    
+    const newProductReview = {
+      id: ++lastId,
+      ...productReview,
+    }
+    // productReviews.push(newProductReview)
+    storageProductReviews.push(newProductReview)
+    localStorageApi.set('productReviews', storageProductReviews)
+    localStorageApi.set('productReviews.lastId', lastId)
+    return newProductReview
   },
 
   // product reviews likes & dislikes
@@ -153,7 +218,7 @@ const clientOnlyApi = {
 
   // blog posts
   async getBlogPosts(count?: number): Promise<BlogPost[]> {
-    return count ? blogPosts.slice(0, count) : blogPosts
+    return blogPosts.slice(0, count)
   },
   async findBlogPostById(id: BlogPost['id']): Promise<BlogPost | null> {
     return blogPosts.find(item => item.id === id) || null
@@ -170,6 +235,31 @@ const clientOnlyApi = {
     const category = foundBlogPost.category[0]
     const sameCategory = blogPosts.filter(item => item.category.includes(category))
     return count ? sameCategory.slice(0, count) : sameCategory
+  },
+
+  // blog posts' comments
+  async getBlogPostComments(count?: number): Promise<BlogPostComment[]> {
+    return count ? blogPostComments.slice(0, count) : blogPostComments
+  },
+  async findBlogPostCommentById(id: BlogPostComment['id']): Promise<BlogPostComment | null> {
+    return blogPostComments.find(item => item.id === id) || null
+  },
+  async findBlogPostCommentsById(ids: BlogPostComment['id'][]): Promise<BlogPostComment[]> {
+    return blogPostComments.filter(item => ids.includes(item.id))
+  },
+  async leaveBlogPostComment(blogPostComment: Omit<BlogPostComment, 'id'>): Promise<BlogPostComment> {
+    const storageBlogPostComments = localStorageApi.get('blogPostComments')
+    let lastId = localStorageApi.get('blogPostComments.lastId')
+    
+    const newBlogPostComment = {
+      id: ++lastId,
+      ...blogPostComment,
+    }
+    // blogPostComments.push(newBlogPostComment)
+    storageBlogPostComments.push(newBlogPostComment)
+    localStorageApi.set('blogPostComments', storageBlogPostComments)
+    localStorageApi.set('blogPostComments.lastId', lastId)
+    return newBlogPostComment
   },
 
 
@@ -191,20 +281,33 @@ const clientOnlyApi = {
 
   // profile
   async getUserBio(): Promise<UserBio> {
-    return userBio
+    return localStorageApi.get('profile.userBio')
   },
   async updateUserBio(newUserBioData: Partial<UserBio>): Promise<UserBio> {
-    Object.assign(userBio, newUserBioData)
-    return userBio
+    const userBio = localStorageApi.get('profile.userBio')
+    const updatedUserBio = Object.assign(userBio, newUserBioData)
+    localStorageApi.set('profile.userBio', updatedUserBio)
+    return updatedUserBio
   },
 
   // profile orders
-  async getOrders(userId: User['id']): Promise<Order[]> {
-    return orders.filter(i => i.userId === 1) // assume our user's id is 1
+  async getOrders(): Promise<Order[]> {
+    const account = localStorageApi.get('profile.account')
+    if (!account) return []
+    const userId = account.id
+    return orders.filter(i => i.userId === userId)  
   },
-  async makeOrder(order: Order): Promise<Order | null> {
-    orders.push(order)
-    return order
+  async makeOrder(order: Omit<Order, 'id'>): Promise<Order | null> {
+    const storageOrders = localStorageApi.get('orders')
+    const nextId = getNextOrderId()
+    const newOrder = {
+      id: nextId,
+      ...order
+    }
+    orders.push(newOrder)
+    storageOrders.push(newOrder)
+    localStorageApi.set('orders', storageOrders)
+    return newOrder
   },
   async getOrderTracking(orderId: Order['id']): Promise<Order['tracking'] | null> {
     const foundOrder = orders.find(i => i.id === orderId)
@@ -219,19 +322,96 @@ const clientOnlyApi = {
 
 
   // auth
-  async signup(email: string, fullname: string, password: string): Promise<boolean> {
-    return true
+  async updateAccount(newAccountData: Partial<Account> & {id: Account['id']}): Promise<Account> {
+    let accounts = localStorageApi.get('auth.accounts')
+    let account = localStorageApi.get('profile.account') as Account
+    const {
+      id,
+      fullname,
+      email,
+      password,
+    } = newAccountData
+
+    const updatedAccount: Account = {
+      id,
+      fullname: fullname || account.fullname,
+      email: email || account.email,
+      password: password || account.password,
+    }
+
+    accounts = accounts.filter(acc => acc.id !== id ) as Account[]
+    accounts.push(updatedAccount)
+    localStorageApi.set('auth.accounts', accounts)
+    localStorageApi.set('profile.account', updatedAccount)
+    return updatedAccount
   },
-  async signin(email: string, password: string): Promise<boolean> {
-    return true
+  async signup(email: string, password: string, fullname: string): Promise<Account | null> {
+    const accounts = localStorageApi.get('auth.accounts')
+    if (accounts.find(acc => acc.email === email) ) return null
+
+    // new public user
+    const newUser = await clientOnlyApi.createUser(fullname)
+
+    // new account
+    const newAccount: Account = {
+      id: newUser.id,
+      email, 
+      fullname, 
+      password
+    }
+    accounts.push(newAccount)
+    localStorageApi.set('auth.accounts', accounts)
+    localStorageApi.set('profile.account', newAccount)
+
+    await clientOnlyApi.updateUserBio({
+      password,
+      firstName: fullname.split(' ')[0],
+      lastName: fullname.split(' ')[1],
+      email,
+    })
+    return newAccount
+  },
+  async signin(email: string, password: string): Promise<Account | null> {
+    const accounts = localStorageApi.get('auth.accounts')
+    const foundAccount = accounts.find(acc => acc.email === email)
+    if (!foundAccount || foundAccount.password !== password) return null
+    return foundAccount
   },
   async signout(): Promise<boolean> {
+    localStorageApi.set('profile.account', null)
     return true
   },
-  async deleteAccount(): Promise<boolean> {
+  async deleteAccount(email: string, password: string): Promise<boolean> {
+    const accounts = localStorageApi.get('auth.accounts')
+    const foundAccount = accounts.find(acc => acc.email === email)
+    if (!foundAccount || foundAccount.password !== password) return false
+    
+    const updatedAccounts = accounts.filter(acc => acc !== foundAccount)
+    localStorageApi.set('auth.accounts', updatedAccounts)
+    clearCurrentUserProfile()
     return true
   },
 }
 
 
 export default clientOnlyApi
+
+
+/*
+  localStorage:
+  profile.favourite
+  profile.recientlyViewed
+  profile.orders
+  profile.bio
+
+
+  auth.account
+  auth.delete
+  auth.signin
+  auth.signup
+
+  ?comments
+  ?reviews
+  ?localStorage.Installation
+
+*/ 

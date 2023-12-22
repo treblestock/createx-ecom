@@ -3,6 +3,11 @@ import InputGroup from '~/components/global/InputGroup.vue'
 import PasswordGroup from '~/components/global/PasswordGroup.vue'
 import usePopupManager from '~/composables/usePopupManager'
 
+
+
+import useStoreAuth from '~/stores/auth'
+const authStore = useStoreAuth()
+
 const formData = ref({
   email: '',
   pass: '',
@@ -18,20 +23,26 @@ function isValidForm() {
   return true
 }
 
+const errorMsg = ref('')
+
 function clearForm() {
   formData.value.email = '' 
   formData.value.pass = '' 
 }
 
-function onSubmit() {
-  if (!isValidForm() ) return
-  const signInRequestResault = api.signin(
+async function onSubmit() {
+  if (!isValidForm() ) {
+    errorMsg.value = `Fill in all the fields`
+    return
+  }
+  const account = await authStore.signin(
     formData.value.email,
     formData.value.pass,
   )
 
-  if (typeof signInRequestResault === 'string') {
-    throw new Error(`Failed to sign up. Got: ${signInRequestResault}`)
+  if (account == null) {
+    errorMsg.value = `Failed to sign in: cannot find account or wrong password`
+    return 
   }
   usePopupManager().closePopup('Signin')
 }
@@ -48,6 +59,7 @@ function onRedirect() {
   <div class="auth-popup">
     <div class="auth-title h3">Sign in</div>
     <div class="auth-description">Sign in to your account using email and password provided during registration.</div>
+    <div class="error">{{ errorMsg }}</div>
     <form class="auth-form"
       @submit.prevent="onSubmit"
     >
@@ -83,6 +95,9 @@ function onRedirect() {
   flex-direction: column;
 
   gap: 2.4rem;
+}
+.error {
+  color: $color-red;
 }
 .auth-title {
   text-align: center;

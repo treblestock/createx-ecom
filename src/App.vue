@@ -1,6 +1,13 @@
 <script setup lang="ts">
-import PopupManager from '~/components/features/PopupManager.vue';
+import PopupManager from '~/components/features/PopupManager.vue'
 
+
+// required to make store active and sign in
+import useStoreAuth from '~/stores/auth'
+const authStore = useStoreAuth()
+// fetch products to make it possible perform sync fetching on client
+import useStoreProducts from '~/stores/products'
+const productsStore = useStoreProducts()
 
 
 </script>

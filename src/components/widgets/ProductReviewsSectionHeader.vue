@@ -1,10 +1,11 @@
 <script setup lang="ts">
-import type { ProductReview, Rating } from '~/types'
+import type { Product, ProductReview, Rating } from '~/types'
 import ProductReviewStats from '~/components/widgets/ProductReviewStats.vue'
 
 
 
 const props = defineProps<{
+  productId: Product['id']
   rating: Rating
   reviews: ProductReview[]
   sortOptions: Record<string, any>
@@ -15,7 +16,9 @@ const selectedSort = defineModel<any>('selectedSort', {required: true})
 
 
 function leaveReview() {
-  usePopupManager().showPopup('LeaveReview')
+  usePopupManager().showPopup('LeaveReview', {}, {
+    productId: props.productId,
+  })
 }
 
 </script>

@@ -12,6 +12,9 @@ import ReturnConditions from '~/components/features/ReturnConditions.vue'
 import useStoreCart from '~/stores/cart'
 const cartStore = useStoreCart()
 
+import useStoreProfile from '~/stores/profile'
+const profileStore = useStoreProfile()
+
 const props = defineProps<{
   product: Product
 }>()
@@ -93,7 +96,10 @@ function onSubmit() {
             <IconCart></IconCart>
             Add to cart
           </Btn>
-          <Btn class="add-to-favourite btn_outlined _with-icon">
+          <Btn class="add-to-favourite btn_outlined _with-icon"
+            :class="{_active: profileStore.isFavourite(product.id)}"
+            @click="profileStore.toggleFavourite(product.id)"
+          >
             <IconHeart></IconHeart>
             Favourite
           </Btn>

@@ -17,27 +17,24 @@ export type RefOrComputed<T> = Ref<T> | ComputedRef<T>
 
 // Shared
 export type Id = number
-export type DateRecord = string
+export type DateRecord = string | Date
 export type Timestamp = number
+
+// Auth
+export type Account = {
+  id: number
+  fullname: string
+  email: string
+  password: string
+}
+
 
 // Users
 export type User = {
   id: Id
-  fullName: string
+  fullname: string
 }
 
-export type UserBio = {
-  firstName: string,
-  lastName: string,
-  email: string,
-  phone: string,
-  passNew: string,
-  passConfirm: string,
-  country: string,
-  city: string,
-  address: string,
-  zipCode: string,
-}
 
 // Products
 /*
@@ -141,7 +138,7 @@ export interface SignInForm {
   keepSignedIn: boolean
 }
 export interface SignUpForm {
-  fullName: string
+  fullname: string
   email: string
   password: string
   confirmPassword: string
@@ -149,15 +146,15 @@ export interface SignUpForm {
 }
 
 export interface UserAccount {
-  profile: UserProfile
+  profile: UserBio
   orders: OrderPreview[]
   favourite: ProductId[]
   recentlyViewed: ProductId[]
   reviews: ProductReview[]
 }
 
-export interface UserProfile {
-  fistName: string
+export interface UserBio {
+  firstName: string
   lastName: string
   email: string
   phone: string
@@ -168,10 +165,10 @@ export interface UserProfile {
   zipCode: string
 }
 
-export interface UserProfileForm extends Omit<UserProfile, 'password'> {
-  newPassword: number
-  confirmPassword: number
-}
+// export interface UserProfileForm extends Omit<UserProfile, 'password'> {
+//   newPassword: number
+//   confirmPassword: number
+// }
 
 // Cart
 export type Cart = CartRecord[]
@@ -281,7 +278,7 @@ export interface SubscribeMailing {
 
 // Contacts
 export interface ContactUsForm {
-  fullName: string
+  fullname: string
   email: string
   phone: string
   subject: string
@@ -330,8 +327,8 @@ export interface BlogPostComment {
   userId: UserId
   date: DateRecord
   comment: string
-  likes: number
-  dislikes: number
+  // likes: number
+  // dislikes: number
 }
 export type commmentId = Id
 

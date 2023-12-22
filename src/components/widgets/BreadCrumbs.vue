@@ -72,7 +72,7 @@ const crumbsMap: Record<string, () => BreadCrumbData[]> = {
     const prodctName = productsStore.findProduct(+productId)?.name
     
     return crumbsMap.products().concat([{
-      text: prodctName,
+      text: prodctName as string,
       to: {
         name: 'account',
         params: {id: productId}

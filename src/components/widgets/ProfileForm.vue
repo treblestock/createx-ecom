@@ -1,8 +1,14 @@
 <script setup lang="ts">
 import IconDelete from '~/assets/img/icons/decor/delete.svg'
+// import type { UserBio } from '~/types'
+import useStoreProfile from '~/stores/profile'
 import type { UserBio } from '~/types'
+const profileStore = useStoreProfile()
 
-const profileForm = ref<UserBio>({
+import useStoreAuth from '~/stores/auth'
+const authStore = useStoreAuth()
+
+const emptyUserBio = {
   firstName: '',
   lastName: '',
   email: '',
@@ -13,11 +19,41 @@ const profileForm = ref<UserBio>({
   city: '',
   address: '',
   zipCode: '',
-})
-
-function onSubmit() {
-  console.log(profileForm.value)
 }
+
+
+
+const profileForm = ref<typeof emptyUserBio>({...emptyUserBio})
+
+async function onSubmit() {
+  if (profileForm.value.passNew !== profileForm.value.passConfirm) return 
+  const newUserBio: UserBio = {
+    firstName: profileForm.value.firstName,
+    lastName: profileForm.value.lastName,
+    email: profileForm.value.email,
+    phone: profileForm.value.phone,
+    password: profileForm.value.passNew,
+    country: profileForm.value.country,
+    city: profileForm.value.city,
+    address: profileForm.value.address,
+    zipCode: profileForm.value.zipCode,
+  }
+  await profileStore.updateUserBio(newUserBio)
+
+  fetchForm()
+}
+
+var deleteAccount = authStore.deleteAccount
+
+function fetchForm() {
+  const { password, ...userBio} = profileStore.userBio as UserBio
+  profileForm.value.passNew = ''
+  profileForm.value.passConfirm = ''
+  Object.assign(profileForm.value, userBio)
+}
+onMounted(fetchForm)
+
+
 
 
 </script>
@@ -26,7 +62,9 @@ function onSubmit() {
   <section class="profile">
     <div class="profile-header">
       <h1 class="h1">My profile</h1>
-      <Btn class="_transparent _with-icon _delete">
+      <Btn class="_transparent _with-icon _delete"
+        @click="deleteAccount"
+      >
         <IconDelete></IconDelete>
         Delete account
       </Btn>
@@ -43,10 +81,10 @@ function onSubmit() {
       >Last name</InputGroup>
       <InputGroup class="input-group"
         v-model="profileForm.email"
-      >First name</InputGroup>
+      >Email</InputGroup>
       <InputGroup class="input-group"
         v-model="profileForm.phone"
-      >First name</InputGroup>
+      >phone</InputGroup>
       <PasswordGroup class="input-group"
         v-model="profileForm.passNew"
       >

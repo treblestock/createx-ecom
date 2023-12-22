@@ -7,7 +7,7 @@ const props = defineProps<{
 }>()
 
 
-
+const BASE_URL = import.meta.env.BASE_URL
 </script>
 
 <template>
@@ -30,9 +30,11 @@ const props = defineProps<{
     <div class="row">
       <div class="title text-xl-b">Care</div>
       <ul>
-        <li v-for="fabricClauses in details.careClauses" :key="fabricClauses.icon">
+        <li class="care-clause"
+          v-for="fabricClauses in details.careClauses" :key="fabricClauses.icon"
+        >
           <img class="icon"
-            :src="fabricClauses.icon"
+            :src="BASE_URL + fabricClauses.icon"
           >
           {{ fabricClauses.explanation }}
         </li>
@@ -69,6 +71,11 @@ const props = defineProps<{
 ._with-icon li {
   display: flex;
   gap: 2rem;
+}
+.care-clause {
+  display: flex;
+  gap: 2rem;
+
 }
 .icon {
   width: 2rem;

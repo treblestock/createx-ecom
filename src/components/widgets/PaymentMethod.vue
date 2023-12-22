@@ -1,26 +1,34 @@
 <script setup lang="ts">
-import { PasswordGroup } from '../global';
-
-const PAYMENT_METHODS = ['creditCard', 'paypal', 'cash'] as const
-
-const selectedPaymentMethod = ref<typeof PAYMENT_METHODS[number]>(PAYMENT_METHODS[0])
 
 
-type FormData = {
-  cardNumber: number
-  expiryDate: string
-  cvc: number
-}
+// const selectedPaymentMethod = ref<typeof PAYMENT_METHODS[number]>(PAYMENT_METHODS[0])
 
-const creditCardForm = ref({
-  cardNumber: undefined,
-  expiryDate: undefined,
-  cvc: undefined,
+
+
+// const creditCardForm = ref({
+//   cardNumber: undefined,
+//   expiryDate: undefined,
+//   cvc: undefined,
+// })
+
+// const paypalForm = ref({
+//   cardNumber: undefined,
+//   password: undefined
+// })
+import useStoreOrder from '~/stores/order'
+const orderStore = useStoreOrder()
+
+const selectedPaymentMethod = computed({
+  get: () => orderStore.selectedPaymentMethod,
+  set: (value) => orderStore.selectedPaymentMethod = value,
 })
-
-const paypalForm = ref({
-  cardNumber: undefined,
-  password: undefined
+const creditCardForm = computed({
+  get: () => orderStore.creditCardForm,
+  set: (value) => orderStore.creditCardForm = value,
+})
+const paypalForm = computed({
+  get: () => orderStore.paypalForm,
+  set: (value) => orderStore.paypalForm = value,
 })
 
 
@@ -50,15 +58,15 @@ const paypalForm = ref({
         <div class="card-form">
           <InputGroup class="card-number"
             placeholder="0000 0000 0000 0000"
-            v-model="creditCardForm.cardNumber"
+            v-model.number="creditCardForm.cardNumber"
           >Card number</InputGroup>
           <InputGroup class="card-expiry"
             placeholder="MM/YY"
-            v-model="creditCardForm.expiryDate"
+            v-model.number="creditCardForm.expiryDate"
           >Expiry date</InputGroup>
           <InputGroup class="card-cvc"
             placeholder="000"
-            v-model="creditCardForm.cvc"
+            v-model.number="creditCardForm.cvc"
           >CVC</InputGroup>
         </div>
       </template>
@@ -82,12 +90,12 @@ const paypalForm = ref({
         <div class="paypal-form">
           <InputGroup class="paypal-number"
             placeholder="0000 0000 0000 0000"
-            v-model="paypalForm.cardNumber"
-          >Card number</InputGroup>
+            v-model.number="paypalForm.cardNumber"
+          >Paypal number</InputGroup>
           <PasswordGroup class="paypal-password"
             placeholder="0000"
             v-model="paypalForm.password"
-          >Expiry date</PasswordGroup>
+          >Paypal password</PasswordGroup>
         </div>
       </template>
     </Spoiler>

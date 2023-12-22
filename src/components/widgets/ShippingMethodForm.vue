@@ -1,18 +1,21 @@
 <script setup lang="ts">
 import type { ShippingMethod } from '~/types'
 const shippingMethods: ShippingMethod[] = ['Courier', 'Store', 'UPS', 'createxLocker', 'createxGlobalExport']
-const selectedShiipingMethod = ref(shippingMethods[0])
+// const selectedShiipingMethod = ref(shippingMethods[0])
 
-function onSubmit() {
-  console.log(selectedShiipingMethod.value)
-}
+import useStoreOrder from '~/stores/order'
+const orderStore = useStoreOrder()
+
+const selectedShiipingMethod = computed<ShippingMethod>({
+  get: () => orderStore.shippingMethod,
+  set: (value) => orderStore.shippingMethod = value,
+})
+
 
 </script>
 
 <template>
-  <form class="shipping-billing-form"
-    @submit.prevent="onSubmit"
-  >
+  <form class="shipping-billing-form">
     <div class="radio-item">
       <div class="left">
         <RadioGroup class="radio-group"
@@ -31,7 +34,7 @@ function onSubmit() {
       <div class="left">
         <RadioGroup class="radio-group"
           v-model="selectedShiipingMethod"
-          value="Courier"
+          value="Store"
           name="shipping-method"
         >
           Pick up from store
@@ -45,7 +48,7 @@ function onSubmit() {
       <div class="left">
         <RadioGroup class="radio-group"
           v-model="selectedShiipingMethod"
-          value="Courier"
+          value="UPS"
           name="shipping-method"
         >
           UPS Ground Shipping
@@ -59,7 +62,7 @@ function onSubmit() {
       <div class="left">
         <RadioGroup class="radio-group"
           v-model="selectedShiipingMethod"
-          value="Courier"
+          value="createxLocker"
           name="shipping-method"
         >
           Pick up at Createx Locker
@@ -73,7 +76,7 @@ function onSubmit() {
       <div class="left">
         <RadioGroup class="radio-group"
           v-model="selectedShiipingMethod"
-          value="Courier"
+          value="createxGlobalExport"
           name="shipping-method"
         >
           Createx Global Export

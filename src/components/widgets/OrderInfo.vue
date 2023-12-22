@@ -18,6 +18,7 @@ import useStoreCart from '~/stores/cart'
 
 const cartStore = useStoreCart()
 
+
 const costs = computed(() => cartStore.calcCartTotal(props.cart, props.tracking.shipping.shippingMethod))
 
 

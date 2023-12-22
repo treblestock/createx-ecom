@@ -10,10 +10,14 @@ import IconSignout from '~/assets/img/icons/decor/Logout.svg'
 import useStoreAuth from '~/stores/auth'
 const authStore = useStoreAuth()
 
+import useStoreProfile from '~/stores/profile'
+const profileStore = useStoreProfile()
+
 function signout() {
   authStore.signout()
 }
 
+const userBio = computed(() => profileStore.userBio)
 
 
 
@@ -22,8 +26,8 @@ function signout() {
 <template>
   <div class="account-sidebar">
     <div class="sidebar-item user-bio">
-      <div class="user-name text-xl">Anne Block</div>
-      <div class="user-email">annetteb@example.com</div>
+      <div class="user-name text-xl">{{ `${userBio?.firstName || ''} ${userBio?.lastName || ''}` }}</div>
+      <div class="user-email">{{ userBio?.email || '' }}</div>
     </div>
     <AppLinkBtn class="sidebar-item btn_outlined _with-icon"
       :to="{name: 'accountProfile'}"

@@ -9,6 +9,9 @@ import IconHeart from '~/assets/img/icons/decor/heart.svg'
 import useStoreCart from '~/stores/cart'
 const cartStore = useStoreCart()
 
+import useStoreProfile from '~/stores/profile'
+const profileStore = useStoreProfile()
+
 
 const props = defineProps<{
   id: number
@@ -35,6 +38,10 @@ function addToCart() {
 }
 
 const BASE_URL = import.meta.env.BASE_URL
+
+// favourite
+const toggleFavourite = profileStore.toggleFavourite
+const isFavourite = computed(() => profileStore.isFavourite(props.id))
 </script>
 
 <template>
@@ -57,9 +64,12 @@ const BASE_URL = import.meta.env.BASE_URL
               :rating="rating"
             ></Rating>
           </AppLink>
-          <div class="icon-circle favourite-label">
+          <button class="icon-circle favourite-label"
+            :class="{_active: isFavourite}"
+            @click="toggleFavourite(id)"
+          >
             <IconHeart class="icon-heart"></IconHeart>
-          </div>
+          </button>
         </div>
       </div>
       <div class="description">
@@ -110,7 +120,8 @@ $shadow-popover: 0 10px 10px 0 $color-gray-800;
 }
 
 .size-s {
-  /* width: 28.5rem; */
+  width: 28.5rem;
+  flex: 0 0 28.5rem;
 }
 .visible {
   .card:hover & {
@@ -165,7 +176,6 @@ $shadow-popover: 0 10px 10px 0 $color-gray-800;
 }
 .description {
   padding: 1.6rem;
-
 
 }
 .product-name {

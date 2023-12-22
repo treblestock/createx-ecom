@@ -10,8 +10,16 @@ const props = defineProps<{
 }>()
 
 
-const { data: product } = useFetch(() => api.findProductById(props.id), null)
-const { data: productReviews } = useFetch(() => api.getProductReviews(props.id), [])
+import useStoreProducts from '~/stores/products'
+const productsStore = useStoreProducts()
+productsStore.currentProductId = props.id
+const productReviews = computed(() => productsStore.currentProductReviews)
+const product = computed(() => productsStore.findProduct(props.id))
+
+
+
+// const { data: product } = useFetch(() => api.findProductById(props.id), null)
+// const { data: productReviews } = useFetch(() => api.getProductReviews(props.id), [])
 
 const sorts = {
   none: undefined,
@@ -49,6 +57,7 @@ const sortedReviews = computed<ProductReview[]>(() => {
 
     <div class="left">
       <ProductReviewsSectionHeader class="reviews-header"
+        :productId="product.id"
         :rating="product.rating"
         :reviews="productReviews"
         v-model:selectedSort="selectedSort"

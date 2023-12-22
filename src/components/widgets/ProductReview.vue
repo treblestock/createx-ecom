@@ -22,7 +22,7 @@ const props = defineProps<{
 }>()
 const { data: reviewerName} = useFetch(async () => {
   const foundUser = await api.findUserById(props.userId)
-  return foundUser ? foundUser.fullName : 'ups..'
+  return foundUser ? foundUser.fullname : 'ups..'
 }, '')
 
 </script>
@@ -31,7 +31,7 @@ const { data: reviewerName} = useFetch(async () => {
   <div class="review">
     <div class="left">
       <div class="reviewer-name text-xl-b">{{ reviewerName }}</div>
-      <div class="review-date">{{ dateToHumanCase(date) }}</div>
+      <div class="review-date">{{ dateToHumanCase(date, 'long') }}</div>
       <RatingComponent class="review-rating"
         :rating="rating"
       ></RatingComponent>

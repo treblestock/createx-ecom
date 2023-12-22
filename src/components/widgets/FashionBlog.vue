@@ -2,7 +2,12 @@
 import BlogPostCard from '~/components/widgets/BlogPostCard.vue'
 
 
-const posts = useFetchItems(() => api.getBlogPosts(2))
+// const posts = useFetchItems(() => api.getBlogPosts(2))
+
+
+import useStoreBlogPosts from '~/stores/blogPosts'
+const blogPostsStore = useStoreBlogPosts()
+const posts = computed(() => blogPostsStore.getBlogPosts(2))
 
 
 

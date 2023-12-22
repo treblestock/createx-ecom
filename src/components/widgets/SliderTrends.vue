@@ -4,9 +4,10 @@ import ProductCard from '~/components/widgets/ProductCard.vue'
 
 
 // products
-const products = useFetchItems(() => api.getProducts(8))
+import useStoreProducts from '~/stores/products'
+const productsStore = useStoreProducts()
 
-
+const products = computed(() => productsStore.productsTrending)
 
 
 
@@ -58,8 +59,12 @@ const products = useFetchItems(() => api.getProducts(8))
 .title {
 }
 
-.product-card {
+/* .product-card {
   z-index: 1;
+} */
+
+.product-card {
+  flex: 0 0 clamp(28rem, 100%, 39rem);
 }
 
 .link {

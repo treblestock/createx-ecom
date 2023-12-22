@@ -4,8 +4,10 @@ import ProductCard from '~/components/widgets/ProductCard.vue'
 
 
 // products
-const products = useFetchItems(() => api.getProducts(8))
-
+// const {data: products} = useFetch(api.getProductsNew, [])
+import useStoreProducts from '~/stores/products'
+const productsStore = useStoreProducts()
+const products = computed(() => productsStore.productsNew)
 
 
 

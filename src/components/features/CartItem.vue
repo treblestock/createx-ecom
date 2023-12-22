@@ -3,7 +3,8 @@ import type { ProductColor, ProductSize } from '~/types'
 import IconHeart from '~/assets/img/icons/decor/heart.svg'
 import Price from '~/components/features/Price.vue'
 
-
+import useStoreProfile from '~/stores/profile'
+const profileStore = useStoreProfile()
 
 
 const props = defineProps<{
@@ -73,7 +74,10 @@ const BASE_URL = import.meta.env.BASE_URL
         <Btn class="delete btn_s btn_outlined-transparent"
           @click="$emit('deleteProduct')"
         >Delete</Btn>      
-        <Btn class="favourite _transparent _with-icon">
+        <Btn class="favourite _transparent _with-icon"
+          :class="{_active: profileStore.isFavourite(productId)}"
+          @click="profileStore.toggleFavourite(productId)"
+        >
           Move to
           <IconHeart></IconHeart>
         </Btn>
@@ -191,6 +195,10 @@ const BASE_URL = import.meta.env.BASE_URL
   padding: 0;
   color: $color-gray-800;
   &:hover {
+    color: $color-green !important;
+  }
+
+  &._active {
     color: $color-green !important;
   }
 }

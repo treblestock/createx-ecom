@@ -13,11 +13,9 @@ const props = defineProps<{
   userId: UserId
   date: DateRecord
   comment: string
-  likes: number
-  dislikes: number
 }>()
 const { data: autorName} = useFetch(async () => {
-  return (await api.findUserById(props.userId))?.fullName || 'ups'
+  return (await api.findUserById(props.userId))?.fullname || 'ups'
 }, '')
 
 </script>
@@ -26,7 +24,7 @@ const { data: autorName} = useFetch(async () => {
   <div class="comment">
     <div class="left">
       <div class="commenter-name text-xl-b">{{ autorName }}</div>
-      <div class="comment-date">{{ dateToHumanCase(date) }}</div>
+      <div class="comment-date">{{ dateToHumanCase(date, 'long') }}</div>
     </div>
     <div class="right">
       <div class="comment-text">{{ comment }}</div>

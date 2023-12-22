@@ -52,28 +52,42 @@ const getDuration = (dateA: Date | DateLike, dateB: Date | DateLike, period: key
 var toTimeInSec = (time: number) => (time / 1000).toFixed(1) + ' sec'
 
 
-function dateToNumberRecord(data: string | Date | DateLike): string {
-  let date
-  if (typeof data === 'string') {
-    date = separateDate(new Date(data))
-  } else if (data instanceof Date) {
-    date = separateDate(data)
-  }
+// function dateToNumberRecord(data: string | Date | DateLike): string {
+//   let date
+//   if (typeof data === 'string') {
+//     date = separateDate(new Date(data))
+//   } else if (data instanceof Date) {
+//     date = separateDate(data)
+//   }
 
-  return `${date?.month} ${date?.days}, ${date?.year}`
+//   return `${date?.month} ${date?.days}, ${date?.year}`
+// }
+
+// function dateToSemanticRecord(data: string | Date | DateLike): string {
+//   let date
+//   if (typeof data === 'string' || data instanceof Date) {
+//     date = separateDate(new Date(data))
+//   }
+//   return `${date?.month} ${date?.days}, ${date?.year}`
+// }
+// function dateToHumanCase(data: string | Date | DateLike, options?: 'numeric' | 'long'): string {
+//   if (!options || options === 'numeric') return dateToNumberRecord(data)
+//   return dateToSemanticRecord(data)
+// }
+function dateToNumberRecord(date: string | Date): string {
+  date = new Date(date)
+  
+  return `${date.getDate()}-${date.getMonth() + 1}-${date.getFullYear()}`
 }
 
-function dateToSemanticRecord(data: string | Date | DateLike): string {
-  let date
-  if (typeof data === 'string' || data instanceof Date) {
-    date = separateDate(new Date(data))
-  }
-  return `${date?.month} ${date?.days}, ${date?.year}`
+function dateToSemanticRecord(date: string | Date): string {
+  date = new Date(date)
+  return `${monthMap[date.getMonth()]} ${date.getDate()}, ${date.getFullYear()}`
 }
 
-function dateToHumanCase(data: string | Date | DateLike, options?: 'numeric' | 'long'): string {
-  if (!options || options === 'numeric') return dateToNumberRecord(data)
-  return dateToSemanticRecord(data)
+function dateToHumanCase(date: string | Date, options?: 'numeric' | 'long'): string {
+  if (!options || options === 'numeric') return dateToNumberRecord(date)
+  return dateToSemanticRecord(date)
 }
 
 

@@ -9,14 +9,20 @@ import useProductFilters from '~/composables/useProductFilters'
 import { Product } from '~/types'
 
 import MobileSidebar from '~/components/features/MobileSidebar.vue'
+
+import useStoreProducts from '~/stores/products'
+const productsStore = useStoreProducts()
+
 // sidebar
 const isSidebarOpen = ref(true)
 
 const productCardsHtml = ref<null | HTMLElement>(null)
 
 
+
 // items
-const { data: products } = useFetch(api.getProducts, [])
+// const { data: products } = useFetch(api.getProducts, [])
+const products = computed(() => productsStore.products)
 
 
 // filters
@@ -192,11 +198,13 @@ onMounted(() => {
         <section class="products-grid grid"
           ref="productCardsHtml"
         >
-          <ProductCard class="product-card"
-            v-for="ind in currentInds" :key="sortedProducts[ind].id" 
-            :="sortedProducts[ind]"
-            :img="sortedProducts[ind].imgs[0]"
-          ></ProductCard>
+          <TransitionGroup name="fade-shift">
+            <ProductCard class="product-card"
+              v-for="ind in currentInds" :key="sortedProducts[ind].id" 
+              :="sortedProducts[ind]"
+              :img="sortedProducts[ind].imgs[0]"
+            ></ProductCard>
+          </TransitionGroup>
         </section>
         <footer class="products-footer">
           <ProductsSortAndPagination class="sorts"

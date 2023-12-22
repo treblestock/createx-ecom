@@ -55,19 +55,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "any tumble dry",
-          "icon": "icons/products/tumble-dry-3.svg"
+          "icon": "img/icons/products/tumble-dry-3.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -128,19 +128,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "any tumble dry",
-          "icon": "icons/products/tumble-dry-3.svg"
+          "icon": "img/icons/products/tumble-dry-3.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "any wash",
-          "icon": "icons/products/wash-3.svg"
+          "icon": "img/icons/products/wash-3.svg"
         }
       ]
     },
@@ -196,19 +196,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "tumble medium dry",
-          "icon": "icons/products/tumble-dry-2.svg"
+          "icon": "img/icons/products/tumble-dry-2.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "medium wash",
-          "icon": "icons/products/wash-2.svg"
+          "icon": "img/icons/products/wash-2.svg"
         }
       ]
     },
@@ -270,19 +270,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -335,19 +335,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -405,19 +405,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "no ironing",
-          "icon": "icons/products/no-ironing.svg"
+          "icon": "img/icons/products/no-ironing.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -474,19 +474,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "soft wash",
-          "icon": "icons/products/wash-1.svg"
+          "icon": "img/icons/products/wash-1.svg"
         }
       ]
     },
@@ -543,19 +543,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "no ironing",
-          "icon": "icons/products/no-ironing.svg"
+          "icon": "img/icons/products/no-ironing.svg"
         },
         {
           "explanation": "soft wash",
-          "icon": "icons/products/wash-1.svg"
+          "icon": "img/icons/products/wash-1.svg"
         }
       ]
     },
@@ -612,19 +612,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "tumble dry",
-          "icon": "icons/products/tumble-dry.svg"
+          "icon": "img/icons/products/tumble-dry.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -683,19 +683,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -751,19 +751,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "tumble medium dry",
-          "icon": "icons/products/tumble-dry-2.svg"
+          "icon": "img/icons/products/tumble-dry-2.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -819,19 +819,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "any tumble dry",
-          "icon": "icons/products/tumble-dry-3.svg"
+          "icon": "img/icons/products/tumble-dry-3.svg"
         },
         {
           "explanation": "no ironing",
-          "icon": "icons/products/no-ironing.svg"
+          "icon": "img/icons/products/no-ironing.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -887,19 +887,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "wash",
-          "icon": "icons/products/wash.svg"
+          "icon": "img/icons/products/wash.svg"
         }
       ]
     },
@@ -960,19 +960,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -1031,19 +1031,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "wash",
-          "icon": "icons/products/wash.svg"
+          "icon": "img/icons/products/wash.svg"
         }
       ]
     },
@@ -1096,19 +1096,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "any wash",
-          "icon": "icons/products/wash-3.svg"
+          "icon": "img/icons/products/wash-3.svg"
         }
       ]
     },
@@ -1168,19 +1168,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -1242,19 +1242,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "tumble dry",
-          "icon": "icons/products/tumble-dry.svg"
+          "icon": "img/icons/products/tumble-dry.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "soft wash",
-          "icon": "icons/products/wash-1.svg"
+          "icon": "img/icons/products/wash-1.svg"
         }
       ]
     },
@@ -1309,19 +1309,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "soft tumble dry",
-          "icon": "icons/products/tumble-dry-1.svg"
+          "icon": "img/icons/products/tumble-dry-1.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "medium wash",
-          "icon": "icons/products/wash-2.svg"
+          "icon": "img/icons/products/wash-2.svg"
         }
       ]
     },
@@ -1380,19 +1380,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "medium wash",
-          "icon": "icons/products/wash-2.svg"
+          "icon": "img/icons/products/wash-2.svg"
         }
       ]
     },
@@ -1457,19 +1457,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "wash",
-          "icon": "icons/products/wash.svg"
+          "icon": "img/icons/products/wash.svg"
         }
       ]
     },
@@ -1521,19 +1521,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "tumble dry",
-          "icon": "icons/products/tumble-dry.svg"
+          "icon": "img/icons/products/tumble-dry.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -1593,19 +1593,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "no ironing",
-          "icon": "icons/products/no-ironing.svg"
+          "icon": "img/icons/products/no-ironing.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -1662,19 +1662,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "any wash",
-          "icon": "icons/products/wash-3.svg"
+          "icon": "img/icons/products/wash-3.svg"
         }
       ]
     },
@@ -1731,19 +1731,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -1809,19 +1809,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "any tumble dry",
-          "icon": "icons/products/tumble-dry-3.svg"
+          "icon": "img/icons/products/tumble-dry-3.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "medium wash",
-          "icon": "icons/products/wash-2.svg"
+          "icon": "img/icons/products/wash-2.svg"
         }
       ]
     },
@@ -1881,19 +1881,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "any tumble dry",
-          "icon": "icons/products/tumble-dry-3.svg"
+          "icon": "img/icons/products/tumble-dry-3.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -1947,19 +1947,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "tumble dry",
-          "icon": "icons/products/tumble-dry.svg"
+          "icon": "img/icons/products/tumble-dry.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "any wash",
-          "icon": "icons/products/wash-3.svg"
+          "icon": "img/icons/products/wash-3.svg"
         }
       ]
     },
@@ -2012,19 +2012,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "dry clean",
-          "icon": "icons/products/dry-clean.svg"
+          "icon": "img/icons/products/dry-clean.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "wash",
-          "icon": "icons/products/wash.svg"
+          "icon": "img/icons/products/wash.svg"
         }
       ]
     },
@@ -2084,19 +2084,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -2152,19 +2152,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "any wash",
-          "icon": "icons/products/wash-3.svg"
+          "icon": "img/icons/products/wash-3.svg"
         }
       ]
     },
@@ -2223,19 +2223,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "any tumble dry",
-          "icon": "icons/products/tumble-dry-3.svg"
+          "icon": "img/icons/products/tumble-dry-3.svg"
         },
         {
           "explanation": "no ironing",
-          "icon": "icons/products/no-ironing.svg"
+          "icon": "img/icons/products/no-ironing.svg"
         },
         {
           "explanation": "wash",
-          "icon": "icons/products/wash.svg"
+          "icon": "img/icons/products/wash.svg"
         }
       ]
     },
@@ -2292,19 +2292,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "any wash",
-          "icon": "icons/products/wash-3.svg"
+          "icon": "img/icons/products/wash-3.svg"
         }
       ]
     },
@@ -2362,19 +2362,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "dry clean",
-          "icon": "icons/products/dry-clean.svg"
+          "icon": "img/icons/products/dry-clean.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "wash",
-          "icon": "icons/products/wash.svg"
+          "icon": "img/icons/products/wash.svg"
         }
       ]
     },
@@ -2430,19 +2430,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "tumble medium dry",
-          "icon": "icons/products/tumble-dry-2.svg"
+          "icon": "img/icons/products/tumble-dry-2.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -2504,19 +2504,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "tumble dry",
-          "icon": "icons/products/tumble-dry.svg"
+          "icon": "img/icons/products/tumble-dry.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "any wash",
-          "icon": "icons/products/wash-3.svg"
+          "icon": "img/icons/products/wash-3.svg"
         }
       ]
     },
@@ -2576,19 +2576,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "tumble medium dry",
-          "icon": "icons/products/tumble-dry-2.svg"
+          "icon": "img/icons/products/tumble-dry-2.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -2643,19 +2643,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no tumble dry",
-          "icon": "icons/products/no-tumble-dry.svg"
+          "icon": "img/icons/products/no-tumble-dry.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "medium wash",
-          "icon": "icons/products/wash-2.svg"
+          "icon": "img/icons/products/wash-2.svg"
         }
       ]
     },
@@ -2712,19 +2712,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "dry clean",
-          "icon": "icons/products/dry-clean.svg"
+          "icon": "img/icons/products/dry-clean.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "soft wash",
-          "icon": "icons/products/wash-1.svg"
+          "icon": "img/icons/products/wash-1.svg"
         }
       ]
     },
@@ -2780,19 +2780,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "tumble dry",
-          "icon": "icons/products/tumble-dry.svg"
+          "icon": "img/icons/products/tumble-dry.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "soft wash",
-          "icon": "icons/products/wash-1.svg"
+          "icon": "img/icons/products/wash-1.svg"
         }
       ]
     },
@@ -2852,19 +2852,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "dry clean",
-          "icon": "icons/products/dry-clean.svg"
+          "icon": "img/icons/products/dry-clean.svg"
         },
         {
           "explanation": "no ironing",
-          "icon": "icons/products/no-ironing.svg"
+          "icon": "img/icons/products/no-ironing.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -2921,19 +2921,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "dry clean",
-          "icon": "icons/products/dry-clean.svg"
+          "icon": "img/icons/products/dry-clean.svg"
         },
         {
           "explanation": "ironing",
-          "icon": "icons/products/ironing.svg"
+          "icon": "img/icons/products/ironing.svg"
         },
         {
           "explanation": "wash",
-          "icon": "icons/products/wash.svg"
+          "icon": "img/icons/products/wash.svg"
         }
       ]
     },
@@ -2991,19 +2991,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "any tumble dry",
-          "icon": "icons/products/tumble-dry-3.svg"
+          "icon": "img/icons/products/tumble-dry-3.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -3066,19 +3066,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "soft tumble dry",
-          "icon": "icons/products/tumble-dry-1.svg"
+          "icon": "img/icons/products/tumble-dry-1.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -3141,19 +3141,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "dry clean",
-          "icon": "icons/products/dry-clean.svg"
+          "icon": "img/icons/products/dry-clean.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "no wash",
-          "icon": "icons/products/no-wash.svg"
+          "icon": "img/icons/products/no-wash.svg"
         }
       ]
     },
@@ -3210,19 +3210,19 @@
       "careClauses": [
         {
           "explanation": "no bleach",
-          "icon": "icons/products/no-bleach.svg"
+          "icon": "img/icons/products/no-bleach.svg"
         },
         {
           "explanation": "soft tumble dry",
-          "icon": "icons/products/tumble-dry-1.svg"
+          "icon": "img/icons/products/tumble-dry-1.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "soft wash",
-          "icon": "icons/products/wash-1.svg"
+          "icon": "img/icons/products/wash-1.svg"
         }
       ]
     },
@@ -3279,19 +3279,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "no dry clean",
-          "icon": "icons/products/no-dry-clean.svg"
+          "icon": "img/icons/products/no-dry-clean.svg"
         },
         {
           "explanation": "no ironing",
-          "icon": "icons/products/no-ironing.svg"
+          "icon": "img/icons/products/no-ironing.svg"
         },
         {
           "explanation": "hand wash",
-          "icon": "icons/products/hand-wash.svg"
+          "icon": "img/icons/products/hand-wash.svg"
         }
       ]
     },
@@ -3350,19 +3350,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "tumble medium dry",
-          "icon": "icons/products/tumble-dry-2.svg"
+          "icon": "img/icons/products/tumble-dry-2.svg"
         },
         {
           "explanation": "soft ironing",
-          "icon": "icons/products/ironing-1.svg"
+          "icon": "img/icons/products/ironing-1.svg"
         },
         {
           "explanation": "any wash",
-          "icon": "icons/products/wash-3.svg"
+          "icon": "img/icons/products/wash-3.svg"
         }
       ]
     },
@@ -3425,19 +3425,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "tumble medium dry",
-          "icon": "icons/products/tumble-dry-2.svg"
+          "icon": "img/icons/products/tumble-dry-2.svg"
         },
         {
           "explanation": "any ironing",
-          "icon": "icons/products/ironing-3.svg"
+          "icon": "img/icons/products/ironing-3.svg"
         },
         {
           "explanation": "wash",
-          "icon": "icons/products/wash.svg"
+          "icon": "img/icons/products/wash.svg"
         }
       ]
     },
@@ -3490,19 +3490,19 @@
       "careClauses": [
         {
           "explanation": "bleach",
-          "icon": "icons/products/bleach.svg"
+          "icon": "img/icons/products/bleach.svg"
         },
         {
           "explanation": "dry clean",
-          "icon": "icons/products/dry-clean.svg"
+          "icon": "img/icons/products/dry-clean.svg"
         },
         {
           "explanation": "medium ironing",
-          "icon": "icons/products/ironing-2.svg"
+          "icon": "img/icons/products/ironing-2.svg"
         },
         {
           "explanation": "soft wash",
-          "icon": "icons/products/wash-1.svg"
+          "icon": "img/icons/products/wash-1.svg"
         }
       ]
     },

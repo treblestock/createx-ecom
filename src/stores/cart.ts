@@ -1,25 +1,19 @@
 import { defineStore } from "pinia"
-import type { CartProductVariant, ProductSize, Cart, ShippingMethod, CartRecord } from '~/types'
+import type { CartProductVariant, ProductSize, Cart, ShippingMethod, CartRecord, Product } from '~/types'
 
 import useStoreProducts from '~/stores/products'
 
 
-const TAX_RATE = 0.06
-
-const SHIPPING_COST: Record<ShippingMethod, number> = {
-  Courier: 25,
-  createxGlobalExport: 10,
-  createxLocker: 0,
-  UPS: 12,
-  Store: 0,
-}
 
 type CartItemId = string
 export default defineStore('cart', () => {
 
   const cart = ref<Map<CartItemId, CartRecord>>(new Map())
 
-  const cartItemsData = computed(() => fetchCartItemData([...cart.value.values()]))
+  const cartItemsData = computed(() => {
+    if (!useStoreProducts().products.length) return []
+    return fetchCartItemData([...cart.value.values()])
+  })
 
   
   const cartItemsCount = computed(() => cart.value.size)
@@ -59,27 +53,12 @@ export default defineStore('cart', () => {
   }
 
   // calc arbitary calc
-  function calcCartTotal(cart: Cart, shippingMethod: ShippingMethod) {
-    const subtotal = cart.reduce((subtotal, cartRecord) => {
-      const product = useStoreProducts().findProduct(cartRecord.productId)
-      return subtotal += cartRecord.count * product.price
-    }, 0)
-
-    const tax = subtotal * TAX_RATE
-
-    return {
-      shippingCost: SHIPPING_COST[shippingMethod],
-      tax,
-      subtotal,
-      total: subtotal + tax + SHIPPING_COST[shippingMethod],
-    }
-  }
+  var calcCartTotal = useCalcCartTotal
   
   function fetchCartItemData(cartItems: CartRecord[]) {
     const productsStore = useStoreProducts()    
-    
     return cartItems.map(cartItem => {
-      const product = productsStore.findProduct(cartItem.productId)
+      const product = productsStore.findProduct(cartItem.productId) as Product
       return {
         productId: product.id,
         name: product.name,

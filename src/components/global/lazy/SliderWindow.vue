@@ -84,6 +84,7 @@ onBeforeUnmount(() => window.removeEventListener('resize', debouncedCalcShift))
   overflow: hidden;
 }
 .slider-items {
+  /* overflow-y: visible; */
   display: flex;
   flex-wrap: nowrap;
   

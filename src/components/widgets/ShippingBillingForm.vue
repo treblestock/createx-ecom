@@ -1,20 +1,23 @@
 <script setup lang="ts">
-const formData = ref({
-  firstName: '',
-  lastName: '',
-  email: '',
-  phone: '',
-  passNew: '',
-  passConfirm: '',
-  country: '',
-  city: '',
-  address: '',
-  zipCode: '',
-  isBillinEqualsShipping: true,
+import useStoreOrder from '~/stores/order'
+const orderStore = useStoreOrder()
+
+const shippingForm = computed({
+  get: () => orderStore.shippingForm,
+  set: (value) => orderStore.shippingForm = value,
+})
+const billingForm = computed({
+  get: () => orderStore.billingForm,
+  set: (value) => orderStore.billingForm = value,
+})
+const isBillinEqualsShipping = computed({
+  get: () => orderStore.isBillingEqualsShipping,
+  set: (value) => orderStore.isBillingEqualsShipping = value,
 })
 
+
 function onSubmit() {
-  console.log(formData.value)
+  console.log(shippingForm.value)
 }
 
 </script>
@@ -23,38 +26,73 @@ function onSubmit() {
     <form class="shipping-billing-form"
       @submit.prevent="onSubmit"
     >
-      <InputGroup class="input-group"
-        v-model="formData.firstName"
-      >First name</InputGroup>
-      <InputGroup class="input-group"
-        v-model="formData.lastName"
-      >Last name</InputGroup>
-      <InputGroup class="input-group"
-        v-model="formData.email"
-      >First name</InputGroup>
-      <InputGroup class="input-group"
-        v-model="formData.phone"
-      >First name</InputGroup>
+      <h2 class="h4" v-if="!isBillinEqualsShipping">Shipping Form</h2>
 
       <InputGroup class="input-group"
-        v-model="formData.country"
+        v-model="shippingForm.firstName"
+      >First name</InputGroup>
+      <InputGroup class="input-group"
+        v-model="shippingForm.lastName"
+      >Last name</InputGroup>
+      <InputGroup class="input-group"
+        v-model="shippingForm.email"
+      >Email</InputGroup>
+      <InputGroup class="input-group"
+        v-model="shippingForm.phone"
+      >Phone</InputGroup>
+
+      <InputGroup class="input-group"
+        v-model="shippingForm.country"
       >Country</InputGroup>
       <InputGroup class="input-group"
-        v-model="formData.city"
+        v-model="shippingForm.city"
       >City</InputGroup>
       <InputGroup class="input-group"
-        v-model="formData.address"
+        v-model="shippingForm.address"
       >Address</InputGroup>
       <InputGroup class="input-group"
-        v-model="formData.zipCode"
+        v-model="shippingForm.zipCode"
       >ZIP Code</InputGroup>
 
 
       <CheckboxGroup class="biling-equals-shipping"
-        v-model="formData.isBillinEqualsShipping"
+        v-model="isBillinEqualsShipping"
       >
         Billing and Shipping details are the same
       </CheckboxGroup>
+
+
+      <template
+        v-if="!isBillinEqualsShipping"
+      >
+        <h2 class="h4">Billing Form</h2>
+        <InputGroup class="input-group"
+          v-model="billingForm.firstName"
+        >First name</InputGroup>
+        <InputGroup class="input-group"
+          v-model="billingForm.lastName"
+        >Last name</InputGroup>
+        <InputGroup class="input-group"
+          v-model="billingForm.email"
+        >Email</InputGroup>
+        <InputGroup class="input-group"
+          v-model="billingForm.phone"
+        >Phone</InputGroup>
+
+        <InputGroup class="input-group"
+          v-model="billingForm.country"
+        >Country</InputGroup>
+        <InputGroup class="input-group"
+          v-model="billingForm.city"
+        >City</InputGroup>
+        <InputGroup class="input-group"
+          v-model="billingForm.address"
+        >Address</InputGroup>
+        <InputGroup class="input-group"
+          v-model="billingForm.zipCode"
+        >ZIP Code</InputGroup>
+      </template>
+
     </form>
 </template>
 
@@ -66,8 +104,12 @@ function onSubmit() {
   flex-wrap: wrap;
   row-gap: 2.4rem;
   column-gap: 3rem;
-
 }
+.h4 {
+  flex: 0 0 100%;
+  color: $color-gray-900;
+}
+
 .item {
   background: $color-gray-200;
   padding: 2rem 2.4rem;

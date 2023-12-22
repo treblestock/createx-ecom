@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { dateToHumanCase } from '~/utils'
 import IconChat from '~/assets/img/icons/decor/Chat.svg'
+import type { DateRecord } from '~/types'
 
 const props = defineProps<{
   id: number
   img: string
   title: string
-  date: string
+  date: DateRecord
   category: string[]
   description: string
   commentsIds: number[]

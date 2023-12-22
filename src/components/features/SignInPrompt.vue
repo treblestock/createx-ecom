@@ -1,10 +1,15 @@
 <script setup lang="ts">
 import IconProfile from '~/assets/img/icons/decor/Profile.svg'
 
+import useStoreAuth from '~/stores/auth'
+const authStore = useStoreAuth()
+const isAuth = computed(() => authStore.isAuth)
 </script>
 
 <template>
-  <div class="sign-in-prompt">
+  <div class="sign-in-prompt"
+    v-if="!isAuth"
+  >
     <IconProfile class="icon"></IconProfile>
     Already have an account?  <AppLink class="link" @click.prevent="$router.$showPopup('Signin')">Sign in</AppLink>  for faster checkout experience
   </div>

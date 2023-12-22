@@ -2,10 +2,12 @@
 import type { ProductReview } from '~/types'
 import ProductReviewComp from '~/components/widgets/ProductReview.vue'
 
+import useStoreProducts from '~/stores/products'
+const productsStore = useStoreProducts()
 
-
-
-const { data: reviews } = useFetch(() => api.getUserProductReviews(1), [])
+// const { data: reviews } = useFetch(() => api.getUserProductReviews(1), [])
+const reviews = computed(() => productsStore.userReviews)
+// <!--todo:
 
 const sorts = {
   none: undefined,

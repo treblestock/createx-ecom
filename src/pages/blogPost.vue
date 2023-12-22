@@ -21,7 +21,6 @@ const blogPostsStore = useStoreBlogPosts()
 const post = computed<BlogPost | undefined>(() => blogPostsStore.findPost(props.id))
 
 
-
 const { data: relatedPosts } = useFetch(() => api.getRelatedBlogPosts(props.id, 3), [] as BlogPost[])
 
 const prevPost = computed<BlogPost | null>(() => {
@@ -32,13 +31,17 @@ const nextPost = computed<BlogPost | null>(() => {
 })
 
 
-// comments
-const comments = computed(() => {
-  if (!post.value) return []
-  const postComments = blogPostsStore.findBlogPostComments(post.value.id)
-  return postComments
-})
 
+
+// comments
+// const comments = computed(() => {
+//   if (!post.value) return []
+//   const postComments = blogPostsStore.findBlogPostComments(post.value.id)
+//   return postComments
+// })
+const comments = computed(() =>
+  blogPostsStore.comments.filter(comment => comment.postId === post.value?.id)
+)
 
 </script>
 
@@ -114,7 +117,7 @@ const comments = computed(() => {
           </div>
           <div class="comments">
             <BlogPostComment class="blog-post-comment"
-            v-for="comment in comments" :key="comment.id" 
+            v-for="comment in comments" :key="comment.id"
             :="comment"></BlogPostComment>
           </div>
         </div>
@@ -123,7 +126,9 @@ const comments = computed(() => {
 
     <div class="leave-comments-section section">
       <div class="container-s">
-        <LeaveBlogPostCommentForm class="leave-comment-form"></LeaveBlogPostCommentForm>
+        <LeaveBlogPostCommentForm class="leave-comment-form"
+          :postId="post.id"
+        ></LeaveBlogPostCommentForm>
       </div>
     </div>
 

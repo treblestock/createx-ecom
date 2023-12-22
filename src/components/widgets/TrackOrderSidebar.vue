@@ -1,12 +1,13 @@
 <script setup lang="ts">
+import { DateRecord } from '~/types';
 import { dateToHumanCase } from '~/utils';
 const props = defineProps<{
   orderExists?: boolean
   orderId?: string
   shippingMethod?: string
-  orderDate?: string
+  orderDate?: DateRecord
   destination?: string
-  expectedDate?: string
+  expectedDate?: DateRecord
   orderStatus?: string
 }>()
 

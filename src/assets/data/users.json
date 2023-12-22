@@ -1,50 +1,50 @@
 [
   {
     "id": 1,
-    "fullName": "Anne Block"
+    "fullname": "Ann Block"
   },
   {
     "id": 2,
-    "fullName": "Janet Allen"
+    "fullname": "Janet Allen"
   },
   {
     "id": 3,
-    "fullName": "Isabel Clarke"
+    "fullname": "Isabel Clarke"
   },
   {
     "id": 4,
-    "fullName": "Roberto Robinson"
+    "fullname": "Roberto Robinson"
   },
   {
     "id": 5,
-    "fullName": "Vera Roberts"
+    "fullname": "Vera Roberts"
   },
   {
     "id": 6,
-    "fullName": "Liam Brown"
+    "fullname": "Liam Brown"
   },
   {
     "id": 7,
-    "fullName": "Ivan Williams"
+    "fullname": "Ivan Williams"
   },
   {
     "id": 8,
-    "fullName": "Lauren Clark"
+    "fullname": "Lauren Clark"
   },
   {
     "id": 9,
-    "fullName": "Lauren Harrison"
+    "fullname": "Lauren Harrison"
   },
   {
     "id": 10,
-    "fullName": "Riley Patel"
+    "fullname": "Riley Patel"
   },
   {
     "id": 11,
-    "fullName": "Daisy Patel"
+    "fullname": "Daisy Patel"
   },
   {
     "id": 12,
-    "fullName": "Lucy Hall"
+    "fullname": "Lucy Hall"
   }
 ]

@@ -366,7 +366,7 @@ body > * {
 
   cursor: pointer;
   
-  &:hover {
+  &._active {
     background: $color-green;
     color: $color-white;
   }
@@ -402,6 +402,9 @@ body > * {
     color: $color-green;
     margin-right: 2rem;
   }
+}
+.error {
+  color: $color-red;
 }
 /* #label */
 @define-mixin label-base {

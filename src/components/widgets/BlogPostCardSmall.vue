@@ -1,12 +1,13 @@
 <script setup lang="ts">
 import { dateToHumanCase } from '~/utils'
 import IconClock from '~/assets/img/icons/decor/Clock.svg'
+import type { DateRecord } from '~/types'
 
 const props = defineProps<{
   id: number
   img: string
   title: string
-  date: string
+  date: DateRecord
 }>()
 
 const BASE_URL = import.meta.env.BASE_URL

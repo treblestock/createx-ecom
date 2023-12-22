@@ -3,18 +3,13 @@ import ProductCard from '~/components/widgets/ProductCard.vue'
 import IconDelete from '~/assets/img/icons/decor/delete.svg'
 
 
-import useStoreProducts from '~/stores/products'
-const productsStore = useStoreProducts()
-
 
 import useStoreProfile from '~/stores/profile'
 const profileStore = useStoreProfile()
 
 
-const products = computed(() => productsStore.products.slice(0, 6))
-function clearFavourite() {
-  // profileStore.
-}
+const products = computed(() => profileStore.favouriteProducts)
+var clearFavourite = profileStore.deleteFavouriteProducts
 
 </script>
 
@@ -23,9 +18,10 @@ function clearFavourite() {
     <section class="favourite">
       <div class="favourite-header">
         <h1 class="h1">Wishlist</h1>
-        <Btn class="_transparent _with-icon _delete">
+        <Btn class="_transparent _with-icon _delete"
+          @click="clearFavourite"
+        >
           <IconDelete class="icon-delete"
-            @click="clearFavourite"
           ></IconDelete>
           Delete all
         </Btn>

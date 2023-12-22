@@ -3,11 +3,12 @@ import ProductCard from '~/components/widgets/ProductCard.vue'
 import IconDelete from '~/assets/img/icons/decor/delete.svg'
 
 
-import useStoreProducts from '~/stores/products'
-const productsStore = useStoreProducts()
+import useStoreProfile from '~/stores/profile'
+const profileStore = useStoreProfile()
 
 
-const products = computed(() => productsStore.products.slice(0, 6))
+const products = computed(() => profileStore.recientlyViewedProducts)
+var clearRecientlyViewed = profileStore.deleteRecientlyViewedProdcts
 
 
 </script>
@@ -17,7 +18,9 @@ const products = computed(() => productsStore.products.slice(0, 6))
     <section class="reciently-viewed">
       <div class="reciently-viewed-header">
         <h1 class="h1">Recently viewed</h1>
-        <Btn class="_transparent _with-icon _delete">
+        <Btn class="_transparent _with-icon _delete"
+          @click="clearRecientlyViewed"
+        >
           <IconDelete class="icon-delete"></IconDelete>
           Delete all
         </Btn>

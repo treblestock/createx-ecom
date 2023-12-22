@@ -1,10 +1,16 @@
 <script setup lang="ts">
+import type { BlogPost } from '~/types'
 import SignInPrompt from '~/components/features/SignInPrompt.vue'
 
+const props = defineProps<{
+  postId: BlogPost['id']
+}>()
 
 import useStoreAuth from '~/stores/auth'
-
 const authStore = useStoreAuth()
+
+import useStoreBlogPosts from '~/stores/blogPosts'
+const blogPostsStore = useStoreBlogPosts()
 
 const isAuth = computed(() => authStore.isAuth)
 
@@ -12,8 +18,16 @@ const commentForm = ref({
   comment: ``,
 })
 
-function onSubmit() {
-  console.log(commentForm.value)
+async function onSubmit() {
+  if (!commentForm.value.comment) return
+
+  await blogPostsStore.leaveBlogPostComment({
+    comment: commentForm.value.comment,
+    date: new Date(),
+    postId: props.postId,
+  })
+
+  commentForm.value.comment = ''
 }
 
 

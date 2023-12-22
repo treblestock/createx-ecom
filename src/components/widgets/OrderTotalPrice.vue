@@ -1,5 +1,16 @@
 <script setup lang="ts">
+import type { ShippingMethod } from '~/types'
 
+
+import useStoreOrder from '~/stores/order'
+const orderStore = useStoreOrder()
+
+
+import useStoreCart from '~/stores/cart'
+const cartStore = useStoreCart()
+
+
+const orderTotal = computed(() => cartStore.calcCartTotal([...cartStore.cart.values()], orderStore.shippingMethod))
 
 </script>
 
@@ -9,11 +20,13 @@
     <div class="total-price-item costs">
       <div class="cost-row text-b">
         <div>Subtotal:</div>
-        <div>$198.65</div>
+        <!-- <div>$198.65</div> -->
+        <div>${{ orderTotal.subtotal.toFixed(2) }}</div>
       </div>
       <div class="cost-row">
         <div>Shipping costs:</div>
-        <div>$25.00</div>
+        <!-- <div>$25.00</div> -->
+        <div>${{ orderTotal.shippingCost.toFixed(2) }}</div>
       </div>
       <div class="cost-row">
         <div>Discount:</div>
@@ -21,12 +34,14 @@
       </div>
       <div class="cost-row">
         <div>Estimated sales tax:</div>
-        <div>$6.35</div>
+        <!-- <div>$6.35</div> -->
+        <div>${{ orderTotal.tax.toFixed(2) }}</div>
       </div>
     </div>
     <div class="total-price-item total text-xl">
       <div>Order total:</div>
-      <div>$230.00</div>
+      <!-- <div>$230.00</div> -->
+        <div>${{ orderTotal.total.toFixed(2) }}</div>
     </div>
   </div>  
 </template>

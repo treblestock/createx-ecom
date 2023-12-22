@@ -1,7 +1,17 @@
 <script setup lang="ts">
-import type { Rating } from '~/types'
-import InputGroup from '~/components/global/InputGroup.vue'
-import PasswordGroup from '~/components/global/PasswordGroup.vue'
+import type { Product, Rating } from '~/types'
+
+
+const props = defineProps<{
+  productId: Product['id']
+}>()
+
+import useStoreProducts from '~/stores/products'
+const productsStore = useStoreProducts()
+
+import useStoreAuth from '~/stores/auth'
+const authStore = useStoreAuth()
+const isAuth = computed(() => authStore.isAuth)
 
 
 
@@ -18,10 +28,13 @@ function isValidForm() {
   if (
     formData.value.name === '' ||
     formData.value.email === '' ||
-    formData.value.comment === ''
+    formData.value.comment === '' ||
+    !formData.value.rating
   ) return false
   return true
 }
+
+const errorMsg = ref('')
 
 function clearForm() {
   formData.value.name = '' 
@@ -32,8 +45,21 @@ function clearForm() {
 }
 
 
-function onSubmit() {
-  if (!isValidForm() ) return
+async function onSubmit() {
+  if (!isValidForm() ) {
+    errorMsg.value = 'Fill in all the fields and select raitng'
+    return
+  }
+  const newProductReview = await productsStore.leaveProductReview({
+    productId: props.productId,
+    date: new Date(),
+    likes: 0,
+    dislikes: 0,
+    rating: formData.value.rating as Rating,
+    comment: formData.value.comment,
+  })
+
+
   usePopupManager().closePopup('LeaveReview')
 }
 
@@ -44,6 +70,13 @@ const ratingOptions = [1, 2, 3, 4, 5]
 <template>
   <div class="review-popup">
     <div class="review-title h3">Leave a review</div>
+
+    <div class="error"
+      v-if="!isAuth"
+    >It's required to be signed in to leave a review</div>
+
+    <div class="error">{{ errorMsg }}</div>
+
 
     <form class="review-form"
       @submit.prevent="onSubmit"
@@ -68,6 +101,7 @@ const ratingOptions = [1, 2, 3, 4, 5]
         
       <Btn class="submit"
         type="submit"
+        :disabled="!isAuth"
       >Submit a review</Btn>
     </form>
     

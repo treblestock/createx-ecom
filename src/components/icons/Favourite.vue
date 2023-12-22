@@ -1,7 +1,8 @@
 <script setup lang="ts">
 import IconHeart from '~/assets/img/icons/decor/heart.svg'
 
-const favouriteItems = ref<number>(0)
+import useStoreProfile from '~/stores/profile'
+const profileStore = useStoreProfile()
 
 
 
@@ -13,7 +14,7 @@ const favouriteItems = ref<number>(0)
   >
     <IconHeart class="icon"></IconHeart>
     <div class="label">
-      {{ favouriteItems }}
+      {{ profileStore.favouriteIds.size }}
     </div>
   </AppLink>
   
