@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { Component, VNodeProps, AllowedComponentProps } from 'vue'
+// import type { ComponentProps } from '~/types/vue'
 
 
 import Popup from '~/components/global/Popup.vue'

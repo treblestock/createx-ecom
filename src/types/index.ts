@@ -11,6 +11,8 @@ export type valueToRecord<T> = {
 }
 
 export type recordof<T> = valueof<valueToRecord<T> >
+export type RequiredKeys<T> = { [K in keyof T]-?: {} extends Pick<T, K> ? never : K }[keyof T];
+export type OptionalKeys<T> = { [K in keyof T]-?: {} extends Pick<T, K> ? K : never }[keyof T];
 
 export type RefOrComputed<T> = Ref<T> | ComputedRef<T>
 

@@ -1,21 +1,24 @@
-<script setup lang="ts">
+<script setup lang="ts" generic="N extends AppRouteName">
+import type { AppRouteName, TypedTo } from '~/router/typedRouter'
+import { type RouterLinkProps } from 'vue-router'
+
+import { modifyRouteTo } from '~/router/utils'
+
 defineOptions({
   inheritAttrs: false
 })
 
-import { computed } from 'vue'
-import { RouterLink } from 'vue-router'
 
-import { modifyRouteTo } from '~/router/utils'
-import type { WithParamsAny } from '~/router/types'
 
-const props  = defineProps<WithParamsAny>()
+// 
+// const props = defineProps<RouterLinkProps>()
+// const props  = defineProps<Omit<RouterLinkProps, 'to'> & RouterLinkProps['to']>()
+const props  = defineProps<Omit<RouterLinkProps, 'to'> & {to?: TypedTo<N>}>()
 
 
 const isExternalLink = computed(() => 
   typeof props.to === 'string' && props.to.startsWith('http')
 )
-
 
 </script>
 
@@ -30,7 +33,7 @@ const isExternalLink = computed(() =>
   <RouterLink class="link"
     v-else
     :="$attrs"
-    :to="modifyRouteTo(to || {})"
+    :to="props.to ? modifyRouteTo(props.to as TypedTo<N>) : {}"
     v-slot="slotProps"
   >
     <slot class="link__inner"

@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import type { AppRouteName, TypedTo } from '~/router/types'
+import type { AppRouteName, TypedTo } from '~/router/typedRouter'
 import HomeIcon from '~/assets/img/icons/decor/Home.svg'
 import Burger from '~/components/features/Burger.vue'
 
 
-type BreadCrumbData = {
-  to: TypedTo
+type BreadCrumbData<N extends AppRouteName> = {
+  to: TypedTo<N>
   text: string
 }
+
 
 import useStoreProducts from '~/stores/products'
 const productsStore = useStoreProducts()
@@ -15,7 +16,7 @@ import useStoreBlogPosts from '~/stores/blogPosts'
 const blogPostsStore = useStoreBlogPosts()
 // key AppRouteName
 
-const crumbsMap: Record<string, () => BreadCrumbData[]> = {
+const crumbsMap: Record<string, () => BreadCrumbData<any>[]> = {
   account: () => [{
     text: 'Account',
     to: {name: 'account'}

@@ -1,13 +1,15 @@
-<script setup lang="ts">
-import type { WithParamsAny } from '~/router/types'
+<script setup lang="ts" generic="N extends AppRouteName">
+import type { AppRouteName, TypedTo } from '~/router/typedRouter'
+import { type RouterLinkProps } from 'vue-router'
 
-const props = defineProps<WithParamsAny>()
+const props  = defineProps<Omit<RouterLinkProps, 'to'> & {to?: TypedTo<N>}>()
+// const props  = defineProps<RouterLinkProps>()
 
 </script>
 
 <template>
   <AppLink class="btn"
-    :to="$props.to"
+    :to="props.to"
   >
     <slot></slot>
   </AppLink>  

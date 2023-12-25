@@ -63,7 +63,7 @@
 - pinia plugin: onRegister
 - pinia plugin: stateCacher
 - pinia plugin: exportImportState
-- adaptive size,
+- adaptive size, functions/rl
 - postCss functions
 - composables/useLocalStorage
 - composables/usePopupManager

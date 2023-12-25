@@ -1,5 +1,6 @@
 import type { RouteLocationRaw, RouteLocationNormalized } from "vue-router"
-import type { TypedTo } from "../types"
+// import type { TypedTo } from "../types"
+import type { AppRouteName, TypedTo } from "../typedRouter"
 
 const BASE_URL = import.meta.env.BASE_URL || '/'
 export function withBaseUrl(string: string): string {
@@ -25,8 +26,8 @@ export function paramsValuesToStrings(to: Exclude<RouteLocationRaw, string> & {p
   }
 }
 
-export function modifyRouteTo (to: TypedTo) {
-  if (typeof to !== 'string') return paramsValuesToStrings(to)
+export function modifyRouteTo<N extends AppRouteName>(to: TypedTo<N>) {
+  if (typeof to !== 'string') return paramsValuesToStrings(to as Exclude<RouteLocationRaw, string>)
 
   if (to.startsWith('#') ) return withHash(to)
   return withBaseUrl(to)
@@ -41,7 +42,7 @@ interface JSONedParams {
 
 export function propsParser(route: RouteLocationNormalized & JSONedParams): Record<string, any> {
   return Object.entries(route.params).reduce((props, [key, value]) => 
-    // required to ignore params auto fitted by router,
+    // required to ignore params auto inserted by router,
     // which were not provided by developer passing params: {}
     value ? (props[key] = JSON.parse(value), props) : props 
   , {} as Record<string, any>)

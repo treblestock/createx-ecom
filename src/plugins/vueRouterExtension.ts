@@ -1,19 +1,22 @@
 import type { App as VueApp } from 'vue'
 import type { Router } from 'vue-router'
-import type { TypedTo } from '~/router/types'
+// import type { TypedTo } from '~/router/types'
+import type { AppRouteName, TypedTo } from '~/router/typedRouter'
 
 import { modifyRouteTo } from '~/router/utils'
 
 
 export const navigateInjectionKey = Symbol('navigate')
 export interface Navigate {
-  (to: TypedTo): void
+  // (to: TypedTo): void
+  <N extends AppRouteName>(to: TypedTo<N>): ReturnType<Router['push']>
 }
 
 function createNavigate(router: Router) {
-  return function navigate(to: TypedTo) {
-    const serializedTo = modifyRouteTo(to)
-    router.push(serializedTo)
+  // return function navigate(to: TypedTo) {
+  return function navigate<N extends AppRouteName>(to: TypedTo<N>) {
+    const modifiedTo = modifyRouteTo(to)
+    return router.push(modifiedTo)
   }
 }
 
