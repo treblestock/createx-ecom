@@ -5,6 +5,8 @@ import type { RequiredKeys, OptionalKeys } from '~/types'
 import type { ComponentProps } from '~/types/vue'
 import { RouteLocationRaw } from 'vue-router'
 
+// !todo: make nesting routes' props merge support
+
 type RemoveReadonly<T> = {
   - readonly[key in keyof T]: T[key]
 }

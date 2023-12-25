@@ -1,6 +1,10 @@
 <script setup lang="ts">
+import type { Product } from '~/types';
 
 
+const props = defineProps<{
+  id: Product['id']
+}>()
 
 
 
@@ -15,17 +19,26 @@
       </div>
       <div class="tabs">
         <AppLinkBtn class="tab btn_transparent-bordered"
-          :to="{name: 'productGeneralInfo'}"
+          :to="{
+            name: 'productGeneralInfo',
+            params: { id, },
+          }"
         >
           General info
         </AppLinkBtn>
         <AppLinkBtn class="tab btn_transparent-bordered"
-          :to="{name: 'productDetails'}"
+          :to="{
+            name: 'productDetails',
+            params: { id, },
+          }"
         >
           Product details
         </AppLinkBtn>
         <AppLinkBtn class="tab btn_transparent-bordered"
-          :to="{name: 'productReviews'}"
+          :to="{
+            name: 'productReviews',
+            params: { id, },
+          }"
         >
           Reviews
         </AppLinkBtn>

@@ -24,7 +24,7 @@ onMounted(() => profileStore.pushRecientlyViewedProdcts(props.id))
   >
     <section class="section">
       <div class="container">
-        <ProductPageWidget/>
+        <ProductPageWidget :id="id"/>
       </div>
     </section>
     
