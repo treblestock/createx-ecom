@@ -210,7 +210,7 @@ const routes = [
       },
     ]
   },
-] as const
+] as const satisfies RouteRecordRaw[]
 
 
 
